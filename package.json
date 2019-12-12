@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/ahmad-666/tour-sambad.git"
   },
-  "homepage": "https://github.com/ahmad-666/tour-sambad#readme",
+  "homepage": "https://github.io.com/ahmad-666/tour-sambad",
   "keywords": [
     "sambad",
     "tour",
@@ -55,9 +55,11 @@
     "core-js": "^3.4.8",
     "fontfaceobserver": "^2.1.0",
     "gh-pages": "^2.1.1",
+    "jquery": "^3.4.1",
     "nouislider": "^14.1.0",
     "path-browserify": "^1.0.0",
     "regenerator-runtime": "^0.13.3",
+    "select2": "^4.0.12",
     "wnumb": "^1.2.0"
   }
 }

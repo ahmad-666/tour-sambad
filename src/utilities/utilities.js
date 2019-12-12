@@ -107,6 +107,12 @@ Ellipse.prototype.checkThreshold = function(){
         this.parent.style.textAlign = this.textAlign ;
     }
 }
+// <h6>
+//    <span class="ellipse" data-align="right">...</span>
+//    عنوان مقاله
+// </h6>
+// h6{@include multiEllipse(3,$dist2,$textDark) ;}
+// aside.querySelectorAll('.ellipse').forEach(ellipse=>new util.Ellipse(ellipse))    
 //fixMenu------------------------------------------------------------------------
 function fixMenu(menu,imgChange,img,beforeFixImg,afterFixImg){
     //we should set imgChange to true if we want to change imgAddress when we have fix Menu

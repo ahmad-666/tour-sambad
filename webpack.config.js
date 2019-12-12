@@ -3,7 +3,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //transfer style vis css not js
 const HtmlWebpackPlugin = require('html-webpack-plugin') ; 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+//const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     mode: 'development', //development | production
     optimization: {
@@ -80,7 +80,8 @@ module.exports = {
                         options : {
                             name : '[name].[ext]',
                             outputPath : 'assets/imgs/',
-                            publicPath : 'assets/imgs/'
+                            publicPath : 'assets/imgs/' ,
+                            esModule: false
                         }
                         }
                 ]
@@ -93,7 +94,8 @@ module.exports = {
                         options : {
                             name : '[name].[ext]',
                             outputPath : 'assets/imgs/gifs',
-                            publicPath : 'assets/imgs/gifs'
+                            publicPath : 'assets/imgs/gifs',
+                            esModule: false
                         }
                         }
                 ]
@@ -105,7 +107,8 @@ module.exports = {
                         options : {
                             name : '[name].[ext]',
                             outputPath : 'assets/fonts/',
-                            publicPath : 'assets/fonts/'
+                            publicPath : 'assets/fonts/',
+                            esModule: false
                         }
                         }
                 ]
@@ -117,7 +120,8 @@ module.exports = {
                         options : {
                             name : '[name].[ext]',
                             outputPath : 'assets/svgs/',
-                            publicPath : 'assets/svgs/'
+                            publicPath : 'assets/svgs/',
+                            esModule: false
                         }
                         }
                 ]
@@ -129,7 +133,8 @@ module.exports = {
                         options : {
                             name : '[name].[ext]',
                             outputPath : 'assets/vids/',
-                            publicPath : 'assets/vids/'
+                            publicPath : 'assets/vids/',
+                            esModule: false
                         }
                         }
                 ]
