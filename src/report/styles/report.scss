@@ -1,0 +1,25 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+#reportWrapper{
+    display: flex;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    h4{
+        font-size: $fontL;
+        font-weight: 700;
+        color: $primaryColor;
+    }
+    .content{
+        width: 100%;
+        height: auto;
+        margin-top: $dist2;
+        display: flex;
+        @include flex(row,flex-start,center,nowrap,"") ;
+        img{
+            width: calc(100% - 50% - 2em);
+            height: 30em;
+            margin-right: $dist2;
+            object-fit: cover;
+        }
+    }
+}

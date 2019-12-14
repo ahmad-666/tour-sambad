@@ -10,9 +10,11 @@ import '../index/styles/grid.scss' ;
 import '../index/styles/slider.scss' ;
 import '../index/styles/whyUs.scss' ;
 import '../index/styles/articles.scss' ;
+import '../index/styles/footer.scss' ;
 //load scripts
 import '../index/scripts/nav.js' ;
 import '../index/scripts/header.js' ;
 import '../index/scripts/slider.js' ;
 import '../index/scripts/whyUs.js' ;
+import '../index/scripts/newsletters.js' ;
 //load videos
