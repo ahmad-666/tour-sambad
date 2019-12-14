@@ -793,9 +793,7 @@ form#loginUser,form#loginAdmin{
         }
     }
 }
-form#loginAdmin{
-    button[type="submit"]{margin-top: $dist3 ;}
-}
+form#loginAdmin{button[type="submit"]{margin-top: $dist3 ;}}
 @include mediaQ(900px){
     form#loginUser,form#loginAdmin {
         font-size: 8px ;

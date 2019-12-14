@@ -53,13 +53,25 @@
                 opacity: 0;
                 visibility: hidden;
                 @include flex(column,flex-start,center,nowrap,"") ;
-                h4{
-                    font-size: $fontL;
-                    color: $primaryColor;
-                    font-weight: 700;
+                .logo{
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    @include flex(column,flex-start,center,nowrap,"") ;
+                    h4{
+                        font-size: $fontL;
+                        color: $primaryColor;
+                        font-weight: 700;
+                    }
+                    img{
+                        width: 7em;
+                        height: 7em;
+                    }   
                 }
+               
                 > p{
                     font-size: $fontM - .1em;
+                    margin-top: $dist1;
                     color: lighten($textGrey,10%);
                 }
             }
