@@ -1,0 +1,22 @@
+@import '../../colors.scss' ;
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+#rules{
+    display: flex;
+    @include flex(column,flex-start,center,nowrap,"");
+    h4{
+        font-size: $fontL;
+        color: $primaryColor;
+        font-weight: 700;
+    }
+    .content{
+        width: 100%;
+        height: auto;
+        margin-top: $dist2;
+        p{
+            font-size: $fontM;
+            line-height: $dist2 + .5em;
+            color: $textGrey;
+        }
+    }
+}

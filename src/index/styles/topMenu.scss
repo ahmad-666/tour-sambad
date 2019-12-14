@@ -1,0 +1,92 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+header{
+    #topMenu{
+        width: 100%;
+        height: auto;
+        padding: $dist1 $dist2;
+        display: flex;
+        @include flex(row,space-between,center,nowrap,"") ;
+        background-color: $darkColor;
+        .right,.left{
+            width: auto;
+            height: auto;
+            display: flex;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            &:not(:first-child){margin-right: $dist2;}
+        }
+        .right{
+            .logo,.login{
+                width: auto;
+                height: auto;
+                display: flex;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                &:not(:first-child){margin-right: $dist3;}
+                p,i{
+                    font-size: $fontM - .2em;
+                    color: $textWhite;
+                    &:nth-child(2){margin-right: $dist1;}
+                }
+            }
+            .logo{
+                img{
+                    width: 4em;
+                    height: 4em;
+                }
+                p{
+                    font-weight: 700;
+                    font-size: $fontL;
+                }
+            }
+            .login{
+                padding: $dist1;
+                border-radius: $dist1;
+                color: darken($orangeColor1,10%);
+                background-color: transparent;
+                border: 1.2px solid darken($orangeColor1,10%) ;
+                transition: all .3s linear;
+                &:hover{
+                    background-color: darken($orangeColor1,10%);
+                    border: 1.2px solid transparent ;
+                    color: $textWhite;
+                }
+            }
+        }
+        .left{
+            a,.tel{
+                color: $textWhite;
+                &:not(:first-child){margin-right: $dist2;}
+                transition: all .2s linear;
+                &:hover{
+                    color: darken($orangeColor1,10%);
+                }
+            }
+            a{font-size: $fontM - .2em;}
+            .tel{
+                width: auto;
+                height: auto;
+                display: flex;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                i{
+                    color: inherit;
+                    font-size: $fontM;
+                }
+                .wrapper{
+                    width: auto;
+                    height: auto;
+                    margin-right: $dist1;
+                    display: flex;
+                    @include flex(column,flex-start,center,nowrap,"") ;
+                    p{
+                        font-size: $fontS;
+                        color: $textWhite;
+                        &:not(:first-child){color: darken($orangeColor1,10%);}
+                    }
+                }
+            }
+        }
+    }
+}
+@include resizeTablet('#topMenu') ;
+@include resizeMobile('#topMenu') ;
