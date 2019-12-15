@@ -788,6 +788,7 @@ form#sample {
                     margin-right: .3em;
                     transition: all .2s linear;
                 }
+                p.error {color: lighten($redColor2,5%);}
             }
         }
     }
@@ -903,6 +904,61 @@ form#sample {
                 }
             }
         }
+    }
+    .inputWrapper.file{
+        width: 28em;
+        height: auto;
+        margin-top: $dist3;
+        position: relative;
+        input[type="file"]{display: none;}
+        label{
+            width: auto;
+            height: auto;
+            display: flex;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            p{
+                &:nth-child(1){
+                    flex-shrink: 0;
+                    color: white;
+                    background-color: $primaryColor ;
+                    cursor: pointer;
+                }
+                &:nth-child(2){
+                    font-size: $fontM - .2em;
+                    color: $primaryColor ;
+                    margin-right: .5em;}        
+            }
+        }
+        .msg {
+            width: auto;
+            height: auto;
+            border-radius: $dist3;
+            padding: $dist1 $dist2;
+            background-color: lighten($redColor2, 5%);
+            position: absolute;
+            right: 0;
+            top: 115%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s linear;
+            p {
+                color: $whiteColor2;
+                font-size: $fontM - .2em;
+            }
+
+            i {
+                font-size: $fontXL;
+                color: lighten($redColor2, 5%);
+                position: absolute;
+                right: $dist2;
+                top: calc(0% - .6em);
+            }
+        }
+        .msg.show {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }   
     }
     .inputWrapper.toggle {
         width: auto;

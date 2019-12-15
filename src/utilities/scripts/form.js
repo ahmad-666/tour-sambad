@@ -22,7 +22,7 @@ FormValidate.prototype.formSubmit = function(e){
         if(this.send) this.form.submit() ;
         else {
             if(this.modal) this.modal.openModal(null) ;        
-        }
+        }           
     }
 }
 FormValidate.prototype.allValidate = function(){
@@ -61,6 +61,19 @@ FormValidate.prototype.validateInput = function(input){
                 input.addEventListener('input',this) ;
             }
         }
+        else if(input.getAttribute('id')=='adminPasswordRepeat'){//password repeat handler
+            let password = this.form.querySelector('input[type="password"]#adminPassword') ;
+            input.password = password ;
+            if(password.value == input.value){
+                this.isValid(input) ;
+                input.removeEventListener('input',this) ;     
+                return true ;
+            }
+            else{
+                this.isNotValid(input) ;
+                input.addEventListener('input',this) ;
+            }
+        }
         else if(input.getAttribute('id')=='mobile'){
             if(input.value.length == 11 && input.value.startsWith('09')){
                 this.isValid(input) ;
@@ -71,6 +84,13 @@ FormValidate.prototype.validateInput = function(input){
                 this.isNotValid(input) ;
                 input.addEventListener('input',this) ;
             }
+        }
+        else if(input.getAttribute('type')=='checkbox'){
+            if(!input.checkValidity()) input.parentElement.querySelector('p').classList.add('error') ;
+            else {
+                input.parentElement.querySelector('p').classList.remove('error') ;
+                return true ;
+            } 
         }
         else{
             if(input.checkValidity()){
@@ -684,6 +704,24 @@ SearchList.prototype.handleEvent = function(e){
         this.label.classList.add('top') ;
     }
 }
+//file handler--------------------------------
+//file handler--------------------------------
+//file handler--------------------------------
+class FileHandler{
+    constructor(wrapper){
+        this.wrapper = wrapper ;
+        this.input = this.wrapper.querySelector('input[type="file"]') ;
+        this.fileName= this.wrapper.querySelector('.fileName') ;
+        this.init() ;
+    }
+    init(){
+        this.input.addEventListener('change',this.fileUploaded.bind(this)) ;
+    }
+    fileUploaded(e){
+        this.fileName.textContent = e.currentTarget.files[0].name ;
+    }
+}
+//wrapper.querySelectorAll('.inputWrapper.file').forEach(file=>new Form.FileHandler(file)) ;
 //form validation--------------------------------
 //form validation--------------------------------
 //form validation--------------------------------
@@ -772,5 +810,6 @@ export default{
 	RandomCode,
 	StarScore,
 	Separate3Num,
-	SearchList
+    SearchList,
+    FileHandler
 }

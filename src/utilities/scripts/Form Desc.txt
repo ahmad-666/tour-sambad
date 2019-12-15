@@ -176,6 +176,18 @@
 				</label>
 			</div>         
 		</div>
+		//bellow for times user must check the checkbox first and after that form can be submitted
+		<div class="inputWrapper checkboxes">
+			<div class="checkbox">
+				<input type="checkbox" id="rulesAgree" name="rulesAgree" class="style1 validate" value="rulesAgree" required>
+				<label for="rulesAgree">
+					<span class="rect">
+						<i class="fas fa-check center-xy"></i>
+					</span>
+					<p class="ellipse">قوانین سمباد را قبول دارم</p>
+				</label>
+			</div>
+		</div>
 		<div class="inputWrapper radios">
 			<div class="radio">
 				<input type="radio" id="radio1" name="radioName" class="style1" value="radio1" checked>
@@ -291,6 +303,17 @@
 				<li data-search="abababa">abababa</li>
 				<li data-search="ccbbaa">ccbbaa</li>
 			</ul>
+		</div>
+		<div class="inputWrapper file">
+			<input type="file" id="adminFile" name="adminFile" class="validate" accept="image/*" required>
+			<label for="adminFile">
+				<p class="btn small">ارسال مجوز</p>
+				<p class="fileName ellipse"></p>
+			</label>
+			<div class="msg">
+				<p>باید مجوز خود را آپلود کنید</p>
+				<i class="fas fa-caret-up"></i>
+			</div>
 		</div>
 		<button type="submit" class="final" id="validateCode">ارسال</button>
 	</div>
