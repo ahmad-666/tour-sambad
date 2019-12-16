@@ -7,7 +7,6 @@ nav.querySelectorAll('.withCollapse').forEach((withCollapse,i,all) => {
     let font = new FontFaceObserver('iranSans');
     font.load().then(()=>new Collapse(withCollapse,others));
  }) ;
-
  let mobileNavWrapper = nav.querySelector('.bars') ;
  let mobileBars = mobileNavWrapper.querySelector('.fa-bars') ;
  let mobileNav = mobileNavWrapper.querySelector('ul.mobile') ;

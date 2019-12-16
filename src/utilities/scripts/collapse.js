@@ -54,4 +54,3 @@ Collapse.prototype.toggleCollapse = function(e){
 //we should use <parent>.querySelectorAll('.withCollapse').forEach((withCollapse,i,all)
 //not document.querySelectorAll('.withCollapse').forEach((withCollapse,i,all) 
 export default Collapse ;
-

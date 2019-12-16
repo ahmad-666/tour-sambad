@@ -21,8 +21,8 @@ FormValidate.prototype.formSubmit = function(e){
         this.validate = true ;
         if(this.send) this.form.submit() ;
         else {
-            if(this.modal) this.modal.openModal(null) ;                 
-        }
+            if(this.modal) this.modal.openModal(null) ;        
+        }           
     }
 }
 FormValidate.prototype.allValidate = function(){
@@ -61,7 +61,6 @@ FormValidate.prototype.validateInput = function(input){
                 input.addEventListener('input',this) ;
             }
         }
-<<<<<<< HEAD
         else if(input.getAttribute('id')=='adminPasswordRepeat'){//password repeat handler
             let password = this.form.querySelector('input[type="password"]#adminPassword') ;
             input.password = password ;
@@ -75,8 +74,6 @@ FormValidate.prototype.validateInput = function(input){
                 input.addEventListener('input',this) ;
             }
         }
-=======
->>>>>>> e0673c3c7e8276f1168ce82fdf3a320c98f66341
         else if(input.getAttribute('id')=='mobile'){
             if(input.value.length == 11 && input.value.startsWith('09')){
                 this.isValid(input) ;
@@ -88,7 +85,6 @@ FormValidate.prototype.validateInput = function(input){
                 input.addEventListener('input',this) ;
             }
         }
-<<<<<<< HEAD
         else if(input.getAttribute('type')=='checkbox'){
             if(!input.checkValidity()) input.parentElement.querySelector('p').classList.add('error') ;
             else {
@@ -96,8 +92,6 @@ FormValidate.prototype.validateInput = function(input){
                 return true ;
             } 
         }
-=======
->>>>>>> e0673c3c7e8276f1168ce82fdf3a320c98f66341
         else{
             if(input.checkValidity()){
                 this.isValid(input) ;
@@ -424,10 +418,6 @@ Ranger.prototype.init = function(){
                 handler.classList.add('left') ;
                 break ;
         }
-<<<<<<< HEAD
-=======
-        
->>>>>>> e0673c3c7e8276f1168ce82fdf3a320c98f66341
     })
     this.minHidden.value = this.min ;
     this.maxHidden.value = this.max ;   
@@ -470,11 +460,8 @@ Ranger.prototype.createRanger = function(){
         this.maxHidden.value = this.ranger.noUiSlider.get()[1];   
         this.text.textContent = `${this.minHidden.value}تومان - ${this.maxHidden.value}تومان` ;
     })
-<<<<<<< HEAD
     this.ranger.parentElement.querySelector('.noUi-target').style.backgroundColor = "#eee" ;
 
-=======
->>>>>>> e0673c3c7e8276f1168ce82fdf3a320c98f66341
 }
 //Timer ------------------------------------
 //Timer ------------------------------------
@@ -718,7 +705,6 @@ SearchList.prototype.handleEvent = function(e){
         this.label.classList.add('top') ;
     }
 }
-<<<<<<< HEAD
 //file handler--------------------------------
 //file handler--------------------------------
 //file handler--------------------------------
@@ -737,8 +723,6 @@ class FileHandler{
     }
 }
 //wrapper.querySelectorAll('.inputWrapper.file').forEach(file=>new Form.FileHandler(file)) ;
-=======
->>>>>>> e0673c3c7e8276f1168ce82fdf3a320c98f66341
 //form validation--------------------------------
 //form validation--------------------------------
 //form validation--------------------------------
@@ -827,10 +811,6 @@ export default{
 	RandomCode,
 	StarScore,
 	Separate3Num,
-<<<<<<< HEAD
     SearchList,
     FileHandler
-=======
-	SearchList
->>>>>>> e0673c3c7e8276f1168ce82fdf3a320c98f66341
 }
