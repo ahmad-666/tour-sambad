@@ -846,7 +846,8 @@ form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassw
             opacity: 1;
             visibility: visible;
             z-index: 2;
-        }   
+        }         
+        
     }
 }
 form#loginAdmin{button[type="submit"]{margin-top: $dist3 ;}}
@@ -1639,6 +1640,8 @@ form#filters{
         }
     }
 }
+
+
 
 
 
