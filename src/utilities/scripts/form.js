@@ -418,7 +418,6 @@ Ranger.prototype.init = function(){
                 handler.classList.add('left') ;
                 break ;
         }
-        
     })
     this.minHidden.value = this.min ;
     this.maxHidden.value = this.max ;   
@@ -461,6 +460,8 @@ Ranger.prototype.createRanger = function(){
         this.maxHidden.value = this.ranger.noUiSlider.get()[1];   
         this.text.textContent = `${this.minHidden.value}تومان - ${this.maxHidden.value}تومان` ;
     })
+    this.ranger.parentElement.querySelector('.noUi-target').style.backgroundColor = "#eee" ;
+
 }
 //Timer ------------------------------------
 //Timer ------------------------------------

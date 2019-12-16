@@ -50,6 +50,7 @@ Collapse.prototype.toggleCollapse = function(e){
 //     //when we click on <label> we also trigger click .collapseTrigger too 
 //     we need to add e.stopPropagation() inside both clicks(.collapseTrigger,label) event to 
 //     prevent any conflicts
-export default{
-	Collapse
-}
+//for prevent conflicts between different collapses :
+//we should use <parent>.querySelectorAll('.withCollapse').forEach((withCollapse,i,all)
+//not document.querySelectorAll('.withCollapse').forEach((withCollapse,i,all) 
+export default Collapse ;

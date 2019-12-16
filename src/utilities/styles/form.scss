@@ -970,1145 +970,10 @@ form#loginAdmin{button[type="submit"]{margin-top: $dist3 ;}}
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-form#productInfo{
-    .inputWrapper.numberHandler {
-        width: auto;
-        height: auto;
-        // position: relative ;
-        display: flex;
-        @include flex(row, space-around, center, nowrap, "");
-        .increase,
-        .decrease,
-        input {
-            margin-right: $dist1;
-            &:first-child {
-                margin-right: 0;
-            }
-        }
-        .increase,
-        .decrease {
-            font-size: $fontM;
-            cursor: pointer;
-            color: lighten($darkColor, 5%);
-            // color: darken($textGrey,15%) ;      
-        }
-        input {
-            width: 3em;
-            height: 2em;
-            text-align: center;
-            line-height: 2em;
-            color: $darkColor;
-            font-size: $fontM;
-            border: 1.2px solid lighten($textGrey, 20%);
-        }
-        input.error {
-            border: 1.2px solid lighten($redColor2, 5%);
-        }
-    }
-}
-form#admin { 
-    .wrapper{
-        @include flex(column,flex-start,flex-start,nowrap,"") ;
-        .row{
-            width: 100%;
-            height: auto;
-            display: flex;
-            @include flex(row,flex-start,flex-start,wrap,flex-start) ;
-            .inputWrapper.text {
-                width: calc((100% - (3 * 3em)) / 3);
-                height: 4em;
-                position: relative;
-                margin: $dist2;
-                input {
-                    width: 100%;
-                    height: 100%;
-                    line-height: 4em;
-                    padding: 0 $dist1;
-                    font-size: $fontM;
-                    color: $darkColor;
-                    transition: all .2s linear;
-                    &::placeholder {
-                        color: $textGrey;
-                        font-size: $fontM;
-                    }
-                }
-                input.style1 {
-                    border: none;
-                    border-bottom: 1.2px solid lighten($textGrey, 25%);
-        
-                    &:focus {
-                        ~label {
-                            color: $primaryColor;
-                            font-size: 8px;
-                            bottom: calc(100% + .5em);
-                            transform: translateY(50%);
-                            right: 0;
-                        }
-        
-                        ~.line {
-                            width: 100%;
-                        }
-                    }
-                }
-        
-                input.style2 {
-                    border: 1.2px solid lighten($textGrey, 25%);
-                    border-radius: $dist3;
-        
-                    &:focus {
-                        border: 1.2px solid $primaryColor;
-        
-                        ~label {
-                            color: $primaryColor;
-                            font-size: 8px;
-                            bottom: calc(100% + 1.5em);
-                            transform: translateY(50%);
-                            right: $dist1;
-                        }
-        
-                        ~.line {
-                            width: 0%;
-                        }
-                    }
-                }
-        
-                input.style1.error {
-                    border-bottom: 1.2px solid lighten($redColor2, 5%);
-        
-                    ~label {
-                        color: lighten($redColor2, 5%);
-                    }
-        
-                    ~.line {
-                        background-color: lighten($redColor2, 5%);
-                    }
-                }
-        
-                input.style2.error {
-                    border: 1.2px solid lighten($redColor2, 5%);
-        
-                    ~label {
-                        color: lighten($redColor2, 5%);
-                    }
-                }
-        
-                label {
-                    width: auto;
-                    height: auto;
-                    position: absolute;
-                    right: $dist1;
-                    bottom: 50%;
-                    transform: translateY(50%);
-                    display: flex;
-                    @include flex(row, flex-start, center, nowrap, "");
-                    color: lighten($textGrey, 20%);
-                    transition: all .2s linear;
-        
-                    .icon {
-                        font-size: $fontM;
-                    }
-        
-                    p {
-                        font-size: $fontM - .1em;
-                        transform: translateX(-.3em);
-                    }
-                }
-        
-                input.style1 {
-                    ~label.top {
-                        font-size: 8px;
-                        bottom: calc(100% + .5em);
-                        transform: translateY(50%);
-                        right: 0;
-                    }
-                }
-        
-                input.style2 {
-                    ~label.top {
-                        font-size: 8px;
-                        bottom: calc(100% + 1.5em);
-                        transform: translateY(50%);
-                        right: $dist1;
-                    }
-                }
-        
-                .line {
-                    width: 0%;
-                    height: 1.2px;
-                    background-color: $primaryColor;
-                    position: absolute;
-                    right: 0;
-                    top: calc(100% - 1px);
-                    transition: all .2s linear;
-                }
-        
-                .msg {
-                    width: auto;
-                    height: auto;
-                    border-radius: $dist3;
-                    padding: $dist1 $dist2;
-                    position: relative;
-                    background-color: lighten($redColor2, 5%);
-                    position: absolute;
-                    right: 0;
-                    top: 115%;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: all .2s linear;
-        
-                    p {
-                        color: $whiteColor2;
-                        font-size: $fontM - .2em;
-                    }
-        
-                    i {
-                        font-size: $fontXL;
-                        color: lighten($redColor2, 5%);
-                        position: absolute;
-                        right: $dist2;
-                        top: calc(0% - .6em);
-                    }
-                }
-        
-                .msg.show {
-                    opacity: 1;
-                    visibility: visible;
-                    z-index: 2;
-                }
-            }
-        }     
-        .inputWrapper.textarea {
-            width: calc((2 * (100% - (3 * 3em)) / 3) + 3em);
-            height: auto;
-            position: relative;
-            margin: $dist2;
-            display: flex;
-            textarea {
-                // we set height/max-height via js
-                width: 100%;
-                font-size: $fontM;
-                color: $darkColor;
-                padding: $dist1;
-                line-height: $dist2 ;
-                transition: all .2s linear;
-                resize: none;
-                &::placeholder {
-                    font-size: $fontM;
-                    color: $textGrey;
-                }
-            }
-            textarea.style1 {
-                height: 10em;
-                border: 1.2px solid lighten($textGrey, 25%);
-                border-radius: $dist2;
-                ~label {
-                    bottom: 100%;
-                    transform: translateY(150%);
-                }
-                &:focus {
-                    border: 1.2px solid $primaryColor;
-                    ~label {
-                        font-size: 8px;
-                        right: $dist1;
-                        color: $primaryColor;
-                        bottom: calc(100% + .5em);
-                        transform: translateY(0);
-                    }
-                }
-            }
-            textarea.style2 {
-                overflow: hidden;
-                border: none;
-                border-bottom: 1.2px solid lighten($textGrey, 25%);
-                ~label {
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-                &:focus {
-                    border-bottom: 1.2px solid $primaryColor;
-                    ~label {
-                        font-size: 8px;
-                        right: 0;
-                        color: $primaryColor;
-                        top: 0;
-                        transform: translateY(-100%);
-                    }
-                    ~.line {
-                        width: 100%;
-                    }
-                }
-            }
-            textarea.style1.error {
-                border: 1.2px solid lighten($redColor2, 5%);
-    
-                ~label {
-                    color: lighten($redColor2, 5%);
-                }
-            }
-            textarea.style2.error {
-                border-bottom: 1.2px solid lighten($redColor2, 5%);
-                ~label {
-                    color: lighten($redColor2, 5%);
-                }
-            }
-            textarea.style1 {
-                ~label.top {
-                    font-size: 8px;
-                    bottom: calc(100% + 2em);
-                    transform: translateY(50%);
-                    right: 0;
-                }
-            }
-            textarea.style2 {
-                ~label.top {
-                    font-size: 8px;
-                    top: 0;
-                    transform: translateY(-100%);
-                    right: 0;                            
-                }
-            }
-            label {
-                width: auto;
-                height: auto;
-                position: absolute;
-                right: $dist1;
-                position: absolute;
-                display: flex;
-                @include flex(row, flex-start, center, nowrap, "");
-                transition: all .2s linear;
-                color: lighten($textGrey,20%);
-                i {
-                    font-size: $fontM;
-                }
-    
-                p {
-                    font-size: $fontM - .1em;
-                    transform: translateX(-.3em);
-                }
-            }
-            .line {
-                width: 0%;
-                height: 1.2px;
-                background-color: $primaryColor;
-                position: absolute;
-                right: 0;
-                top: calc(100% - .6px);
-                transition: all .2s linear;
-            }
-        } 
-    }
-    button{
-        margin: $dist1 auto 0 auto;
-        @include swapColor(white,lighten($primaryColor,10%)) ;
-        @include pulse(lighten($primaryColor,10%)) ;
-    }
-    
-}
-@include mediaQ(900px){
-    form#admin { 
-        .wrapper{   
-            .inputWrapper.textarea {
-                margin-top: $dist3;
-            } 
-        }   
-    }
-}
-@include mediaQ(800px){
-    form#admin { 
-        .wrapper{
-            .row{
-                .inputWrapper.text {
-                    width: 30em;
-                }
-            }     
-            .inputWrapper.textarea {
-                width: 63em;
-            } 
-        }   
-    }
-}
-@include mediaQ(650px){
-    form#admin { 
-        .wrapper{
-            .row{
-                .inputWrapper.text {
-                    width: calc((100% - (2 * 3em)) / 2);
-                }
-            }     
-            .inputWrapper.textarea {
-                width: calc(100% - 3em);
-            } 
-        }   
-    }
-}
-// form#login{
-//     width: 40em;
-//     height: auto;
-//     padding: $dist2;
-//     margin: 0 ;
-//     position: fixed ;
-//     top: 50% ;
-//     right: 50% ;
-//     transform: translate(50%,-50%) ;
-//     display: flex;
-//     @include flex(column, flex-start, center, nowrap, "");
-//     img{
-//         width: 12em ;
-//         height: 6em;
-//     }
-//     h4 {
-//         font-size: $fontL;
-//         font-weight: 700;
-//         color: $darkColor;
-//     }
-//     .inputWrapper.text {
-//         width: 35em;
-//         height: 4em;
-//         position: relative;
-//         margin-top: $dist2;
-//         &:nth-child(4){margin-top: $dist3 ;}
-//         input {
-//             width: 100%;
-//             height: 100%;
-//             line-height: 4em;
-//             padding: 0 $dist1;
-//             font-size: $fontM;
-//             color: $darkColor;
-//             transition: all .2s linear;
-//             &::placeholder {
-//                 color: $textGrey;
-//                 font-size: $fontM;
-//             }
-//         }
-//         input.style1 {
-//             border: none;
-//             border-bottom: 1.2px solid lighten($textGrey, 25%);
-
-//             &:focus {
-//                 ~label {
-//                     color: $primaryColor;
-//                     font-size: 8px;
-//                     bottom: calc(100% + .5em);
-//                     transform: translateY(50%);
-//                     right: 0;
-//                 }
-
-//                 ~.line {
-//                     width: 100%;
-//                 }
-//             }
-//         }
-//         input.style2 {
-//             border: 1.2px solid lighten($textGrey, 25%);
-//             border-radius: $dist3;
-
-//             &:focus {
-//                 border: 1.2px solid $primaryColor;
-
-//                 ~label {
-//                     color: $primaryColor;
-//                     font-size: 8px;
-//                     bottom: calc(100% + 1.5em);
-//                     transform: translateY(50%);
-//                     right: $dist1;
-//                 }
-
-//                 ~.line {
-//                     width: 0%;
-//                 }
-//             }
-//         }
-//         input.style1.error {
-//             border-bottom: 1.2px solid lighten($redColor2, 5%);
-//             ~label {
-//                 color: lighten($redColor2, 5%);
-//             }
-//             ~.line {
-//                 background-color: lighten($redColor2, 5%);
-//             }
-//         }
-//         input.style2.error {
-//             border: 1.2px solid lighten($redColor2, 5%);
-
-//             ~label {
-//                 color: lighten($redColor2, 5%);
-//             }
-//         }
-//         label {
-//             width: auto;
-//             height: auto;
-//             position: absolute;
-//             right: $dist1;
-//             bottom: 50%;
-//             transform: translateY(50%);
-//             display: flex;
-//             @include flex(row, flex-start, center, nowrap, "");
-//             color: lighten($textGrey, 20%);
-//             transition: all .2s linear;
-//             .icon {
-//                 font-size: $fontM;
-//             }
-//             p {
-//                 font-size: $fontM - .1em;
-//                 transform: translateX(-.3em);
-//             }
-//         }
-//         input.style1 {
-//             ~label.top {
-//                 font-size: 8px;
-//                 bottom: calc(100% + .5em);
-//                 transform: translateY(50%);
-//                 right: 0;
-//             }
-//         }
-//         input.style2 {
-//             ~label.top {
-//                 font-size: 8px;
-//                 bottom: calc(100% + 1.5em);
-//                 transform: translateY(50%);
-//                 right: $dist1;
-//             }
-//         }
-//         .line {
-//             width: 0%;
-//             height: 1.2px;
-//             background-color: $primaryColor;
-//             position: absolute;
-//             right: 0;
-//             top: calc(100% - 1px);
-//             transition: all .2s linear;
-//         }
-//         .msg {
-//             width: auto;
-//             height: auto;
-//             border-radius: $dist3;
-//             padding: $dist1 $dist2;
-//             position: relative;
-//             background-color: lighten($redColor2, 5%);
-//             position: absolute;
-//             right: 0;
-//             top: 115%;
-//             opacity: 0;
-//             visibility: hidden;
-//             transition: all .2s linear;
-//             p {
-//                 color: $whiteColor2;
-//                 font-size: $fontM - .2em;
-//             }
-//             i {
-//                 font-size: $fontXL;
-//                 color: lighten($redColor2, 5%);
-//                 position: absolute;
-//                 right: $dist2;
-//                 top: calc(0% - .6em);
-//             }
-//         }
-//         .msg.show {
-//             opacity: 1;
-//             visibility: visible;
-//             z-index: 2;
-//         }
-//     }
-//     .inputWrapper.checkboxes {
-//         width: auto;
-//         height: auto;
-//         display: flex;
-//         @include flex(column, flex-start, flex-start, nowrap, "");
-//         margin-top: 0;
-//         .checkbox {
-//             width: auto;
-//             height: auto;
-//             padding-right: $dist1;
-//             margin-top: $dist2 ;
-//             input[type="checkbox"] {
-//                 width: 0;
-//                 height: 0;
-//                 display: none;
-//             }
-//             input[type="checkbox"].style1 {
-//                 &:checked {
-//                     ~label {
-//                         .rect {
-//                             width: 2em;
-//                             height: 1em;
-//                             border-radius: 0;
-//                             border-top: none;
-//                             border-right: none;
-//                             border-left: 1.2px solid $primaryColor;
-//                             border-bottom: 1.2px solid $primaryColor;
-//                             transform: translateY(-.3em) rotate(-45deg);
-//                         }
-
-//                         p {
-//                             color: $primaryColor;
-//                         }
-//                     }
-//                 }
-//             }
-
-//             input[type="checkbox"].style2 {
-//                 &:checked {
-//                     ~label {
-//                         .rect {
-//                             border: 1px solid transparent;
-//                             background-color: $primaryColor;
-
-//                             i {
-//                                 opacity: 1;
-//                             }
-//                         }
-
-//                         p {
-//                             color: $primaryColor;
-//                         }
-//                     }
-//                 }
-//             }
-
-//             label {
-//                 cursor: pointer;
-//                 width: 100%;
-//                 height: 100%;
-//                 line-height: 2.5em;
-//                 display: flex;
-//                 @include flex(row, flex-start, center, nowrap, "");
-
-//                 .rect {
-//                     flex-shrink: 0;
-//                     width: 2em;
-//                     height: 2em;
-//                     border: 1px solid darken($textGrey, 15%);
-//                     position: relative;
-//                     transition: all .2s linear;
-//                     border-radius: .45em;
-
-//                     i {
-//                         opacity: 0;
-//                         font-size: $fontM;
-//                         color: $whiteColor2;
-//                         transition: all .2s linear;
-//                     }
-//                 }
-
-//                 p {
-//                     width: auto;
-//                     font-size: $fontS + .2em;
-//                     color: lighten($textGrey, 0%);
-//                     margin-right: .3em;
-//                     transition: all .2s linear;
-//                 }
-//             }
-//         }
-//     }
-//     button[type="submit"] {
-//         width: auto;
-//         height: auto;
-//         padding: .3em $dist2 + .5em;
-//         margin: $dist3 auto 0 auto;
-//         border-radius: $dist3;
-//         font-size: $fontL;
-//         @include swapColor($textWhite,$primaryColor) ;
-//     }
-//     a.rememberPassword{
-//         font-size: $fontS + .1em;
-//         color: lighten($textGrey,0%) ;
-//         position: absolute ;
-//         right: 0 ;
-//         top: 140% ;
-//     }
-//     a.signup{
-//         font-size: $fontM ;
-//         color: lighten($textGrey,0%) ;
-//         margin-top: $dist2 ;
-//     }
-// }
-// @include resizeTablet('form#login') ;
-// @include resizeMobile('form#login') ;
-// form#forgetPassword{
-//     width: 40em;
-//     height: auto;
-//     padding: $dist2;
-//     margin: 0 ;
-//     position: fixed ;
-//     top: 50% ;
-//     right: 50% ;
-//     transform: translate(50%,-50%) ;
-//     display: flex;
-//     @include flex(column, flex-start, center, nowrap, "");
-//     img{
-//         width: 12em ;
-//         height: 6em;
-//     }
-//     h4 {
-//         font-size: $fontL;
-//         font-weight: 700;
-//         color: $darkColor;
-//     }
-//     .inputWrapper.text {
-//         width: 35em;
-//         height: 4em;
-//         position: relative;
-//         margin-top: $dist2;
-//         input {
-//             width: 100%;
-//             height: 100%;
-//             line-height: 4em;
-//             padding: 0 $dist1;
-//             font-size: $fontM;
-//             color: $darkColor;
-//             transition: all .2s linear;
-//             &::placeholder {
-//                 color: $textGrey;
-//                 font-size: $fontM;
-//             }
-//         }
-//         input.style1 {
-//             border: none;
-//             border-bottom: 1.2px solid lighten($textGrey, 25%);
-
-//             &:focus {
-//                 ~label {
-//                     color: $primaryColor;
-//                     font-size: 8px;
-//                     bottom: calc(100% + .5em);
-//                     transform: translateY(50%);
-//                     right: 0;
-//                 }
-
-//                 ~.line {
-//                     width: 100%;
-//                 }
-//             }
-//         }
-//         input.style2 {
-//             border: 1.2px solid lighten($textGrey, 25%);
-//             border-radius: $dist3;
-
-//             &:focus {
-//                 border: 1.2px solid $primaryColor;
-
-//                 ~label {
-//                     color: $primaryColor;
-//                     font-size: 8px;
-//                     bottom: calc(100% + 1.5em);
-//                     transform: translateY(50%);
-//                     right: $dist1;
-//                 }
-
-//                 ~.line {
-//                     width: 0%;
-//                 }
-//             }
-//         }
-//         input.style1.error {
-//             border-bottom: 1.2px solid lighten($redColor2, 5%);
-//             ~label {
-//                 color: lighten($redColor2, 5%);
-//             }
-//             ~.line {
-//                 background-color: lighten($redColor2, 5%);
-//             }
-//         }
-//         input.style2.error {
-//             border: 1.2px solid lighten($redColor2, 5%);
-
-//             ~label {
-//                 color: lighten($redColor2, 5%);
-//             }
-//         }
-//         label {
-//             width: auto;
-//             height: auto;
-//             position: absolute;
-//             right: $dist1;
-//             bottom: 50%;
-//             transform: translateY(50%);
-//             display: flex;
-//             @include flex(row, flex-start, center, nowrap, "");
-//             color: lighten($textGrey, 20%);
-//             transition: all .2s linear;
-//             .icon {
-//                 font-size: $fontM;
-//             }
-//             p {
-//                 font-size: $fontM - .1em;
-//                 transform: translateX(-.3em);
-//             }
-//         }
-//         input.style1 {
-//             ~label.top {
-//                 font-size: 8px;
-//                 bottom: calc(100% + .5em);
-//                 transform: translateY(50%);
-//                 right: 0;
-//             }
-//         }
-//         input.style2 {
-//             ~label.top {
-//                 font-size: 8px;
-//                 bottom: calc(100% + 1.5em);
-//                 transform: translateY(50%);
-//                 right: $dist1;
-//             }
-//         }
-//         .line {
-//             width: 0%;
-//             height: 1.2px;
-//             background-color: $primaryColor;
-//             position: absolute;
-//             right: 0;
-//             top: calc(100% - .6px);
-//             transition: all .2s linear;
-//         }
-//         .msg {
-//             width: auto;
-//             height: auto;
-//             border-radius: $dist3;
-//             padding: $dist1 $dist2;
-//             position: relative;
-//             background-color: lighten($redColor2, 5%);
-//             position: absolute;
-//             right: 0;
-//             top: 115%;
-//             opacity: 0;
-//             visibility: hidden;
-//             transition: all .2s linear;
-//             p {
-//                 color: $whiteColor2;
-//                 font-size: $fontM - .2em;
-//             }
-//             i {
-//                 font-size: $fontXL;
-//                 color: lighten($redColor2, 5%);
-//                 position: absolute;
-//                 right: $dist2;
-//                 top: calc(0% - .6em);
-//             }
-//         }
-//         .msg.show {
-//             opacity: 1;
-//             visibility: visible;
-//             z-index: 2;
-//         }
-//         .rememberPassword{
-//             font-size: $fontS ;
-//             color: lighten($textGrey,10%) ;
-//             position: absolute ;
-//             right: 0 ;
-//             top: 140% ;
-//         }
-//     }
-//     button[type="submit"] {
-//         width: auto;
-//         height: auto;
-//         padding: .3em $dist2 + .5em;
-//         margin-top: $dist2 ;
-//         border-radius: $dist3;
-//         font-size: $fontL;
-//         @include swapColor($textWhite,$primaryColor) ;
-//     }
-//     a.login{
-//         font-size: $fontS + .2em ;
-//         color: $textGrey ;
-//         margin-top: $dist2 ;
-//     }
-// }
-// @include resizeTablet('form#forgetPassword') ;
-// @include resizeMobile('form#forgetPassword') ;
-// form#signup {
-//     width: 40em;
-//     height: auto;
-//     padding: $dist2;
-//     margin: 0 ;
-//     position: fixed ;
-//     top: 50% ;
-//     right: 50% ;
-//     transform: translate(50%,-50%) ;
-//     display: flex;
-//     @include flex(column, flex-start, center, nowrap, "");
-//     img{
-//         width: 12em ;
-//         height: 6em;
-//     }
-//     h4 {
-//         font-size: $fontL;
-//         font-weight: 700;
-//         color: $darkColor;
-//     }
-//     .inputWrapper.text {
-//         width: 35em;
-//         height: 4em;
-//         position: relative;
-//         margin-top: $dist2 + .5em;
-//         input {
-//             width: 100%;
-//             height: 100%;
-//             line-height: 4em;
-//             padding: 0 $dist1;
-//             font-size: $fontM;
-//             color: $darkColor;
-//             transition: all .2s linear;
-//             &::placeholder {
-//                 color: $textGrey;
-//                 font-size: $fontM;
-//             }
-//         }
-//         input.style1 {
-//             border: none;
-//             border-bottom: 1.2px solid lighten($textGrey, 25%);
-
-//             &:focus {
-//                 ~label {
-//                     color: $primaryColor;
-//                     font-size: 8px;
-//                     bottom: calc(100% + .5em);
-//                     transform: translateY(50%);
-//                     right: 0;
-//                 }
-
-//                 ~.line {
-//                     width: 100%;
-//                 }
-//             }
-//         }
-//         input.style2 {
-//             border: 1.2px solid lighten($textGrey, 25%);
-//             border-radius: $dist3;
-
-//             &:focus {
-//                 border: 1.2px solid $primaryColor;
-
-//                 ~label {
-//                     color: $primaryColor;
-//                     font-size: 8px;
-//                     bottom: calc(100% + 1.5em);
-//                     transform: translateY(50%);
-//                     right: $dist1;
-//                 }
-
-//                 ~.line {
-//                     width: 0%;
-//                 }
-//             }
-//         }
-//         input.style1.error {
-//             border-bottom: 1.2px solid lighten($redColor2, 5%);
-//             ~label {
-//                 color: lighten($redColor2, 5%);
-//             }
-//             ~.line {
-//                 background-color: lighten($redColor2, 5%);
-//             }
-//         }
-//         input.style2.error {
-//             border: 1.2px solid lighten($redColor2, 5%);
-
-//             ~label {
-//                 color: lighten($redColor2, 5%);
-//             }
-//         }
-//         label {
-//             width: auto;
-//             height: auto;
-//             position: absolute;
-//             right: $dist1;
-//             bottom: 50%;
-//             transform: translateY(50%);
-//             display: flex;
-//             @include flex(row, flex-start, center, nowrap, "");
-//             color: lighten($textGrey, 20%);
-//             transition: all .2s linear;
-//             .icon {
-//                 font-size: $fontM;
-//             }
-//             p {
-//                 font-size: $fontM - .1em;
-//                 transform: translateX(-.3em);
-//             }
-//         }
-//         input.style1 {
-//             ~label.top {
-//                 font-size: 8px;
-//                 bottom: calc(100% + .5em);
-//                 transform: translateY(50%);
-//                 right: 0;
-//             }
-//         }
-//         input.style2 {
-//             ~label.top {
-//                 font-size: 8px;
-//                 bottom: calc(100% + 1.5em);
-//                 transform: translateY(50%);
-//                 right: $dist1;
-//             }
-//         }
-//         .line {
-//             width: 0%;
-//             height: 1.2px;
-//             background-color: $primaryColor;
-//             position: absolute;
-//             right: 0;
-//             top: calc(100% - 1px);
-//             transition: all .2s linear;
-//         }
-//         .msg {
-//             width: auto;
-//             height: auto;
-//             border-radius: $dist3;
-//             padding: $dist1 $dist2;
-//             position: relative;
-//             background-color: lighten($redColor2, 5%);
-//             position: absolute;
-//             right: 0;
-//             top: 115%;
-//             opacity: 0;
-//             visibility: hidden;
-//             transition: all .2s linear;
-//             p {
-//                 color: $whiteColor2;
-//                 font-size: $fontM - .2em;
-//             }
-//             i {
-//                 font-size: $fontXL;
-//                 color: lighten($redColor2, 5%);
-//                 position: absolute;
-//                 right: $dist2;
-//                 top: calc(0% - .6em);
-//             }
-//         }
-//         .msg.show {
-//             opacity: 1;
-//             visibility: visible;
-//             z-index: 2;
-//         }
-//     }
-//     .inputWrapper.checkboxes {
-//         width: auto;
-//         height: auto;
-//         display: flex;
-//         @include flex(column, flex-start, flex-start, nowrap, "");
-//         margin-top: 0;
-//         .checkbox {
-//             width: auto;
-//             height: auto;
-//             padding-right: $dist1;
-//             margin-top: $dist2 ;
-//             input[type="checkbox"] {
-//                 width: 0;
-//                 height: 0;
-//                 display: none;
-//             }
-//             input[type="checkbox"].style1 {
-//                 &:checked {
-//                     ~label {
-//                         .rect {
-//                             width: 2em;
-//                             height: 1em;
-//                             border-radius: 0;
-//                             border-top: none;
-//                             border-right: none;
-//                             border-left: 1.2px solid $primaryColor;
-//                             border-bottom: 1.2px solid $primaryColor;
-//                             transform: translateY(-.3em) rotate(-45deg);
-//                         }
-
-//                         p {
-//                             color: $primaryColor;
-//                         }
-//                     }
-//                 }
-//             }
-
-//             input[type="checkbox"].style2 {
-//                 &:checked {
-//                     ~label {
-//                         .rect {
-//                             border: 1px solid transparent;
-//                             background-color: $primaryColor;
-
-//                             i {
-//                                 opacity: 1;
-//                             }
-//                         }
-
-//                         p {
-//                             color: $primaryColor;
-//                         }
-//                     }
-//                 }
-//             }
-
-//             label {
-//                 cursor: pointer;
-//                 width: 100%;
-//                 height: 100%;
-//                 line-height: 2.5em;
-//                 display: flex;
-//                 @include flex(row, flex-start, center, nowrap, "");
-
-//                 .rect {
-//                     flex-shrink: 0;
-//                     width: 2em;
-//                     height: 2em;
-//                     border: 1px solid darken($textGrey, 15%);
-//                     position: relative;
-//                     transition: all .2s linear;
-//                     border-radius: .45em;
-
-//                     i {
-//                         opacity: 0;
-//                         font-size: $fontM;
-//                         color: $whiteColor2;
-//                         transition: all .2s linear;
-//                     }
-//                 }
-
-//                 p {
-//                     width: auto;
-//                     font-size: $fontS + .2em;
-//                     color: lighten($textGrey, 0%);
-//                     margin-right: .3em;
-//                     transition: all .2s linear;
-//                 }
-//             }
-//         }
-//     }
-//     button[type="submit"] {
-//         width: auto;
-//         height: auto;
-//         padding: .3em $dist2 + .5em;
-//         margin-top: $dist2 ;
-//         border-radius: $dist3;
-//         font-size: $fontL;
-//         @include swapColor($textWhite,$primaryColor) ;
-//     }
-//     a.login{
-//         font-size: $fontM ;
-//         color: lighten($textGrey,0%) ;
-//         margin-top: $dist2 ;
-//     }
-// }
-@include resizeTablet('form#signup') ;
-@include resizeMobile('form#signup') ;
-form#sort { 
+form#filters{
     .inputWrapper.select {
-        width: 22em;
-        height: 4em;
+        width: 100%;
         position: relative;
-        margin: 0;
         input {
             width: 100%;
             height: 100%;
@@ -2118,7 +983,6 @@ form#sort {
             font-size: $fontM;
             cursor: pointer;
             transition: all .2s linear;
-
             &::placeholder {
                 font-size: $fontM;
                 color: $textGrey;
@@ -2134,15 +998,12 @@ form#sort {
                     right: 0;
                     bottom: calc(100% + .5em);
                 }
-
                 ~.arrow {
                     color: $primaryColor;
                 }
-
                 ~.line {
                     width: 100%;
                 }
-
                 ~ul {
                     opacity: 1;
                     visibility: visible;
@@ -2151,7 +1012,8 @@ form#sort {
         }
         input.style2 {
             border: 1.2px solid lighten($textGrey, 25%);
-            border-radius: .5em;
+            border-radius: $dist3;
+
             &:focus {
                 border: 1.2px solid $primaryColor;
 
@@ -2180,9 +1042,11 @@ form#sort {
             ~label {
                 color: lighten($redColor2, 5%);
             }
+
             ~.arrow {
                 color: lighten($redColor2, 5%);
             }
+
             ~.line {
                 width: 100%;
                 background-color: lighten($redColor2, 5%);
@@ -2190,12 +1054,15 @@ form#sort {
         }
         input.style2.error {
             border: 1.2px solid lighten($redColor2, 5%);
+
             ~label {
                 color: lighten($redColor2, 5%);
             }
+
             ~.arrow {
                 color: lighten($redColor2, 5%);
             }
+
             ~.line {
                 background-color: lighten($redColor2, 5%);
             }
@@ -2208,7 +1075,7 @@ form#sort {
             @include flex(row, flex-start, center, nowrap, "");
             color: lighten($textGrey, 20%);
             position: absolute;
-            right: $dist1;
+            right: 0;
             bottom: 50%;
             transform: translateY(50%);
             transition: all .2s linear;
@@ -2238,7 +1105,7 @@ form#sort {
             cursor: pointer;
             font-size: $fontL;
             color: lighten($textGrey, 20%);
-            left: $dist1;
+            left: 0;
             transition: all .2s linear;
         }
         .line {
@@ -2264,7 +1131,6 @@ form#sort {
             top: 105%;
             right: 0;
             box-shadow: 0 .2em .5em 0em $shadowColor;
-
             li {
                 width: 100%;
                 height: 2.5em;
@@ -2286,31 +1152,182 @@ form#sort {
             visibility: visible;
         }
     }
-}
-form#filters { 
-    .inputWrapper.range {
-        width: 100%;
-        height: auto;
-        display: flex;
-        @include flex(column, flex-start, center, nowrap, "");
-        h4 {
+    .inputWrapper.text {
+        width: 90%;
+        height: 4em;
+        margin: $dist2 auto 0 auto;
+        position: relative;
+        input {
+            width: 100%;
+            height: 100%;
+            line-height: 4em;
+            padding: 0 $dist1;
             font-size: $fontM;
-            font-weight: 700;
-            color: $textWhite;
+            color: $darkColor;
+            transition: all .2s linear;
+            &::placeholder {
+                color: $textGrey;
+                font-size: $fontM;
+            }
         }
+        input.style1 {
+            border: none;
+            border-bottom: 1.2px solid lighten($textGrey, 25%);
+
+            &:focus {
+                ~label {
+                    color: $primaryColor;
+                    font-size: 8px;
+                    bottom: calc(100% + .5em);
+                    transform: translateY(50%);
+                    right: 0;
+                }
+
+                ~.line {
+                    width: 100%;
+                }
+            }
+        }
+
+        input.style2 {
+            border: 1.2px solid lighten($textGrey, 25%);
+            border-radius: $dist3;
+
+            &:focus {
+                border: 1.2px solid $primaryColor;
+
+                ~label {
+                    color: $primaryColor;
+                    font-size: 8px;
+                    bottom: calc(100% + 1.5em);
+                    transform: translateY(50%);
+                    right: $dist1;
+                }
+
+                ~.line {
+                    width: 0%;
+                }
+            }
+        }
+
+        input.style1.error {
+            border-bottom: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+
+            ~.line {
+                background-color: lighten($redColor2, 5%);
+            }
+        }
+
+        input.style2.error {
+            border: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+        }
+
+        label {
+            width: auto;
+            height: auto;
+            position: absolute;
+            right: $dist1;
+            bottom: 50%;
+            transform: translateY(50%);
+            display: flex;
+            @include flex(row, flex-start, center, nowrap, "");
+            color: lighten($textGrey, 20%);
+            transition: all .2s linear;
+
+            .icon {
+                font-size: $fontM;
+            }
+
+            p {
+                font-size: $fontM - .1em;
+                transform: translateX(-.3em);
+            }
+        }
+
+        input.style1 {
+            ~label.top {
+                font-size: 8px;
+                bottom: calc(100% + .5em);
+                transform: translateY(50%);
+                right: 0;
+            }
+        }
+
+        input.style2 {
+            ~label.top {
+                font-size: 8px;
+                bottom: calc(100% + 1.5em);
+                transform: translateY(50%);
+                right: $dist1;
+            }
+        }
+
+        .line {
+            width: 0%;
+            height: 1.2px;
+            background-color: $primaryColor;
+            position: absolute;
+            right: 0;
+            top: calc(100% - 1px);
+            transition: all .2s linear;
+        }
+
+        .msg {
+            width: auto;
+            height: auto;
+            border-radius: $dist3;
+            padding: $dist1 $dist2;
+            position: relative;
+            background-color: lighten($redColor2, 5%);
+            position: absolute;
+            right: 0;
+            top: 115%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s linear;
+
+            p {
+                color: $whiteColor2;
+                font-size: $fontM - .2em;
+            }
+
+            i {
+                font-size: $fontXL;
+                color: lighten($redColor2, 5%);
+                position: absolute;
+                right: $dist2;
+                top: calc(0% - .6em);
+            }
+        }
+
+        .msg.show {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+    }
+    .inputWrapper.range#priceRanger {
         .ranger {
             width: 100% ;
             height: .4em;
-            margin: $dist2 auto 0 auto;
-            position: relative;
+            margin-top: $dist2;
             .noUi-connect {
                 background-color: $primaryColor;
             }
+            .noUi-connect, .noUi-origin{position: relative;}
             .noUi-handle.circle {
                 width: 2em;
                 height: 2em;
                 border-radius: 50%;
-                background-color: lighten($primaryColor,10%);
+                background-color: $primaryColor;
                 border: none;
                 box-shadow: none;
                 cursor: pointer;
@@ -2328,14 +1345,14 @@ form#filters {
                 }
             }
             .noUi-handle.right {
-                right: 0;
-                transform: translate(0%, -40%);
+                right: 0%;
+                transform: translate(0%, -60%);
                 top: 0%;
             }
             .noUi-handle.left {
-                left: 0;
+                left: 100%;
                 top: 0%;
-                transform: translate(-0%, -40%);
+                transform: translate(0%, -60%);
             }
             .noUi-tooltip {
                 display: none;
@@ -2355,1215 +1372,191 @@ form#filters {
             height: auto;
             margin-top: $dist1;
             text-align: center ;
-            color: lighten($textGrey,20%);
+            color: $textGrey;
             font-size: $fontM;
         }
     }
-    .filtersWrapper{
-        .inputWrapper.checkboxes {
-            width: 100%;
-            height: auto;
-            display: flex;
-            @include flex(column, flex-start, flex-start, nowrap, "");
-            .checkbox {
-                width: auto;
-                height: 100%;
-                input[type="checkbox"] {
-                    width: 0;
-                    height: 0;
-                    display: none;
-                }
-                label {
-                    color: inherit;
-                    cursor: pointer;
-                    width: auto;
-                    height: 100%;
-                    line-height: 2.5em;
-                    display: flex;
-                    @include flex(row, flex-start, center, nowrap, "");
-                    .rect {
-                        flex-shrink: 0;
-                        width: 2.3em;
-                        height: 2.3em;
-                        border: 1px solid lighten($textGrey,20%);
-                        position: relative;
-                        transition: all .2s linear;
-                        border-radius: .45em;
-                        i {
-                            opacity: 0;
-                            font-size: $fontM;
-                            color: $whiteColor2;
-                            transition: all .2s linear;
-                        }
-                    }
-                    p {
-                        max-width:auto;
-                        font-size: $fontM;
-                        color:lighten($textGrey,20%);
-                        margin-right: .3em;
-                        transition: all .2s linear;
-                    }
-                }
-                input[type="checkbox"].style1 {
-                    &:checked {
-                        ~label {
-                            .rect {
-                                width: 2em;
-                                height: 1em;
-                                border-radius: 0;
-                                border-top: none;
-                                border-right: none;
-                                border-left: 1.2px solid $primaryColor;
-                                border-bottom: 1.2px solid $primaryColor;
-                                transform: translateY(-.3em) rotate(-45deg);
-                            }
-    
-                            p {
-                                color: lighten($primaryColor,10%);
-                            }
-                        }
-                    }
-                }
-                input[type="checkbox"].style2 {
-                    &:checked {
-                        ~label {
-                            .rect {
-                                border: 1px solid transparent;
-                                background-color: lighten($primaryColor,10%);
-    
-                                i {
-                                    opacity: 1;
-                                }
-                            }
-    
-                            p {
-                                color: lighten($primaryColor,10%);
-                            }
-                        }
-                    }
-                }       
-            }
-        }
-        .withCollapse{        
-            .collapseTrigger{
-                .inputWrapper.checkboxes {
-                    .checkbox {
-                        label {
-                            .rect {
-                                width: 2.3em;
-                                height: 2.3em;
-                                border: 1px solid $textWhite;
-                                i {               
-                                    font-size: $fontM;
-                                    color: $whiteColor2;
-                                }
-                            }
-                            p {
-                                font-size: $fontM;
-                                color: $textWhite;
-                            }
-                        }        
-                    }
-                }
-            }     
-            .collapse{
-                font-size: 9px;
-                .inputWrapper.checkboxes{
-                    .checkbox {
-                        margin-top: $dist2 ;
-                        label {
-                            color: inherit;
-                            .rect {                          
-                                border: 1px solid lighten($textGrey,20%);                          
-                            }
-                            p {
-                                color:lighten($textGrey,20%);
-                            }
-                        }
-                        input[type="checkbox"].style1 {
-                            &:checked {
-                                ~label {
-                                    p {color: lighten($primaryColor,10%);}
-                                }
-                            }
-                        }
-                        input[type="checkbox"].style2 {
-                            &:checked {
-                                ~label {
-                                    .rect {
-                                        border: 1px solid transparent;
-                                        background-color: lighten($primaryColor,10%);
-                                        i {opacity: 1;}
-                                    }
-                                    p {color: lighten($primaryColor,10%);}
-                                }
-                            }
-                        }                
-                    }
-                }       
-            }   
-        }
-    }  
-}
-@include mediaQ(750px){
-    form#filters { 
-        .inputWrapper.range {
-            .ranger {
-                width: 95% ;
-            }
-        }
-    }
-}
-form#basket{
-    .slide#stage2{
-        .inputs{
-            width: 100%;
-            height: auto;
-            display: flex;
-            @include flex(row,flex-start,flex-start,wrap,flex-start) ;
-            .inputWrapper.text {
-                width: calc((100% - (4 * 3em)) / 4);
-                height: 4em;
-                position: relative;
-                margin: $dist2;
-                input {
-                    width: 100%;
-                    height: 100%;
-                    line-height: 4em;
-                    padding: 0 $dist1;
-                    font-size: $fontM;
-                    color: $darkColor;
-                    transition: all .2s linear;
-                    &::placeholder {
-                        color: $textGrey;
-                        font-size: $fontM;
-                    }
-                }
-                input.style1 {
-                    border: none;
-                    border-bottom: 1.2px solid lighten($textGrey, 25%);
-        
-                    &:focus {
-                        ~label {
-                            color: $primaryColor;
-                            font-size: 8px;
-                            bottom: calc(100% + .5em);
-                            transform: translateY(50%);
-                            right: 0;
-                        }
-        
-                        ~.line {
-                            width: 100%;
-                        }
-                    }
-                }
-        
-                input.style2 {
-                    border: 1.2px solid lighten($textGrey, 25%);
-                    border-radius: $dist3;
-        
-                    &:focus {
-                        border: 1.2px solid $primaryColor;
-        
-                        ~label {
-                            color: $primaryColor;
-                            font-size: 8px;
-                            bottom: calc(100% + 1.5em);
-                            transform: translateY(50%);
-                            right: $dist1;
-                        }
-        
-                        ~.line {
-                            width: 0%;
-                        }
-                    }
-                }
-        
-                input.style1.error {
-                    border-bottom: 1.2px solid lighten($redColor2, 5%);
-        
-                    ~label {
-                        color: lighten($redColor2, 5%);
-                    }
-        
-                    ~.line {
-                        background-color: lighten($redColor2, 5%);
-                    }
-                }
-        
-                input.style2.error {
-                    border: 1.2px solid lighten($redColor2, 5%);
-        
-                    ~label {
-                        color: lighten($redColor2, 5%);
-                    }
-                }
-        
-                label {
-                    width: auto;
-                    height: auto;
-                    position: absolute;
-                    right: $dist1;
-                    bottom: 50%;
-                    transform: translateY(50%);
-                    display: flex;
-                    @include flex(row, flex-start, center, nowrap, "");
-                    color: lighten($textGrey, 20%);
-                    transition: all .2s linear;
-        
-                    .icon {
-                        font-size: $fontM;
-                    }
-        
-                    p {
-                        font-size: $fontM - .1em;
-                        transform: translateX(-.3em);
-                    }
-                }
-        
-                input.style1 {
-                    ~label.top {
-                        font-size: 8px;
-                        bottom: calc(100% + .5em);
-                        transform: translateY(50%);
-                        right: 0;
-                    }
-                }
-        
-                input.style2 {
-                    ~label.top {
-                        font-size: 8px;
-                        bottom: calc(100% + 1.5em);
-                        transform: translateY(50%);
-                        right: $dist1;
-                    }
-                }
-        
-                .line {
-                    width: 0%;
-                    height: 1.2px;
-                    background-color: $primaryColor;
-                    position: absolute;
-                    right: 0;
-                    top: calc(100% - 1px);
-                    transition: all .2s linear;
-                }
-        
-                .msg {
-                    width: auto;
-                    height: auto;
-                    border-radius: $dist3;
-                    padding: $dist1 $dist2;
-                    position: relative;
-                    background-color: lighten($redColor2, 5%);
-                    position: absolute;
-                    right: 0;
-                    top: 115%;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: all .2s linear;
-        
-                    p {
-                        color: $whiteColor2;
-                        font-size: $fontM - .2em;
-                    }
-        
-                    i {
-                        font-size: $fontXL;
-                        color: lighten($redColor2, 5%);
-                        position: absolute;
-                        right: $dist2;
-                        top: calc(0% - .6em);
-                    }
-                }
-        
-                .msg.show {
-                    opacity: 1;
-                    visibility: visible;
-                    z-index: 2;
-                }
-            }
-            .inputWrapper.selectSearch {
-                width: calc((100% - (4 * 3em)) / 4);
-                height: 4em;
-                position: relative;
-                margin: $dist2;
-                input {
-                    width: 100%;
-                    height: 100%;
-                    line-height: 4em;
-                    padding: 0 $dist1;
-                    color: $darkColor;
-                    font-size: $fontM;
-                    cursor: pointer;
-                    transition: all .2s linear;
-        
-                    &::placeholder {
-                        font-size: $fontM;
-                        color: $textGrey;
-                    }
-                }
-        
-                input.style1 {
-                    border: none;
-                    border-bottom: 1.2px solid lighten($textGrey, 25%);
-        
-                    &:focus {
-                        ~label {
-                            font-size: 8px;
-                            color: $primaryColor;
-                            right: 0;
-                            bottom: calc(100% + .5em);
-                        }
-        
-                        ~.arrow {
-                            color: $primaryColor;
-                        }
-        
-                        ~.line {
-                            width: 100%;
-                        }
-        
-                        ~ul {
-                            opacity: 1;
-                            visibility: visible;
-                        }
-                    }
-                }
-        
-                input.style2 {
-                    border: 1.2px solid lighten($textGrey, 25%);
-                    border-radius: $dist3;
-        
-                    &:focus {
-                        border: 1.2px solid $primaryColor;
-        
-                        ~label {
-                            font-size: 8px;
-                            color: $primaryColor;
-                            right: 0;
-                            bottom: calc(100% + 1.5em);
-                        }
-        
-                        ~.arrow {
-                            color: $primaryColor;
-                        }
-        
-                        ~.line {
-                            width: 0%;
-                        }
-        
-                        ~ul {
-                            opacity: 1;
-                            visibility: visible;
-                        }
-                    }
-                }
-        
-                input.style1.error {
-                    ~label {
-                        color: lighten($redColor2, 5%);
-                    }
-        
-                    ~.arrow {
-                        color: lighten($redColor2, 5%);
-                    }
-        
-                    ~.line {
-                        width: 100%;
-                        background-color: lighten($redColor2, 5%);
-                    }
-                }
-        
-                input.style2.error {
-                    border: 1.2px solid lighten($redColor2, 5%);
-        
-                    ~label {
-                        color: lighten($redColor2, 5%);
-                    }
-        
-                    ~.arrow {
-                        color: lighten($redColor2, 5%);
-                    }
-        
-                    ~.line {
-                        background-color: lighten($redColor2, 5%);
-                    }
-                }
-        
-                label {
-                    cursor: pointer;
-                    width: auto;
-                    height: auto;
-                    display: flex;
-                    @include flex(row, flex-start, center, nowrap, "");
-                    color: lighten($textGrey, 20%);
-                    position: absolute;
-                    right: $dist1;
-                    bottom: 50%;
-                    transform: translateY(50%);
-                    transition: all .2s linear;
-        
-                    .icon {
-                        font-size: $fontM;
-                    }
-        
-                    p {
-                        font-size: $fontM - .1em;
-                        transform: translateX(-.3em);
-                    }
-                }
-        
-                input.style1 {
-                    ~label.top {
-                        font-size: 8px;
-                        right: 0;
-                        bottom: calc(100% + .5em);
-                    }
-                }
-        
-                input.style2 {
-                    ~label.top {
-                        font-size: 8px;
-                        right: 0;
-                        bottom: calc(100% + 1.5em);
-                    }
-                }   
-                .arrow {
-                    cursor: pointer;
-                    font-size: $fontL;
-                    color: lighten($textGrey, 20%);
-                    left: $dist1;
-                    transition: all .2s linear;
-                }  
-                .line {
-                    width: 0;
-                    height: 1.2px;
-                    background-color: $primaryColor;
-                    position: absolute;
-                    right: 0;
-                    top: calc(100% - .6px);
-                    transition: all .2s linear;
-                }
-                ul {
-                    z-index: 50;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: all .2s linear;
-                    width: 100%;
-                    max-height: 12em; //7 * 2.5em(height of each <li>)
-                    overflow: auto;
-                    display: flex;
-                    @include flex(column, flex-start, flex-start, nowrap, "");
-                    position: absolute;
-                    top: 105%;
-                    right: 0;
-                    box-shadow: 0 .2em .5em 0em $shadowColor; 
-                    li {
-                        width: 100%;
-                        height: 2.5em;
-                        line-height: 2.5em;
-                        padding: 0 $dist1;
-                        font-size: $fontM;
-                        color: $darkColor;
-                        transition: all .2s linear;
-                        cursor: pointer;
-                        background-color: white;
-                        &:hover {
-                            background-color: darken(white, 10%);
-                        }
-                    }
-                }
-                ul.show {
-                    opacity: 1;
-                    visibility: visible;
-                }
-            }
-        }
-    }
-}
-@include mediaQ(850px){
-    form#basket{
-        .slide#stage2{
-            .inputs{
-                .inputWrapper.text {width: calc((100% - (3 * 3em)) / 3);}
-                .inputWrapper.selectSearch {width: calc((100% - (3 * 3em)) / 3);}
-            }
-        }
-    }
-}
-@include mediaQ(500px){
-    form#basket{
-        .slide#stage2{
-            .inputs{
-                .inputWrapper.text {width: calc((100% - (2 * 3em)) / 2);}
-                .inputWrapper.selectSearch {width: calc((100% - (2 * 3em)) / 2);}
-            }
-        }
-    }
-}
-form#editProfile{
-    .inputs{
-        width: 100%;
+    .inputWrapper.checkboxes {
+        width: auto;
         height: auto;
         display: flex;
-        @include flex(row,flex-start,flex-start,wrap,flex-start) ;
-        .inputWrapper.text {
-            width: calc((100% - (4 * 3em)) / 4);
-            height: 4em;
-            position: relative;
-            margin: $dist2;
-            input {
-                width: 100%;
-                height: 100%;
-                line-height: 4em;
-                padding: 0 $dist1;
-                font-size: $fontM;
-                color: $darkColor;
-                transition: all .2s linear;
-                &::placeholder {
-                    color: $textGrey;
-                    font-size: $fontM;
-                }
-            }
-            input.style1 {
-                border: none;
-                border-bottom: 1.2px solid lighten($textGrey, 25%);
-    
-                &:focus {
-                    ~label {
-                        color: $primaryColor;
-                        font-size: 8px;
-                        bottom: calc(100% + .5em);
-                        transform: translateY(50%);
-                        right: 0;
-                    }
-    
-                    ~.line {
-                        width: 100%;
-                    }
-                }
-            }
-    
-            input.style2 {
-                border: 1.2px solid lighten($textGrey, 25%);
-                border-radius: $dist3;
-    
-                &:focus {
-                    border: 1.2px solid $primaryColor;
-    
-                    ~label {
-                        color: $primaryColor;
-                        font-size: 8px;
-                        bottom: calc(100% + 1.5em);
-                        transform: translateY(50%);
-                        right: $dist1;
-                    }
-    
-                    ~.line {
-                        width: 0%;
-                    }
-                }
-            }
-    
-            input.style1.error {
-                border-bottom: 1.2px solid lighten($redColor2, 5%);
-    
-                ~label {
-                    color: lighten($redColor2, 5%);
-                }
-    
-                ~.line {
-                    background-color: lighten($redColor2, 5%);
-                }
-            }
-    
-            input.style2.error {
-                border: 1.2px solid lighten($redColor2, 5%);
-    
-                ~label {
-                    color: lighten($redColor2, 5%);
-                }
-            }
-    
-            label {
-                width: auto;
-                height: auto;
-                position: absolute;
-                right: $dist1;
-                bottom: 50%;
-                transform: translateY(50%);
-                display: flex;
-                @include flex(row, flex-start, center, nowrap, "");
-                color: lighten($textGrey, 20%);
-                transition: all .2s linear;
-    
-                .icon {
-                    font-size: $fontM;
-                }
-    
-                p {
-                    font-size: $fontM - .1em;
-                    transform: translateX(-.3em);
-                }
-            }
-    
-            input.style1 {
-                ~label.top {
-                    font-size: 8px;
-                    bottom: calc(100% + .5em);
-                    transform: translateY(50%);
-                    right: 0;
-                }
-            }
-    
-            input.style2 {
-                ~label.top {
-                    font-size: 8px;
-                    bottom: calc(100% + 1.5em);
-                    transform: translateY(50%);
-                    right: $dist1;
-                }
-            }
-    
-            .line {
-                width: 0%;
-                height: 1.2px;
-                background-color: $primaryColor;
-                position: absolute;
-                right: 0;
-                top: calc(100% - 1px);
-                transition: all .2s linear;
-            }
-    
-            .msg {
-                width: auto;
-                height: auto;
-                border-radius: $dist3;
-                padding: $dist1 $dist2;
-                position: relative;
-                background-color: lighten($redColor2, 5%);
-                position: absolute;
-                right: 0;
-                top: 115%;
-                opacity: 0;
-                visibility: hidden;
-                transition: all .2s linear;
-    
-                p {
-                    color: $whiteColor2;
-                    font-size: $fontM - .2em;
-                }
-    
-                i {
-                    font-size: $fontXL;
-                    color: lighten($redColor2, 5%);
-                    position: absolute;
-                    right: $dist2;
-                    top: calc(0% - .6em);
-                }
-            }
-    
-            .msg.show {
-                opacity: 1;
-                visibility: visible;
-                z-index: 2;
-            }
-        }
-        .inputWrapper.selectSearch {
-            width: calc((100% - (4 * 3em)) / 4);
-            height: 4em;
-            position: relative;
-            margin: $dist2;
-            input {
-                width: 100%;
-                height: 100%;
-                line-height: 4em;
-                padding: 0 $dist1;
-                color: $darkColor;
-                font-size: $fontM;
-                cursor: pointer;
-                transition: all .2s linear;
-    
-                &::placeholder {
-                    font-size: $fontM;
-                    color: $textGrey;
-                }
-            }
-    
-            input.style1 {
-                border: none;
-                border-bottom: 1.2px solid lighten($textGrey, 25%);
-    
-                &:focus {
-                    ~label {
-                        font-size: 8px;
-                        color: $primaryColor;
-                        right: 0;
-                        bottom: calc(100% + .5em);
-                    }
-    
-                    ~.arrow {
-                        color: $primaryColor;
-                    }
-    
-                    ~.line {
-                        width: 100%;
-                    }
-    
-                    ~ul {
-                        opacity: 1;
-                        visibility: visible;
-                    }
-                }
-            }
-    
-            input.style2 {
-                border: 1.2px solid lighten($textGrey, 25%);
-                border-radius: $dist3;
-    
-                &:focus {
-                    border: 1.2px solid $primaryColor;
-    
-                    ~label {
-                        font-size: 8px;
-                        color: $primaryColor;
-                        right: 0;
-                        bottom: calc(100% + 1.5em);
-                    }
-    
-                    ~.arrow {
-                        color: $primaryColor;
-                    }
-    
-                    ~.line {
-                        width: 0%;
-                    }
-    
-                    ~ul {
-                        opacity: 1;
-                        visibility: visible;
-                    }
-                }
-            }
-    
-            input.style1.error {
-                ~label {
-                    color: lighten($redColor2, 5%);
-                }
-    
-                ~.arrow {
-                    color: lighten($redColor2, 5%);
-                }
-    
-                ~.line {
-                    width: 100%;
-                    background-color: lighten($redColor2, 5%);
-                }
-            }
-    
-            input.style2.error {
-                border: 1.2px solid lighten($redColor2, 5%);
-    
-                ~label {
-                    color: lighten($redColor2, 5%);
-                }
-    
-                ~.arrow {
-                    color: lighten($redColor2, 5%);
-                }
-    
-                ~.line {
-                    background-color: lighten($redColor2, 5%);
-                }
-            }
-    
-            label {
-                cursor: pointer;
-                width: auto;
-                height: auto;
-                display: flex;
-                @include flex(row, flex-start, center, nowrap, "");
-                color: lighten($textGrey, 20%);
-                position: absolute;
-                right: $dist1;
-                bottom: 50%;
-                transform: translateY(50%);
-                transition: all .2s linear;
-    
-                .icon {
-                    font-size: $fontM;
-                }
-    
-                p {
-                    font-size: $fontM - .1em;
-                    transform: translateX(-.3em);
-                }
-            }
-    
-            input.style1 {
-                ~label.top {
-                    font-size: 8px;
-                    right: 0;
-                    bottom: calc(100% + .5em);
-                }
-            }
-    
-            input.style2 {
-                ~label.top {
-                    font-size: 8px;
-                    right: 0;
-                    bottom: calc(100% + 1.5em);
-                }
-            }   
-            .arrow {
-                cursor: pointer;
-                font-size: $fontL;
-                color: lighten($textGrey, 20%);
-                left: $dist1;
-                transition: all .2s linear;
-            }  
-            .line {
+        @include flex(column, flex-start, flex-start, nowrap, "");
+        .checkbox {
+            width: auto;
+            height: auto;
+            padding-right: $dist1;
+            margin-top: $dist2 ;
+            input[type="checkbox"] {
                 width: 0;
-                height: 1.2px;
-                background-color: $primaryColor;
-                position: absolute;
-                right: 0;
-                top: calc(100% - .6px);
-                transition: all .2s linear;
+                height: 0;
+                display: none;
             }
-            ul {
-                z-index: 50;
-                opacity: 0;
-                visibility: hidden;
-                transition: all .2s linear;
-                width: 100%;
-                max-height: 12em; //7 * 2.5em(height of each <li>)
-                overflow: auto;
-                display: flex;
-                @include flex(column, flex-start, flex-start, nowrap, "");
-                position: absolute;
-                top: 105%;
-                right: 0;
-                box-shadow: 0 .2em .5em 0em $shadowColor; 
-                li {
-                    width: 100%;
-                    height: 2.5em;
-                    line-height: 2.5em;
-                    padding: 0 $dist1;
-                    font-size: $fontM;
-                    color: $darkColor;
-                    transition: all .2s linear;
-                    cursor: pointer;
-                    background-color: white;
-                    &:hover {
-                        background-color: darken(white, 10%);
-                    }
-                }
-            }
-            ul.show {
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-    }
-}
-@include resizeTablet('form#editProfile') ;
-@include mediaQ(750px){
-    form#editProfile{
-        .inputs{
-            .inputWrapper.text {width: calc((100% - (3 * 3em)) / 3);}
-            .inputWrapper.selectSearch {width: calc((100% - (3 * 3em)) / 3);}
-        }
-    }
-}
-@include mediaQ(500px){
-    form#editProfile{
-        .inputs{
-            .inputWrapper.text {width: calc((100% - (2 * 3em)) / 2);}
-            .inputWrapper.selectSearch {width: calc((100% - (2 * 3em)) / 2);}
-        }
-    }
-}
-@include mediaQ(450px){
-    form#editProfile{
-        width: 95%;
-    }
-}
-@include resizeMobile('form#editProfile') ;
-form#changePassword{
-    .inputs{
-        width: 100%;
-        height: auto;
-        display: flex;
-        @include flex(row,flex-start,flex-start,wrap,flex-start) ;
-        .inputWrapper.text {
-            width: calc((100% - (4 * 3em)) / 4);
-            height: 4em;
-            position: relative;
-            margin: $dist2;
-            input {
-                width: 100%;
-                height: 100%;
-                line-height: 4em;
-                padding: 0 $dist1;
-                font-size: $fontM;
-                color: $darkColor;
-                transition: all .2s linear;
-                &::placeholder {
-                    color: $textGrey;
-                    font-size: $fontM;
-                }
-            }
-            input.style1 {
-                border: none;
-                border-bottom: 1.2px solid lighten($textGrey, 25%);
-    
-                &:focus {
+            input[type="checkbox"].style1 {
+                &:checked {
                     ~label {
-                        color: $primaryColor;
-                        font-size: 8px;
-                        bottom: calc(100% + .5em);
-                        transform: translateY(50%);
-                        right: 0;
-                    }
-    
-                    ~.line {
-                        width: 100%;
-                    }
-                }
-            }
-    
-            input.style2 {
-                border: 1.2px solid lighten($textGrey, 25%);
-                border-radius: $dist3;
-    
-                &:focus {
-                    border: 1.2px solid $primaryColor;
-    
-                    ~label {
-                        color: $primaryColor;
-                        font-size: 8px;
-                        bottom: calc(100% + 1.5em);
-                        transform: translateY(50%);
-                        right: $dist1;
-                    }
-    
-                    ~.line {
-                        width: 0%;
+                        .rect {
+                            width: 2em;
+                            height: 1em;
+                            border-radius: 0;
+                            border-top: none;
+                            border-right: none;
+                            border-left: 1.2px solid $primaryColor;
+                            border-bottom: 1.2px solid $primaryColor;
+                            transform: translateY(-.3em) rotate(-45deg);
+                        }
+
+                        p {
+                            color: $primaryColor;
+                        }
                     }
                 }
             }
-    
-            input.style1.error {
-                border-bottom: 1.2px solid lighten($redColor2, 5%);
-    
-                ~label {
-                    color: lighten($redColor2, 5%);
-                }
-    
-                ~.line {
-                    background-color: lighten($redColor2, 5%);
-                }
-            }
-    
-            input.style2.error {
-                border: 1.2px solid lighten($redColor2, 5%);
-    
-                ~label {
-                    color: lighten($redColor2, 5%);
-                }
-            }
-    
             label {
+                cursor: pointer;
                 width: auto;
                 height: auto;
-                position: absolute;
-                right: $dist1;
-                bottom: 50%;
-                transform: translateY(50%);
+                line-height: 2.5em;
                 display: flex;
                 @include flex(row, flex-start, center, nowrap, "");
-                color: lighten($textGrey, 20%);
-                transition: all .2s linear;
-    
-                .icon {
-                    font-size: $fontM;
+                .rect {
+                    flex-shrink: 0;
+                    width: 2.3em;
+                    height: 2.3em;
+                    border: 1px solid $textGrey ;
+                    position: relative;
+                    transition: all .2s linear;
+                    border-radius: .45em;
+
+                    i {
+                        opacity: 0;
+                        font-size: $fontM;
+                        color: $whiteColor2;
+                        transition: all .2s linear;
+                    }
                 }
-    
-                p {
-                    font-size: $fontM - .1em;
-                    transform: translateX(-.3em);
+                p.error {color: lighten($redColor2,5%);}
+                .content{
+                    max-width: calc(100% - 1.5em);
+                    height: auto;
+                    margin-right: .3em;
+                    display: flex;
+                    @include flex(row,flex-start,center,nowrap,"") ;
+                    p,i{
+                        color: $textGrey;
+                        margin-right: .3em;
+                        font-size: $fontM;
+                    }
+                    .fa-star{color: lighten($orangeColor1,2%);}
                 }
             }
-    
-            input.style1 {
-                ~label.top {
-                    font-size: 8px;
-                    bottom: calc(100% + .5em);
-                    transform: translateY(50%);
-                    right: 0;
-                }
-            }
-    
-            input.style2 {
-                ~label.top {
-                    font-size: 8px;
-                    bottom: calc(100% + 1.5em);
-                    transform: translateY(50%);
-                    right: $dist1;
-                }
-            }
-    
-            .line {
-                width: 0%;
-                height: 1.2px;
-                background-color: $primaryColor;
-                position: absolute;
-                right: 0;
-                top: calc(100% - 1px);
-                transition: all .2s linear;
-            }
-    
-            .msg {
-                width: auto;
+        }
+    } 
+    .row{
+        &:nth-child(2){
+            .mobileFixFlexFixer{
+                width: 100%;
                 height: auto;
-                border-radius: $dist3;
-                padding: $dist1 $dist2;
-                position: relative;
-                background-color: lighten($redColor2, 5%);
-                position: absolute;
-                right: 0;
-                top: 115%;
-                opacity: 0;
-                visibility: hidden;
-                transition: all .2s linear;
-    
-                p {
-                    color: $whiteColor2;
-                    font-size: $fontM - .2em;
+                display: flex;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                .filtersWrapper{
+                    width: 100%;
+                    height: auto;
+                    padding: $dist1;
+                    padding-bottom: $dist3;
+                    &:not(:last-child){border-bottom: 1px solid lighten($textGrey,25%);}      
+                    display: flex;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    h4{
+                        font-size: $fontM - .2em;
+                        color: $textDark;
+                        font-weight: 700;
+                    }
+                    .withCollapse{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        .mainCategory{
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            color: $textGrey;
+                            @include flex(row,space-between,center,nowrap,"") ;
+                            i.collapseTrigger{
+                                font-size: $fontM;
+                                color: inherit;
+                                padding-right: $dist2;
+                            }
+                            .inputWrapper.checkboxes {             
+                                .checkbox {
+                                    margin-top: 0 ;
+                                    padding-right: 0;
+                                }
+                            } 
+                        }
+                        .collapse{
+                            width: 100%;
+                            // height: auto;
+                            padding-right: $dist2;
+                            display: flex;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
+                            color: blue;
+                            font-size: 9px; 
+                        }
+                    }
                 }
-    
-                i {
-                    font-size: $fontXL;
-                    color: lighten($redColor2, 5%);
-                    position: absolute;
-                    right: $dist2;
-                    top: calc(0% - .6em);
+                #currFilters{
+                    .top{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        @include flex(row,space-between,center,nowrap,"") ;
+                        #clearFilters{
+                            font-size: $fontS + .1em;
+                            margin-right: $dist2;
+                            white-space: nowrap;
+                            @include swapColor(white,$primaryColor) ;
+                        }                       
+                    }
+                    .bottom{
+                        width: 100%;
+                        height: auto;
+                        margin-top: $dist1;
+                        display: flex;
+                        @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+                        .currFilter{
+                            width: auto;
+                            height: auto;
+                            border-radius: $dist1;
+                            padding: .5em $dist1;
+                            @include swapColor(white,$primaryColor) ;
+                            margin: $dist1 ;
+                            display: flex;
+                            @include flex(row,flex-start,center,nowrap,"") ;
+                            .close{font-size: $fontS;}
+                            p{
+                                font-size: $fontS;
+                                margin-right: .5em;
+                            }
+                        }
+                    }
                 }
+                #inOutDate{
+                    .inputs{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        margin: 0 auto;
+                        @include flex(column,flex-start,center,nowrap,"") ;
+                    }
+                }
+                
             }
-    
-            .msg.show {
-                opacity: 1;
-                visibility: visible;
-                z-index: 2;
-            }
         }
     }
 }
-@include mediaQ(1000px){
-    form#changePassword{
-        .inputs{
-            .inputWrapper.text {width: calc((100% - (3 * 3em)) / 3);}
-        }
-    }
-}
-@include resizeTablet('form#changePassword') ;
-@include mediaQ(450px){
-    form#changePassword{
-        width: 95%;
-        .inputs{
-            .inputWrapper.text {width: calc((100% - (2 * 3em)) / 2);}
-        }
-    }
-}
-@include resizeMobile('form#changePassword') ;
 @include mediaQ(900px){
-    form#admin {
-        .wrapper{
-            .row{
-                font-size: 8px ;
-                .inputWrapper.text {
-                    input.style1 {
-                        &:focus {
-                            ~label {font-size: 6px;}                  
-                        }
-                    }
-                    input.style2 {
-                        &:focus {
-                            ~label {font-size: 6px;}
-                        }
-                    }  
-                    input.style1 {
-                        ~label.top {font-size: 6px;}
-                    }
-            
-                    input.style2 {
-                        ~label.top {font-size: 6px;}
-                    }
-                }
-            }
-            .inputWrapper.textarea {   
-                textarea.style1 {
-                    &:focus {    
-                        ~label {font-size: 6px;}
-                    }
-                }
-                textarea.style2 {
-                    &:focus {    
-                        ~label {font-size: 6px;}
-                    }
-                }
-                textarea.style1 {
-                    ~label.top {font-size: 6px;}
-                }
-                textarea.style2 {
-                    ~label.top {font-size: 6px;}
-                }
-            }
-        }    
-    }
-    form#login {
-        font-size: 8px ;
-        .inputWrapper.text {
-            input.style1 {
-                &:focus {
-                    ~label {font-size: 6px;}                  
-                }
-            }
-            input.style2 {
-                &:focus {
-                    ~label {font-size: 6px;}
-                }
-            }  
-            input.style1 {
-                ~label.top {font-size: 6px;}
-            }
-    
-            input.style2 {
-                ~label.top {font-size: 6px;}
-            }
-        } 
-        .inputWrapper.textarea {   
-            textarea.style1 {
-                &:focus {    
-                    ~label {font-size: 6px;}
-                }
-            }
-            textarea.style2 {
-                &:focus {    
-                    ~label {font-size: 6px;}
-                }
-            }
-            textarea.style1 {
-                ~label.top {font-size: 6px;}
-            }
-            textarea.style2 {
-                ~label.top {font-size: 6px;}
-            }
-        }
-    }
-    form#forgetPassword {
+    form#filters {
         font-size: 8px ;
         .inputWrapper.text {
             input.style1 {
@@ -3584,67 +1577,6 @@ form#changePassword{
                 ~label.top {font-size: 6px;}
             }
         }
-        .inputWrapper.textarea {   
-            textarea.style1 {
-                &:focus {    
-                    ~label {font-size: 6px;}
-                }
-            }
-            textarea.style2 {
-                &:focus {    
-                    ~label {font-size: 6px;}
-                }
-            }
-            textarea.style1 {
-                ~label.top {font-size: 6px;}
-            }
-            textarea.style2 {
-                ~label.top {font-size: 6px;}
-            }
-        }
-    }
-    form#signup {
-        font-size: 8px ;
-        .inputWrapper.text {
-            input.style1 {
-                &:focus {
-                    ~label {font-size: 6px;}                  
-                }
-            }
-            input.style2 {
-                &:focus {
-                    ~label {font-size: 6px;}
-                }
-            }  
-            input.style1 {
-                ~label.top {font-size: 6px;}
-            }
-    
-            input.style2 {
-                ~label.top {font-size: 6px;}
-            }
-        }
-        .inputWrapper.textarea {   
-            textarea.style1 {
-                &:focus {    
-                    ~label {font-size: 6px;}
-                }
-            }
-            textarea.style2 {
-                &:focus {    
-                    ~label {font-size: 6px;}
-                }
-            }
-            textarea.style1 {
-                ~label.top {font-size: 6px;}
-            }
-            textarea.style2 {
-                ~label.top {font-size: 6px;}
-            }
-        }
-    }
-    form#sort {
-        font-size: 8px ;
         .inputWrapper.select {
             input.style1 {
                 &:focus {
@@ -3664,235 +1596,9 @@ form#changePassword{
             }                
         }
     }
-    form#basket {
-        .slide#stage2{
-            .inputs{
-                font-size: 8px ;
-                .inputWrapper.text {
-                    input.style1 {
-                        &:focus {
-                            ~label {font-size: 6px;}                  
-                        }
-                    }
-                    input.style2 {
-                        &:focus {
-                            ~label {font-size: 6px;}
-                        }
-                    }  
-                    input.style1 {
-                        ~label.top {font-size: 6px;}
-                    }
-            
-                    input.style2 {
-                        ~label.top {font-size: 6px;}
-                    }
-                }
-                .inputWrapper.select {
-                    input.style1 {
-                        &:focus {
-                            ~label {font-size: 6px;}
-                        }
-                    }
-                    input.style2 {       
-                        &:focus {    
-                            ~label {font-size: 6px;}               
-                        }
-                    }         
-                    input.style1 {
-                        ~label.top {font-size: 6px;}
-                    }
-                    input.style2 {
-                        ~label.top {font-size: 6px;}
-                    }                
-                }
-                .inputWrapper.selectSearch {          
-                    input.style1 {        
-                        &:focus {
-                            ~label {font-size: 6px;}
-                        }
-                    }
-                    input.style2 {
-                        &:focus {    
-                            ~label {font-size: 6px;}
-                        }
-                    }
-                    input.style1 {
-                        ~label.top {font-size: 6px;}
-                    }
-                    input.style2 {
-                        ~label.top {font-size: 6px;}
-                    }
-                }    
-                .inputWrapper.textarea {   
-                    textarea.style1 {
-                        &:focus {    
-                            ~label {font-size: 6px;}
-                        }
-                    }
-                    textarea.style2 {
-                        &:focus {    
-                            ~label {font-size: 6px;}
-                        }
-                    }
-                    textarea.style1 {
-                        ~label.top {font-size: 6px;}
-                    }
-                    textarea.style2 {
-                        ~label.top {font-size: 6px;}
-                    }
-                }
-            }
-        }    
-    }
-    form#editProfile{
-        .inputs{
-            font-size: 8px ;
-            .inputWrapper.text {
-                input.style1 {
-                    &:focus {
-                        ~label {font-size: 6px;}                  
-                    }
-                }
-                input.style2 {
-                    &:focus {
-                        ~label {font-size: 6px;}
-                    }
-                }  
-                input.style1 {
-                    ~label.top {font-size: 6px;}
-                }
-        
-                input.style2 {
-                    ~label.top {font-size: 6px;}
-                }
-            }
-            .inputWrapper.select {
-                input.style1 {
-                    &:focus {
-                        ~label {font-size: 6px;}
-                    }
-                }
-                input.style2 {       
-                    &:focus {    
-                        ~label {font-size: 6px;}               
-                    }
-                }         
-                input.style1 {
-                    ~label.top {font-size: 6px;}
-                }
-                input.style2 {
-                    ~label.top {font-size: 6px;}
-                }                
-            }
-            .inputWrapper.selectSearch {          
-                input.style1 {        
-                    &:focus {
-                        ~label {font-size: 6px;}
-                    }
-                }
-                input.style2 {
-                    &:focus {    
-                        ~label {font-size: 6px;}
-                    }
-                }
-                input.style1 {
-                    ~label.top {font-size: 6px;}
-                }
-                input.style2 {
-                    ~label.top {font-size: 6px;}
-                }
-            }    
-            .inputWrapper.textarea {   
-                textarea.style1 {
-                    &:focus {    
-                        ~label {font-size: 6px;}
-                    }
-                }
-                textarea.style2 {
-                    &:focus {    
-                        ~label {font-size: 6px;}
-                    }
-                }
-                textarea.style1 {
-                    ~label.top {font-size: 6px;}
-                }
-                textarea.style2 {
-                    ~label.top {font-size: 6px;}
-                }
-            }
-        }
-    }
-    form#changePassword{
-        .inputs{
-            font-size: 8px ;
-            .inputWrapper.text {
-                input.style1 {
-                    &:focus {
-                        ~label {font-size: 6px;}                  
-                    }
-                }
-                input.style2 {
-                    &:focus {
-                        ~label {font-size: 6px;}
-                    }
-                }  
-                input.style1 {
-                    ~label.top {font-size: 6px;}
-                }
-        
-                input.style2 {
-                    ~label.top {font-size: 6px;}
-                }
-            }
-        }
-    }
 }
 @include mediaQ(600px){
-    form#admin {
-        .wrapper{
-            .row{
-                font-size: 6px ;
-                .inputWrapper.text {
-                    input.style1 {
-                        &:focus {
-                            ~label {font-size: 4px;}                  
-                        }
-                    }
-                    input.style2 {
-                        &:focus {
-                            ~label {font-size: 4px;}
-                        }
-                    }  
-                    input.style1 {
-                        ~label.top {font-size: 4px;}
-                    }
-            
-                    input.style2 {
-                        ~label.top {font-size: 4px;}
-                    }
-                }
-            }
-            .inputWrapper.textarea {   
-                textarea.style1 {
-                    &:focus {    
-                        ~label {font-size: 4px;}
-                    }
-                }
-                textarea.style2 {
-                    &:focus {    
-                        ~label {font-size: 4px;}
-                    }
-                }
-                textarea.style1 {
-                    ~label.top {font-size: 4px;}
-                }
-                textarea.style2 {
-                    ~label.top {font-size: 4px;}
-                }
-            }
-        }      
-    }
-    form#login {
+    form#filters {
         font-size: 6px ;
         .inputWrapper.text {
             input.style1 {
@@ -3913,107 +1619,6 @@ form#changePassword{
                 ~label.top {font-size: 4px;}
             }
         }
-        .inputWrapper.textarea {   
-            textarea.style1 {
-                &:focus {    
-                    ~label {font-size: 4px;}
-                }
-            }
-            textarea.style2 {
-                &:focus {    
-                    ~label {font-size: 4px;}
-                }
-            }
-            textarea.style1 {
-                ~label.top {font-size: 4px;}
-            }
-            textarea.style2 {
-                ~label.top {font-size: 4px;}
-            }
-        }
-    }
-    form#forgetPassword {
-        font-size: 6px ;
-        .inputWrapper.text {
-            input.style1 {
-                &:focus {
-                    ~label {font-size: 4px;}                  
-                }
-            }
-            input.style2 {
-                &:focus {
-                    ~label {font-size: 4px;}
-                }
-            }  
-            input.style1 {
-                ~label.top {font-size: 4px;}
-            }
-    
-            input.style2 {
-                ~label.top {font-size: 4px;}
-            }
-        }  
-        .inputWrapper.textarea {   
-            textarea.style1 {
-                &:focus {    
-                    ~label {font-size: 4px;}
-                }
-            }
-            textarea.style2 {
-                &:focus {    
-                    ~label {font-size: 4px;}
-                }
-            }
-            textarea.style1 {
-                ~label.top {font-size: 4px;}
-            }
-            textarea.style2 {
-                ~label.top {font-size: 4px;}
-            }
-        }
-    }
-    form#signup {
-        font-size: 6px ;
-        .inputWrapper.text {
-            input.style1 {
-                &:focus {
-                    ~label {font-size: 4px;}                  
-                }
-            }
-            input.style2 {
-                &:focus {
-                    ~label {font-size: 4px;}
-                }
-            }  
-            input.style1 {
-                ~label.top {font-size: 4px;}
-            }
-    
-            input.style2 {
-                ~label.top {font-size: 4px;}
-            }
-        } 
-        .inputWrapper.textarea {   
-            textarea.style1 {
-                &:focus {    
-                    ~label {font-size: 4px;}
-                }
-            }
-            textarea.style2 {
-                &:focus {    
-                    ~label {font-size: 4px;}
-                }
-            }
-            textarea.style1 {
-                ~label.top {font-size: 4px;}
-            }
-            textarea.style2 {
-                ~label.top {font-size: 4px;}
-            }
-        }
-    }
-    form#sort {
-        font-size: 6px ;
         .inputWrapper.select {
             input.style1 {
                 &:focus {
@@ -4033,187 +1638,7 @@ form#changePassword{
             }                
         }
     }
-    form#basket {
-        .slide#stage2{
-            .inputs{
-                font-size: 6px ;
-                .inputWrapper.text {
-                    input.style1 {
-                        &:focus {
-                            ~label {font-size: 4px;}                  
-                        }
-                    }
-                    input.style2 {
-                        &:focus {
-                            ~label {font-size: 4px;}
-                        }
-                    }  
-                    input.style1 {
-                        ~label.top {font-size: 4px;}
-                    }
-            
-                    input.style2 {
-                        ~label.top {font-size: 4px;}
-                    }
-                }
-                .inputWrapper.select {
-                    input.style1 {
-                        &:focus {
-                            ~label {font-size: 4px;}
-                        }
-                    }
-                    input.style2 {       
-                        &:focus {    
-                            ~label {font-size: 4px;}               
-                        }
-                    }         
-                    input.style1 {
-                        ~label.top {font-size: 4px;}
-                    }
-                    input.style2 {
-                        ~label.top {font-size: 4px;}
-                    }                
-                }
-                .inputWrapper.selectSearch {          
-                    input.style1 {        
-                        &:focus {
-                            ~label {font-size: 4px;}
-                        }
-                    }
-                    input.style2 {
-                        &:focus {    
-                            ~label {font-size: 4px;}
-                        }
-                    }
-                    input.style1 {
-                        ~label.top {font-size: 4px;}
-                    }
-                    input.style2 {
-                        ~label.top {font-size: 4px;}
-                    }
-                }    
-                .inputWrapper.textarea {   
-                    textarea.style1 {
-                        &:focus {    
-                            ~label {font-size: 4px;}
-                        }
-                    }
-                    textarea.style2 {
-                        &:focus {    
-                            ~label {font-size: 4px;}
-                        }
-                    }
-                    textarea.style1 {
-                        ~label.top {font-size: 4px;}
-                    }
-                    textarea.style2 {
-                        ~label.top {font-size: 4px;}
-                    }
-                }
-            }
-        }    
-    }
-    form#editProfile{
-        .inputs{
-            font-size: 6px ;
-            .inputWrapper.text {
-                input.style1 {
-                    &:focus {
-                        ~label {font-size: 4px;}                  
-                    }
-                }
-                input.style2 {
-                    &:focus {
-                        ~label {font-size: 4px;}
-                    }
-                }  
-                input.style1 {
-                    ~label.top {font-size: 4px;}
-                }
-        
-                input.style2 {
-                    ~label.top {font-size: 4px;}
-                }
-            }
-            .inputWrapper.select {
-                input.style1 {
-                    &:focus {
-                        ~label {font-size: 4px;}
-                    }
-                }
-                input.style2 {       
-                    &:focus {    
-                        ~label {font-size: 4px;}               
-                    }
-                }         
-                input.style1 {
-                    ~label.top {font-size: 4px;}
-                }
-                input.style2 {
-                    ~label.top {font-size: 4px;}
-                }                
-            }
-            .inputWrapper.selectSearch {          
-                input.style1 {        
-                    &:focus {
-                        ~label {font-size: 4px;}
-                    }
-                }
-                input.style2 {
-                    &:focus {    
-                        ~label {font-size: 4px;}
-                    }
-                }
-                input.style1 {
-                    ~label.top {font-size: 4px;}
-                }
-                input.style2 {
-                    ~label.top {font-size: 4px;}
-                }
-            }    
-            .inputWrapper.textarea {   
-                textarea.style1 {
-                    &:focus {    
-                        ~label {font-size: 4px;}
-                    }
-                }
-                textarea.style2 {
-                    &:focus {    
-                        ~label {font-size: 4px;}
-                    }
-                }
-                textarea.style1 {
-                    ~label.top {font-size: 4px;}
-                }
-                textarea.style2 {
-                    ~label.top {font-size: 4px;}
-                }
-            }
-        }
-    }
-    form#changePassword{
-        .inputs{
-            font-size: 6px ;
-            .inputWrapper.text {
-                input.style1 {
-                    &:focus {
-                        ~label {font-size: 4px;}                  
-                    }
-                }
-                input.style2 {
-                    &:focus {
-                        ~label {font-size: 4px;}
-                    }
-                }  
-                input.style1 {
-                    ~label.top {font-size: 4px;}
-                }
-        
-                input.style2 {
-                    ~label.top {font-size: 4px;}
-                }
-            }
-        }
-    }
 }
+
+
 

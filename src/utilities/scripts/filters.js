@@ -72,7 +72,7 @@ class FilterHandler{
        let closeIcon = document.createElement('i') ;
        closeIcon.classList.add('fas','fa-times','close') ;
        let text = document.createElement('p') ;
-       text.textContent = target.parentElement.querySelector('p').textContent ;
+       text.textContent = target.parentElement.querySelector('.content').getAttribute('data-currFilter') ;
        currFilter.appendChild(closeIcon) ;
        currFilter.appendChild(text) ;
        this.currFiltersWrapper.appendChild(currFilter) ;

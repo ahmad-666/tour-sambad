@@ -1,12 +1,12 @@
 import FontFaceObserver from 'fontfaceobserver' ;
 import Collapse from '../../utilities/scripts/collapse.js' ;
-document.querySelectorAll('.withCollapse').forEach((withCollapse,i,all) => {
+let nav = document.querySelector('nav') ;
+nav.querySelectorAll('.withCollapse').forEach((withCollapse,i,all) => {
     all = [...all] ;
     let others = all.filter(elm =>elm!=withCollapse);
     let font = new FontFaceObserver('iranSans');
-    font.load().then(()=>new Collapse.Collapse(withCollapse,others));
+    font.load().then(()=>new Collapse(withCollapse,others));
  }) ;
- let nav = document.querySelector('nav') ;
  let mobileNavWrapper = nav.querySelector('.bars') ;
  let mobileBars = mobileNavWrapper.querySelector('.fa-bars') ;
  let mobileNav = mobileNavWrapper.querySelector('ul.mobile') ;

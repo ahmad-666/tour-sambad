@@ -7,6 +7,4 @@ function Tooltip(elm){
 //document.querySelectorAll('.withTooltip').forEach(tooltip => {
 //    new Tooltip(tooltip) ;
 //})
-export default{
-	Tooltip
-}
+export default Tooltip ;
