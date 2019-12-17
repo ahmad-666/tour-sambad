@@ -34,3 +34,12 @@ filtersForm.querySelectorAll('label').forEach(label=>label.addEventListener('cli
 //filter handler------------------------------------
 let filterHandlerInstance = mainCategories.forEach(mainCategory=>new Filter.FilterHandler(currFiltersWrapper,mainCategory)) ;
 new Filter.CurrFilterClearAll(currFiltersWrapper,filtersForm,clearAllBtn,filterHandlerInstance) ;
+//switch display handler------------------------------------
+filtersWrapper.querySelectorAll('.switchDisplayMode').forEach(switchElm=>switchElm.addEventListener('click',switchDisplay)) ;
+function switchDisplay(e){
+    let target = document.querySelector(`#${this.getAttribute('data-target')}`) ;
+    let displayMode = this.getAttribute('data-display') ;
+    let altDisplayMode = this.getAttribute('data-display-alt') ;
+    target.classList.remove(altDisplayMode);
+    target.classList.add(displayMode);
+}
