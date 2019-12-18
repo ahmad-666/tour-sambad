@@ -4,7 +4,6 @@ import '../../node_modules/nouislider/distribute/nouislider.css';
 import '../framework.scss' ;
 import '../../node_modules/select2/dist/css/select2.min.css' ;
 import '../utilities/styles/form.scss'
-import '../utilities/styles/sliderCarousel.scss' ;
 import '../init.scss' ;
 import '../index/styles/header.scss' ;
 import '../tours/styles/tours.scss' ;

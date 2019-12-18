@@ -23,25 +23,30 @@
             padding: $dist2 $dist4 ;
             cursor: pointer;
             font-size: $fontM ;
-            color: $textDark ;
+            color: $primaryColor ;
+            background-color: white;
             transition: all .3s linear ;
             border-left: 1.2px solid lighten($textGrey,30%) ;
             &:last-child{border-left: none ;}
+            &:hover{
+                background-color: $primaryColor;
+                color: $textWhite;
+            }
         }
         .tab.active{
-            color: $primaryColor ;
-            font-weight: 700 ;
+            background-color: $primaryColor;
+            color: $textWhite;
         }
     }
     .contents{
         width: 100% ;
         height: auto;    
-        margin: $dist2 auto ;
+        margin: $dist1 auto ;
         .content{
             width: 100% ;
             height: auto;
             display: none ;
-            font-size: $fontM;
+            // font-size: $fontM;
             color: $textDark ;
             padding: $dist1 ;
         }
