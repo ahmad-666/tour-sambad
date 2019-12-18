@@ -381,34 +381,45 @@
                             <h4>اطلاعات هتل</h4>
                             <div class="displaySwitches">
                                 <p>انتخاب نوع نمایش</p>
-                                <i class="fas fa-table withTooltip" data-tooltip="جدولی" data-target="tableDisplay" data-target-alt="detailDisplay">
+                                <i class="fas fa-table withTooltip switchDisplay" data-tooltip="جدولی" data-target="tableDisplay" data-target-alt="detailDisplay">
                                     <span class="tooltip"></span>
                                 </i>
-                                <i class="fas fa-grip-lines withTooltip" data-tooltip="دریفی" data-target="detailDisplay" data-target-alt="tableDisplay">
+                                <i class="fas fa-grip-lines withTooltip switchDisplay" data-tooltip="دریفی" data-target="detailDisplay" data-target-alt="tableDisplay">
                                     <span class="tooltip"></span>
                                 </i>
                             </div>
                             <div class="content">
-                               <div id="tableDisplay">
+                               <div id="tableDisplay" class="show">
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th>نام هتل</th>
-                                                <th>ستاره</th>
-                                                <th>قیمت</th>
-                                                <th>امکانات</th>
-                                                <th>توضیحات بیشتر</th>
+                                                <th class="name"> 
+                                                    <h6>نام هتل</h6>
+                                                </th>
+                                                <th class="star">
+                                                    <h6>ستاره</h6>
+                                                </th>
+                                                <th class="price">
+                                                    <h6>قیمت</h6>
+                                                </th>
+                                                <th class="features">
+                                                    <h6>امکانات</h6>
+                                                </th>                                          
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody>                              
                                             <tr>
-                                                <td class="name">نام هتل</td>
+                                                <td class="name">
+                                                    <p>نام هتل</p>
+                                                </td>
                                                 <td class="star">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+                                                    <div class="icons">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>                         
                                                 </td>
                                                 <td class="price">
                                                     <p>1.000.000تومان</p>
@@ -439,23 +450,20 @@
                                                     <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
                                                         <span class="tooltip"></span>
                                                     </i>
-                                                </td>
-                                                <td class="more">
-                                                    <p>
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                    </p>
-                                                </td>
-                                            </tr>
+                                                </td>                                          
+                                            </tr>                                                                                                                                                                              
                                             <tr>
-                                                <td class="name">نام هتل</td>
+                                                <td class="name">
+                                                    <p>نام هتل</p>
+                                                </td>
                                                 <td class="star">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+                                                    <div class="icons">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>                         
                                                 </td>
                                                 <td class="price">
                                                     <p>1.000.000تومان</p>
@@ -486,23 +494,20 @@
                                                     <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
                                                         <span class="tooltip"></span>
                                                     </i>
-                                                </td>
-                                                <td class="more">
-                                                    <p>
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                    </p>
-                                                </td>
-                                            </tr>
+                                                </td>                                          
+                                            </tr>                                                                                                                                                                              
                                             <tr>
-                                                <td class="name">نام هتل</td>
+                                                <td class="name">
+                                                    <p>نام هتل</p>
+                                                </td>
                                                 <td class="star">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+                                                    <div class="icons">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>                         
                                                 </td>
                                                 <td class="price">
                                                     <p>1.000.000تومان</p>
@@ -533,23 +538,20 @@
                                                     <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
                                                         <span class="tooltip"></span>
                                                     </i>
-                                                </td>
-                                                <td class="more">
-                                                    <p>
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                    </p>
-                                                </td>
-                                            </tr>
+                                                </td>                                          
+                                            </tr>                                                                                                                                                                              
                                             <tr>
-                                                <td class="name">نام هتل</td>
+                                                <td class="name">
+                                                    <p>نام هتل</p>
+                                                </td>
                                                 <td class="star">
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
+                                                    <div class="icons">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>                         
                                                 </td>
                                                 <td class="price">
                                                     <p>1.000.000تومان</p>
@@ -580,15 +582,8 @@
                                                     <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
                                                         <span class="tooltip"></span>
                                                     </i>
-                                                </td>
-                                                <td class="more">
-                                                    <p>
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                        توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                    </p>
-                                                </td>
-                                            </tr>
+                                                </td>                                          
+                                            </tr>                                                                                                                                                                              
                                         </tbody>
                                     </table>
                                </div>
@@ -637,13 +632,52 @@
                                                         </i>
                                                    </div>                                  
                                                </div>
-                                               <div class="more">
-                                                   <h6>توضیح بیشتر</h6>
-                                                   <p>
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                   </p>                            
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="hotel">
+                                       <img src="../assets/imgs/tour1.jpg" alt="hotelAlt">
+                                       <div class="info">
+                                           <div class="right">
+                                               <h4>نام هتل</h4>
+                                               <div class="stars">
+                                                   <i class="fas fa-star"></i>
+                                                   <i class="fas fa-star"></i>
+                                                   <i class="fas fa-star"></i>
+                                                   <i class="fas fa-star"></i>
+                                                   <i class="fas fa-star"></i>
+                                               </div>
+                                               <p class="price">1.000.000تومان</p>
+                                           </div>
+                                           <div class="left">
+                                               <div class="features">
+                                                   <h6>امکانات</h6>
+                                                   <div class="icons">
+                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
+                                                            <span class="tooltip"></span>
+                                                        </i>
+                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
+                                                            <span class="tooltip"></span>
+                                                        </i>
+                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
+                                                            <span class="tooltip"></span>
+                                                        </i>
+                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
+                                                            <span class="tooltip"></span>
+                                                        </i>
+                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
+                                                            <span class="tooltip"></span>
+                                                        </i>
+                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
+                                                            <span class="tooltip"></span>
+                                                        </i>
+                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
+                                                            <span class="tooltip"></span>
+                                                        </i>
+                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
+                                                            <span class="tooltip"></span>
+                                                        </i>
+                                                   </div>                                  
                                                </div>
                                            </div>
                                        </div>
@@ -692,14 +726,6 @@
                                                         </i>
                                                    </div>                                  
                                                </div>
-                                               <div class="more">
-                                                   <h6>توضیح بیشتر</h6>
-                                                   <p>
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                   </p>                            
-                                               </div>
                                            </div>
                                        </div>
                                    </div>
@@ -747,72 +773,9 @@
                                                         </i>
                                                    </div>                                  
                                                </div>
-                                               <div class="more">
-                                                   <h6>توضیح بیشتر</h6>
-                                                   <p>
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                   </p>                            
-                                               </div>
                                            </div>
                                        </div>
-                                   </div>
-                                   <div class="hotel">
-                                       <img src="../assets/imgs/tour1.jpg" alt="hotelAlt">
-                                       <div class="info">
-                                           <div class="right">
-                                               <h4>نام هتل</h4>
-                                               <div class="stars">
-                                                   <i class="fas fa-star"></i>
-                                                   <i class="fas fa-star"></i>
-                                                   <i class="fas fa-star"></i>
-                                                   <i class="fas fa-star"></i>
-                                                   <i class="fas fa-star"></i>
-                                               </div>
-                                               <p class="price">1.000.000تومان</p>
-                                           </div>
-                                           <div class="left">
-                                               <div class="features">
-                                                   <h6>امکانات</h6>
-                                                   <div class="icons">
-                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
-                                                            <span class="tooltip"></span>
-                                                        </i>
-                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
-                                                            <span class="tooltip"></span>
-                                                        </i>
-                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
-                                                            <span class="tooltip"></span>
-                                                        </i>
-                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
-                                                            <span class="tooltip"></span>
-                                                        </i>
-                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
-                                                            <span class="tooltip"></span>
-                                                        </i>
-                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
-                                                            <span class="tooltip"></span>
-                                                        </i>
-                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
-                                                            <span class="tooltip"></span>
-                                                        </i>
-                                                        <i class="fas fa-wifi withTooltip" data-tooltip="وای فای">
-                                                            <span class="tooltip"></span>
-                                                        </i>
-                                                   </div>                                  
-                                               </div>
-                                               <div class="more">
-                                                   <h6>توضیح بیشتر</h6>
-                                                   <p>
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                       توضیح بیشتر توضیح بیشتر توضیح بیشتر
-                                                   </p>                            
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
+                                   </div>                            
                                </div>
                             </div>
                         </div>
