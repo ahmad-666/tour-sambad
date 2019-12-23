@@ -43,3 +43,5 @@ function switchDisplay(e){
     target.classList.remove(altDisplayMode);
     target.classList.add(displayMode);
 }
+
+

@@ -677,6 +677,14 @@ class SmoothScroll{
 //document.querySelectorAll('.smoothScroll').forEach(smooth=> new util.SmoothScroll(smooth)) ;
 // <button class="smoothScroll" data-target="smoothTarget">smooth</button>
 // <div id="smoothTarget"></div>
+//force full height on child
+//when height of parent is set to auto then 100% for height of child will not work
+let forceFullHeight = elm=>elm.style.height = pxToEm(elm.parentElement.offsetHeight,elm.parentElement)
+//we should add class="forceFull" on each child that we want to make then 100% height
+// document.querySelectorAll('.forceFull').forEach(force=>{
+//     let font = new FontFaceObserver('iranSans');
+//     font.load().then(()=>forceFullHeight(force));
+// }) ;
 //exports------------------------------------------------------------------------
 export default{
     getStyle,
@@ -712,4 +720,6 @@ export default{
     Reveal2 ,
     hasScroll ,
     SmoothScroll ,
+    forceFullHeight,
+
 }

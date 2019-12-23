@@ -31,20 +31,38 @@
                     <img src="../assets/icons/logo.png" alt="logoAlt">
                     <p>سمباد</p>
                 </a>
+            </div>
+            <div class="left">
                 <a href="./login.html" class="login">
                     <i class="fas fa-user"></i>
                     <p>ورود به حساب کاربری</p>
                 </a>
-            </div>
-            <div class="left">
-                <a href="./about.html">درباره ما</a>
-                <a href="./rules.html">قوانین</a>
-                <div class="tel">
-                    <i class="fas fa-tel"></i>
-                    <div class="wrapper">
-                        <p>051-38670000</p>
-                        <p>پشتیبانی ۲۴ساعته</p>
+                <!-- <a href="./about.html">درباره ما</a>
+                <a href="./rules.html">قوانین</a> -->
+                <div class="telWrapper">
+                    <div class="content">
+                        <i class="fas fa-phone"></i>
+                        <p>شماره تماس</p>
+                        <i class="fas fa-angle-down"></i>
                     </div>
+                    <ul id="telDropdown" class="fadeIn">
+                        <li class="tel">
+                            <p>051-38670000</p>
+                            <p>پشتیبانی ۲۴ساعته</p>
+                        </li>
+                        <li>
+                            <a href="rules.html">قوانین</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">تماس با ما</a>
+                        </li>
+                        <li>
+                            <a href="ticketGuide.html">راهنمای  خرید بلیط</a>
+                        </li>
+                        <li>
+                            <a href="moneyGuide.html">راهنمای استرداد وجه</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -181,9 +199,9 @@
                 </li>
             </ul>
         </nav>
-        <div class="bg">
-            <img src="../assets/imgs/tour4.jpg" alt="bgAlt">
-            <form novalidate class="center-x" id="search" name="search" action="#!" method="GET" enctype="text/plain">
+        <div class="bg withoutImg">
+            <!-- <img src="../assets/imgs/tour4.jpg" alt="bgAlt"> -->
+            <form novalidate id="search" class="" name="search" action="#!" method="GET" enctype="text/plain">
                 <div class="point">
                     <label for="startPoint">مبدا</label>
                     <select class="select2 validate" id="startPoint" name="startPoint">
@@ -427,6 +445,74 @@
                             </div>
                         </div>
                     </div>                 
+                    <div class="filtersWrapper" id="dists">
+                        <div class="withCollapse">
+                            <div class="mainCategory">
+                                <div class="inputWrapper checkboxes">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="allDists" name="allDists" class="style1" value="allDists">
+                                        <label for="allDists">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="تمام  مقصدها">
+                                                <p>انتخاب مقصد</p>
+                                            </div>       
+                                        </label>
+                                    </div>
+                                </div>
+                                <i class="fas fa-angle-down collapseTrigger"></i>
+                            </div>
+                            <div class="collapse">
+                                <div class="inputWrapper checkboxes">
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="distTehran" name="distTehran" class="style1" value="distTehran">
+                                        <label for="distTehran">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="تهران">
+                                                <p>تهران</p>
+                                            </div>
+                                        </label>
+                                    </div>                                                                                                   
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="distMashhad" name="distMashhad" class="style1" value="distMashhad">
+                                        <label for="distMashhad">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="مشهد">
+                                                <p>مشهد</p>
+                                            </div>
+                                        </label>
+                                    </div>                                                                                                   
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="distShiraz" name="distShiraz" class="style1" value="distShiraz">
+                                        <label for="distShiraz">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="شیراز">
+                                                <p>شیراز</p>
+                                            </div>
+                                        </label>
+                                    </div>                                                                                                   
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="distEsfehan" name="distEsfehan" class="style1" value="distEsfehan">
+                                        <label for="distEsfehan">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="اصفهان">
+                                                <p>اصفهان</p>
+                                            </div>
+                                        </label>
+                                    </div>                                                                                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>                 
                 </div>
             </div>
         </form>
@@ -442,489 +528,500 @@
                     </i>
                 </div>
             </div>
-            <div class="row containerStyle rowDisplay" id="tours">
+            <div class="row containerStyle colDisplay" id="tours">
                 <div class="tours">
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/slide1.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
+                    <a href="tour.html" class="tour">
+                        <img src="../assets/imgs/tour1.jpg" class="forceFull" alt="tourAlt">
+                        <div class="content">
+                            <div class="colTour info">
+                                <div class="rowTour title">
+                                    <h6>عنوان تور</h6>
+                                    <p>نام آژانس</p>
                                 </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                            <div class="icons">     
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-car-alt"></i>
-                                    <p>زمینی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                            </div>                                
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <p class="finalPrice">1.000.000تومان</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/tour1.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-subway"></i>
-                                    <p>ریلی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <p class="finalPrice">1.000.000تومان</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/tour3.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-plane"></i>
-                                    <p>هوایی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <div class="discount">
-                                        <p class="beforeDiscount">1.000.000تومان</p>
-                                        <p class="discountVal">50%</p>
+                                <div class="rowTour details">
+                                    <div class="detail">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <p>مشهد به چین</p>
                                     </div>
-                                    <p class="finalPrice">1.000.000تومان</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/tour4.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                           <div class="icons">
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-plane"></i>
-                                    <p>هوایی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                           </div>
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <div class="discount">
-                                        <p class="beforeDiscount">1.000.000تومان</p>
-                                        <p class="discountVal">50%</p>
+                                    <div class="detail">
+                                        <i class="fas fa-plane"></i>
+                                        <p>هوایی</p>
                                     </div>
-                                    <p class="finalPrice">1.000.000تومان</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>         
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/slide1.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                            <div class="icons">     
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-car-alt"></i>
-                                    <p>زمینی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                            </div>                                
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <p class="finalPrice">1.000.000تومان</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/tour1.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-subway"></i>
-                                    <p>ریلی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <p class="finalPrice">1.000.000تومان</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/tour3.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-plane"></i>
-                                    <p>هوایی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <div class="discount">
-                                        <p class="beforeDiscount">1.000.000تومان</p>
-                                        <p class="discountVal">50%</p>
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <p>۶روزه</p>
                                     </div>
-                                    <p class="finalPrice">1.000.000تومان</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/tour4.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                           <div class="icons">
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-plane"></i>
-                                    <p>هوایی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                           </div>
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <div class="discount">
-                                        <p class="beforeDiscount">1.000.000تومان</p>
-                                        <p class="discountVal">50%</p>
+                                    <div class="detail">
+                                        <i class="fas fa-star"></i>
+                                        <p>۱امتیاز</p>
                                     </div>
-                                    <p class="finalPrice">1.000.000تومان</p>
                                 </div>
-                            </div>
-                        </div>
-                    </a>         
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/slide1.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                            <div class="icons">     
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-car-alt"></i>
-                                    <p>زمینی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                            </div>                                
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <p class="finalPrice">1.000.000تومان</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/tour1.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-subway"></i>
-                                    <p>ریلی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <p class="finalPrice">1.000.000تومان</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/tour3.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-plane"></i>
-                                    <p>هوایی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <div class="discount">
-                                        <p class="beforeDiscount">1.000.000تومان</p>
-                                        <p class="discountVal">50%</p>
+                                <div class="rowTour inOut">
+                                    <div class="in">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>رفت: ۴دی(نام ایرلاین)</p>
                                     </div>
-                                    <p class="finalPrice">1.000.000تومان</p>
+                                    <div class="out">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>برگشت: ۱۰دی(نام ایرلاین)</p>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="colTour services">
+                                <h6>خدمات تور</h6>
+                                <div class="serviceWrapper">
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="colTour price">
+                                <h6>شروع قیمت از</h6>
+                                <div class="priceWrapper">
+                                    <div class="beforeDiscount">
+                                        <p class="before">1000000تومان</p>
+                                        <p class="discount">50%</p>
+                                    </div>
+                                    <p class="finalPrice">500000تومان</p>
                                 </div>
                             </div>
                         </div>
                     </a>
-                    <a href="./tour.html" class="tour">
-                        <img src="../assets/imgs/tour4.jpg" alt="tourAlt">
-                        <div class="info">
-                            <h6>عنوان تور</h6>
-                            <div class="inOut">
-                                <div class="in withTooltip" data-tooltip="رفت">
-                                    <p>مشهد</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
+                    <a href="tour.html" class="tour">
+                        <img src="../assets/imgs/tour3.jpg" class="forceFull" alt="tourAlt">
+                        <div class="content">
+                            <div class="colTour info">
+                                <div class="rowTour title">
+                                    <h6>عنوان تور</h6>
+                                    <p>نام آژانس</p>
                                 </div>
-                                <div class="out withTooltip" data-tooltip="برگشت">
-                                    <p>چین</p>
-                                    <p>10/10/98</p>
-                                    <span class="tooltip"></span>    
+                                <div class="rowTour details">
+                                    <div class="detail">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <p>مشهد به چین</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-subway"></i>
+                                        <p>ریلی</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <p>۶روزه</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-star"></i>
+                                        <p>۱امتیاز</p>
+                                    </div>
+                                </div>
+                                <div class="rowTour inOut">
+                                    <div class="in">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>رفت: ۴دی(نام ایرلاین)</p>
+                                    </div>
+                                    <div class="out">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>برگشت: ۱۰دی(نام ایرلاین)</p>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="colTour services">
+                                <h6>خدمات تور</h6>
+                                <div class="serviceWrapper">
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
                                 </div>
                             </div>
-                           <div class="icons">
-                                <div class="icon">
-                                    <i class="fas fa-clock"></i>
-                                    <p>۳روزه</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-plane"></i>
-                                    <p>هوایی</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-star"></i>
-                                    <p>1امتیاز</p>
-                                </div>
-                           </div>
-                            <div class="money">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div class="moneyHelper">
-                                    <div class="discount">
-                                        <p class="beforeDiscount">1.000.000تومان</p>
-                                        <p class="discountVal">50%</p>
-                                    </div>
-                                    <p class="finalPrice">1.000.000تومان</p>
+                            <div class="colTour price">
+                                <h6>شروع قیمت از</h6>
+                                <div class="priceWrapper">                               
+                                    <p class="finalPrice">500000تومان</p>
                                 </div>
                             </div>
                         </div>
-                    </a>         
-                    
+                    </a>
+                    <a href="tour.html" class="tour">
+                        <img src="../assets/imgs/tour4.jpg" class="forceFull" alt="tourAlt">
+                        <div class="content">
+                            <div class="colTour info">
+                                <div class="rowTour title">
+                                    <h6>عنوان تور</h6>
+                                    <p>نام آژانس</p>
+                                </div>
+                                <div class="rowTour details">
+                                    <div class="detail">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <p>مشهد به چین</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-shuttle-van"></i>
+                                        <p>زمینی</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <p>۶روزه</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-star"></i>
+                                        <p>۱امتیاز</p>
+                                    </div>
+                                </div>
+                                <div class="rowTour inOut">
+                                    <div class="in">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>رفت: ۴دی(نام ایرلاین)</p>
+                                    </div>
+                                    <div class="out">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>برگشت: ۱۰دی(نام ایرلاین)</p>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="colTour services">
+                                <h6>خدمات تور</h6>
+                                <div class="serviceWrapper">
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="colTour price">
+                                <h6>شروع قیمت از</h6>
+                                <div class="priceWrapper">                               
+                                    <p class="finalPrice">500000تومان</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="tour.html" class="tour">
+                        <img src="../assets/imgs/tour1.jpg" class="forceFull" alt="tourAlt">
+                        <div class="content">
+                            <div class="colTour info">
+                                <div class="rowTour title">
+                                    <h6>عنوان تور</h6>
+                                    <p>نام آژانس</p>
+                                </div>
+                                <div class="rowTour details">
+                                    <div class="detail">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <p>مشهد به چین</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-plane"></i>
+                                        <p>هوایی</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <p>۶روزه</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-star"></i>
+                                        <p>۱امتیاز</p>
+                                    </div>
+                                </div>
+                                <div class="rowTour inOut">
+                                    <div class="in">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>رفت: ۴دی(نام ایرلاین)</p>
+                                    </div>
+                                    <div class="out">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>برگشت: ۱۰دی(نام ایرلاین)</p>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="colTour services">
+                                <h6>خدمات تور</h6>
+                                <div class="serviceWrapper">
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="colTour price">
+                                <h6>شروع قیمت از</h6>
+                                <div class="priceWrapper">
+                                    <div class="beforeDiscount">
+                                        <p class="before">1000000تومان</p>
+                                        <p class="discount">50%</p>
+                                    </div>
+                                    <p class="finalPrice">500000تومان</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="tour.html" class="tour">
+                        <img src="../assets/imgs/tour3.jpg" class="forceFull" alt="tourAlt">
+                        <div class="content">
+                            <div class="colTour info">
+                                <div class="rowTour title">
+                                    <h6>عنوان تور</h6>
+                                    <p>نام آژانس</p>
+                                </div>
+                                <div class="rowTour details">
+                                    <div class="detail">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <p>مشهد به چین</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-subway"></i>
+                                        <p>ریلی</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <p>۶روزه</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-star"></i>
+                                        <p>۱امتیاز</p>
+                                    </div>
+                                </div>
+                                <div class="rowTour inOut">
+                                    <div class="in">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>رفت: ۴دی(نام ایرلاین)</p>
+                                    </div>
+                                    <div class="out">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>برگشت: ۱۰دی(نام ایرلاین)</p>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="colTour services">
+                                <h6>خدمات تور</h6>
+                                <div class="serviceWrapper">
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="colTour price">
+                                <h6>شروع قیمت از</h6>
+                                <div class="priceWrapper">                               
+                                    <p class="finalPrice">500000تومان</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="tour.html" class="tour">
+                        <img src="../assets/imgs/tour4.jpg" class="forceFull" alt="tourAlt">
+                        <div class="content">
+                            <div class="colTour info">
+                                <div class="rowTour title">
+                                    <h6>عنوان تور</h6>
+                                    <p>نام آژانس</p>
+                                </div>
+                                <div class="rowTour details">
+                                    <div class="detail">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <p>مشهد به چین</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-shuttle-van"></i>
+                                        <p>زمینی</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-clock"></i>
+                                        <p>۶روزه</p>
+                                    </div>
+                                    <div class="detail">
+                                        <i class="fas fa-star"></i>
+                                        <p>۱امتیاز</p>
+                                    </div>
+                                </div>
+                                <div class="rowTour inOut">
+                                    <div class="in">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>رفت: ۴دی(نام ایرلاین)</p>
+                                    </div>
+                                    <div class="out">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>برگشت: ۱۰دی(نام ایرلاین)</p>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="colTour services">
+                                <h6>خدمات تور</h6>
+                                <div class="serviceWrapper">
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="colTour price">
+                                <h6>شروع قیمت از</h6>
+                                <div class="priceWrapper">                               
+                                    <p class="finalPrice">500000تومان</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <button class="showMore">نمایش بیشتر</button>
             </div>
