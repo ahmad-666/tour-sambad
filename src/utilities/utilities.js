@@ -656,8 +656,14 @@ class Reveal2{
 }
 // document.querySelectorAll('.blockReveal2').forEach(reveal=>new util.Reveal2(reveal,'partOf',1))
 //scroll------------------------------------------------------------------------
-let hasScroll = elm => elm.offsetHeight<elm.scrollHeight ;
-//when content height is more than max-height or real height of element
+function hasScroll(elm){
+    let condition1 = elm.offsetHeight<elm.scrollHeight?true:false ;
+    //when content height is more than max-height or real height of element
+    let condition2 = (getStyle(elm,'overflow')!='hidden')?true:false;
+    //if some element has height but overflow:hidden we don't see scrollbar 
+    //but still has scroll 
+    return (condition1&&condition2) ;
+}
 class SmoothScroll{
     constructor(trigger){
         this.trigger = trigger ;
@@ -685,6 +691,23 @@ let forceFullHeight = elm=>elm.style.height = pxToEm(elm.parentElement.offsetHei
 //     let font = new FontFaceObserver('iranSans');
 //     font.load().then(()=>forceFullHeight(force));
 // }) ;
+//prevent touch screens scroll conflict
+function preventBodyScroll(elm){
+    elm.addEventListener('touchmove',startTouch) ;
+    elm.addEventListener('touchend',stopTouch) ;
+    function startTouch(e){
+        if(!hasScroll(elm)){
+            e.preventDefault() ;
+            document.body.classList.add('disableScroll') ;
+        }
+    }
+    function stopTouch(e){
+        document.body.classList.remove('disableScroll') ;
+    }
+}
+//we should add .preventBodyScroll class only on elements that we dont want scroll on them
+//check menu mobile of 'sambad-tour'
+//mobileMenu.querySelectorAll('.preventBodyScroll').forEach(elm=>preventBodyScroll(elm)) ;
 //exports------------------------------------------------------------------------
 export default{
     getStyle,
@@ -721,5 +744,6 @@ export default{
     hasScroll ,
     SmoothScroll ,
     forceFullHeight,
+    preventBodyScroll,
 
 }

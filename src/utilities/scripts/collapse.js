@@ -53,4 +53,9 @@ Collapse.prototype.toggleCollapse = function(e){
 //for prevent conflicts between different collapses :
 //we should use <parent>.querySelectorAll('.withCollapse').forEach((withCollapse,i,all)
 //not document.querySelectorAll('.withCollapse').forEach((withCollapse,i,all) 
+//if we have inner collapses :
+// let firstLevelCollapse = nav.querySelectorAll('... .withCollapse') ;
+// let secondLevelCollapse = nav.querySelectorAll('... .withCollapse') ;
+// firstLevelCollapse.forEach((withCollapse,i,all) => {...})
+// secondLevelCollapse.forEach((withCollapse,i,all) => {...})
 export default Collapse ;

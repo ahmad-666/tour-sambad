@@ -48,12 +48,12 @@ header{
                 @include flex(row,flex-start,center,nowrap,"") ;
                 padding: $dist1;
                 border-radius: $dist1;
-                color: darken($orangeColor1,10%);
+                color: $primaryColor;
                 background-color: transparent;
-                border: 1.2px solid darken($orangeColor1,10%) ;
+                border: 1.2px solid $primaryColor ;
                 transition: all .3s linear;
                 &:hover{
-                    background-color: darken($orangeColor1,10%);
+                    background-color: $primaryColor;
                     border: 1.2px solid transparent ;
                     color: $textWhite;
                 }

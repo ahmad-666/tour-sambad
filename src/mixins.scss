@@ -194,7 +194,7 @@
 //     }
 // }
 @mixin resizeTablet($wrapper){
-    @media screen and (max-width:950px){
+    @media screen and (max-width:1000px){
         #{$wrapper}{
             font-size: 8px ;
             @content ;

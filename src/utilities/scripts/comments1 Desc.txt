@@ -17,14 +17,14 @@
 					</div>
 				</div>
 				<div class="inputWrapper text">
-					<input type="email" id="email" name="email" class="style1 labelHandler validate" required>
-					<label for="email">
+					<input type="text" id="emailPhone" name="emailPhone" class="style1 labelHandler validate" required>
+					<label for="emailPhone">
 						<i class="fas fa-envelope icon"></i>
-						<p>پست الکترونیکی</p>
+						<p>ایمیل یا شماره موبایل</p>
 					</label>
 					<span class="line"></span>
 					<div class="msg">
-						<p>ایمیل صحیح وارد نمایید</p>
+						<p>لطفا مقداری وارد نمایید</p>
 						<i class="fas fa-caret-up"></i>
 					</div>
 				</div>
@@ -50,10 +50,16 @@
 				<p>
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum quisquam distinctio officia magni! Enim deleniti eos iusto at illo temporibus, rem accusantium, eaque quos voluptate ut sapiente quam reiciendis delectus.Non corrupti quasi eligendi in, dolor quod vel similique molestiae ratione molestias dignissimos minima facere explicabo iure dicta quisquam neque eos est? Officia exercitationem officiis perspiciatis, cumque ea repellat aliquam!
 				</p>
-				<div class="reply collapseTrigger">
-					<p>پاسخ</p>
-					<i class="fas fa-reply"></i>
-				</div>
+				<div class="commentAction">
+					<div class="like likeTrigger">
+						<i class="far fa-heart"></i>
+						<p>10</p>
+					</div>
+					<div class="reply collapseTrigger">
+						<p>پاسخ</p>
+						<i class="fas fa-reply"></i>
+					</div>
+				</div>            
 			</div>
 		</div>
 		<form novalidate id="reply1" name="reply1" class="validate reply collapse" method="GET" action="#!" enctype="text/plain">
@@ -105,16 +111,22 @@
 				<p>
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum quisquam distinctio officia magni! Enim deleniti eos iusto at illo temporibus, rem accusantium, eaque quos voluptate ut sapiente quam reiciendis delectus.Non corrupti quasi eligendi in, dolor quod vel similique molestiae ratione molestias dignissimos minima facere explicabo iure dicta quisquam neque eos est? Officia exercitationem officiis perspiciatis, cumque ea repellat aliquam!
 				</p>
-				<div class="reply collapseTrigger">
-					<p>پاسخ</p>
-					<i class="fas fa-reply"></i>
-				</div>
+				<div class="commentAction">
+					<div class="like likeTrigger">
+						<i class="far fa-heart"></i>
+						<p>10</p>
+					</div>
+					<div class="reply collapseTrigger">
+						<p>پاسخ</p>
+						<i class="fas fa-reply"></i>
+					</div>
+				</div>        
 			</div>
 		</div>
-		<form novalidate id="reply1" name="reply1" class="validate reply collapse" method="GET" action="#!" enctype="text/plain">
+		<form novalidate id="reply2" name="reply2" class="validate reply collapse" method="GET" action="#!" enctype="text/plain">
 			<div class="inputWrapper textarea">
-				<textarea name="reply1Content" id="reply1Content" class="style2 labelHandler autoExpand validate" required></textarea>
-				<label for="reply1Content" class="collapseTrigger">
+				<textarea name="reply2Content" id="reply2Content" class="style2 labelHandler autoExpand validate" required></textarea>
+				<label for="reply2Content" class="collapseTrigger">
 					<i class="fas fa-comments"></i>
 					<p>نظر خود را وارد نمایید</p>
 				</label>
@@ -123,5 +135,10 @@
 			<button type="submit" class="modalTrigger" data-modal="adminApprove">ارسال</button>
 		</form>
 	</div>
-	<button class="btn mid showMore">نظرات بیشتر</button>
+	<button class="btn mid showMore">نظرات بیشتر</button>            
+</div>
+<div id="adminApprove" class="containerStyle modal">
+	<i class="fas fa-user-shield"></i>
+	<p>نظر شما بعد از تایید مدیر نمایش داده میشود</p>
+	<button class="btn small pulse close">بستن</button>
 </div>

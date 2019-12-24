@@ -24,6 +24,10 @@ nav{
                 height: 100%;       
                 padding: $dist1;
                 color: $textWhite;
+            }
+        }
+        li:not(.dropdownTrigger){
+            a{
                 font-size: $fontM;
             }
         }
@@ -39,7 +43,6 @@ nav{
             a{
                 display: flex;
                 @include flex(row,flex-start,center,nowrap,"") ;
-                font-size: 10px;
                 p,i{
                     font-size: $fontM;
                     &:not(:first-child){margin-right: $dist1;}
@@ -125,6 +128,113 @@ nav{
                 }
             }
         }
+        li.mobile{
+            display: none;
+            width: auto;
+            height: 100%;   
+            padding: 0 $dist2;
+            position: relative;
+            margin-right: 0;
+            transition: all .3s linear;
+            background-color: transparent;
+            color: $textWhite;
+            cursor: pointer;
+            &:hover{background-color: $primaryColor;}
+            .fa-bars{
+                display: inline-block;
+                width: auto;
+                height: 100%;
+                font-size: $fontXL;        
+                position: relative;
+                top: 50%;
+                transform: translateY(-25%);
+            }
+            ul.mobileDropdown{
+                opacity: 0;
+                visibility: hidden;
+                transition: all .3s linear;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 25em;
+                height: auto;
+                display: flex;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                box-shadow: 0 .8em 1em -.4em $shadowColor;
+                li{
+                    display: inline-block;
+                    width: 100%;
+                    height: auto;
+                    background-color: white;
+                    transition: all .3s linear;
+                    &:hover{background-color: darken(white,12%);}
+                    margin-right: 0;
+                    a{
+                        display: inline-block;
+                        width: 100%;
+                        height: auto;
+                        padding: $dist1;
+                        color: $textDark;
+                        font-size: $fontM;
+                    }
+                }
+                li.withCollapse{
+                    display: flex;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    .collapseTrigger{
+                        width: 100%;
+                        height: auto;
+                        padding: $dist1 + .5em;
+                        color: $textDark;
+                        display: flex;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        p{
+                            font-size: $fontM;
+                        }
+                        i{
+                            margin-right: .3em;
+                            font-size: $fontM;
+                        }
+                    }
+                    ul.collapse{
+                        width: 100%;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        border-bottom: 1.5px solid $primaryColor;
+                        li{
+                            // width: calc(100% - 2em);
+                            padding-right: 2em;
+                        }
+                        li.withCollapse.inner{
+                            &:hover{background-color: white;}
+                        }
+                        ul.collapse.inner{
+                            max-height: 25em;
+                            overflow: auto;
+                        }   
+                    }                  
+                }
+
+            }
+            ul.mobileDropdown.show{
+                opacity: 1;
+                visibility: visible;
+                z-index: 10;
+            }
+            
+        }
+        
     }
-   
+}
+@include resizeTablet('nav') ;
+@include resizeMobile('nav') ;
+@include mediaQ(550px){
+    nav{
+        ul.desktop{   
+            li{display:none;}
+            li.mobile{
+                display: block;  
+            }         
+        }
+    }
 }
