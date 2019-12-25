@@ -708,6 +708,125 @@ function preventBodyScroll(elm){
 //we should add .preventBodyScroll class only on elements that we dont want scroll on them
 //check menu mobile of 'sambad-tour'
 //mobileMenu.querySelectorAll('.preventBodyScroll').forEach(elm=>preventBodyScroll(elm)) ;
+//fadeEffect ----------------------------------
+//fadeEffect ----------------------------------
+//fadeEffect ----------------------------------
+class FadeEffect{
+    constructor(elm,size,color){ //size should be something line '15em','50%'
+        this.elm = elm ;
+        this.size = size ;
+        this.color = color ;
+        this.fade = this.elm.querySelector('.fade') ;
+        this.init() ;
+    }
+    init(){
+        if(this.fade.classList.contains('top')) {
+            this.fade.style.height = this.size ; 
+            this.fade.style.backgroundImage = `linear-gradient(to bottom,${this.color} 0%,transparent 100%)` ; 
+        }
+        else if(this.fade.classList.contains('topRev')) {
+            this.fade.style.height = this.size ; 
+            this.fade.style.backgroundImage = `linear-gradient(to bottom,transparent 0%,${this.color} 100%)` ; 
+        }
+        else if(this.fade.classList.contains('bottom')) {
+            this.fade.style.height = this.size ; 
+            this.fade.style.backgroundImage = `linear-gradient(to top,${this.color} 0%,transparent 100%)` ; 
+        }
+        else if(this.fade.classList.contains('right')){
+            this.fade.style.width = this.size ; 
+            this.fade.style.backgroundImage = `linear-gradient(to left,${this.color} 0%,transparent 100%)` ; 
+        } 
+        else if(this.fade.classList.contains('left')) {
+            this.fade.style.width = this.size ; 
+            this.fade.style.backgroundImage = `linear-gradient(to right,${this.color} 0%,transparent 100%)` ; 
+        }
+    }
+}
+// <div class="fadeEffect">
+//     ...
+//     <div class="fade bottom"></div>
+// </div>
+//document.querySelectorAll('.fadeEffect').forEach(fadeEffect=>new FadeEffect(fadeEffect,'100%','white'));
+//SwapIconText ----------------------------------
+//SwapIconText ----------------------------------
+//SwapIconText ----------------------------------
+class SwapIconText{
+    constructor(elm,initText,changeText,initIcons,changeIcons,fadeElm){
+        //initIcon,changeIcon is array of css class lists --> ['fas','fa-plus']
+        this.elm = elm ;
+        this.initText = initText ;
+        this.changeText = changeText ;
+        this.initIcons = initIcons ;
+        this.changeIcons = changeIcons ;
+        this.fadeElm = fadeElm ;
+        this.icon = this.elm.querySelector('.icon') ;
+        this.text = this.elm.querySelector('.text') ;
+        this.isInit = true ;
+        this.init() ;
+    }
+    init(){
+        if(this.icon){
+            this.icon.getAttribute('class','');
+            this.icon.classList.add('icon') ;
+            this.initIcons.forEach(iconClass=>this.icon.classList.add(iconClass)) ;
+        }
+        if(this.text) this.text.textContent = this.initText ;
+        this.elm.addEventListener('click',this.toggleContent.bind(this)) ;
+    }
+    toggleContent(e){
+        this.isInit = !this.isInit ;
+        if(this.icon){
+            this.initIcons.forEach(initIcon=>this.icon.classList.toggle(initIcon)) ;
+            this.changeIcons.forEach(changeIcon=>this.icon.classList.toggle(changeIcon)) ;
+        }
+        if(this.text){
+            if(this.isInit) this.text.textContent = this.initText ;
+            else this.text.textContent = this.changeText ;
+        }
+        if(this.fadeElm) this.fadeElm.classList.toggle('hide') ;
+        this.others.forEach(other=>{
+            if(other.icon){
+                other.changeIcons.forEach(changeIcon=>other.icon.classList.remove(changeIcon)) ;
+                other.initIcons.forEach(initIcon=>other.icon.classList.add(initIcon)) ;
+            }
+            if(other.text) other.text.textContent = other.initText ; 
+            if(other.fadeElm&&!other.isInit) other.fadeElm.classList.remove('hide') ;
+            other.isInit = true ;
+        })
+    }
+}
+// <div class="swapIconText">
+//    <i class="icon"></i>
+//    <p class="text"></p>
+// </div>
+// let swapInstances = [] ;
+// moreInfo.querySelectorAll('.swapIconText').forEach(swap=>swapInstances.push(new SwapIconText(swap,'نمایش بیشتر','نمایش کمتر',['fas','fa-plus'],['fas','fa-minus'],swap.parentElement.querySelector('.fade'))));
+// swapInstances.forEach((swapInstance,i,all)=>{
+//    all = [...all] ;
+//    let others = all.filter(instance=>instance!=swapInstance)
+//    swapInstance.others = others ;
+// })
+//fix dom element with thresholds---------------------
+//fix dom element with thresholds---------------------
+//fix dom element with thresholds---------------------
+class FixElm{
+    constructor(elm,stopElm,threshold){
+        //stop is that element that we want to remove fix class if we reach that element
+        //threshold is size of screen and bellow that width we dont fix anything
+        this.elm = elm ;
+        this.stopElm = stopElm ;
+        this.threshold = threshold ;
+        this.init() ;
+    }
+    init(){
+        if(window.innerWidth>this.threshold) window.addEventListener('scroll',this) ;
+    }
+    handleEvent(e){
+        window.scrollY>this.elm.getBoundingClientRect().top?this.elm.classList.add('fix'):this.elm.classList.remove('fix') ;
+        if(this.stopElm.getBoundingClientRect().top<window.innerHeight) this.elm.classList.remove('fix') ; 
+    }
+}
+//new FixElm(document.querySelector('.leftSection'),document.querySelector('footer'),850)
 //exports------------------------------------------------------------------------
 export default{
     getStyle,
@@ -745,5 +864,8 @@ export default{
     SmoothScroll ,
     forceFullHeight,
     preventBodyScroll,
+    FadeEffect,
+    SwapIconText,
+    FixElm,
 
 }

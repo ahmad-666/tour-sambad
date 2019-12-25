@@ -366,6 +366,106 @@ ul.scrollSpyList.fix{
         }
     }
 }
+// <div class="example fadeEffect">
+//     ...
+//     <div class="fade bottom show"></div>
+// </div>
+.fadeEffect{
+    position: relative;
+    overflow: hidden;
+    .fade{position: absolute;}
+    .fade.hide{display: none;}
+    .fade.show{display: block;}
+    .fade.top,.fade.topRev{
+        width: 100%;
+        top: 0;
+        right: 0;
+    }
+    .fade.bottom{
+        width: 100%;
+        bottom: 0;
+        right: 0;
+    }
+    .fade.right{
+        height: 100%;
+        right: 0;
+        top: 0;
+    }
+    .fade.left{
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+}
+.swapIconText{
+    width: auto;
+    height: auto;
+    margin-top: $dist2;
+    display: flex;
+    @include flex(row,flex-start,center,nowrap,"") ;
+    color: $primaryColor;
+    p,i{font-size: $fontM - .2em;}
+    p{margin-right: .3em;}
+}
+//price --------------------------------------------
+//price --------------------------------------------
+//price --------------------------------------------
+// <div class="priceWrapper">
+//     <h6>شروع قیمت از</h6>
+//     <div class="priceHelper">
+//         <div class="beforeDiscount">
+//             <p class="before">1000000تومان</p>
+//             <p class="discount">50%</p>
+//         </div>
+//         <p class="finalPrice">500000تومان</p>
+//     </div>
+// </div>
+.priceWrapper{
+    width: auto;
+    height: auto;
+    margin-top: $dist2;
+    display: flex;
+    @include flex(row,flex-start,center,nowrap,"") ;
+    h6{
+        font-size: $fontM;
+        color: $textDark;
+        font-weight: 700;
+    }
+    .priceHelper{
+        width: auto;
+        height: auto;
+        margin-right: $dist2;
+        display: flex;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        .beforeDiscount{
+            width: auto;
+            height: auto;
+            display: flex;
+            @include flex(row,flex-start,center,wrap,flex-start) ;
+            .before{
+                font-size: $fontM - .2em;
+                color: lighten($textGrey,20%);
+                text-decoration: line-through;
+            }
+            .discount{
+                width: auto;
+                height: auto;
+                border-radius: $dist1;
+                padding: .2em .5em;
+                background-color: $primaryColor;
+                font-size: $fontS;
+                color: $textWhite;
+                margin-right: $dist1;
+            }
+        }
+        .finalPrice{
+            font-size: $fontM + .2em;
+            color: $primaryColor;
+            font-weight: 700;
+        }
+    }
+    
+}
 //text effects--------------------------------------------
 //text effects--------------------------------------------
 //text effects--------------------------------------------
@@ -374,6 +474,7 @@ ul.scrollSpyList.fix{
     overflow: hidden;
     text-overflow: ellipsis ;
 }
+
 //size and pos--------------------------------------------
 //size and pos--------------------------------------------
 //size and pos--------------------------------------------
@@ -440,7 +541,10 @@ ul.scrollSpyList.fix{
 @include hiddenShow('.modal') ;
 .collapseTrigger{cursor: pointer;}
 // we should not use height:auto .collapse again in other files
-.collapse{height: auto;}
+.collapse{
+    overflow: hidden;
+    height: auto;
+}
 .collapse.close{
     opacity: 0;
     visibility: hidden ;

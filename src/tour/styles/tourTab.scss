@@ -7,7 +7,7 @@
             .contents{
                 #tourTab{
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
-                    .summery,.infos,.days{
+                    .summery,.days,.moreInfo,.map{
                         width: 100%;
                         height: auto;
                         padding-bottom: $dist2;
@@ -31,116 +31,47 @@
                     .summery{
                         .sectionContent{
                             p{
+                                margin-top: $dist2;
                                 font-size: $fontM;
                                 color: darken($textGrey,5%);
                                 line-height: $dist2 + .5em;
                             }
-                        }
+                        }                 
                     }
-                    .infos{
+                    .moreInfo{
                         .sectionContent{
-                            h6{
-                                font-size: $fontM;
-                                color: $textDark;
-                                font-weight: 700;
-                            }
-                            .icon{
-                                width: auto;
+                            .row{
+                                width: 100%;
                                 height: auto;
-                                color: $textGrey;
+                                padding: $dist2 $dist1;
                                 display: flex;
-                                @include flex(row,flex-start,center,nowrap,"") ;
-                                i{
-                                    font-size: $fontM ;
-                                    width: $fontS;
-                                }
-                                p{
-                                    font-size: $fontM ;
-                                    margin-right: .2em;
-                                }
-                            }
-                            .icon.company{
-                                margin-top: $dist2;
-                                margin-right: 0;
-                            }
-                            .icons{
-                                width: auto;
-                                height: auto;
-                                margin-top: $dist2 + .5em;
-                                display: flex;
-                                @include flex(row,flex-start,center,wrap,flex-start) ;
-                                .icon{&:not(:first-child){margin-right: $dist3;}}
-                            }
-                            .inOut{
-                                width: auto;
-                                height: auto;
-                                margin-top: $dist2;
-                                display: flex;
-                                @include flex(row,flex-start,flex-start,wrap,flex-start) ;
-                                .in,.out{
-                                    width: auto;
+                                @include flex(row,flex-start,flex-start,nowrap,"") ;
+                                &:not(:last-child){border-bottom: 1px solid lighten($textGrey,15%);}
+                                h6{
+                                    flex-shrink: 0;
+                                    width: 10em;
                                     height: auto;
-                                    &:not(:first-child){margin-right: $dist2;}
-                                    display: flex;
-                                    @include flex(row,flex-start,center,nowrap,"") ;
-                                    p{
-                                        font-size: $fontM;
-                                        color: $textGrey;
-                                    }
-                                    .info{
-                                        width: auto;
-                                        height: auto;
-                                        border-radius: $dist1;
-                                        padding: .2em $dist2;
-                                        color: $textWhite;
-                                        background-color: $primaryColor;
-                                        margin-right: $dist2;
-                                        display: flex;
-                                        @include flex(column,flex-start,center,nowrap,"") ;
-                                        p{
-                                            font-size: $fontM - .2em;
-                                            color: $textWhite;
-                                        }
-                                    }
+                                    font-size: $fontM;
+                                    font-weight: 700;
+                                    color: $primaryColor;
                                 }
-                            }
-                            .money{
-                                margin-top: $dist3;
-                                p{
-                                    margin-right: 0;
-                                }
-                                .moneyHelper{
-                                    width: auto;
-                                    height: auto;
-                                    margin-right: .5em;
+                                .desc{
+                                    width: 100%;
+                                    margin-right: $dist2;
                                     display: flex;
                                     @include flex(column,flex-start,flex-start,nowrap,"") ;
-                                    .discount{
-                                        width: auto;
+                                    .rowInfo{
+                                        width: 100%;
                                         height: auto;
-                                        display: flex;
-                                        @include flex(row,flex-start,center,nowrap,"") ;
-                                        .beforeDiscount{
-                                            text-decoration: line-through;
-                                            font-size: $fontM ;
-                                            color: lighten($textGrey,20%);
+                                        p{
+                                            font-size: $fontM - .2em;
+                                            color: darken($textGrey,15%);
+                                            line-height: $dist2 + .3em;
                                         }
-                                        span{
-                                            width: auto;
-                                            height: auto;
-                                            font-size: $fontM;
-                                            color: $textWhite;
-                                            background-color: $primaryColor;
-                                            padding: 0 $dist1;
-                                            margin-right: $dist2;
-                                            border-radius: $dist1;
-                                        }
-        
                                     }
-                                    .finalPrice{
-                                        font-size: $fontM + .2em;
-                                        color: $textGrey;
-                                    }
+                                }
+                                .swapIconText{
+                                    margin-top: $dist1;
                                 }
                             }
                         }
@@ -189,8 +120,16 @@
                             }
                         }
                     }
+                    .map{
+                        img{
+                            width: 100%;
+                            height: 35em;
+                            margin-top: $dist2;
+                        }
+                    }
                 }
             }     
         }
     }
 }
+

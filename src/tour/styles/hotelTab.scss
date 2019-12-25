@@ -7,7 +7,7 @@
             .contents{
                 #hotelTab{
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
-                    .hotelInfo,.hotelMore{
+                    .hotelInfo,{
                         width: 100%;
                         height: auto;
                         padding-bottom: $dist2;
@@ -26,54 +26,6 @@
                             display: flex;
                             @include flex(column,flex-start,flex-start,nowrap,"") ;
                             margin-top: $dist1;
-                        }
-                    }
-                    .hotelMore{
-                        .inOut{
-                            width: auto;
-                            height: auto;
-                            display: flex;
-                            @include flex(row,flex-start,flex-start,nowrap,"") ;
-                            .in,.out{
-                                width: auto;
-                                height: auto;
-                                &:not(:first-child){margin-right: $dist3;}
-                                display: flex;
-                                @include flex(column,flex-start,flex-start,nowrap,"") ;
-                                .top{
-                                    width: auto;
-                                    height: auto;
-                                    display: flex;
-                                    @include flex(row,flex-start,center,nowrap,"") ;
-                                    color: $primaryColor ;
-                                    i{
-                                        font-size: $fontM;
-                                        width: $fontS;                              
-                                    }
-                                    p{
-                                        margin-right: .2em;
-                                        font-size: $fontM;
-                                        margin-top: 0;
-                                        color: $primaryColor;
-                                    }
-
-                                }
-                                p{
-                                    font-size: $fontL;
-                                    font-weight: 700;
-                                    margin-top: 0;
-                                    color: $textGrey
-                                }
-                            }
-                        }
-                        .map{
-                            width: 100%;
-                            height: 35em;
-                            margin-top: $dist2;
-                            img{
-                                width: 100%;
-                                height: 100%;
-                            }
                         }
                     }
                     .hotelInfo{
@@ -139,19 +91,17 @@
                                             }
                                         }
                                         th.name,td.name{
-                                            flex-shrink: 0;
-                                            width: 30em;
+                                            width: 20%;
                                         }
                                         th.star,td.star{
-                                            width: 16em;
+                                            width: 12em;
                                             flex-shrink: 0;
                                         }
                                         th.price,td.price{
-                                            flex-shrink: 10em;
-                                            width: 30em;
+                                            width: 15%;
                                         }
                                         th.features,td.features{
-                                            width: 100%;
+                                            width: 20%;
                                         }                                     
                                     }
                                 }
@@ -167,7 +117,7 @@
                                         &:nth-child(even){background-color: lighten($textGrey,35%);}
                                         // align-items: stretch;
                                         // td{height: auto;}
-                                        td.name,td.more{
+                                        td.name{
                                             p{
                                                 font-size: $fontM;
                                                 color: $textDark;
@@ -181,22 +131,28 @@
                                                 display: flex;
                                                 @include flex(row,space-around,center,wrap,flex-start) ;
                                                 i{
-                                                    font-size: $fontM - .2em;
+                                                    font-size: $fontS;
                                                     color: lighten($orangeColor1,5%);
                                                 }
                                             }
                                            
                                             
-                                        }
+                                        }   
                                         td.price{
-                                            display: flex;
-                                            @include flex(column,flex-start,center,nowrap,"") ;
-                                            p{
-                                                font-size: $fontM;
-                                                &:first-child{color: $textDark;}
-                                                &:last-child{color: $textGrey;;}
+                                            .priceWrapper{
+                                                margin-top: 0;
+                                                width: 100%;
+                                                height: 100%;
+                                                justify-content: center;                                           
+                                                .priceHelper{
+                                                    margin-right: 0;
+                                                    p{
+                                                        font-weight: 400;
+                                                    }
+                                                }
+                                                
                                             }
-                                        }
+                                        }                             
                                         td.features{
                                             // padding: 0;
                                             display: flex;

@@ -1,11 +1,13 @@
-function Collapse(wrapper,others){
+function Collapse(wrapper,others,maxHeight){
     this.wrapper = wrapper ;
     this.others = others ;
+    this.maxHeight = maxHeight ;
     this.trigger = this.wrapper.querySelector('.collapseTrigger') ;
     this.icon = this.wrapper.querySelector('.collapseIcon') ;
     this.targetHeight = null;
     this.collapse =this.wrapper.querySelector('.collapse') ;
-    this.collapse.classList.add('close') ;
+    if(!this.maxHeight) this.collapse.classList.add('close') ;
+    else this.collapse.style.maxHeight = this.maxHeight ;
     this.trigger.addEventListener('click',this.toggleCollapse.bind(this)) ;
 }
 Collapse.prototype.toggleCollapse = function(e){
@@ -14,12 +16,14 @@ Collapse.prototype.toggleCollapse = function(e){
     this.collapse.classList.add('addTransition') ;
     this.collapse.classList.toggle('open') ;
     if(this.collapse.classList.contains('open')) {
-        this.collapse.style.height = `${this.targetHeight}px` ;
+        if(!this.maxHeight) this.collapse.style.height = `${this.targetHeight}px` ;
+        else this.collapse.style.maxHeight = `` ;     
         setTimeout(()=>this.collapse.style.height = `auto`,150)
         this.others.forEach(other=>{
             let collapse = other.querySelector('.collapse') ;
             collapse.classList.add('addTransition')
-            collapse.style.height = `0px` ;
+            if(!this.maxHeight) collapse.style.height = `0px` ;          
+            else collapse.style.maxHeight = this.maxHeight ;      
             collapse.classList.remove('open');
             if(this.icon){
                 let icon = other.querySelector('.collapseIcon');
@@ -29,8 +33,14 @@ Collapse.prototype.toggleCollapse = function(e){
         });        
     }
     else {
-        this.collapse.style.height = `${this.targetHeight}px` ;
-        setTimeout(()=>this.collapse.style.height = `0px`,10) ;
+        if(!this.maxHeight){
+            this.collapse.style.height = `${this.targetHeight}px` ;
+            setTimeout(()=>this.collapse.style.height = `0px`,10) ;
+        }
+        else{
+            //this.collapse.style.maxHeight = this.maxHeight ;   
+            setTimeout(()=>this.collapse.style.maxHeight = this.maxHeight,10) ;  
+        }
     }
     if(this.icon){
         this.icon.classList.toggle('fa-plus') ;
@@ -42,6 +52,8 @@ Collapse.prototype.toggleCollapse = function(e){
 //    let others = all.filter(elm =>elm!=withCollapse);
 //    let font = new FontFaceObserver('iranSans');
 //    font.load().then(()=>new Collapse(withCollapse,others));
+//    OR(if we want max-height)
+//    font.load().then(()=>new Collapse(withCollapse,others,'5em'));
 //})
 // when we click on <label> we click on target form element too and also we trigger click event too
 // if we have : 

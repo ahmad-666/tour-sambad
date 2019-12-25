@@ -102,6 +102,9 @@
         @include swapColor(white,$primaryColor) ;
     }
 }
+#comments.tourComments{
+    margin-top: 0;
+}
 #adminApprove{
     width: 45em;
     height: auto;
