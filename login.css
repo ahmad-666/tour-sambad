@@ -5004,6 +5004,233 @@ ul.scrollSpyList.fix {
     -webkit-transform-origin: center bottom;
             transform-origin: center bottom; } }
 
+.fadeEffect {
+  position: relative;
+  overflow: hidden; }
+  .fadeEffect .fade {
+    position: absolute; }
+  .fadeEffect .fade.hide {
+    display: none; }
+  .fadeEffect .fade.show {
+    display: block; }
+  .fadeEffect .fade.top, .fadeEffect .fade.topRev {
+    width: 100%;
+    top: 0;
+    right: 0; }
+  .fadeEffect .fade.bottom {
+    width: 100%;
+    bottom: 0;
+    right: 0; }
+  .fadeEffect .fade.right {
+    height: 100%;
+    right: 0;
+    top: 0; }
+  .fadeEffect .fade.left {
+    height: 100%;
+    left: 0;
+    top: 0; }
+
+.swapIconText {
+  width: auto;
+  height: auto;
+  margin-top: 1.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  color: #2295a6; }
+  .swapIconText p, .swapIconText i {
+    font-size: 1.4em; }
+  .swapIconText p {
+    margin-right: .3em; }
+
+.pagination {
+  width: auto;
+  height: auto;
+  margin: 3em auto 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start; }
+  .pagination .page-item {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    color: #2295a6;
+    background-color: white;
+    border: 1.2px solid transparent;
+    border: 1px solid #2295a6;
+    margin: 1em;
+    border-radius: 0.75em; }
+    .pagination .page-item:hover {
+      color: white;
+      background-color: #2295a6;
+      border: 1.2px solid white; }
+    .pagination .page-item a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      padding: 0.375em 0.75em;
+      font-size: 1.6em;
+      color: inherit; }
+      .pagination .page-item a i {
+        font-size: 1.2em;
+        color: inherit;
+        -webkit-transform: translateY(0.2em);
+            -ms-transform: translateY(0.2em);
+                transform: translateY(0.2em); }
+  .pagination .page-item.disabled {
+    background-color: #e0e0e0;
+    color: #90909b;
+    border: none; }
+    .pagination .page-item.disabled a {
+      cursor: default; }
+  .pagination .page-item.active {
+    color: white;
+    background-color: #2295a6; }
+
+.priceWrapper {
+  width: auto;
+  height: auto;
+  margin-top: 1.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: ""; }
+  .priceWrapper h6 {
+    font-size: 1.6em;
+    color: #2d2d31;
+    font-weight: 700; }
+  .priceWrapper .priceHelper {
+    width: auto;
+    height: auto;
+    margin-right: 1.5em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: ""; }
+    .priceWrapper .priceHelper .beforeDiscount {
+      width: auto;
+      height: auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-align-content: flex-start;
+          -ms-flex-line-pack: start;
+              align-content: flex-start; }
+      .priceWrapper .priceHelper .beforeDiscount .before {
+        font-size: 1.4em;
+        color: #c6c6cb;
+        text-decoration: line-through; }
+      .priceWrapper .priceHelper .beforeDiscount .discount {
+        width: auto;
+        height: auto;
+        border-radius: 0.75em;
+        padding: .2em .5em;
+        background-color: #2295a6;
+        font-size: 1.2em;
+        color: #fbfbfb;
+        margin-right: 0.75em; }
+    .priceWrapper .priceHelper .finalPrice {
+      font-size: 1.8em;
+      color: #2295a6;
+      font-weight: 700; }
+
 .ellipse {
   white-space: nowrap;
   overflow: hidden;
@@ -5117,6 +5344,7 @@ ul.scrollSpyList.fix {
   cursor: pointer; }
 
 .collapse {
+  overflow: hidden;
   height: auto; }
 
 .collapse.close {
@@ -7058,6 +7286,929 @@ form#filters .row:nth-child(2) .mobileFixFlexFixer {
       font-size: 4px; }
     form#filters .inputWrapper.select input.style2 ~ label.top {
       font-size: 4px; } }
+
+form#userComment {
+  width: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: ""; }
+  form#userComment .row {
+    width: auto;
+    height: auto;
+    margin-top: 1.5em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start; }
+    form#userComment .row .inputWrapper.text {
+      width: 25em;
+      height: 4em;
+      position: relative; }
+      form#userComment .row .inputWrapper.text:not(:first-child) {
+        margin-right: 3em; }
+      form#userComment .row .inputWrapper.text input {
+        width: 100%;
+        height: 100%;
+        line-height: 4em;
+        padding: 0 0.75em;
+        font-size: 1.6em;
+        color: #2d2d31;
+        -webkit-transition: all .2s linear;
+        transition: all .2s linear; }
+        form#userComment .row .inputWrapper.text input::-webkit-input-placeholder {
+          color: #90909b;
+          font-size: 1.6em; }
+        form#userComment .row .inputWrapper.text input::-moz-placeholder {
+          color: #90909b;
+          font-size: 1.6em; }
+        form#userComment .row .inputWrapper.text input:-ms-input-placeholder {
+          color: #90909b;
+          font-size: 1.6em; }
+        form#userComment .row .inputWrapper.text input::-ms-input-placeholder {
+          color: #90909b;
+          font-size: 1.6em; }
+        form#userComment .row .inputWrapper.text input::placeholder {
+          color: #90909b;
+          font-size: 1.6em; }
+      form#userComment .row .inputWrapper.text input.style1 {
+        border: none;
+        border-bottom: 1.2px solid #d3d3d7; }
+        form#userComment .row .inputWrapper.text input.style1:focus ~ label {
+          color: #2295a6;
+          font-size: 8px;
+          bottom: -webkit-calc(100% + .5em);
+          bottom: calc(100% + .5em);
+          -webkit-transform: translateY(50%);
+              -ms-transform: translateY(50%);
+                  transform: translateY(50%);
+          right: 0; }
+        form#userComment .row .inputWrapper.text input.style1:focus ~ .line {
+          width: 100%; }
+      form#userComment .row .inputWrapper.text input.style2 {
+        border: 1.2px solid #d3d3d7;
+        border-radius: 3em; }
+        form#userComment .row .inputWrapper.text input.style2:focus {
+          border: 1.2px solid #2295a6; }
+          form#userComment .row .inputWrapper.text input.style2:focus ~ label {
+            color: #2295a6;
+            font-size: 8px;
+            bottom: -webkit-calc(100% + 1.5em);
+            bottom: calc(100% + 1.5em);
+            -webkit-transform: translateY(50%);
+                -ms-transform: translateY(50%);
+                    transform: translateY(50%);
+            right: 0.75em; }
+          form#userComment .row .inputWrapper.text input.style2:focus ~ .line {
+            width: 0%; }
+      form#userComment .row .inputWrapper.text input.style1.error {
+        border-bottom: 1.2px solid #ea6161; }
+        form#userComment .row .inputWrapper.text input.style1.error ~ label {
+          color: #ea6161; }
+        form#userComment .row .inputWrapper.text input.style1.error ~ .line {
+          background-color: #ea6161; }
+      form#userComment .row .inputWrapper.text input.style2.error {
+        border: 1.2px solid #ea6161; }
+        form#userComment .row .inputWrapper.text input.style2.error ~ label {
+          color: #ea6161; }
+      form#userComment .row .inputWrapper.text label {
+        width: auto;
+        height: auto;
+        position: absolute;
+        right: 0.75em;
+        bottom: 50%;
+        -webkit-transform: translateY(50%);
+            -ms-transform: translateY(50%);
+                transform: translateY(50%);
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+        -webkit-align-content: "";
+            -ms-flex-line-pack: "";
+                align-content: "";
+        color: #c6c6cb;
+        -webkit-transition: all .2s linear;
+        transition: all .2s linear; }
+        form#userComment .row .inputWrapper.text label .icon {
+          font-size: 1.6em; }
+        form#userComment .row .inputWrapper.text label p {
+          font-size: 1.5em;
+          -webkit-transform: translateX(-0.3em);
+              -ms-transform: translateX(-0.3em);
+                  transform: translateX(-0.3em); }
+      form#userComment .row .inputWrapper.text input.style1 ~ label.top {
+        font-size: 8px;
+        bottom: -webkit-calc(100% + .5em);
+        bottom: calc(100% + .5em);
+        -webkit-transform: translateY(50%);
+            -ms-transform: translateY(50%);
+                transform: translateY(50%);
+        right: 0; }
+      form#userComment .row .inputWrapper.text input.style2 ~ label.top {
+        font-size: 8px;
+        bottom: -webkit-calc(100% + 1.5em);
+        bottom: calc(100% + 1.5em);
+        -webkit-transform: translateY(50%);
+            -ms-transform: translateY(50%);
+                transform: translateY(50%);
+        right: 0.75em; }
+      form#userComment .row .inputWrapper.text .line {
+        width: 0%;
+        height: 1.2px;
+        background-color: #2295a6;
+        position: absolute;
+        right: 0;
+        top: -webkit-calc(100% - 1px);
+        top: calc(100% - 1px);
+        -webkit-transition: all .2s linear;
+        transition: all .2s linear; }
+      form#userComment .row .inputWrapper.text .msg {
+        width: auto;
+        height: auto;
+        border-radius: 3em;
+        padding: 0.75em 1.5em;
+        position: relative;
+        background-color: #ea6161;
+        position: absolute;
+        right: 0;
+        top: 115%;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all .2s linear;
+        transition: all .2s linear; }
+        form#userComment .row .inputWrapper.text .msg p {
+          color: #fbfbfb;
+          font-size: 1.4em; }
+        form#userComment .row .inputWrapper.text .msg i {
+          font-size: 2.4em;
+          color: #ea6161;
+          position: absolute;
+          right: 1.5em;
+          top: -webkit-calc(0% - .6em);
+          top: calc(0% - .6em); }
+      form#userComment .row .inputWrapper.text .msg.show {
+        opacity: 1;
+        visibility: visible;
+        z-index: 2; }
+  form#userComment .inputWrapper.textarea {
+    width: 53em;
+    height: auto;
+    position: relative;
+    margin-top: 3em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    form#userComment .inputWrapper.textarea textarea {
+      width: 100%;
+      font-size: 1.6em;
+      color: #2d2d31;
+      padding: 0.75em;
+      line-height: 1.5em;
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear;
+      resize: none; }
+      form#userComment .inputWrapper.textarea textarea::-webkit-input-placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+      form#userComment .inputWrapper.textarea textarea::-moz-placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+      form#userComment .inputWrapper.textarea textarea:-ms-input-placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+      form#userComment .inputWrapper.textarea textarea::-ms-input-placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+      form#userComment .inputWrapper.textarea textarea::placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+    form#userComment .inputWrapper.textarea textarea.style1 {
+      height: 8em;
+      border: 1.2px solid #d3d3d7;
+      border-radius: 1.5em; }
+      form#userComment .inputWrapper.textarea textarea.style1 ~ label {
+        bottom: 100%;
+        -webkit-transform: translateY(150%);
+            -ms-transform: translateY(150%);
+                transform: translateY(150%); }
+      form#userComment .inputWrapper.textarea textarea.style1:focus {
+        border: 1.2px solid #2295a6; }
+        form#userComment .inputWrapper.textarea textarea.style1:focus ~ label {
+          font-size: 8px;
+          right: 0.75em;
+          color: #2295a6;
+          bottom: -webkit-calc(100% + .5em);
+          bottom: calc(100% + .5em);
+          -webkit-transform: translateY(0);
+              -ms-transform: translateY(0);
+                  transform: translateY(0); }
+    form#userComment .inputWrapper.textarea textarea.style2 {
+      overflow: hidden;
+      border: none;
+      border-bottom: 1.2px solid #d3d3d7; }
+      form#userComment .inputWrapper.textarea textarea.style2 ~ label {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%); }
+      form#userComment .inputWrapper.textarea textarea.style2:focus {
+        border-bottom: 1.2px solid #2295a6; }
+        form#userComment .inputWrapper.textarea textarea.style2:focus ~ label {
+          font-size: 8px;
+          right: 0;
+          color: #2295a6;
+          top: 0;
+          -webkit-transform: translateY(-100%);
+              -ms-transform: translateY(-100%);
+                  transform: translateY(-100%); }
+        form#userComment .inputWrapper.textarea textarea.style2:focus ~ .line {
+          width: 100%; }
+    form#userComment .inputWrapper.textarea textarea.style1.error {
+      border: 1.2px solid #ea6161; }
+      form#userComment .inputWrapper.textarea textarea.style1.error ~ label {
+        color: #ea6161; }
+    form#userComment .inputWrapper.textarea textarea.style2.error {
+      border-bottom: 1.2px solid #ea6161; }
+      form#userComment .inputWrapper.textarea textarea.style2.error ~ label {
+        color: #ea6161; }
+    form#userComment .inputWrapper.textarea textarea.style1 ~ label.top {
+      font-size: 8px;
+      bottom: -webkit-calc(100% + 2em);
+      bottom: calc(100% + 2em);
+      -webkit-transform: translateY(50%);
+          -ms-transform: translateY(50%);
+              transform: translateY(50%);
+      right: 0; }
+    form#userComment .inputWrapper.textarea textarea.style2 ~ label.top {
+      font-size: 8px;
+      top: 0;
+      -webkit-transform: translateY(-100%);
+          -ms-transform: translateY(-100%);
+              transform: translateY(-100%);
+      right: 0; }
+    form#userComment .inputWrapper.textarea label {
+      width: auto;
+      height: auto;
+      position: absolute;
+      right: 0.75em;
+      position: absolute;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: nowrap;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap;
+      -webkit-align-content: "";
+          -ms-flex-line-pack: "";
+              align-content: "";
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear;
+      color: #c6c6cb; }
+      form#userComment .inputWrapper.textarea label i {
+        font-size: 1.6em; }
+      form#userComment .inputWrapper.textarea label p {
+        font-size: 1.5em;
+        -webkit-transform: translateX(-0.3em);
+            -ms-transform: translateX(-0.3em);
+                transform: translateX(-0.3em); }
+    form#userComment .inputWrapper.textarea .line {
+      width: 0%;
+      height: 1.2px;
+      background-color: #2295a6;
+      position: absolute;
+      right: 0;
+      top: -webkit-calc(100% - .6px);
+      top: calc(100% - .6px);
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear; }
+  form#userComment button[type="submit"] {
+    width: auto;
+    height: auto;
+    padding: 0.5em 1.7em;
+    margin: 1.5em auto 0 auto;
+    border-radius: 3em;
+    font-size: 1.6em;
+    cursor: pointer;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    color: #fbfbfb;
+    background-color: #2295a6;
+    border: 1.2px solid transparent; }
+    form#userComment button[type="submit"]:hover {
+      color: #2295a6;
+      background-color: #fbfbfb;
+      border: 1.2px solid #2295a6; }
+
+@media screen and (max-width: 900px) {
+  form#userComment {
+    font-size: 8px; }
+    form#userComment .row .inputWrapper.text input.style1:focus ~ label {
+      font-size: 6px; }
+    form#userComment .row .inputWrapper.text input.style2:focus ~ label {
+      font-size: 6px; }
+    form#userComment .row .inputWrapper.text input.style1 ~ label.top {
+      font-size: 6px; }
+    form#userComment .row .inputWrapper.text input.style2 ~ label.top {
+      font-size: 6px; }
+    form#userComment .inputWrapper.textarea textarea.style1:focus ~ label {
+      font-size: 6px; }
+    form#userComment .inputWrapper.textarea textarea.style2:focus ~ label {
+      font-size: 6px; }
+    form#userComment .inputWrapper.textarea textarea.style1 ~ label.top {
+      font-size: 6px; }
+    form#userComment .inputWrapper.textarea textarea.style2 ~ label.top {
+      font-size: 6px; } }
+
+@media screen and (max-width: 600px) {
+  form#userComment {
+    font-size: 6px; }
+    form#userComment .row .inputWrapper.text input.style1:focus ~ label {
+      font-size: 4px; }
+    form#userComment .row .inputWrapper.text input.style2:focus ~ label {
+      font-size: 4px; }
+    form#userComment .row .inputWrapper.text input.style1 ~ label.top {
+      font-size: 4px; }
+    form#userComment .row .inputWrapper.text input.style2 ~ label.top {
+      font-size: 4px; }
+    form#userComment .inputWrapper.textarea textarea.style1:focus ~ label {
+      font-size: 4px; }
+    form#userComment .inputWrapper.textarea textarea.style2:focus ~ label {
+      font-size: 4px; }
+    form#userComment .inputWrapper.textarea textarea.style1 ~ label.top {
+      font-size: 4px; }
+    form#userComment .inputWrapper.textarea textarea.style2 ~ label.top {
+      font-size: 4px; } }
+
+@media screen and (max-width: 360px) {
+  form#userComment {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: ""; }
+    form#userComment .row {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-align-content: flex-start;
+          -ms-flex-line-pack: start;
+              align-content: flex-start;
+      width: 100%; }
+      form#userComment .row .inputWrapper.text {
+        width: 90%;
+        height: 4em;
+        position: relative; }
+        form#userComment .row .inputWrapper.text:not(:first-child) {
+          margin-right: 0;
+          margin-top: 3em; }
+    form#userComment .inputWrapper.textarea {
+      width: 90%; } }
+
+form.reply {
+  width: auto;
+  height: auto;
+  margin-top: -0.75em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: ""; }
+  form.reply .inputWrapper.textarea {
+    width: 53em;
+    height: auto;
+    position: relative;
+    margin-top: 3em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    form.reply .inputWrapper.textarea textarea {
+      width: 100%;
+      font-size: 1.6em;
+      color: #2d2d31;
+      padding: 0.75em;
+      line-height: 1.5em;
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear;
+      resize: none; }
+      form.reply .inputWrapper.textarea textarea::-webkit-input-placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+      form.reply .inputWrapper.textarea textarea::-moz-placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+      form.reply .inputWrapper.textarea textarea:-ms-input-placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+      form.reply .inputWrapper.textarea textarea::-ms-input-placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+      form.reply .inputWrapper.textarea textarea::placeholder {
+        font-size: 1.6em;
+        color: #90909b; }
+    form.reply .inputWrapper.textarea textarea.style1 {
+      height: 8em;
+      border: 1.2px solid #d3d3d7;
+      border-radius: 1.5em; }
+      form.reply .inputWrapper.textarea textarea.style1 ~ label {
+        bottom: 100%;
+        -webkit-transform: translateY(150%);
+            -ms-transform: translateY(150%);
+                transform: translateY(150%); }
+      form.reply .inputWrapper.textarea textarea.style1:focus {
+        border: 1.2px solid #2295a6; }
+        form.reply .inputWrapper.textarea textarea.style1:focus ~ label {
+          font-size: 8px;
+          right: 0.75em;
+          color: #2295a6;
+          bottom: -webkit-calc(100% + .5em);
+          bottom: calc(100% + .5em);
+          -webkit-transform: translateY(0);
+              -ms-transform: translateY(0);
+                  transform: translateY(0); }
+    form.reply .inputWrapper.textarea textarea.style2 {
+      overflow: hidden;
+      border: none;
+      border-bottom: 1.2px solid #d3d3d7; }
+      form.reply .inputWrapper.textarea textarea.style2 ~ label {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%); }
+      form.reply .inputWrapper.textarea textarea.style2:focus {
+        border-bottom: 1.2px solid #2295a6; }
+        form.reply .inputWrapper.textarea textarea.style2:focus ~ label {
+          font-size: 8px;
+          right: 0;
+          color: #2295a6;
+          top: 0;
+          -webkit-transform: translateY(-100%);
+              -ms-transform: translateY(-100%);
+                  transform: translateY(-100%); }
+        form.reply .inputWrapper.textarea textarea.style2:focus ~ .line {
+          width: 100%; }
+    form.reply .inputWrapper.textarea textarea.style1.error {
+      border: 1.2px solid #ea6161; }
+      form.reply .inputWrapper.textarea textarea.style1.error ~ label {
+        color: #ea6161; }
+    form.reply .inputWrapper.textarea textarea.style2.error {
+      border-bottom: 1.2px solid #ea6161; }
+      form.reply .inputWrapper.textarea textarea.style2.error ~ label {
+        color: #ea6161; }
+    form.reply .inputWrapper.textarea textarea.style1 ~ label.top {
+      font-size: 8px;
+      bottom: -webkit-calc(100% + 2em);
+      bottom: calc(100% + 2em);
+      -webkit-transform: translateY(50%);
+          -ms-transform: translateY(50%);
+              transform: translateY(50%);
+      right: 0; }
+    form.reply .inputWrapper.textarea textarea.style2 ~ label.top {
+      font-size: 8px;
+      top: 0;
+      -webkit-transform: translateY(-100%);
+          -ms-transform: translateY(-100%);
+              transform: translateY(-100%);
+      right: 0; }
+    form.reply .inputWrapper.textarea label {
+      width: auto;
+      height: auto;
+      position: absolute;
+      right: 0.75em;
+      position: absolute;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: nowrap;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap;
+      -webkit-align-content: "";
+          -ms-flex-line-pack: "";
+              align-content: "";
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear;
+      color: #d3d3d7; }
+      form.reply .inputWrapper.textarea label i {
+        font-size: 1.6em; }
+      form.reply .inputWrapper.textarea label p {
+        font-size: 1.5em;
+        -webkit-transform: translateX(-0.3em);
+            -ms-transform: translateX(-0.3em);
+                transform: translateX(-0.3em); }
+    form.reply .inputWrapper.textarea .line {
+      width: 0%;
+      height: 1.2px;
+      background-color: #2295a6;
+      position: absolute;
+      right: 0;
+      top: -webkit-calc(100% - .6px);
+      top: calc(100% - .6px);
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear; }
+  form.reply button[type="submit"] {
+    width: auto;
+    height: auto;
+    padding: 0.5em 1.7em;
+    margin: 0.75em auto;
+    border-radius: 3em;
+    font-size: 1.6em;
+    cursor: pointer;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    color: #fbfbfb;
+    background-color: #2295a6;
+    border: 1.2px solid transparent; }
+    form.reply button[type="submit"]:hover {
+      color: #2295a6;
+      background-color: #fbfbfb;
+      border: 1.2px solid #2295a6; }
+
+@media screen and (max-width: 900px) {
+  form.reply {
+    font-size: 8px; }
+    form.reply .inputWrapper.text input.style1:focus ~ label {
+      font-size: 6px; }
+    form.reply .inputWrapper.text input.style2:focus ~ label {
+      font-size: 6px; }
+    form.reply .inputWrapper.text input.style1 ~ label.top {
+      font-size: 6px; }
+    form.reply .inputWrapper.text input.style2 ~ label.top {
+      font-size: 6px; }
+    form.reply .inputWrapper.textarea textarea.style1:focus ~ label {
+      font-size: 6px; }
+    form.reply .inputWrapper.textarea textarea.style2:focus ~ label {
+      font-size: 6px; }
+    form.reply .inputWrapper.textarea textarea.style1 ~ label.top {
+      font-size: 6px; }
+    form.reply .inputWrapper.textarea textarea.style2 ~ label.top {
+      font-size: 6px; } }
+
+@media screen and (max-width: 600px) {
+  form.reply {
+    font-size: 6px; }
+    form.reply .inputWrapper.text input.style1:focus ~ label {
+      font-size: 4px; }
+    form.reply .inputWrapper.text input.style2:focus ~ label {
+      font-size: 4px; }
+    form.reply .inputWrapper.text input.style1 ~ label.top {
+      font-size: 4px; }
+    form.reply .inputWrapper.text input.style2 ~ label.top {
+      font-size: 4px; }
+    form.reply .inputWrapper.textarea textarea.style1:focus ~ label {
+      font-size: 4px; }
+    form.reply .inputWrapper.textarea textarea.style2:focus ~ label {
+      font-size: 4px; }
+    form.reply .inputWrapper.textarea textarea.style1 ~ label.top {
+      font-size: 4px; }
+    form.reply .inputWrapper.textarea textarea.style2 ~ label.top {
+      font-size: 4px; } }
+
+@media screen and (max-width: 400px) {
+  form.reply {
+    width: 100%; }
+    form.reply .inputWrapper.textarea {
+      width: 90%; } }
+
+form#searchForm {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start; }
+  form#searchForm .inputWrapper.text {
+    width: 26em;
+    height: 4em;
+    position: relative;
+    margin: 1.5em; }
+    form#searchForm .inputWrapper.text input {
+      width: 100%;
+      height: 100%;
+      line-height: 4em;
+      padding: 0 0.75em;
+      font-size: 1.6em;
+      color: #2d2d31;
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear; }
+      form#searchForm .inputWrapper.text input::-webkit-input-placeholder {
+        color: #90909b;
+        font-size: 1.6em; }
+      form#searchForm .inputWrapper.text input::-moz-placeholder {
+        color: #90909b;
+        font-size: 1.6em; }
+      form#searchForm .inputWrapper.text input:-ms-input-placeholder {
+        color: #90909b;
+        font-size: 1.6em; }
+      form#searchForm .inputWrapper.text input::-ms-input-placeholder {
+        color: #90909b;
+        font-size: 1.6em; }
+      form#searchForm .inputWrapper.text input::placeholder {
+        color: #90909b;
+        font-size: 1.6em; }
+    form#searchForm .inputWrapper.text input.style1 {
+      border: none;
+      border-bottom: 1.2px solid #d3d3d7; }
+      form#searchForm .inputWrapper.text input.style1:focus ~ label {
+        color: #2295a6;
+        font-size: 8px;
+        bottom: -webkit-calc(100% + .5em);
+        bottom: calc(100% + .5em);
+        -webkit-transform: translateY(50%);
+            -ms-transform: translateY(50%);
+                transform: translateY(50%);
+        right: 0; }
+      form#searchForm .inputWrapper.text input.style1:focus ~ .line {
+        width: 100%; }
+    form#searchForm .inputWrapper.text input.style2 {
+      border: 1.2px solid #d3d3d7;
+      border-radius: 3em; }
+      form#searchForm .inputWrapper.text input.style2:focus {
+        border: 1.2px solid #2295a6; }
+        form#searchForm .inputWrapper.text input.style2:focus ~ label {
+          color: #2295a6;
+          font-size: 8px;
+          bottom: -webkit-calc(100% + 1.5em);
+          bottom: calc(100% + 1.5em);
+          -webkit-transform: translateY(50%);
+              -ms-transform: translateY(50%);
+                  transform: translateY(50%);
+          right: 0.75em; }
+        form#searchForm .inputWrapper.text input.style2:focus ~ .line {
+          width: 0%; }
+    form#searchForm .inputWrapper.text input.style1.error {
+      border-bottom: 1.2px solid #ea6161; }
+      form#searchForm .inputWrapper.text input.style1.error ~ label {
+        color: #ea6161; }
+      form#searchForm .inputWrapper.text input.style1.error ~ .line {
+        background-color: #ea6161; }
+    form#searchForm .inputWrapper.text input.style2.error {
+      border: 1.2px solid #ea6161; }
+      form#searchForm .inputWrapper.text input.style2.error ~ label {
+        color: #ea6161; }
+    form#searchForm .inputWrapper.text label {
+      width: auto;
+      height: auto;
+      position: absolute;
+      right: 0.75em;
+      bottom: 50%;
+      -webkit-transform: translateY(50%);
+          -ms-transform: translateY(50%);
+              transform: translateY(50%);
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: nowrap;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap;
+      -webkit-align-content: "";
+          -ms-flex-line-pack: "";
+              align-content: "";
+      color: #c6c6cb;
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear; }
+      form#searchForm .inputWrapper.text label .isRequire {
+        width: auto;
+        height: auto;
+        color: #e74a4a;
+        font-size: 1.1em;
+        padding-left: .3em; }
+      form#searchForm .inputWrapper.text label .icon {
+        font-size: 1.6em; }
+      form#searchForm .inputWrapper.text label p {
+        font-size: 1.5em;
+        -webkit-transform: translateX(-0.3em);
+            -ms-transform: translateX(-0.3em);
+                transform: translateX(-0.3em); }
+    form#searchForm .inputWrapper.text input.style1 ~ label.top {
+      font-size: 8px;
+      bottom: -webkit-calc(100% + .5em);
+      bottom: calc(100% + .5em);
+      -webkit-transform: translateY(50%);
+          -ms-transform: translateY(50%);
+              transform: translateY(50%);
+      right: 0; }
+    form#searchForm .inputWrapper.text input.style2 ~ label.top {
+      font-size: 8px;
+      bottom: -webkit-calc(100% + 1.5em);
+      bottom: calc(100% + 1.5em);
+      -webkit-transform: translateY(50%);
+          -ms-transform: translateY(50%);
+              transform: translateY(50%);
+      right: 0.75em; }
+    form#searchForm .inputWrapper.text .line {
+      width: 0%;
+      height: 1.2px;
+      background-color: #2295a6;
+      position: absolute;
+      right: 0;
+      top: -webkit-calc(100% - 1px);
+      top: calc(100% - 1px);
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear; }
+    form#searchForm .inputWrapper.text .msg {
+      width: auto;
+      height: auto;
+      border-radius: 3em;
+      padding: 0.75em 1.5em;
+      position: relative;
+      background-color: #ea6161;
+      position: absolute;
+      right: 0;
+      top: 115%;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear; }
+      form#searchForm .inputWrapper.text .msg p {
+        color: #fbfbfb;
+        font-size: 1.4em; }
+      form#searchForm .inputWrapper.text .msg i {
+        font-size: 2.4em;
+        color: #ea6161;
+        position: absolute;
+        right: 1.5em;
+        top: -webkit-calc(0% - .6em);
+        top: calc(0% - .6em); }
+    form#searchForm .inputWrapper.text .msg.show {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2; }
+  form#searchForm button[type="submit"] {
+    margin: 1.5em;
+    cursor: pointer;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    color: white;
+    background-color: #2295a6;
+    border: 1.2px solid transparent;
+    font-size: 1.5em; }
+    form#searchForm button[type="submit"]:hover {
+      color: #2295a6;
+      background-color: white;
+      border: 1.2px solid #2295a6; }
 
 @font-face {
   font-family: iranSans;
