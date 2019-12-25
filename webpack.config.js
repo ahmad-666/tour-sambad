@@ -22,7 +22,10 @@ module.exports = {
         'signup' : './src/signup/signup.js',
         'ticketGuide' : './src/ticketGuide/ticketGuide.js',
         'tour' : './src/tour/tour.js',
-        'tours' : './src/tours/tours.js'
+        'tours' : './src/tours/tours.js',
+        'agency' : './src/agency/agency.js',
+        'agencies' : './src/agencies/agencies.js',
+        'reserve' : './src/reserve/reserve.js',
     },
     output: {
         filename: '[name].js',
@@ -236,6 +239,24 @@ module.exports = {
             inject: true,
             chunks: ['tours'],
             template: './src/tours/tours.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'agency.html' , 
+            inject: true,
+            chunks: ['agency'],
+            template: './src/agency/agency.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'agencies.html' , 
+            inject: true,
+            chunks: ['agencies'],
+            template: './src/agencies/agencies.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'reserve.html' , 
+            inject: true,
+            chunks: ['reserve'],
+            template: './src/reserve/reserve.html'
         }),
         new CleanWebpackPlugin()
     ]
