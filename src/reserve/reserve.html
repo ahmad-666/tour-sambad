@@ -317,7 +317,7 @@
         </div>
         <form novalidate id="reserve" name="reserve" method="GET" action="#!" enctype="text/plain">
             <div id="timelineSlider" style="right:0%">
-                <!-- <div class="slide" id="selectHotel">
+                <div class="slide" id="selectHotel">
                     <h4>هتلی که قصد اقامت دارید را انتخاب کنید</h4>
                     <div class="content">
                         <table>
@@ -703,12 +703,49 @@
                         <button type="button" class="changeSlide prev" data-slide="-1">مرحله قبل</button>
                         <button type="button" class="changeSlide next" data-slide="1">ثبت مشخصات</button>
                     </div>
-                </div> -->
+                </div>
                 <div class="slide" id="otherInfos">
                     <h4>مشخصات همسفران را وارد کنید</h4>
                     <div class="content appendDOM">
                         <div class="row cloneMe">
-                            <p>dasdsadassadsad</p>
+                            <div class="inputs">
+                                <div class="inputWrapper text">
+                                    <input type="text" id="mainName" name="mainName" class="style1 labelHandler validate" required>
+                                    <label for="mainName">
+                                        <i class="fas fa-user icon"></i>
+                                        <p>نام و نام خانوادگی</p>
+                                    </label>
+                                    <span class="line"></span>
+                                    <div class="msg">
+                                        <p>نام و نام خانوادگی خود را وارد نمایید</p>
+                                        <i class="fas fa-caret-up"></i>
+                                    </div>
+                                </div>
+                                <div class="inputWrapper text">
+                                    <input type="text" id="mainSnn" name="mainSnn" class="style1 labelHandler validate" required>
+                                    <label for="mainSnn">
+                                        <i class="fas fa-poll-h icon"></i>
+                                        <p>کد ملی</p>
+                                    </label>
+                                    <span class="line"></span>
+                                    <div class="msg">
+                                        <p>کدملی خود را وارد نمایید</p>
+                                        <i class="fas fa-caret-up"></i>
+                                    </div>
+                                </div>
+                                <div class="inputWrapper text">
+                                    <input type="text" id="mainTel" name="mainTel" class="style1 labelHandler validate" required>
+                                    <label for="mainTel">
+                                        <i class="fas fa-phone icon"></i>
+                                        <p>تلفن تماس</p>
+                                    </label>
+                                    <span class="line"></span>
+                                    <div class="msg">
+                                        <p>  تلفن تماس  خود را وارد نمایید</p>
+                                        <i class="fas fa-caret-up"></i>
+                                    </div>
+                                </div>     
+                            </div>               
                         </div>
                         <div class="appendTrigger">
                             <i class="fas fa-plus"></i>

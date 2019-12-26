@@ -44,10 +44,31 @@ function createRow(){
     timelineWrapper.querySelectorAll('.labelHandler').forEach(label=> new LabelHandler(label)) ;
 }
 createRow() ;
+let companyIndex = 1 ;
 new AppendDOM(
     timelineWrapper.querySelector('#otherInfos .appendDOM'),
-    timelineWrapper.querySelector('#otherInfos .cloneMe').cloneNode(true),
+    timelineWrapper.querySelector('#otherInfos .cloneMe'),
     timelineWrapper.querySelector('#otherInfos .appendTrigger'),
-    'row',
-    createRow
+    function(newElm){
+        let nameInput = newElm.querySelector('.inputs .inputWrapper:nth-child(1) input');
+        let nameLabel = newElm.querySelector('.inputs .inputWrapper:nth-child(1) label');
+        let snnInput = newElm.querySelector('.inputs .inputWrapper:nth-child(2) input');
+        let snnLabel = newElm.querySelector('.inputs .inputWrapper:nth-child(2) label');
+        let phoneInput = newElm.querySelector('.inputs .inputWrapper:nth-child(3) input');
+        let phoneLabel = newElm.querySelector('.inputs .inputWrapper:nth-child(3) label');
+        nameInput.setAttribute('id',`company${companyIndex}Name`) ;
+        nameInput.setAttribute('name',`company${companyIndex}Name`) ;
+        nameLabel.setAttribute('for',`company${companyIndex}Name`) ;
+        nameInput.value = '' ;
+        snnInput.setAttribute('id',`company${companyIndex}Snn`) ;
+        snnInput.setAttribute('name',`company${companyIndex}Snn`) ;
+        snnLabel.setAttribute('for',`company${companyIndex}Snn`) ;
+        snnInput.value = '' ;
+        phoneInput.setAttribute('id',`company${companyIndex}Tel`) ;
+        phoneInput.setAttribute('name',`company${companyIndex}Tel`) ;
+        phoneLabel.setAttribute('for',`company${companyIndex}Tel`) ;
+        phoneInput.value = '' ;
+        createRow() ;
+        companyIndex++ ;
+    }
 )

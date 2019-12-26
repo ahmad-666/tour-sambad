@@ -828,11 +828,10 @@ class FixElm{
 }
 //new FixElm(document.querySelector('.leftSection'),document.querySelector('footer'),850)
 class AppendDOM{
-    constructor(container,clone,trigger,targetClass,cb){
+    constructor(container,clone,trigger,cb){
         this.container = container ;
         this.clone = clone ;
         this.trigger = trigger ;
-        this.targetClass = targetClass ;
         this.cb = cb ;
         this.init() ;
     }
@@ -840,15 +839,25 @@ class AppendDOM{
         this.trigger.addEventListener('click',this.append.bind(this)) ;
     }
     append(){
-        this.container.insertBefore(this.clone,this.trigger) ;
-        //this.clone = this.container.querySelector(`.${this.targetClass}:last-child`).cloneNode(true) ;
-        this.container = this.container.parentElement.querySelector('.appendDOM');
-        console.log(this.container) ;
-        if(this.cb) {
-            this.cb() ;
-        }
+        let newElm = null ;
+        this.container.insertBefore(
+            newElm = this.clone.cloneNode(true),
+            this.trigger
+        ) ;
+        if(this.cb) this.cb(newElm) ;    
     }
 }
+// <div class="appendDOM">
+//     <div class="cloneMe"></div>
+//     <div class="appendTrigger"></div>
+// </div>
+// new AppendDOM(
+//     <Elm>.querySelector('.appendDOM'),
+//     <Elm>.querySelector('.cloneMe'),
+//     <Elm>.querySelector('.appendTrigger'),
+//     function(newElm){//executed after we append to DOM}
+// )
+
 //exports------------------------------------------------------------------------
 export default{
     getStyle,
