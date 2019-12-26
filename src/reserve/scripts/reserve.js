@@ -56,6 +56,8 @@ new AppendDOM(
         let snnLabel = newElm.querySelector('.inputs .inputWrapper:nth-child(2) label');
         let phoneInput = newElm.querySelector('.inputs .inputWrapper:nth-child(3) input');
         let phoneLabel = newElm.querySelector('.inputs .inputWrapper:nth-child(3) label');
+        let title = newElm.querySelector('h6') ;
+        title.textContent = `مشخصات همراه${companyIndex}` ;
         nameInput.setAttribute('id',`company${companyIndex}Name`) ;
         nameInput.setAttribute('name',`company${companyIndex}Name`) ;
         nameLabel.setAttribute('for',`company${companyIndex}Name`) ;
