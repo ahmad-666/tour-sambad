@@ -8445,6 +8445,30 @@ form#reserve #otherInfos .inputs {
     background-color: #2295a6;
     font-size: 1.4em; }
 
+@media screen and (max-width: 900px) {
+  form#reserve #otherInfo .inputs {
+    font-size: 8px; }
+    form#reserve #otherInfo .inputs .inputWrapper.text input.style1:focus ~ label {
+      font-size: 6px; }
+    form#reserve #otherInfo .inputs .inputWrapper.text input.style2:focus ~ label {
+      font-size: 6px; }
+    form#reserve #otherInfo .inputs .inputWrapper.text input.style1 ~ label.top {
+      font-size: 6px; }
+    form#reserve #otherInfo .inputs .inputWrapper.text input.style2 ~ label.top {
+      font-size: 6px; } }
+
+@media screen and (max-width: 600px) {
+  form#reserve #otherInfo .inputs {
+    font-size: 6px; }
+    form#reserve #otherInfo .inputs .inputWrapper.text input.style1:focus ~ label {
+      font-size: 4px; }
+    form#reserve #otherInfo .inputs .inputWrapper.text input.style2:focus ~ label {
+      font-size: 4px; }
+    form#reserve #otherInfo .inputs .inputWrapper.text input.style1 ~ label.top {
+      font-size: 4px; }
+    form#reserve #otherInfo .inputs .inputWrapper.text input.style2 ~ label.top {
+      font-size: 4px; } }
+
 @font-face {
   font-family: iranSans;
   src: url(assets/fonts/iransans.ttf); }
@@ -10046,6 +10070,10 @@ header {
               align-content: ""; }
       #timelineWrapper form#reserve #timelineSlider #otherInfos .content .row:not(:last-child) {
         border-bottom: 1px solid #c6c6cb; }
+      #timelineWrapper form#reserve #timelineSlider #otherInfos .content .row h6 {
+        font-size: 1.6em;
+        font-weight: 700;
+        color: #2d2d31; }
     #timelineWrapper form#reserve #timelineSlider #otherInfos .content .title {
       width: auto;
       height: auto;
