@@ -764,9 +764,7 @@ class FileHandler{
 //     new LabelHandler(labelHandler) ;
 // })
 // //NumberInput--------------------------------
-// document.querySelectorAll('input[type="number"]').forEach(number => {
-//     new NumberInput(number) ;
-// })
+// document.querySelectorAll('input[type="number"]').forEach(number=> new NumberInput(number))
 // //NumberHandler--------------------------------
 //document.querySelectorAll('.inputWrapper.numberHandler').forEach(numberHandler => {
 //    let initVal = parseFloat(numberHandler.getAttribute('data-init'));
@@ -802,6 +800,15 @@ class FileHandler{
 // //SearchList--------------------------------
 // document.querySelectorAll('.inputWrapper.searchList').forEach(searchList => {
 //     new SearchList(searchList) ;
+// })
+//***************
+//***************
+//***************
+//we can use above things if we have one form with multiple submits :
+//<formWraper>.querySelectorAll('.row').forEach(row=>{
+//     let inputs = row.querySelectorAll('.inputs .validate') ;
+//     let submit = row.querySelector('.inputs button') ;
+//     new FormValidation(row,submit,inputs,false,null) ;
 // })
 //exports--------------------------------
 //exports--------------------------------

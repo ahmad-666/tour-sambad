@@ -33,7 +33,7 @@
             position: relative;
             p{
                 @include center-x ;
-                width: 200% ;
+                width: 300% ;
                 text-align:center ;
                 top: -2em ;
                 font-size: $fontM ;
@@ -70,7 +70,7 @@
             }
         }
     }
-    form#basket{
+    form#reserve{
         width: 100% ;
         height: auto;
         margin-top: $dist2 ;

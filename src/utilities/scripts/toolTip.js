@@ -4,7 +4,5 @@ function Tooltip(elm){
     this.tooltip = this.elm.querySelector('.tooltip') ;
     this.tooltip.textContent = this.tooltipText ;
 }
-//document.querySelectorAll('.withTooltip').forEach(tooltip => {
-//    new Tooltip(tooltip) ;
-//})
+//document.querySelectorAll('.withTooltip').forEach(tooltip=>new Tooltip(tooltip))
 export default Tooltip ;
