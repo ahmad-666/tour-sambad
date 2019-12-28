@@ -858,6 +858,24 @@ class AppendDOM{
 //     function(newElm){//executed after we append to DOM}
 // )
 
+class MenuToggle{
+    constructor(menuTrigger,menu,blackFilter){
+        this.menuTrigger = menuTrigger ;
+        this.menu = menu ;
+        this.blackFilter = blackFilter ;
+        this.init() ;
+    }
+    init(){
+        this.menuTrigger.addEventListener('click',this.toggleMenu.bind(this)) ;
+    }
+    toggleMenu(e){
+        e.stopPropagation() ;
+        this.menuTrigger.classList.toggle('show') ;
+        this.menu.classList.toggle('show') ;
+        if(this.blackFilter) this.blackFilter.classList.toggle('show') ;
+        if(this.menu.classList.contains('show')) docHandler(this.menu,[this.blackFilter,this.menuTrigger]);
+    }
+}
 //exports------------------------------------------------------------------------
 export default{
     getStyle,
@@ -898,5 +916,6 @@ export default{
     FadeEffect,
     SwapIconText,
     FixElm,
-    AppendDOM
+    AppendDOM,
+    MenuToggle
 }

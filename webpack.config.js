@@ -26,6 +26,10 @@ module.exports = {
         'agency' : './src/agency/agency.js',
         'agencies' : './src/agencies/agencies.js',
         'reserve' : './src/reserve/reserve.js',
+        'changePassword' : './src/changePassword/changePassword.js',
+        'editProfile' : './src/editProfile/editProfile.js',
+        'toursResume' : './src/toursResume/toursResume.js',
+        'companies' : './src/companies/companies.js',
     },
     output: {
         filename: '[name].js',
@@ -257,6 +261,30 @@ module.exports = {
             inject: true,
             chunks: ['reserve'],
             template: './src/reserve/reserve.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'changePassword.html' , 
+            inject: true,
+            chunks: ['changePassword'],
+            template: './src/changePassword/changePassword.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'editProfile.html' , 
+            inject: true,
+            chunks: ['editProfile'],
+            template: './src/editProfile/editProfile.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'toursResume.html' , 
+            inject: true,
+            chunks: ['toursResume'],
+            template: './src/toursResume/toursResume.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'companies.html' , 
+            inject: true,
+            chunks: ['companies'],
+            template: './src/companies/companies.html'
         }),
         new CleanWebpackPlugin()
     ]

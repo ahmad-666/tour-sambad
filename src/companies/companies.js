@@ -5,10 +5,9 @@ import '../utilities/styles/form.scss'
 import '../init.scss' ;
 import '../index/styles/header.scss' ;
 import '../reserve/styles/menu.scss' ;
-import '../reserve/styles/reserve.scss' ;
 import '../index/styles/footer.scss' ;
 //load scripts
 import '../index/scripts/nav.js' ;
 import '../reserve/scripts/menu.js' ;
-import '../reserve/scripts/reserve.js' ;
+import '../companies/scripts/companies.js' ;
 //load videos
