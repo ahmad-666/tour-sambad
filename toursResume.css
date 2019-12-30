@@ -6300,6 +6300,9 @@ header {
 #menuToggle.show {
   right: 31em; }
 
+#menuToggle.behind {
+  z-index: 0; }
+
 #blackFilter {
   display: none;
   width: 100%;
@@ -6548,15 +6551,18 @@ header {
       #menu ul li:nth-child(3) a i {
         color: #6956D8; }
       #menu ul li:nth-child(4) a i {
-        color: #2295a6; }
+        color: #2295a6;
+        font-size: 1.2em; }
       #menu ul li:nth-child(5) a i {
+        color: #90909b; }
+      #menu ul li:nth-child(6) a i {
         color: #b8832d;
         font-size: 1.2em; }
-      #menu ul li:nth-child(6) a i {
-        color: #e74a4a; }
       #menu ul li:nth-child(7) a i {
-        color: #FF805B; }
+        color: #e74a4a; }
       #menu ul li:nth-child(8) a i {
+        color: #FF805B; }
+      #menu ul li:nth-child(9) a i {
         color: #FF427B; }
 
 #menu.show {
@@ -6726,6 +6732,38 @@ header {
           #toursResume .tours .tour .info .col.priceCol p:nth-child(2) {
             color: #90909b;
             font-size: 2em; }
+          #toursResume .tours .tour .info .col.priceCol .code {
+            margin-top: 1.5em;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-pack: start;
+            -webkit-justify-content: flex-start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
+            -webkit-box-align: start;
+            -webkit-align-items: flex-start;
+                -ms-flex-align: start;
+                    align-items: flex-start;
+            -webkit-flex-wrap: nowrap;
+                -ms-flex-wrap: nowrap;
+                    flex-wrap: nowrap;
+            -webkit-align-content: "";
+                -ms-flex-line-pack: "";
+                    align-content: ""; }
+            #toursResume .tours .tour .info .col.priceCol .code h6 {
+              font-size: 2em;
+              font-weight: 700;
+              color: #2295a6; }
+            #toursResume .tours .tour .info .col.priceCol .code p {
+              font-size: 1.8em;
+              color: #90909b; }
         #toursResume .tours .tour .info .col.companiesCol {
           width: 50%; }
           #toursResume .tours .tour .info .col.companiesCol p {
@@ -6871,6 +6909,7 @@ header {
                 margin-top: 0; }
           #toursResume .tours .tour .info .col.infoCol .innerRow.details {
             margin-right: -1.5em;
+            margin-top: -1.5em;
             -webkit-box-orient: horizontal;
             -webkit-box-direction: normal;
             -webkit-flex-direction: row;
@@ -6892,7 +6931,7 @@ header {
                     align-content: flex-start; }
           #toursResume .tours .tour .info .col.infoCol .innerRow.inOut {
             margin-right: -1.5em;
-            margin-top: -1.5em;
+            margin-top: 0;
             -webkit-box-orient: horizontal;
             -webkit-box-direction: normal;
             -webkit-flex-direction: row;
@@ -6912,6 +6951,10 @@ header {
             -webkit-align-content: flex-start;
                 -ms-flex-line-pack: start;
                     align-content: flex-start; }
+            #toursResume .tours .tour .info .col.infoCol .innerRow.inOut .in i.fa-plane {
+              -webkit-transform: rotate(180deg);
+                  -ms-transform: rotate(180deg);
+                      transform: rotate(180deg); }
 
 footer {
   width: 100%;
