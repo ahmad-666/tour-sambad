@@ -3,7 +3,7 @@ import form from '../../utilities/scripts/form.js' ;
 import Collapse from '../../utilities/scripts/collapse' ;
 import modal from '../../utilities/scripts/modal.js' ;
 let adminApproveTriggers = document.querySelectorAll('.modalTrigger[data-modal="adminApprove"]') ;
-let adminApproveModal = new modal.Modal([...adminApproveTriggers],[],true) ;
+let adminApproveModal = new modal.Modal([...adminApproveTriggers],[],true,null,()=>{;},()=>{;}) ;
 let commentsWrapper = document.querySelector('#comments') ;
 commentsWrapper.querySelectorAll('.labelHandler').forEach(labelHandler => {
     new form.LabelHandler(labelHandler) ;
