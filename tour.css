@@ -12932,6 +12932,9 @@ header {
   margin-top: 0; }
 
 #adminApprove {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -100;
   width: 45em;
   height: auto;
   padding: 1.5em;
@@ -12984,6 +12987,11 @@ header {
       color: #2295a6;
       background-color: white;
       border: 1.2px solid #2295a6; }
+
+#adminApprove.show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10; }
 
 @media screen and (max-width: 1000px) {
   #comments {
