@@ -176,14 +176,28 @@
                                 }
                             }
                         }
-                        .priceWrapper{
-                            .before{color: lighten($textGrey,20%);}
-                            .discount{color: $textWhite;}
-                            .finalPrice{
-                                font-size: $fontL;
-                                color: $primaryColor;
+                        .otherWrapper{
+                            width: auto;
+                            height: auto;
+                            display: flex;
+                            @include flex(row,flex-start,center,wrap,flex-start) ;
+                            .priceWrapper{
+                                .before{color: lighten($textGrey,20%);}
+                                .discount{color: $textWhite;}
+                                .finalPrice{
+                                    font-size: $fontL;
+                                    color: $primaryColor;
+                                }
+                            }
+                            .innerForm{
+                                width: auto;
+                                height: auto;
+                                margin-right: $dist4;
+                                display: flex;
+                                @include flex(row,flex-start,center,nowrap,"") ;
                             }
                         }
+                       
         
                     }
                 }

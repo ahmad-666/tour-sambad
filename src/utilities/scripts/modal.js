@@ -1,5 +1,5 @@
 import util from '../utilities.js' ;
-function Modal(triggers,others,needCheck){
+function Modal(triggers,others,needCheck,blackFilter,afterOpen,afterEnd){
     //this.triggers is array and we use array because sometimes multiple things will trigger same
     //modal like comment section(multiple submit button trigger adminApprove modal)
     //others is for others in docHandler
@@ -13,12 +13,17 @@ function Modal(triggers,others,needCheck){
     this.needCheck = needCheck ;
     this.modal = document.querySelector(`#${this.triggers[0].getAttribute('data-modal')}`) ;
     this.close = this.modal.querySelector('.close') ;
+    this.blackFilter = blackFilter ;
+    this.afterOpen = afterOpen ;
+    this.afterEnd = afterEnd ;
     if(!this.needCheck) this.triggers.forEach(trigger =>trigger.addEventListener('click',this.openModal.bind(this)));   
 }
 Modal.prototype.openModal = function(e){
     this.modal.classList.add('show') ;
-    this.close.addEventListener('click',this) ;
+    if(this.blackFilter) this.blackFilter.classList.add('show') ;
+    if(this.close) this.close.addEventListener('click',this) ;
     setTimeout(()=>document.addEventListener('click',this),10)
+    this.afterOpen() ;
 }
 Modal.prototype.handleEvent = function(e){
     if(e.currentTarget == document){
@@ -29,9 +34,24 @@ Modal.prototype.handleEvent = function(e){
 }
 Modal.prototype.closeModal = function(){
     this.modal.classList.remove('show') ;
-    this.close.removeEventListener('click',this) ;
+    if(this.blackFilter) this.blackFilter.classList.remove('show') ;
+    if(this.close) this.close.removeEventListener('click',this) ;
     document.removeEventListener('click',this) ;
+    this.afterEnd() ;
 }
+// <button class="modalTrigger" data-modal="answer1Modal">show modal</button>
+// <div class="modal" id="answer1Modal">...</div>
+// ticketTable.querySelectorAll('.modalTrigger').forEach((trigger,i,all)=>{
+//     all = [...all] ;
+//     let others = all.filter(a=>a!=trigger);
+//     new Modal([trigger],others,false,blackFilter1,
+//         ()=>{menuTrigger1.classList.add('behind') ;},
+//         ()=>{menuTrigger1.classList.remove('behind') ;}
+//     ) ;
+// })
+//---------------------------
+//---------------------------
+//---------------------------
 // let adminApproveTriggers = document.querySelectorAll('.modalTrigger[data-modal="adminApprove"]') ;
 // let adminApproveModal = new modal.Modal([...adminApproveTriggers],[],false) ;
 //OR

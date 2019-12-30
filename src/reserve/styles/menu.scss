@@ -25,6 +25,9 @@
 #menuToggle.show{
     right: 31em;
 }
+#menuToggle.behind{
+    z-index: 0;
+}
 #blackFilter{
     display: none;
     width: 100%;
@@ -154,10 +157,15 @@
             }
             &:nth-child(4){
                 a{
-                    i{color: $primaryColor;}
+                    i{color: $primaryColor;font-size: $fontS;}
                 }
             }
             &:nth-child(5){
+                a{
+                    i{color: $textGrey;}
+                }
+            }
+            &:nth-child(6){
                 a{
                     i{
                         color: $brownColor;
@@ -165,17 +173,17 @@
                     }
                 }
             }
-            &:nth-child(6){
+            &:nth-child(7){
                 a{
                     i{color: $redColor2;}
                 }
             }
-            &:nth-child(7){
+            &:nth-child(8){
                 a{
                     i{color: $orangeColor1;}
                 }
             }
-            &:nth-child(8){
+            &:nth-child(9){
                 a{
                     i{color: $redColor1;}
                 }

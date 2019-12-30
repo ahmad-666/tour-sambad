@@ -57,6 +57,20 @@
                             font-size: $fontL ;
                         }
                     }
+                    .code{
+                        margin-top: $dist2;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        h6{
+                            font-size: $fontL;
+                            font-weight: 700;
+                            color: $primaryColor;
+                        }
+                        p{
+                            font-size: $fontM + .2em;
+                            color: $textGrey;
+                        }
+                    }
                 }
                 .col.companiesCol{
                     width: 50%;
@@ -132,12 +146,16 @@
                     }
                     .innerRow.details{
                         margin-right: -$dist2;
+                        margin-top: -$dist2;
                         @include flex(row,flex-start,center,wrap,flex-start) ;
                     }
                     .innerRow.inOut{
                         margin-right: -$dist2;
-                        margin-top: -$dist2;
+                        margin-top: 0;
                         @include flex(row,flex-start,center,wrap,flex-start) ;                  
+                        .in{
+                            i.fa-plane{transform: rotate(180deg);}
+                        }
                     }
                 }
                 

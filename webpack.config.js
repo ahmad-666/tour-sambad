@@ -32,8 +32,7 @@ module.exports = {
         'companies' : './src/companies/companies.js',
         'returnMoney' : './src/returnMoney/returnMoney.js',
         'sendTicket' : './src/sendTicket/sendTicket.js',
-        'tickets' : './src/tickets/tickets.js',
-        'discounts' : './src/discounts/discounts.js'
+        'tickets' : './src/tickets/tickets.js'
     },
     output: {
         filename: '[name].js',
@@ -301,12 +300,6 @@ module.exports = {
             inject: true,
             chunks: ['tickets'],
             template: './src/tickets/tickets.html'
-        }),
-        new HtmlWebpackPlugin({ 
-            filename: 'discounts.html' , 
-            inject: true,
-            chunks: ['discounts'],
-            template: './src/discounts/discounts.html'
         }),
         new HtmlWebpackPlugin({ 
             filename: 'sendTicket.html' , 
