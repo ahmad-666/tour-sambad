@@ -30,6 +30,10 @@ module.exports = {
         'editProfile' : './src/editProfile/editProfile.js',
         'toursResume' : './src/toursResume/toursResume.js',
         'companies' : './src/companies/companies.js',
+        'returnMoney' : './src/returnMoney/returnMoney.js',
+        'sendTicket' : './src/sendTicket/sendTicket.js',
+        'tickets' : './src/tickets/tickets.js',
+        'discounts' : './src/discounts/discounts.js'
     },
     output: {
         filename: '[name].js',
@@ -285,6 +289,30 @@ module.exports = {
             inject: true,
             chunks: ['companies'],
             template: './src/companies/companies.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'returnMoney.html' , 
+            inject: true,
+            chunks: ['returnMoney'],
+            template: './src/returnMoney/returnMoney.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'tickets.html' , 
+            inject: true,
+            chunks: ['tickets'],
+            template: './src/tickets/tickets.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'discounts.html' , 
+            inject: true,
+            chunks: ['discounts'],
+            template: './src/discounts/discounts.html'
+        }),
+        new HtmlWebpackPlugin({ 
+            filename: 'sendTicket.html' , 
+            inject: true,
+            chunks: ['sendTicket'],
+            template: './src/sendTicket/sendTicket.html'
         }),
         new CleanWebpackPlugin()
     ]

@@ -2,6 +2,7 @@ import Form from '../../utilities/scripts/form.js' ;
 let FormValidate = Form.FormValidate ;
 let LabelHandler = Form.LabelHandler ;
 let NumberInput = Form.NumberInput ;
+let Toggle = Form.Toggle ;
 let editProfileForm = document.querySelector('form#editProfile') ;
 let editProfileData = {
     elm: editProfileForm,
@@ -14,5 +15,5 @@ new FormValidate(editProfileData.elm,editProfileData.submit,
     editProfileData.inputs,editProfileData.send,editProfileData.modal) ;
 editProfileForm.querySelectorAll('.labelHandler').forEach(label=>new LabelHandler(label)) ;
 editProfileForm.querySelectorAll('input[type="number"]').forEach(number=> new NumberInput(number));
-
+editProfileForm.querySelectorAll('.inputWrapper.toggle').forEach(toggle=>new Toggle(toggle))
 

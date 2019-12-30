@@ -287,169 +287,107 @@
             </ul>
         </nav>
     </header>
-    <form novalidate id="editProfile" name="editProfile" class="containerStyle" method="GET" action="#!" enctype="text/plain">
-        <h4>ویرایش مشخصات</h4>
-        <div class="inputs">
-            <div class="inputWrapper text">
-                <input type="text" id="name" name="name" class="style1 labelHandler validate" required>
-                <label for="name">
-                    <i class="fas fa-user icon"></i>
-                    <p>نام و نام خانوادگی</p>
-                </label>
-                <span class="line"></span>
-                <div class="msg">
-                    <p>نام و نام خانوادگی خود را وارد نمایید</p>
-                    <i class="fas fa-caret-up"></i>
-                </div>
-            </div>
-            <div class="inputWrapper text">
-                <input type="number" id="ssn" name="ssn" class="style1 labelHandler validate" required>
-                <label for="ssn">
-                    <i class="fas fa-poll-h icon"></i>
-                    <p>کد ملی</p>
-                </label>
-                <span class="line"></span>
-                <div class="msg">
-                    <p> کد ملی وارد نمایید</p>
-                    <i class="fas fa-caret-up"></i>
-                </div>
-            </div>
-            <div class="inputWrapper text">
-                <input type="email" id="email" name="email" class="style1 labelHandler validate" required>
-                <label for="email">
-                    <i class="fas fa-envelope icon"></i>
-                    <p>پست الکترونیکی</p>
-                </label>
-                <span class="line"></span>
-                <div class="msg">
-                    <p>ایمیل صحیح وارد نمایید</p>
-                    <i class="fas fa-caret-up"></i>
-                </div>
-            </div>
-            <div class="inputWrapper text">
-                <input type="number" id="tel" name="tel" class="style1 labelHandler validate" required>
-                <label for="tel">
-                    <i class="fas fa-phone icon"></i>
-                    <p>شماره ثابت</p>
-                </label>
-                <span class="line"></span>
-                <div class="msg">
-                    <p>شماره ثابت وارد نمایید</p>
-                    <i class="fas fa-caret-up"></i>
-                </div>
-            </div>
-            <div class="inputWrapper text">
-                <input type="number" id="mobile" name="mobile" class="style1 labelHandler validate" required pattern="\d{11}">
-                <label for="mobile">
-                    <i class="fas fa-mobile-alt icon"></i>
-                    <p>شماره موبایل</p>
-                </label>
-                <span class="line"></span>
-                <div class="msg">
-                    <p>شماره موبایل صحیح(شروع با ۰۹) وارد نمایید</p>
-                    <i class="fas fa-caret-up"></i>
-                </div>
-            </div>
-            <div class="inputWrapper text">
-                <input type="number" id="bandCart" name="bandCart" class="style1 labelHandler validate">
-                <label for="bandCart">
-                    <i class="fas fa-money-check-alt icon"></i>
-                    <p>شماره کارت بانکی</p>
-                </label>
-                <span class="line"></span>
-                <div class="msg">
-                    <p></p>
-                    <i class="fas fa-caret-up"></i>
-                </div>
-            </div>
-            <div class="inputWrapper text">
-                <input type="text" id="shaba" name="shaba" class="style1 labelHandler validate">
-                <label for="shaba">
-                    <i class="fas fa-money-check-alt icon"></i>
-                    <p>شماره  شبا</p>
-                </label>
-                <span class="line"></span>
-                <div class="msg">
-                    <p></p>
-                    <i class="fas fa-caret-up"></i>
-                </div>
-            </div>     
-        </div>
-        <div class="inputsSelect">
-            <div class="vanillaSelect">
-                <label for="selectDay">روز:</label>
-                <select name="selectDay" id="selectDay">
-                    <option value="day1">1</option>
-                    <option value="day2">2</option>
-                    <option value="day3">3</option>
-                    <option value="day4">4</option>
-                    <option value="day5">5</option>
-                    <option value="day6">6</option>
-                    <option value="day7">7</option>
-                    <option value="day8">8</option>
-                    <option value="day9">9</option>
-                    <option value="day10">10</option>
-                    <option value="day11">11</option>
-                    <option value="day12">12</option>
-                    <option value="day13">13</option>
-                    <option value="day14">14</option>
-                    <option value="day15">15</option>
-                    <option value="day16">16</option>
-                    <option value="day17">17</option>
-                    <option value="day18">18</option>
-                    <option value="day19">19</option>
-                    <option value="day20">20</option>
-                    <option value="day21">21</option>
-                    <option value="day22">22</option>
-                    <option value="day23">23</option>
-                    <option value="day24">24</option>
-                    <option value="day25">25</option>
-                    <option value="day26">26</option>
-                    <option value="day27">27</option>
-                    <option value="day28">28</option>
-                    <option value="day29">29</option>
-                    <option value="day30">30</option>
-                    <option value="day31">31</option>
-                  
-                </select>
-            </div>
-            <div class="vanillaSelect">
-                <label for="selectMonth">ماه:</label>
-                <select name="selectMonth" id="selectMonth">
-                    <option value="month1">فروردین</option>
-                    <option value="month2">اردیبهشت</option>
-                    <option value="month3">خرداد</option>
-                    <option value="month4">تیر</option>
-                    <option value="month5">مرداد</option>
-                    <option value="month6">شهریور</option>
-                    <option value="month7">مهر</option>
-                    <option value="month8">آبان</option>
-                    <option value="month9">آذر</option>
-                    <option value="month10">دی</option>
-                    <option value="month11">بهمن</option>
-                    <option value="month12">اسفند</option>                                      
-                </select>
-            </div>
-            <div class="vanillaSelect">
-                <label for="selectYear">ماه:</label>
-                <select name="selectYear" id="selectYear">
-                    <option value="year1398">1398</option>
-                    <option value="year1397">1397</option>
-                    <option value="year1396">1396</option>
-                    <option value="year1395">1395</option>
-                </select>
-            </div>
-        </div>
-        <div class="inputWrapper toggle">
-            <input type="hidden">
-            <p class="toggleText right active" data-value="مرد">مرد</p>
-            <div class="switch">
-                <span class="circle right center-y"></span>
-            </div>
-            <p class="toggleText left" data-value="زن">زن</p>
-        </div>
-        <button type="submit" class="btn mid pulse">ثبت</button>
-    </form>
+    <div id="tickets" class="containerStyle">
+        <h4>سوابق تیکت ها</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th class="id">
+                        <p>شماره تیکت</p>
+                    </th>
+                    <th class="reason">
+                        <p>علت درخواست</p>
+                    </th>
+                    <th class="date">
+                        <p>تاریخ</p>
+                    </th>
+                    <th class="answer">
+                        <p>مشاهده جواب</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="id">
+                        <p>#12345678</p>
+                    </td>
+                    <td class="reason">
+                        <p>علت ارسال تیکت</p>
+                    </td>
+                    <td class="date">
+                        <p>1398/11/11</p>
+                    </td>
+                    <td class="answer">
+                        <p class="process">در حال پردازش</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="id">
+                        <p>#12345678</p>
+                    </td>
+                    <td class="reason">
+                        <p>علت ارسال تیکت</p>
+                    </td>
+                    <td class="date">
+                        <p>1398/11/11</p>
+                    </td>
+                    <td class="answer">
+                       <button class="showAnswer btn mid modalTrigger" data-modal="answer1Modal">مشاهده جواب</button>
+                        <div class="modal" id="answer1Modal">
+                            <h4>عنوان جواب</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quidem totam repellendus tenetur expedita earum consequatur ut, nobis, distinctio at laborum aliquam incidunt aut odio voluptate ab facilis fugiat eius!
+                                Repellendus modi molestias laborum vitae quidem debitis quo veniam ab, error perspiciatis possimus quis sequi dolorum. Odio distinctio, veritatis voluptates nemo aut enim ipsam accusamus magni aspernatur voluptas numquam natus!
+                                Minus deleniti quasi quia ipsum unde deserunt necessitatibus? Id voluptates illo quisquam aperiam! Provident, veniam nostrum numquam facere autem accusantium, voluptas placeat, laudantium voluptatibus explicabo alias distinctio quod fugit animi.
+                                Impedit fugiat ex velit voluptatum minus eaque quas quasi sed. Autem praesentium quas eaque in numquam similique neque itaque doloribus. Veniam est repellendus odio eaque consectetur, natus hic officia laudantium.
+                                Ea earum ipsa quaerat. Sint vero non consectetur minima. At soluta sunt, nam voluptas voluptate autem voluptatibus, illum magnam tempora nihil illo amet! Dolorum aut cum consequuntur culpa, harum expedita.
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="id">
+                        <p>#12345678</p>
+                    </td>
+                    <td class="reason">
+                        <p>علت ارسال تیکت</p>
+                    </td>
+                    <td class="date">
+                        <p>1398/11/11</p>
+                    </td>
+                    <td class="answer">
+                        <p class="process">در حال پردازش</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="id">
+                        <p>#12345678</p>
+                    </td>
+                    <td class="reason">
+                        <p>علت ارسال تیکت</p>
+                    </td>
+                    <td class="date">
+                        <p>1398/11/11</p>
+                    </td>
+                    <td class="answer">
+                       <button class="showAnswer btn mid modalTrigger" data-modal="answer2Modal">مشاهده جواب</button>
+                        <div class="modal" id="answer2Modal">
+                            <h4>عنوان جواب</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quidem totam repellendus tenetur expedita earum consequatur ut, nobis, distinctio at laborum aliquam incidunt aut odio voluptate ab facilis fugiat eius!
+                                Repellendus modi molestias laborum vitae quidem debitis quo veniam ab, error perspiciatis possimus quis sequi dolorum. Odio distinctio, veritatis voluptates nemo aut enim ipsam accusamus magni aspernatur voluptas numquam natus!
+                                Minus deleniti quasi quia ipsum unde deserunt necessitatibus? Id voluptates illo quisquam aperiam! Provident, veniam nostrum numquam facere autem accusantium, voluptas placeat, laudantium voluptatibus explicabo alias distinctio quod fugit animi.
+                                Impedit fugiat ex velit voluptatum minus eaque quas quasi sed. Autem praesentium quas eaque in numquam similique neque itaque doloribus. Veniam est repellendus odio eaque consectetur, natus hic officia laudantium.
+                                Ea earum ipsa quaerat. Sint vero non consectetur minima. At soluta sunt, nam voluptas voluptate autem voluptatibus, illum magnam tempora nihil illo amet! Dolorum aut cum consequuntur culpa, harum expedita.
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <a href="sendTicket.html" class="btn mid" id="newTicket">ارسال تیکت جدید</a>
+    </div>
     <i class="fas fa-bars" id="menuToggle"></i>
     <div id="menu">
         <div class="logo">
@@ -486,6 +424,24 @@
                 <a href="toursResume.html">
                     <i class="fas fa-poll-h"></i>
                     <p>سوابق رزروها</p>
+                </a>
+            </li>
+            <li>
+                <a href="discounts.html">
+                    <i class="fas fa-percent"></i>
+                    <p>کدهای تخفیف</p>
+                </a>
+            </li>
+            <li>
+                <a href="returnMoney.html">
+                    <i class="fas fa-dollar-sign"></i>
+                    <p>درخواست استرداد وجه</p>
+                </a>
+            </li>
+            <li>
+                <a href="sendTicket.html">
+                    <i class="fas fa-headset"></i>
+                    <p>ارتباط با پشتیبانی</p>
                 </a>
             </li>
             <li>

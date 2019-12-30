@@ -159,6 +159,24 @@
             }
             &:nth-child(5){
                 a{
+                    i{
+                        color: $brownColor;
+                        font-size: $fontS;
+                    }
+                }
+            }
+            &:nth-child(6){
+                a{
+                    i{color: $redColor2;}
+                }
+            }
+            &:nth-child(7){
+                a{
+                    i{color: $orangeColor1;}
+                }
+            }
+            &:nth-child(8){
+                a{
                     i{color: $redColor1;}
                 }
             }

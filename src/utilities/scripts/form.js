@@ -427,7 +427,7 @@ Ranger.prototype.init = function(){
     })
     this.minHidden.value = this.min ;
     this.maxHidden.value = this.max ;   
-    this.text.textContent = `${this.min}تومان - ${this.max}تومان` ;
+    this.text.textContent = `از ${this.min}  تومان  تا ${this.max}تومان` ;
 }
 Ranger.prototype.createRanger = function(){
     noUiSlider.create(this.ranger,{
@@ -777,9 +777,7 @@ class FileHandler{
 //     new AutoExpand(textarea,'2.6em','15em') ;
 // })
 // //Toggle--------------------------------
-// document.querySelectorAll('.inputWrapper.toggle').forEach(toggle => {
-//     new Toggle(toggle) ;
-// })
+// document.querySelectorAll('.inputWrapper.toggle').forEach(toggle=>new Toggle(toggle))
 // //Ranger--------------------------------
 // document.querySelectorAll('.inputWrapper.range').forEach(ranger => {
 //     new Ranger(ranger) ;

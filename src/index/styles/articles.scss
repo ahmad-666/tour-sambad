@@ -1,68 +1,133 @@
-@import '../../colors.scss' ;
-@import '../../variables.scss' ;
-@import '../../mixins.scss' ;
-#articles{
+@import '../../colors.scss';
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+#articles {
     display: flex;
-    @include flex(column,flex-start,flex-start,nowrap,"") ;
-    h4{
+    padding: 2em;
+    @include flex(column, flex-start, flex-start, nowrap, "");
+
+    h4 {
         font-size: $fontL;
         font-weight: 700;
         color: $textDark;
     }
-    .articles{
+
+    .articles {
         width: 100%;
         height: auto;
+        margin-top: 2em;
         display: flex;
-        @include flex(row,flex-start,flex-start,wrap,flex-start) ;
-        .article{
-            width: calc((100% - (4 * 3em)) / 4);
-            height: 22em;
-            margin: $dist2;
-            border-radius: $dist2;
-            overflow: hidden;
-            transition: all .3s linear;
+        @include flex(column, flex-start, flex-start, nowrap, "");
+        .row {
+            width: 100%;
+            height: auto;
             display: flex;
-            @include flex(column,flex-start,flex-start,nowrap,"") ;
-            transform: perspective(1000%) rotateX(0);
-            transform-style: preserve-3d;
-            &:hover{
-                transform: perspective(1000px) rotateX(20deg);
-            }
-            img{
-                width: 100%;
-                height: 70%;
-                object-fit: cover;
-            }
-            .info{
-                width: 100%;
-                height: 30%;
-                background-color: $primaryColor;
-                padding: $dist1;
-                display: flex;
-                @include flex(column,flex-start,flex-start,nowrap,"") ;
-                h6{
-                    font-size: $fontM;
-                    color: white;
+            @include flex(row, flex-start, flex-start, nowrap, "");
+            .article {
+                position: relative;
+                overflow: hidden;
+                &:not(:first-child){margin-right: 2em;}
+                &:hover {
+                    &::before {
+                        background-color: rgba(30, 30, 30, .7);
+                    }
+                    img {
+                        transform: scale(1.2);
+                    }
+                    .txt{
+                        .jump {
+                            transform: translateY(0);
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                   
                 }
-                p{
-                    font-size: $fontS;
-                    color: white;
-                    margin-top: .5em;
+                &::before {
+                    content: '';
+                    z-index: 2;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: rgba(30, 30, 30, .4);
+                    transition: all .3s linear;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: all .3s linear;
+                }
+                .txt {
+                    width: 100%;
+                    text-align: center;
+                    height: auto;
+                    z-index: 3;
+                    position: absolute;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%, -50%);
+                    display: flex;
+                    @include flex(column, flex-start, center, nowrap, "");
+                    h6 {
+                        font-size: $fontL;
+                        font-weight: 700;
+                        color: white;
+                    }
+
+                    p {
+                        margin-top: $dist1;
+                        font-size: $fontM;
+                        color: white;
+                    }
+                    .jump {
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateY(8em);
+                        transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    }
+                }
+            }
+            &:nth-child(1) {
+                .article{
+                    height: 30em;
+                    &:nth-child(1){width: 25%;}
+                    &:nth-child(2){width: 50%;}
+                    &:nth-child(3){width: 25%;}
+                }
+            }
+            &:nth-child(2) {
+                margin-top: 2em;
+                .article{
+                    width: calc(100% / 3);
+                    height: 20em;
                 }
             }
         }
     }
-    .showMore{
+
+    .showMore {
         width: auto;
         height: auto;
         margin: $dist2 auto 0 auto;
         display: flex;
-        @include flex(row,flex-start,center,nowrap,"") ;
+        @include flex(row, flex-start, center, nowrap, "");
         color: $textGrey;
-        &:hover{color: $primaryColor;}
-        p,i{
+
+        &:hover {
+            color: $primaryColor;
+        }
+
+        p,
+        i {
             font-size: $fontM;
-            &:last-child{margin-right: .5em;}
+
+            &:last-child {
+                margin-right: .5em;
+            }
         }
     }
 }

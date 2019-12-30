@@ -13,62 +13,134 @@
         &:nth-child(1){
             flex-shrink: 0;
             width: 30em;  
+            .row{
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 0;
+                padding: 0;
+                &:nth-child(2){
+                    padding: $dist2;
+                    height: 6em;
+                }
+                &:nth-child(2){margin-top: $dist3;}     
+            }    
         }
         &:nth-child(2){
             width: 100%;
             margin-right: $dist3;
+            .row{
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 0;
+                padding: 0;
+                &:nth-child(1){
+                    padding: $dist2;
+                    height: 6em;
+                }
+                &:nth-child(2){margin-top: $dist3;}     
+            }       
         }
         height: auto;
         display: flex;
         @include flex(column,flex-start,flex-start,nowrap,"") ;
-        .row{
-            width: 100%;
-            height: auto;
-            display: flex;
-            margin-top: 0;
-            padding: 0;
-            &:nth-child(1){
-                padding: $dist2;
-                height: 6em;
-            }
-            &:nth-child(2){margin-top: $dist3;}     
-        }       
+       
     }
     #displayStyles{
+        height: auto;
         display: flex;
         @include flex(row,flex-start,center,wrap,flex-start) ;
-        p{
-            font-size: $fontM;
-            color: $textDark;
-        }
-        .icons{
+        .right{
             width: auto;
             height: auto;
             display: flex;
-            @include flex(row,flex-start,center,nowrap,"") ;
-            .withTooltip{
-                width: 4em;
-                height: 3em;
-                margin-right: $dist2;
-                position: relative;
-                background-color: lighten($textGrey,30%);
-                color: $primaryColor;
-                transition: all .2s linear;
-                cursor: pointer;
-                &:hover{
-                    color: white;
-                    background-color: $primaryColor;
-                }
-                &::before{
-                    position: absolute;
-                    top: 50%;
-                    right: 50%;
-                    transform: translate(50%,-50%);
-                    font-size: $fontL;
-                }
+            @include flex(row,flex-start,center,nowrap,"")
+            p{
+                font-size: $fontM;
+                color: $textDark;
+                font-weight: 700;
 
             }
+            .icons{
+                width: auto;
+                height: auto;
+                display: flex;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                .withTooltip{
+                    width: 4em;
+                    height: 3em;
+                    margin-right: $dist2;
+                    position: relative;
+                    background-color: lighten($textGrey,30%);
+                    color: $primaryColor;
+                    transition: all .2s linear;
+                    cursor: pointer;
+                    &:hover{
+                        color: white;
+                        background-color: $primaryColor;
+                    }
+                    &::before{
+                        position: absolute;
+                        top: 50%;
+                        right: 50%;
+                        transform: translate(50%,-50%);
+                        font-size: $fontL;
+                    }
+    
+                }
+            }
         }
+        .left{
+            width: auto;
+            height: auto;
+            margin-right: $dist2;
+            display: flex;
+            @include flex(row,flex-start,center,wrap,flex-start) ;
+            .title{
+                width: auto;
+                height: auto;
+                display: flex;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                i{
+                    font-size: $fontL;
+                    color: $primaryColor
+                }
+                p{
+                    font-size: $fontM;
+                    color: $textDark;
+                    margin-right: .3em;
+                    font-weight: 700;
+                }
+            }
+            .sorts{
+                width: auto;
+                height: auto;
+                display: flex;
+                margin-right: $dist1;
+                @include flex(row,flex-start,center,wrap,flex-start) ;
+                .sort{
+                    width: auto;
+                    height: auto;
+                    margin: $dist1;
+                    font-size: $fontM;
+                    color: $textGrey;
+                    transition: all .2s linear;
+                    cursor: pointer;
+                    background-color: transparent;
+                    &:hover{
+                        color: $primaryColor;
+                    }
+                }
+                .sort.active{
+                    border-radius: $dist1;
+                    padding: .3em .6em;
+                    color: $textWhite;
+                    background-color: $primaryColor;
+                }
+            }
+        }
+       
     }
     #tours{
         display: flex;
@@ -89,10 +161,12 @@
             height: auto;
             display: flex;  
             .tour{
+                background-color: white;
+                border-radius: $dist2;
+                box-shadow: 0 0 .5em .1em $shadowColor;
                 // width: 100%;
                 // height: 20em;
                 // padding: $dist2;
-                background-color: transparent;
                 transition: all .3s linear;
                 // &:hover{background-color: darken(white,10%);}
                 // &:not(:last-child){border-bottom: 1px solid lighten($textGrey,20%);}
@@ -104,6 +178,34 @@
                 //     height: 100%;
                 //     border-radius: $dist2;
                 // }
+                .img{
+                    position: relative;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: $dist2;
+                    }
+                    .agency{
+                        font-size: $fontM;
+                        color: white;
+                        position: absolute;
+                        right: .5em;
+                        bottom: .1em;
+                    }
+                    .special{
+                        width: auto;
+                        height: auto;
+                        border-radius: $dist1;
+                        padding: .1em .5em;
+                        color: $textWhite;
+                        background-color: lighten($redColor1,0%);
+                        font-size: $fontM - .2em;
+                        position: absolute;
+                        left: -$dist2;
+                        top: $dist1;
+                        transform: rotate(-45deg);
+                    }
+                }
                 .content{
                     width: 100%;
                     // height: 100%;
@@ -137,25 +239,6 @@
                                 color: $textGrey;
                             }
                         }
-                        .rowTour.details{
-                            @include flex(row,flex-start,flex-start,wrap,flex-start) ;
-                            .detail{
-                                width: auto;
-                                height: auto;
-                                display: flex;
-                                @include flex(row,flex-start,center,wrap,flex-start) ;
-                                margin: $dist1;
-                                i{
-                                    font-size: $fontS;
-                                    color: $primaryColor
-                                }
-                                p{
-                                    font-size: $fontM - .2em;
-                                    color: $textDark;
-                                    margin-right: .3em;
-                                }
-                            }
-                        }
                         .rowTour.inOut{
                             @include flex(row,flex-start,flex-start,wrap,flex-start) ;
                             .in,.out{
@@ -174,7 +257,33 @@
                                     color: $textDark;
                                 }
                             }
+                            .in{
+                                i.fa-plane{
+                                    transform: rotate(180deg);
+                                }
+                            }
                         }
+                        .rowTour.details{
+                            @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+                            .withIcon{
+                                width: auto;
+                                height: auto;
+                                display: flex;
+                                @include flex(row,flex-start,center,wrap,flex-start) ;
+                                margin: $dist1;
+                                i{
+                                    font-size: $fontS;
+                                    color: $primaryColor ;
+                                    transform: translateY(-.1em);
+                                }
+                                p{
+                                    font-size: $fontM - .2em;
+                                    color: $textDark;
+                                    margin-right: .3em;
+                                }
+                            }
+                        }
+                       
                     }
                     .colTour.services{
                         width: 100%;
@@ -256,6 +365,12 @@
                                 color: $primaryColor;
                             }
                         }
+                        a{
+                            margin-top: $dist1 ;
+                            font-size: $fontM;
+                            padding: .5em $dist2;
+                            @include swapColor(white,$primaryColor) ;
+                        }
                     }
                 }
             }          
@@ -268,33 +383,34 @@
                 width: 100%;
                 height: 20em;
                 padding: $dist2;
-                &:hover{background-color: darken(white,10%);}
-                &:not(:last-child){border-bottom: 1px solid lighten($textGrey,20%);}
-                @include flex(row,flex-start,flex-start,nowrap,"") ;
-                img{
+                // &:hover{background-color: darken(white,10%);}
+                // &:not(:last-child){border-bottom: 5px solid lighten($textGrey,20%);}
+                @include flex(row,flex-start,flex-start,nowrap,"") ;                    
+                &:not(:first-child){margin-top: $dist2;}
+                .img{
                     flex-shrink: 0;
                     width: 25em;
                     height: 100%;
-                    border-radius: $dist2;
-                }
+                }     
                 .content{
                     height: 100%;
                     @include flex(row,flex-start,flex-start,nowrap,"") ;
-                    padding-right: $dist1;
+                    padding-right: $dist2;
                     .colTour{
                         height: 100%;
                         &:not(:first-child){margin-right: $dist2;}
                     }
                     .colTour.info{
                         flex-shrink: 0;
-                        width: 35em;                                                                      
+                        width: auto;
                     }
-                    .colTour.services{                     
+                    .colTour.services{   
+                        width: 100%;
                         display: flex;                                           
                     }
                     .colTour.price{
                         flex-shrink: 0;
-                        width: 15em;                       
+                        width: 15em;     
                     }
                 }
             }  
@@ -306,20 +422,28 @@
             .tour{
                 width: calc((100% - (3 * 1.5em)) / 3);
                 margin: $dist1;
-                height: 41em;
+                height: 42sem;
                 border-radius: $dist2;
                 border: 1px solid lighten($textGrey,10%);
-                overflow: hidden;
+                overflow: visible;
                 &:hover{
                     transform: translateY(-1em);
                     box-shadow: 0 .8em 1em -.3em $shadowColor;
                 }
                 @include flex(column,flex-start,flex-start,nowrap,"") ;
-                img{
+                .img{
                     width: 100%;
                     height: 50%;
+                    img{
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                    }  
+                    .agency{
+                        bottom: .4em;
+                    }
                 }
                 .content{
+                    margin-top: -$dist1;
                     height: 50%;
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
                     padding: $dist1;
@@ -327,13 +451,16 @@
                         width: 100%;
                         height: auto;
                         &:not(:first-child){margin-top: $dist1;}
+                        .rowTour{
+                            margin-top: 0;
+                        }
                     }               
                     .colTour.services{                     
                         display: none;                                           
                     }       
                     .colTour.price{
-                        margin-top: -$dist1;
-                        @include flex(row,flex-start,center,nowrap,"") ;
+                        margin-top: 0;
+                        @include flex(row,flex-start,center,wrap,flex-start) ;
                         h6{
                             flex-shrink: 0;           
                             transform: translateY(.2em);
@@ -341,6 +468,11 @@
                         .priceWrapper{
                             width: 100%;
                             margin-right: $dist1 + .3em;                    
+                        }
+                        a{
+                            margin-top: 0;
+                            margin-left: auto;
+                            margin-right: auto;
                         }
                     }        
                 }

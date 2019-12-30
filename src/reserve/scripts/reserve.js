@@ -4,6 +4,7 @@ import TL from '../../utilities/scripts/timeline.js' ;
 import Tooltip from '../../utilities/scripts/toolTip.js' ;
 import Collapse from '../../utilities/scripts/collapse.js' ;
 import util from '../../utilities/utilities.js' ;
+import { remove } from 'animejs';
 let Timeline = TL.Timeline ;
 let TimelineSlider = TL.TimelineSlider ;
 let Progress = TL.Progress ;
@@ -42,8 +43,15 @@ function createRow(){
     ) ;
     timelineWrapper.querySelectorAll('input[type="number"]').forEach(number=>new NumberInput(number));
     timelineWrapper.querySelectorAll('.labelHandler').forEach(label=> new LabelHandler(label)) ;
+    reserveForm.querySelectorAll('button.removeRow').forEach(removeRow=>removeRow.removeEventListener('click',removeRowInfo)) ;
+    reserveForm.querySelectorAll('button.removeRow').forEach(removeRow=>removeRow.addEventListener('click',removeRowInfo)) ;
 }
 createRow() ;
+function removeRowInfo(e){
+    let row = this.parentElement.parentElement ;
+    row.parentElement.removeChild(row) ;
+    createRow() ;
+}
 let companyIndex = 1 ;
 new AppendDOM(
     timelineWrapper.querySelector('#otherInfos .appendDOM'),
@@ -57,6 +65,8 @@ new AppendDOM(
         let phoneInput = newElm.querySelector('.inputs .inputWrapper:nth-child(3) input');
         let phoneLabel = newElm.querySelector('.inputs .inputWrapper:nth-child(3) label');
         let title = newElm.querySelector('h6') ;
+        let btn = newElm.querySelector('button.removeRow') ;
+        btn.style.display= "inline-block" ;
         title.textContent = `مشخصات همراه${companyIndex}` ;
         nameInput.setAttribute('id',`company${companyIndex}Name`) ;
         nameInput.setAttribute('name',`company${companyIndex}Name`) ;
@@ -72,5 +82,9 @@ new AppendDOM(
         phoneInput.value = '' ;
         createRow() ;
         companyIndex++ ;
+        if(companyIndex>2){
+            let phone = phoneInput.parentElement ;
+            phone.parentElement.removeChild(phone) ;
+        }
     }
 )

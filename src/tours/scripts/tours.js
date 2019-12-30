@@ -44,4 +44,11 @@ function switchDisplay(e){
     target.classList.add(displayMode);
 }
 
+let sortWrapper = document.querySelector('#displayStyles .sorts') ;
+sortWrapper.querySelectorAll('.sort').forEach((sort,i,all)=>{
+    sort.addEventListener('click',e=>{
+        all.forEach(a=>a.classList.remove('active')) ;
+        e.currentTarget.classList.add('active') ;
+    });
+}) ;
 
