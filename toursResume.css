@@ -5330,16 +5330,6 @@ ul.scrollSpyList.fix {
     display: -ms-flexbox;
     display: flex; }
 
-.modal {
-  -webkit-transition: all .3s linear;
-  transition: all .3s linear;
-  opacity: 0;
-  visibility: hidden; }
-
-.modal.show {
-  opacity: 1;
-  visibility: visible; }
-
 .collapseTrigger {
   cursor: pointer; }
 
@@ -6560,6 +6550,13 @@ header {
       #menu ul li:nth-child(4) a i {
         color: #2295a6; }
       #menu ul li:nth-child(5) a i {
+        color: #b8832d;
+        font-size: 1.2em; }
+      #menu ul li:nth-child(6) a i {
+        color: #e74a4a; }
+      #menu ul li:nth-child(7) a i {
+        color: #FF805B; }
+      #menu ul li:nth-child(8) a i {
         color: #FF427B; }
 
 #menu.show {

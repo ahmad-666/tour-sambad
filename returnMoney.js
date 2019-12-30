@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/agencies/agencies.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/returnMoney/returnMoney.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2190,41 +2190,6 @@ eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPAC
 
 /***/ }),
 
-/***/ "./src/agencies/agencies.js":
-/*!**********************************!*\
-  !*** ./src/agencies/agencies.js ***!
-  \**********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/@fortawesome/fontawesome-free/css/all.css */ \"./node_modules/@fortawesome/fontawesome-free/css/all.css\");\n/* harmony import */ var _node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _framework_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../framework.scss */ \"./src/framework.scss\");\n/* harmony import */ var _framework_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_framework_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _utilities_styles_form_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utilities/styles/form.scss */ \"./src/utilities/styles/form.scss\");\n/* harmony import */ var _utilities_styles_form_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utilities_styles_form_scss__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _init_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../init.scss */ \"./src/init.scss\");\n/* harmony import */ var _init_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_init_scss__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _index_styles_header_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../index/styles/header.scss */ \"./src/index/styles/header.scss\");\n/* harmony import */ var _index_styles_header_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_index_styles_header_scss__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _agencies_styles_agencies_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../agencies/styles/agencies.scss */ \"./src/agencies/styles/agencies.scss\");\n/* harmony import */ var _agencies_styles_agencies_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_agencies_styles_agencies_scss__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _index_styles_footer_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../index/styles/footer.scss */ \"./src/index/styles/footer.scss\");\n/* harmony import */ var _index_styles_footer_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_index_styles_footer_scss__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var _index_scripts_nav_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../index/scripts/nav.js */ \"./src/index/scripts/nav.js\");\n/* harmony import */ var _agencies_scripts_agencies_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../agencies/scripts/agencies.js */ \"./src/agencies/scripts/agencies.js\");\n//load styles\n\n\n\n\n\n\n //load scripts\n\n\n //load videos\n\n//# sourceURL=webpack:///./src/agencies/agencies.js?");
-
-/***/ }),
-
-/***/ "./src/agencies/scripts/agencies.js":
-/*!******************************************!*\
-  !*** ./src/agencies/scripts/agencies.js ***!
-  \******************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ \"./node_modules/core-js/modules/es.array.for-each.js\");\n/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ \"./node_modules/core-js/modules/web.dom-collections.for-each.js\");\n/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _utilities_scripts_form_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/scripts/form.js */ \"./src/utilities/scripts/form.js\");\n\n\n\nvar formValidate = _utilities_scripts_form_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].FormValidate;\nvar agencyLabelHandler = _utilities_scripts_form_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].LabelHandler;\nvar agencyForm = document.querySelector('#searchForm');\nvar agencyFormData = {\n  elm: agencyForm,\n  inputs: agencyForm.querySelectorAll('.validate'),\n  send: false,\n  modal: null,\n  submit: agencyForm.querySelector('button[type=\"submit\"]')\n}; // new formValidate(agencyFormData.elm,agencyFormData.submit,\n//     agencyFormData.inputs,agencyForm.send,agencyForm.modal) ;\n\nagencyForm.querySelectorAll('.labelHandler').forEach(function (label) {\n  return new agencyLabelHandler(label);\n});\n\n//# sourceURL=webpack:///./src/agencies/scripts/agencies.js?");
-
-/***/ }),
-
-/***/ "./src/agencies/styles/agencies.scss":
-/*!*******************************************!*\
-  !*** ./src/agencies/styles/agencies.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/agencies/styles/agencies.scss?");
-
-/***/ }),
-
 /***/ "./src/framework.scss":
 /*!****************************!*\
   !*** ./src/framework.scss ***!
@@ -2278,6 +2243,53 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/init.scss?");
+
+/***/ }),
+
+/***/ "./src/reserve/scripts/menu.js":
+/*!*************************************!*\
+  !*** ./src/reserve/scripts/menu.js ***!
+  \*************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utilities_utilities_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utilities/utilities.js */ \"./src/utilities/utilities.js\");\n\nvar MenuToggle = _utilities_utilities_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].MenuToggle;\nnew MenuToggle(document.querySelector('#menuToggle'), document.querySelector('#menu'), document.querySelector('#blackFilter'));\n\n//# sourceURL=webpack:///./src/reserve/scripts/menu.js?");
+
+/***/ }),
+
+/***/ "./src/reserve/styles/menu.scss":
+/*!**************************************!*\
+  !*** ./src/reserve/styles/menu.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/reserve/styles/menu.scss?");
+
+/***/ }),
+
+/***/ "./src/returnMoney/returnMoney.js":
+/*!****************************************!*\
+  !*** ./src/returnMoney/returnMoney.js ***!
+  \****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/@fortawesome/fontawesome-free/css/all.css */ \"./node_modules/@fortawesome/fontawesome-free/css/all.css\");\n/* harmony import */ var _node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _framework_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../framework.scss */ \"./src/framework.scss\");\n/* harmony import */ var _framework_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_framework_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _utilities_styles_form_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utilities/styles/form.scss */ \"./src/utilities/styles/form.scss\");\n/* harmony import */ var _utilities_styles_form_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utilities_styles_form_scss__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _init_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../init.scss */ \"./src/init.scss\");\n/* harmony import */ var _init_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_init_scss__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _index_styles_header_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../index/styles/header.scss */ \"./src/index/styles/header.scss\");\n/* harmony import */ var _index_styles_header_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_index_styles_header_scss__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _reserve_styles_menu_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reserve/styles/menu.scss */ \"./src/reserve/styles/menu.scss\");\n/* harmony import */ var _reserve_styles_menu_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_reserve_styles_menu_scss__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _index_styles_footer_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../index/styles/footer.scss */ \"./src/index/styles/footer.scss\");\n/* harmony import */ var _index_styles_footer_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_index_styles_footer_scss__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var _index_scripts_nav_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../index/scripts/nav.js */ \"./src/index/scripts/nav.js\");\n/* harmony import */ var _reserve_scripts_menu_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../reserve/scripts/menu.js */ \"./src/reserve/scripts/menu.js\");\n/* harmony import */ var _returnMoney_scripts_returnMoney_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../returnMoney/scripts/returnMoney.js */ \"./src/returnMoney/scripts/returnMoney.js\");\n//load styles\n\n\n\n\n\n\n //load scripts\n\n\n\n //load videos\n\n//# sourceURL=webpack:///./src/returnMoney/returnMoney.js?");
+
+/***/ }),
+
+/***/ "./src/returnMoney/scripts/returnMoney.js":
+/*!************************************************!*\
+  !*** ./src/returnMoney/scripts/returnMoney.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ \"./node_modules/core-js/modules/es.array.for-each.js\");\n/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ \"./node_modules/core-js/modules/web.dom-collections.for-each.js\");\n/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _utilities_scripts_form_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/scripts/form.js */ \"./src/utilities/scripts/form.js\");\n\n\n\nvar FormValidate = _utilities_scripts_form_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].FormValidate;\nvar LabelHandler = _utilities_scripts_form_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].LabelHandler;\nvar returnMoneyForm = document.querySelector('form#returnMoney');\nvar returnMoneyData = {\n  elm: returnMoneyForm,\n  submit: returnMoneyForm.querySelector('button[type=\"submit\"]'),\n  inputs: returnMoneyForm.querySelectorAll('.validate'),\n  send: true,\n  modal: null\n};\nnew FormValidate(returnMoneyData.elm, returnMoneyData.submit, returnMoneyData.inputs, returnMoneyData.send, returnMoneyData.modal);\nreturnMoneyForm.querySelectorAll('.labelHandler').forEach(function (label) {\n  return new LabelHandler(label);\n});\n\n//# sourceURL=webpack:///./src/returnMoney/scripts/returnMoney.js?");
 
 /***/ }),
 
