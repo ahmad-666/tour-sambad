@@ -211,6 +211,7 @@ nav{
                         ul.collapse.inner{
                             max-height: 25em;
                             overflow: auto;
+                            border-bottom: 1.5px solid transparent;
                         }   
                     }                  
                 }
@@ -227,8 +228,11 @@ nav{
     }
 }
 @include resizeTablet('nav') ;
+@include mediaQ(800px){
+    nav{font-size: 7px;}
+}
 @include resizeMobile('nav') ;
-@include mediaQ(550px){
+@include mediaQ(610px){
     nav{
         ul.desktop{   
             li{display:none;}

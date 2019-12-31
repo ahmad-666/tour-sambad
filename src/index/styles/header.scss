@@ -79,3 +79,22 @@ header{
     font-size: $fontM ;
     color: $textDark ;
 }
+@include resizeTablet('header');
+@include resizeMobile('header');
+@include mediaQ(500px){
+    header{
+        .bg{
+            form#search{
+                min-width: 75%;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                .point{
+                    margin: $dist1 0;
+                }
+                button[type="submit"]{
+                    margin: $dist1 0;
+                }
+            
+            }
+        }
+    }
+}

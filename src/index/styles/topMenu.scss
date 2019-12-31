@@ -137,3 +137,6 @@ header{
 }
 @include resizeTablet('#topMenu') ;
 @include resizeMobile('#topMenu') ;
+@include mediaQ(350px){
+    #topMenu{font-size: 5px;}
+}

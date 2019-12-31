@@ -1,7 +1,6 @@
 @import '../../colors.scss';
 @import '../../variables.scss';
 @import '../../mixins.scss';
-
 #articles {
     display: flex;
     padding: 2em;
@@ -127,6 +126,131 @@
 
             &:last-child {
                 margin-right: .5em;
+            }
+        }
+    }
+}
+@include resizeTablet('#articles') ;
+@include mediaQ(750px){
+    #articles{
+        width: 95%;
+        .articles {
+            .row {
+                .article {             
+                    &:hover {
+                        .txt{
+                            .jump {
+                                transform: translateY(0);
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                    .txt {      
+                        .jump {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateY(0em);
+                            transition: none;
+                        }
+                    }
+                }       
+            }
+        }
+    }
+}
+@include resizeMobile('#articles') ;
+@include mediaQ(580px){
+    #articles {
+        .articles {
+            .row {
+                @include flex(row, flex-start, flex-start, wrap, flex-start);
+                &:nth-child(1) {
+                    .article{
+                        height: 30em;
+                        &:nth-child(1){
+                            width: calc((100% - 2em) / 2);
+                            margin-top: 0em;
+                            margin-right: 0em;
+                        }
+                        &:nth-child(2){
+                            width: calc((100% - 2em) / 2);
+                            margin-top: 0em;
+                            margin-right: 2em;
+                        }
+                        &:nth-child(3){
+                            width: 100%;
+                            margin-top: 2em;
+                            margin-right: 0em;
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    .article{
+                        height: 30em;
+                        &:nth-child(1){
+                            width: 100%;
+                            margin-top: 0em;
+                            margin-right: 0em;
+                        }
+                        &:nth-child(2){
+                            width: calc((100% - 2em) / 2);
+                            margin-top: 2em;
+                            margin-right: 0em;
+                        }
+                        &:nth-child(3){
+                            width: calc((100% - 2em) / 2);
+                            margin-top: 2em;
+                            margin-right: 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mediaQ(410px){
+    #articles {
+        .articles {
+            .row {
+                &:nth-child(1) {
+                    .article{
+                        &:nth-child(1){
+                            width: 100%;
+                            margin-top: 0em;
+                            margin-right: 0em;
+                        }
+                        &:nth-child(2){
+                            width: 100%;
+                            margin-top: 2em;
+                            margin-right: 0em;
+                        }
+                        &:nth-child(3){
+                            width: 100%;
+                            margin-top: 2em;
+                            margin-right: 0em;
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    .article{
+                        &:nth-child(1){
+                            width: 100%;
+                            margin-top: 0em;
+                            margin-right: 0em;
+                        }
+                        &:nth-child(2){
+                            width: 100%;
+                            margin-top: 2em;
+                            margin-right: 0em;
+                        }
+                        &:nth-child(3){
+                            width: 100%;
+                            margin-top: 2em;
+                            margin-right: 0em;
+                        }
+                    }
+                }
             }
         }
     }

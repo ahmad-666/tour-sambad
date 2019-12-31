@@ -295,3 +295,51 @@
 .sliderCarousel.insideTour{
     width: 95%;
 }
+@include mediaQ(1200px){
+    .sliderCarousel{
+        .helper{
+            .slides{  
+                .slide{
+                    width: calc((100% - (3 * 1.5em)) / 3);
+                }  
+            }
+        }
+    } 
+}
+@include resizeTablet('.sliderCarousel') ;
+@include mediaQ(750px){
+    .sliderCarousel{
+        width: 95%;
+        .helper{        
+            .btn{
+                display: none ;
+            }
+            .slides{
+                overflow: auto;
+            }
+        }
+    }
+}
+@include resizeMobile('.sliderCarousel') ;
+@include mediaQ(540px){
+    .sliderCarousel{
+        .helper{
+            .slides{  
+                .slide{
+                    width: calc((100% - (2 * 1.5em)) / 2);
+                }  
+            }
+        }
+    } 
+}
+@include mediaQ(380px){
+    .sliderCarousel{
+        .helper{
+            .slides{  
+                .slide{
+                    width: calc((100% - (1 * 1.5em)) / 1);
+                }  
+            }
+        }
+    } 
+}

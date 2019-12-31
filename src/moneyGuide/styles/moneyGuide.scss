@@ -20,3 +20,8 @@
         }
     }
 }
+@include resizeTablet('#moneyGuide') ;
+@include mediaQ(800px){
+    #moneyGuide{width: 95%;}
+}
+@include resizeMobile('#moneyGuide') ;

@@ -197,3 +197,5 @@
     visibility: visible;
     right: 0;
 }
+@include resizeTablet('#menuToggle,#menu') ;
+@include resizeMobile('#menuToggle,#menu') ;

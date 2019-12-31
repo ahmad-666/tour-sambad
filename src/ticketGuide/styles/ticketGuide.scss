@@ -20,3 +20,8 @@
         }
     }
 }
+@include resizeTablet('#ticketGuide') ;
+@include mediaQ(800px){
+    #ticketGuide{width: 95%;}
+}
+@include resizeMobile('#ticketGuide') ;

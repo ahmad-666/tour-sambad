@@ -188,10 +188,34 @@
                     a{
                         color: $textWhite;
                         background-color: $primaryColor;
+                        white-space: nowrap;
+                        font-size: $fontS;
                     }
                    
                 }
             }
         }
+    }
+}
+@include resizeTablet('#agency,#toursList') ;
+@include mediaQ(830px){
+    #toursList{
+        font-size: 6px;
+    }
+}
+@include mediaQ(750px){
+    #agency,#toursList{
+        width: 95%;
+    }
+}
+@include resizeMobile('#agency,#toursList') ;
+@include mediaQ(600px){
+    #toursList{
+        font-size: 4px;
+    }
+}
+@include mediaQ(380px){
+    #toursList{
+        font-size: 4px;
     }
 }

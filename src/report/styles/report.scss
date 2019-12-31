@@ -18,8 +18,23 @@
         img{
             width: calc(100% - 50% - 2em);
             height: 30em;
-            margin-right: $dist2;
             object-fit: cover;
+        }
+    }
+}
+@include resizeTablet('#reportWrapper') ;
+@include mediaQ(800px){
+    #reportWrapper{width: 95%;}
+}
+@include resizeMobile('#reportWrapper') ;
+@include mediaQ(550px){
+    #reportWrapper{
+        .content{
+            @include flex(column,flex-start,center,nowrap,"") ;
+            img{
+                width: 90%;
+                height: 30em;
+            }
         }
     }
 }

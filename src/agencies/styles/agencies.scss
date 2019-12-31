@@ -94,3 +94,52 @@
         }
     }
 }
+@include mediaQ(1000px){
+    #allAgencies{      
+        .agency{
+            width: calc((100% - (4 * 3em)) / 4);
+            height: 6em;
+        }
+    }
+}
+@include mediaQ(500px){
+    #allAgencies{      
+        .agency{
+            width: calc((100% - (3 * 3em)) / 3);
+            height: 6em;
+        }
+    }
+}
+@include mediaQ(380px){
+    #allAgencies{      
+        .agency{
+            width: calc((100% - (2 * 3em)) / 2);
+            height: 6em;
+        }
+    }
+}
+@include resizeTablet('#regAgencies,#allAgencies') ;
+@include mediaQ(750px){
+    #regAgencies,#allAgencies{
+        width: 95%;
+    }
+}
+@include resizeMobile('regAgencies,#allAgencies') ;
+@include mediaQ(670px){
+    #regAgencies{
+        .agencies{
+            .agency{
+                width: 100%;
+            }
+        }
+    }
+}
+@include mediaQ(400px){
+    #regAgencies{
+        .agencies{
+            .agency{
+                height: 18em; 
+            }
+        }
+    }
+}

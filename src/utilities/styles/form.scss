@@ -106,7 +106,9 @@ form#newsletters {
         transform: translateY(0em);
     }
 }
-@include mediaQ(900px){
+@include resizeTablet('form#newsletters') ;
+@include resizeMobile('form#newsletters') ;
+@include mediaQ(1000px){
     form#newsletters { 
         .inputWrapper.withSubmit {
             button[type="submit"] {
@@ -115,11 +117,11 @@ form#newsletters {
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#newsletters { 
         position: relative;
         .inputWrapper.withSubmit {
-            width: 25em;       
+            width: 35em;       
             button[type="submit"] {
                 padding: 0 .4em ;
             }
@@ -138,6 +140,7 @@ form#report{
     height: auto;
     display: flex;
     @include flex(column,flex-start,center,nowrap,"") ;
+    margin-right: $dist2;
     .row{
         width: 100%;
         height: auto;
@@ -430,7 +433,7 @@ form#report{
         @include swapColor($textWhite,$primaryColor) ;
     }
 }
-@include mediaQ(900px){
+@include mediaQ(1000px){
     form#report {
         font-size: 8px ;
         .inputWrapper.text {
@@ -472,7 +475,7 @@ form#report{
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#report {
         font-size: 6px ;
         .inputWrapper.text {
@@ -512,6 +515,13 @@ form#report{
                 ~label.top {font-size: 4px;}
             }
         }
+    }
+}
+@include mediaQ(550px){
+    form#report{
+        width: 100%;
+        margin-right: 0;
+        margin-top: $dist2;
     }
 }
 form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassword{
@@ -695,7 +705,7 @@ form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassw
     .loginRoute{
         font-size: $fontM;
         color: $primaryColor;
-        margin-top: $dist2;
+        margin-top: $dist1;
         position: relative;
         &::before{
             content: '';
@@ -796,7 +806,7 @@ form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassw
     .inputWrapper.file{
         width: 28em;
         height: auto;
-        margin-top: $dist3;
+        margin-top: $dist2;
         position: relative;
         input[type="file"]{display: none;}
         label{
@@ -850,7 +860,7 @@ form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassw
     }
 }
 form#loginAdmin{button[type="submit"]{margin-top: $dist3 ;}}
-@include mediaQ(900px){
+@include mediaQ(1000px){
     form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassword {
         font-size: 8px ;
         .inputWrapper.text {
@@ -910,7 +920,7 @@ form#loginAdmin{button[type="submit"]{margin-top: $dist3 ;}}
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassword {
         font-size: 6px ;
         .inputWrapper.text {
@@ -970,6 +980,8 @@ form#loginAdmin{button[type="submit"]{margin-top: $dist3 ;}}
         }
     }
 }
+@include resizeTablet('form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassword') ;
+@include resizeMobile('form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassword') ;
 form#filters{
     .inputWrapper.select {
         width: 100%;
@@ -1555,7 +1567,7 @@ form#filters{
         }
     }
 }
-@include mediaQ(900px){
+@include mediaQ(1000px){
     form#filters {
         font-size: 8px ;
         .inputWrapper.text {
@@ -1597,7 +1609,7 @@ form#filters{
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#filters {
         font-size: 6px ;
         .inputWrapper.text {
@@ -2458,7 +2470,7 @@ form#searchForm{
         font-size: $fontM - .1em;
     }
 }
-@include mediaQ(900px){
+@include mediaQ(1000px){
     form.searchForm{
         font-size: 8px ;
         .inputWrapper.text {
@@ -2482,7 +2494,7 @@ form#searchForm{
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form.searchForm{
         font-size: 6px ;
         .inputWrapper.text {
@@ -2521,6 +2533,187 @@ form#searchForm{
             textarea.style2 {
                 ~label.top {font-size: 4px;}
             }
+        }
+    }
+}
+@include mediaQ(450px){
+    form#searchForm{
+        width: auto;
+        height: auto;
+        display: flex;
+        @include flex(row,center,center,wrap,flex-start) ;
+        .inputWrapper.text {
+            width: 26em;
+            height: 4em;
+            position: relative;
+            margin: $dist2;
+            input {
+                width: 100%;
+                height: 100%;
+                line-height: 4em;
+                padding: 0 $dist1;
+                font-size: $fontM;
+                color: $darkColor;
+                transition: all .2s linear;
+                &::placeholder {
+                    color: $textGrey;
+                    font-size: $fontM;
+                }
+            }
+            input.style1 {
+                border: none;
+                border-bottom: 1.2px solid lighten($textGrey, 25%);
+    
+                &:focus {
+                    ~label {
+                        color: $primaryColor;
+                        font-size: 8px;
+                        bottom: calc(100% + .5em);
+                        transform: translateY(50%);
+                        right: 0;
+                    }
+    
+                    ~.line {
+                        width: 100%;
+                    }
+                }
+            }
+    
+            input.style2 {
+                border: 1.2px solid lighten($textGrey, 25%);
+                border-radius: $dist3;
+    
+                &:focus {
+                    border: 1.2px solid $primaryColor;
+    
+                    ~label {
+                        color: $primaryColor;
+                        font-size: 8px;
+                        bottom: calc(100% + 1.5em);
+                        transform: translateY(50%);
+                        right: $dist1;
+                    }
+    
+                    ~.line {
+                        width: 0%;
+                    }
+                }
+            }
+    
+            input.style1.error {
+                border-bottom: 1.2px solid lighten($redColor2, 5%);
+    
+                ~label {
+                    color: lighten($redColor2, 5%);
+                }
+    
+                ~.line {
+                    background-color: lighten($redColor2, 5%);
+                }
+            }
+    
+            input.style2.error {
+                border: 1.2px solid lighten($redColor2, 5%);
+    
+                ~label {
+                    color: lighten($redColor2, 5%);
+                }
+            }
+    
+            label {
+                width: auto;
+                height: auto;
+                position: absolute;
+                right: $dist1;
+                bottom: 50%;
+                transform: translateY(50%);
+                display: flex;
+                @include flex(row, flex-start, center, nowrap, "");
+                color: lighten($textGrey, 20%);
+                transition: all .2s linear;
+                .isRequire{
+                    width: auto;
+                    height: auto;
+                    color: lighten($redColor2, 0%);
+                    font-size: $fontS - .1em; 
+                    padding-left: .3em;
+                }
+                .icon {
+                    font-size: $fontM;
+                }
+    
+                p {
+                    font-size: $fontM - .1em;
+                    transform: translateX(-.3em);
+                }
+            }
+    
+            input.style1 {
+                ~label.top {
+                    font-size: 8px;
+                    bottom: calc(100% + .5em);
+                    transform: translateY(50%);
+                    right: 0;
+                }
+            }
+    
+            input.style2 {
+                ~label.top {
+                    font-size: 8px;
+                    bottom: calc(100% + 1.5em);
+                    transform: translateY(50%);
+                    right: $dist1;
+                }
+            }
+    
+            .line {
+                width: 0%;
+                height: 1.2px;
+                background-color: $primaryColor;
+                position: absolute;
+                right: 0;
+                top: calc(100% - 1px);
+                transition: all .2s linear;
+            }
+    
+            .msg {
+                width: auto;
+                height: auto;
+                border-radius: $dist3;
+                padding: $dist1 $dist2;
+                position: relative;
+                background-color: lighten($redColor2, 5%);
+                position: absolute;
+                right: 0;
+                top: 115%;
+                opacity: 0;
+                visibility: hidden;
+                transition: all .2s linear;
+    
+                p {
+                    color: $whiteColor2;
+                    font-size: $fontM - .2em;
+                }
+    
+                i {
+                    font-size: $fontXL;
+                    color: lighten($redColor2, 5%);
+                    position: absolute;
+                    right: $dist2;
+                    top: calc(0% - .6em);
+                }
+            }
+    
+            .msg.show {
+                opacity: 1;
+                visibility: visible;
+                z-index: 2;
+            }
+        }
+        button[type="submit"]{
+            margin: $dist2;
+            @include swapColor(white,$primaryColor) ;
+            font-size: $fontM - .1em;
         }
     }
 }
@@ -2710,7 +2903,7 @@ form#reserve{
             display: flex;
             @include flex(row,flex-start,flex-start,wrap,flex-start) ;
             .inputWrapper.text {
-                width: calc((100% - (5 * 3em)) / 5);
+                width: calc((100% - (4 * 3em)) / 4);
                 height: 4em;
                 position: relative;
                 margin: $dist2;
@@ -2886,10 +3079,10 @@ form#reserve{
         }
     }
 }
-@include mediaQ(900px){
+@include mediaQ(1000px){
     form#reserve{
-        #otherInfo{
-            .inputs{
+        #generalInfo{
+            .innerForm{
                 font-size: 8px ;
                 .inputWrapper.text {
                     input.style1 {
@@ -2909,15 +3102,67 @@ form#reserve{
                     input.style2 {
                         ~label.top {font-size: 6px;}
                     }
-                }
+                }          
+            } 
+         }
+    }
+    form#reserve{
+        #otherInfos{
+            .inputs{    
+                font-size: 8px ;
+                .inputWrapper.text {
+                    input.style1 {
+                        &:focus {
+                            ~label {font-size: 6px;}                  
+                        }
+                    }
+                    input.style2 {
+                        &:focus {
+                            ~label {font-size: 6px;}
+                        }
+                    }  
+                    input.style1 {
+                        ~label.top {font-size: 6px;}
+                    }
+            
+                    input.style2 {
+                        ~label.top {font-size: 6px;}
+                    }
+                }    
             }
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#reserve{
-        #otherInfo{
-            .inputs{
+        #generalInfo{
+            .innerForm{
+                font-size: 6px ;
+                .inputWrapper.text {
+                    input.style1 {
+                        &:focus {
+                            ~label {font-size: 4px;}                  
+                        }
+                    }
+                    input.style2 {
+                        &:focus {
+                            ~label {font-size: 4px;}
+                        }
+                    }  
+                    input.style1 {
+                        ~label.top {font-size: 4px;}
+                    }
+            
+                    input.style2 {
+                        ~label.top {font-size: 4px;}
+                    }
+                }         
+            } 
+         }
+    }
+    form#reserve{
+        #otherInfos{
+            .inputs{    
                 font-size: 6px ;
                 .inputWrapper.text {
                     input.style1 {
@@ -2941,6 +3186,17 @@ form#reserve{
             }
         }
     }
+}
+@include mediaQ(600px){
+    form#reserve{
+        #otherInfos{
+            .inputs{
+                .inputWrapper.text {
+                    width: calc((100% - (2 * 3em)) / 2);              
+                }
+            }
+        }
+    } 
 }
 form#editProfile{
     display: flex;
@@ -3218,7 +3474,9 @@ form#editProfile{
         margin: $dist1 auto 0 auto;
     }
 }
-@include mediaQ(900px){
+@include resizeTablet('form#editProfile') ;
+@include resizeMobile('form#editProfile') ;
+@include mediaQ(1000px){
     form#editProfile{
         .inputs{
             font-size: 8px ;
@@ -3244,7 +3502,7 @@ form#editProfile{
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#editProfile{
         .inputs{
             font-size: 6px ;
@@ -3268,6 +3526,29 @@ form#editProfile{
                 }
             }
         }  
+    }
+}
+@include mediaQ(750px){
+    form#editProfile{
+        width: 95%;
+    }
+}
+@include mediaQ(800px){
+    form#editProfile{
+        .inputs{
+            .inputWrapper.text {
+                width: calc((100% - (3 * 3em)) / 3);
+            }      
+        }
+    }
+}
+@include mediaQ(500px){
+    form#editProfile{
+        .inputs{
+            .inputWrapper.text {
+                width: calc((100% - (2 * 3em)) / 2);
+            }      
+        }
     }
 }
 form#changePassword{
@@ -3457,7 +3738,7 @@ form#changePassword{
         background-color: $primaryColor;
     }
 }
-@include mediaQ(900px){
+@include mediaQ(1000px){
     form#changePassword{
         .inputs{
             font-size: 8px ;
@@ -3483,7 +3764,7 @@ form#changePassword{
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#changePassword{
         .inputs{
             font-size: 6px ;
@@ -3507,6 +3788,22 @@ form#changePassword{
                 }
             }
         }  
+    }
+}
+@include resizeTablet('form#changePassword') ;
+@include resizeMobile('form#changePassword') ;
+@include mediaQ(750px){
+    form#changePassword{
+        width: 95%;
+    }
+}
+@include mediaQ(500px){
+    form#changePassword{
+        .inputs{
+            .inputWrapper.text {
+                width: calc((100% - (2 * 3em)) / 2);
+            }
+        }
     }
 }
 form#companies{
@@ -3740,7 +4037,42 @@ form#companies{
          }
     } 
 }
-@include mediaQ(900px){
+@include resizeTablet('form#companies') ;
+@include resizeMobile('form#companies') ;
+@include mediaQ(750px){
+    form#companies{
+        width: 95%;
+    }
+}
+@include mediaQ(500px){
+    form#companies{
+        .appendDOM{      
+            .row{    
+                .inputs{                
+                    .inputWrapper.text {
+                        width: calc((100% - (3 * 3em)) / 3);
+                    }              
+                }
+            }  
+
+        } 
+    }
+}
+@include mediaQ(380px){
+    form#companies{
+        .appendDOM{      
+            .row{    
+                .inputs{                
+                    .inputWrapper.text {
+                        width: calc((100% - (2 * 3em)) / 2);
+                    }              
+                }
+            }  
+
+        } 
+    }
+}
+@include mediaQ(1000px){
     form#companies{
         .appendDOM{
             .row{
@@ -3771,7 +4103,7 @@ form#companies{
         
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#companies{
         .appendDOM{
             .row{
@@ -4118,7 +4450,7 @@ form#returnMoney{
         }
     }
 }
-@include mediaQ(900px){
+@include mediaQ(1000px){
     form#returnMoney{
         font-size: 8px ;
         .inputWrapper.text {
@@ -4160,7 +4492,7 @@ form#returnMoney{
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#returnMoney{
         font-size: 6px ;
         .inputWrapper.text {
@@ -4199,6 +4531,24 @@ form#returnMoney{
             textarea.style2 {
                 ~label.top {font-size: 4px;}
             }
+        }
+    }
+}
+@include resizeTablet('form#returnMoney') ;
+@include resizeMobile('form#returnMoney') ;
+@include mediaQ(750px){
+    form#returnMoney{
+        width: 95%;
+    }
+}
+@include mediaQ(400px){
+    form#returnMoney{
+        @include flex(column,flex-start,center,nowrap,"") ;
+        .inputWrapper.text {
+            width: 90%;
+        }
+        .inputWrapper.textarea {
+            width: 90%;
         }
     }
 }
@@ -4519,7 +4869,7 @@ form#sendTicket{
         }
     }
 }
-@include mediaQ(900px){
+@include mediaQ(1000px){
     form#sendTicket{
         font-size: 8px ;
         .inputWrapper.text {
@@ -4561,7 +4911,7 @@ form#sendTicket{
         }
     }
 }
-@include mediaQ(600px){
+@include mediaQ(700px){
     form#sendTicket{
         font-size: 6px ;
         .inputWrapper.text {
@@ -4600,6 +4950,27 @@ form#sendTicket{
             textarea.style2 {
                 ~label.top {font-size: 4px;}
             }
+        }
+    }
+}
+@include resizeTablet('form#sendTicket') ;
+@include resizeMobile('form#sendTicket') ;
+@include mediaQ(750px){
+    form#sendTicket{
+        width: 95%;
+    }
+}
+@include mediaQ(450px){
+    form#sendTicket{
+        .inputWrapper.text {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .inputWrapper.textarea {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }

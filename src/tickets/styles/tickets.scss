@@ -11,7 +11,7 @@
         margin: 0 auto;
     }
     table{
-        width: auto;
+        max-width: 90%;
         height: auto;
         margin: $dist2 auto 0 auto;
         display: flex;
@@ -132,4 +132,20 @@
         margin-top: $dist2;
     }
 
+}
+@include resizeTablet('#tickets') ;
+@include mediaQ(750px){
+    #tickets{
+        width: 95%;
+        table{
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+@include resizeMobile('#tickets') ;
+@include mediaQ(460px){
+    #tickets{
+        font-size: 4px;
+    }
 }

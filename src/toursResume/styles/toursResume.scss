@@ -45,7 +45,7 @@
                 }
                 .col.priceCol{
                     flex-shrink: 0;
-                    width: 20em;
+                    width: auto;
                     p{
                         &:nth-child(1){
                             font-size: $fontL;
@@ -159,6 +159,42 @@
                     }
                 }
                 
+            }
+        }
+    }
+}
+@include resizeTablet('#toursResume') ;
+@include mediaQ(750px){
+    #toursResume{width: 95%;}
+}
+@include mediaQ(780px){
+    #toursResume{font-size: 6px;}
+}
+@include mediaQ(580px){
+    #toursResume{
+        .tours{
+            .tour{
+                @include flex(column,flex-start,center,nowrap,"") ;     
+                img{
+                    width: 90%;
+                    height: 25em;
+                }
+                .info{
+                    margin-top: $dist1;
+                    margin-right: 0;          
+                }
+            }
+        }
+    }
+}
+@include mediaQ(480px){
+    #toursResume{
+        font-size: 4px;
+        .tours{
+            .tour{
+                img{
+                    height: 33em;
+                }
             }
         }
     }

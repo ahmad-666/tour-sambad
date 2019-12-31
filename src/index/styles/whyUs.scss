@@ -44,10 +44,35 @@
                     height: 6em;
                 }
                 h6{
-                    font-size: $fontL - .2em;
+                    font-size: $fontM;
                     color: lighten($textGrey,8%);
-                    margin-right: .5em;
+                    margin-right: .2em;
                 }
+            }
+        }
+    }
+}
+@include resizeTablet('#whyUs') ;
+@include mediaQ(850px){
+    #whyUs{       
+        .features{
+            .feature{
+                width: calc((100% - (3 * 3em)) / 3);
+            }
+        }
+    }
+}
+@include mediaQ(750px){
+    #whyUs{
+        width: 95%;
+    }
+}
+@include resizeMobile('#whyUs') ;
+@include mediaQ(550px){
+    #whyUs{       
+        .features{
+            .feature{
+                width: calc((100% - (2 * 3em)) / 2);
             }
         }
     }

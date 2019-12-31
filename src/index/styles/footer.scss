@@ -18,7 +18,7 @@ footer{
         .col{
             width: auto;
             height: auto;
-            margin: $dist3;
+            margin: $dist1;
             display: flex;
             @include flex(column,flex-start,flex-start,nowrap,"") ;
             h4{
@@ -105,5 +105,18 @@ footer{
             font-size: $fontM;
             color: $textGrey;
         }
+    }
+}
+@include resizeTablet('footer') ;
+@include resizeMobile('footer') ;
+@include mediaQ(550px){
+    footer{     
+        .links{  
+            .col{          
+                margin: $dist2 ;
+            }
+
+        }
+
     }
 }
