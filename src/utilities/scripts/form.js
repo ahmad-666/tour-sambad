@@ -464,7 +464,7 @@ Ranger.prototype.createRanger = function(){
     this.ranger.noUiSlider.on('update',()=>{
         this.minHidden.value = this.ranger.noUiSlider.get()[0];
         this.maxHidden.value = this.ranger.noUiSlider.get()[1];   
-        this.text.textContent = `${this.minHidden.value}تومان - ${this.maxHidden.value}تومان` ;
+    this.text.textContent = `از ${this.minHidden.value}  تومان  تا ${this.maxHidden.value}تومان` ;
     })
     this.ranger.parentElement.querySelector('.noUi-target').style.backgroundColor = "#eee" ;
 

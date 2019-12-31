@@ -422,7 +422,7 @@
             .tour{
                 width: calc((100% - (3 * 1.5em)) / 3);
                 margin: $dist1;
-                height: 42sem;
+                height: 41em;
                 border-radius: $dist2;
                 border: 1px solid lighten($textGrey,10%);
                 overflow: visible;
@@ -433,7 +433,7 @@
                 @include flex(column,flex-start,flex-start,nowrap,"") ;
                 .img{
                     width: 100%;
-                    height: 50%;
+                    height: 45%;
                     img{
                         border-bottom-left-radius: 0;
                         border-bottom-right-radius: 0;
@@ -444,7 +444,7 @@
                 }
                 .content{
                     margin-top: -$dist1;
-                    height: 50%;
+                    height: 55%;
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
                     padding: $dist1;
                     .colTour{
@@ -460,14 +460,27 @@
                     }       
                     .colTour.price{
                         margin-top: 0;
-                        @include flex(row,flex-start,center,wrap,flex-start) ;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
                         h6{
                             flex-shrink: 0;           
                             transform: translateY(.2em);
                         }
                         .priceWrapper{
                             width: 100%;
-                            margin-right: $dist1 + .3em;                    
+                            margin-right: 0;                
+                            display: flex;
+                            @include flex(row,flex-start,center,wrap,flex-start) ;    
+                            .beforeDiscount{
+                                width: auto;
+                                display: flex;
+                                @include flex(row,flex-start,center,nowrap,"") ;
+                                .discount{
+                                    margin-right: $dist1;
+                                }
+                            }
+                            .finalPrice{margin-right: $dist2;}
+                            .finalPrice.withoutDiscount{margin-right: 0;}
                         }
                         a{
                             margin-top: 0;
