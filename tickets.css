@@ -12142,6 +12142,11 @@ header {
     font-weight: 700;
     color: #2d2d31;
     margin: 0 auto; }
+  #tickets .otherInfo {
+    color: #2295a6;
+    width: 100%;
+    text-align: left;
+    display: none; }
   #tickets table {
     max-width: 90%;
     height: auto;
@@ -12359,6 +12364,8 @@ header {
     font-size: 4px; } }
 
 @media screen and (max-width: 400px) {
+  #tickets .otherInfo {
+    display: block; }
   #tickets table {
     max-width: 100%; }
     #tickets table thead tr, #tickets table tbody tr {
@@ -12367,22 +12374,22 @@ header {
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0;
-        width: 15em; }
+        width: 8em; }
       #tickets table thead tr th.reason, #tickets table thead tr td.reason, #tickets table tbody tr th.reason, #tickets table tbody tr td.reason {
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0;
-        width: 25em; }
+        width: 15em; }
       #tickets table thead tr th.date, #tickets table thead tr td.date, #tickets table tbody tr th.date, #tickets table tbody tr td.date {
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0;
-        width: 15em; }
+        width: 10em; }
       #tickets table thead tr th.answer, #tickets table thead tr td.answer, #tickets table tbody tr th.answer, #tickets table tbody tr td.answer {
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0;
-        width: 15em; } }
+        width: 8em; } }
 
 footer {
   width: 100%;

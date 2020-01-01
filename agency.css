@@ -12019,6 +12019,11 @@ header {
     font-size: 2em;
     font-weight: 700;
     color: #2d2d31; }
+  #toursList .otherInfo {
+    color: #2295a6;
+    width: 100%;
+    text-align: left;
+    display: none; }
   #toursList table {
     width: 100%;
     height: auto;
@@ -12228,37 +12233,39 @@ header {
     font-size: 4px; } }
 
 @media screen and (max-width: 400px) {
+  #toursList .otherInfo {
+    display: block; }
   #toursList table {
     width: 100%; }
     #toursList table thead tr, #toursList table tbody tr {
       overflow: auto; }
       #toursList table thead tr th.name, #toursList table thead tr td.name, #toursList table tbody tr th.name, #toursList table tbody tr td.name {
-        width: 18em;
+        width: 12em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #toursList table thead tr th.dest, #toursList table thead tr td.dest, #toursList table tbody tr th.dest, #toursList table tbody tr td.dest {
-        width: 18em;
+        width: 10em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #toursList table thead tr th.date, #toursList table thead tr td.date, #toursList table tbody tr th.date, #toursList table tbody tr td.date {
-        width: 18em;
+        width: 12em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #toursList table thead tr th.hotel, #toursList table thead tr td.hotel, #toursList table tbody tr th.hotel, #toursList table tbody tr td.hotel {
-        width: 18em;
+        width: 6em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #toursList table thead tr th.price, #toursList table thead tr td.price, #toursList table tbody tr th.price, #toursList table tbody tr td.price {
-        width: 18em;
+        width: 12em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #toursList table thead tr th.more, #toursList table thead tr td.more, #toursList table tbody tr th.more, #toursList table tbody tr td.more {
-        width: 18em;
+        width: 12em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; } }
