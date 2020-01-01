@@ -13484,7 +13484,11 @@ header {
   #toursWrapper #tours.rowDisplay .tours .tour {
     width: 80%;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto; }
+  #toursWrapper #displayStyles .right {
+    display: none; }
+  #toursWrapper #displayStyles .left {
+    margin-top: 0; } }
 
 footer {
   width: 100%;
