@@ -7119,8 +7119,7 @@ form#filters .row:nth-child(1) .mobileFixFlexFixer {
         -webkit-align-content: "";
             -ms-flex-line-pack: "";
                 align-content: "";
-        color: blue;
-        font-size: 9px; }
+        color: blue; }
   form#filters .row:nth-child(1) .mobileFixFlexFixer #currFilters .top {
     width: 100%;
     height: auto;
@@ -7260,7 +7259,7 @@ form#filters .row:nth-child(1) .mobileFixFlexFixer {
         -ms-flex-line-pack: "";
             align-content: ""; }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1350px) {
   form#filters {
     font-size: 8px; }
     form#filters .inputWrapper.text input.style1:focus ~ label {
@@ -7280,7 +7279,7 @@ form#filters .row:nth-child(1) .mobileFixFlexFixer {
     form#filters .inputWrapper.select input.style2 ~ label.top {
       font-size: 6px; } }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 856px) {
   form#filters {
     font-size: 6px; }
     form#filters .inputWrapper.text input.style1:focus ~ label {
@@ -11773,7 +11772,7 @@ header {
     font-size: 6px; } }
 
 @media screen and (max-width: 500px) {
-  header .bg form#search {
+  header .bg form#search, header .withoutImg form#search {
     min-width: 75%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -11794,9 +11793,9 @@ header {
     -webkit-align-content: "";
         -ms-flex-line-pack: "";
             align-content: ""; }
-    header .bg form#search .point {
+    header .bg form#search .point, header .withoutImg form#search .point {
       margin: 0.75em 0; }
-    header .bg form#search button[type="submit"] {
+    header .bg form#search button[type="submit"], header .withoutImg form#search button[type="submit"] {
       margin: 0.75em 0; } }
 
 #reportWrapper {

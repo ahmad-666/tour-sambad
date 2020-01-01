@@ -6282,7 +6282,7 @@ header {
     font-size: 6px; } }
 
 @media screen and (max-width: 500px) {
-  header .bg form#search {
+  header .bg form#search, header .withoutImg form#search {
     min-width: 75%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -6303,9 +6303,9 @@ header {
     -webkit-align-content: "";
         -ms-flex-line-pack: "";
             align-content: ""; }
-    header .bg form#search .point {
+    header .bg form#search .point, header .withoutImg form#search .point {
       margin: 0.75em 0; }
-    header .bg form#search button[type="submit"] {
+    header .bg form#search button[type="submit"], header .withoutImg form#search button[type="submit"] {
       margin: 0.75em 0; } }
 
 #rules {

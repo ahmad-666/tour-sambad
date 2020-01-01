@@ -7119,8 +7119,7 @@ form#filters .row:nth-child(1) .mobileFixFlexFixer {
         -webkit-align-content: "";
             -ms-flex-line-pack: "";
                 align-content: "";
-        color: blue;
-        font-size: 9px; }
+        color: blue; }
   form#filters .row:nth-child(1) .mobileFixFlexFixer #currFilters .top {
     width: 100%;
     height: auto;
@@ -7260,7 +7259,7 @@ form#filters .row:nth-child(1) .mobileFixFlexFixer {
         -ms-flex-line-pack: "";
             align-content: ""; }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1350px) {
   form#filters {
     font-size: 8px; }
     form#filters .inputWrapper.text input.style1:focus ~ label {
@@ -7280,7 +7279,7 @@ form#filters .row:nth-child(1) .mobileFixFlexFixer {
     form#filters .inputWrapper.select input.style2 ~ label.top {
       font-size: 6px; } }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 856px) {
   form#filters {
     font-size: 6px; }
     form#filters .inputWrapper.text input.style1:focus ~ label {
@@ -11920,7 +11919,7 @@ header {
     font-size: 6px; } }
 
 @media screen and (max-width: 500px) {
-  header .bg form#search {
+  header .bg form#search, header .withoutImg form#search {
     min-width: 75%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -11941,9 +11940,9 @@ header {
     -webkit-align-content: "";
         -ms-flex-line-pack: "";
             align-content: ""; }
-    header .bg form#search .point {
+    header .bg form#search .point, header .withoutImg form#search .point {
       margin: 0.75em 0; }
-    header .bg form#search button[type="submit"] {
+    header .bg form#search button[type="submit"], header .withoutImg form#search button[type="submit"] {
       margin: 0.75em 0; } }
 
 .productSlider {
@@ -12664,6 +12663,12 @@ header {
     width: 100%;
     height: auto;
     margin-top: 1.5em; }
+    #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay .otherInfo {
+      width: 100%;
+      font-size: 1.6em;
+      color: #2295a6;
+      text-align: left;
+      display: none; }
     #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table {
       width: 100%;
       height: auto;
@@ -12770,8 +12775,16 @@ header {
       #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr:nth-child(even) {
         background-color: #eeeef0; }
       #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.name p {
+        width: 100%;
         font-size: 1.6em;
-        color: #2d2d31; }
+        color: #2d2d31;
+        text-align: center; }
+      #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.star p {
+        width: 100%;
+        height: auto;
+        font-size: 1.6em;
+        color: #2d2d31;
+        text-align: center; }
       #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.star .icons {
         -webkit-transform: translateY(0.5em);
             -ms-transform: translateY(0.5em);
@@ -12814,7 +12827,8 @@ header {
         #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.price .priceWrapper .priceHelper {
           margin-right: 0; }
           #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.price .priceWrapper .priceHelper p {
-            font-weight: 400; }
+            font-weight: 400;
+            font-size: 1.4em; }
       #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.features {
         display: -webkit-box;
         display: -webkit-flex;
@@ -12874,8 +12888,8 @@ header {
       border: 1px solid #d3d3d7;
       -webkit-transition: all .3s linear;
       transition: all .3s linear;
-      width: -webkit-calc((100% - (3 * 3em)) / 3);
-      width: calc((100% - (3 * 3em)) / 3);
+      width: -webkit-calc((100% - (2 * 3em)) / 2);
+      width: calc((100% - (2 * 3em)) / 2);
       height: 20em;
       border-radius: 1.5em;
       overflow: hidden;
@@ -12910,12 +12924,12 @@ header {
         -webkit-box-shadow: 0 0.4em 1em -0.3em rgba(70, 69, 85, 0.3);
                 box-shadow: 0 0.4em 1em -0.3em rgba(70, 69, 85, 0.3); }
       #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel img {
-        width: 40%;
+        width: 50%;
         height: 100%;
         -o-object-fit: cover;
            object-fit: cover; }
       #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel .info {
-        width: 60%;
+        width: 50%;
         height: 100%;
         display: -webkit-box;
         display: -webkit-flex;
@@ -13075,6 +13089,142 @@ header {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
+
+@media screen and (max-width: 1100px) {
+  #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay {
+    font-size: 7px; } }
+
+@media screen and (max-width: 900px) {
+  #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel {
+    width: 100%;
+    height: 20em; }
+    #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel img {
+      width: 50%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover; }
+    #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel .info {
+      width: 50%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      -webkit-flex-wrap: nowrap;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap;
+      -webkit-align-content: "";
+          -ms-flex-line-pack: "";
+              align-content: ""; }
+  #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: ""; }
+    #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay .otherInfo {
+      display: block; }
+    #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table {
+      width: 100%; }
+      #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table thead tr, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr {
+        overflow: auto; }
+        #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table thead tr th.name, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table thead tr td.name, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr th.name, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.name {
+          width: 15em;
+          -webkit-flex-shrink: 0;
+              -ms-flex-negative: 0;
+                  flex-shrink: 0; }
+        #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table thead tr th.star, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table thead tr td.star, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr th.star, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.star {
+          width: 10em;
+          -webkit-flex-shrink: 0;
+              -ms-flex-negative: 0;
+                  flex-shrink: 0; }
+        #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table thead tr th.price, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table thead tr td.price, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr th.price, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.price {
+          width: 12em;
+          -webkit-flex-shrink: 0;
+              -ms-flex-negative: 0;
+                  flex-shrink: 0; }
+        #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table thead tr th.features, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table thead tr td.features, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr th.features, #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay table tbody tr td.features {
+          width: 15em;
+          -webkit-flex-shrink: 0;
+              -ms-flex-negative: 0;
+                  flex-shrink: 0; } }
+
+@media screen and (max-width: 800px) {
+  #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: ""; }
+    #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #tableDisplay .otherInfo {
+      display: block; } }
+
+@media screen and (max-width: 750px) {
+  #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel {
+    width: -webkit-calc((100% - (2 * 3em)) / 2);
+    width: calc((100% - (2 * 3em)) / 2); } }
+
+@media screen and (max-width: 600px) {
+  #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel {
+    width: 100%; }
+    #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel img {
+      -o-object-fit: fill;
+         object-fit: fill; } }
+
+@media screen and (max-width: 380px) {
+  #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel img {
+    width: 40%; }
+  #tourInfo #tour .tabs_wrapper .contents #hotelTab .hotelInfo #detailDisplay .hotel .info {
+    width: 60%; } }
 
 #comments {
   width: 100%;
@@ -13516,6 +13666,7 @@ header {
         -ms-flex-line-pack: "";
             align-content: ""; }
     #tourInfo #tour .rightSection {
+      overflow: hidden;
       width: 100%;
       height: auto;
       display: -webkit-box;
@@ -13562,7 +13713,6 @@ header {
           height: auto;
           margin: 0.75em auto 0 auto; }
           #tourInfo #tour .rightSection .tabs_wrapper .contents .content {
-            font-size: 10px;
             padding: 0; }
             #tourInfo #tour .rightSection .tabs_wrapper .contents .content .tourInfos {
               width: 100%;
@@ -13948,6 +14098,92 @@ header {
       position: fixed;
       top: 1.5em;
       left: 1.5em; }
+
+@media screen and (max-width: 1200px) {
+  #tourInfo {
+    font-size: 8px; }
+  #tourInfo #tour .rightSection .tabs_wrapper .contents .content .tourInfos .items .item {
+    width: -webkit-calc((100% - (3* 3em)) / 3);
+    width: calc((100% - (3* 3em)) / 3); } }
+
+@media screen and (max-width: 1000px) {
+  #tourInfo #tour .rightSection .productSlider .slider_wrapper .slider .slide {
+    width: -webkit-calc((100% - (5 * 1.4em)) / 5);
+    width: calc((100% - (5 * 1.4em)) / 5); } }
+
+@media screen and (max-width: 860px) {
+  #tourInfo #tour .rightSection .productSlider .slider_wrapper .slider .slide {
+    width: -webkit-calc((100% - (4 * 1.4em)) / 4);
+    width: calc((100% - (4 * 1.4em)) / 4); }
+  #tourInfo #tour .rightSection .tabs_wrapper .contents .content .tourInfos .items .item {
+    width: -webkit-calc((100% - (2 * 3em)) / 2);
+    width: calc((100% - (2 * 3em)) / 2); } }
+
+@media screen and (max-width: 800px) {
+  #tourInfo {
+    font-size: 6px; } }
+
+@media screen and (max-width: 750px) {
+  #tourInfo #tour {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: ""; }
+    #tourInfo #tour .rightSection {
+      margin-top: 1.5em; }
+    #tourInfo #tour .leftSection {
+      width: 45em;
+      margin-right: 0; }
+  #tourInfo #tour .rightSection .tabs_wrapper .contents .content .tourInfos .items .item {
+    width: -webkit-calc((100% - (3 * 3em)) / 3);
+    width: calc((100% - (3 * 3em)) / 3); } }
+
+@media screen and (max-width: 450px) {
+  #tourInfo #tour .rightSection .productSlider .slider_wrapper .slider .slide {
+    width: -webkit-calc((100% - (3 * 1.4em)) / 3);
+    width: calc((100% - (3 * 1.4em)) / 3); }
+  #tourInfo #tour .rightSection .tabs_wrapper .contents .content .tourInfos .items .item {
+    width: -webkit-calc((100% - (2 * 3em)) / 2);
+    width: calc((100% - (2 * 3em)) / 2); } }
+
+@media screen and (max-width: 300px) {
+  #tourInfo #tour {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-content: "";
+        -ms-flex-line-pack: "";
+            align-content: ""; }
+    #tourInfo #tour .leftSection {
+      width: 95%; } }
 
 .sliderCarousel {
   width: 90%;
