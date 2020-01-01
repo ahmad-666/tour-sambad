@@ -90,7 +90,7 @@
                                 display: flex;
                                 @include flex(row,flex-start,flex-start,wrap,flex-start) ;
                                 .item{
-                                    width: calc((100% - (4 * 3em)) / 4);
+                                    width: calc((100% - (3 * 3em)) / 3);
                                     height: auto;
                                     margin: $dist2 - .4em;
                                     display: flex;
@@ -243,7 +243,7 @@
                             .tourInfos{                           
                                 .items{                            
                                     .item{
-                                        width: calc((100% - (3* 3em)) / 3);                                     
+                                        width: calc((100% - (2* 3em)) / 2);                                     
                                     }
                                 }
                             }
@@ -347,23 +347,7 @@
     }
 
 }
-@include mediaQ(450px){
-    #tourInfo{
-        #tour{
-            .rightSection{
-                .productSlider{
-                    .slider_wrapper{
-                        .slider{
-                            .slide{
-                                width: calc((100% - (3 * 1.4em)) / 3) ;
-                                // height: 10em;
-                            }
-                        }
-                    }
-                }
-            }       
-        }
-    }
+@include mediaQ(580px){
     #tourInfo{
         #tour{
             .rightSection{
@@ -383,6 +367,46 @@
             }       
         }
     }
+    
+}
+@include mediaQ(450px){
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .productSlider{
+                    .slider_wrapper{
+                        .slider{
+                            .slide{
+                                width: calc((100% - (3 * 1.4em)) / 3) ;
+                                // height: 10em;
+                            }
+                        }
+                    }
+                }
+            }       
+        }
+    }
+    
+}
+@include mediaQ(400px){
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{                   
+                        .content{
+                            .tourInfos{                         
+                                .items{                               
+                                   font-size: 5px;
+                                }
+                            }
+                        }
+                    }     
+                }
+            }       
+        }
+    }
+    
 }
 @include mediaQ(300px){
     #tourInfo{
