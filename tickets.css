@@ -12269,7 +12269,8 @@ header {
       padding: 0.5em 1.5em;
       font-size: 1.4em;
       color: #fbfbfb;
-      margin: 0 auto; }
+      margin: 0 auto;
+      white-space: nowrap; }
     #tickets table tbody tr td.answer .process {
       background-color: #ea6161; }
     #tickets table tbody tr td.answer .showAnswer {
@@ -12374,22 +12375,22 @@ header {
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0;
-        width: 8em; }
+        width: 15em; }
       #tickets table thead tr th.reason, #tickets table thead tr td.reason, #tickets table tbody tr th.reason, #tickets table tbody tr td.reason {
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0;
-        width: 15em; }
+        width: 25em; }
       #tickets table thead tr th.date, #tickets table thead tr td.date, #tickets table tbody tr th.date, #tickets table tbody tr td.date {
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0;
-        width: 10em; }
+        width: 15em; }
       #tickets table thead tr th.answer, #tickets table thead tr td.answer, #tickets table tbody tr th.answer, #tickets table tbody tr td.answer {
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0;
-        width: 8em; } }
+        width: 10em; } }
 
 footer {
   width: 100%;

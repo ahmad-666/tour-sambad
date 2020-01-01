@@ -13135,7 +13135,7 @@ header {
     #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr {
       overflow: auto; }
       #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr th.name, #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr td.name, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr th.name, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.name {
-        width: 12em;
+        width: 15em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
@@ -13145,12 +13145,12 @@ header {
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr th.price, #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr td.price, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr th.price, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.price {
-        width: 10em;
+        width: 12em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr th.features, #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr td.features, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr th.features, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.features {
-        width: 12em;
+        width: 14em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }

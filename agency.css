@@ -12240,27 +12240,27 @@ header {
     #toursList table thead tr, #toursList table tbody tr {
       overflow: auto; }
       #toursList table thead tr th.name, #toursList table thead tr td.name, #toursList table tbody tr th.name, #toursList table tbody tr td.name {
-        width: 12em;
+        width: 20em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #toursList table thead tr th.dest, #toursList table thead tr td.dest, #toursList table tbody tr th.dest, #toursList table tbody tr td.dest {
-        width: 10em;
+        width: 15em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #toursList table thead tr th.date, #toursList table thead tr td.date, #toursList table tbody tr th.date, #toursList table tbody tr td.date {
-        width: 12em;
+        width: 15em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #toursList table thead tr th.hotel, #toursList table thead tr td.hotel, #toursList table tbody tr th.hotel, #toursList table tbody tr td.hotel {
-        width: 6em;
+        width: 15em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
       #toursList table thead tr th.price, #toursList table thead tr td.price, #toursList table tbody tr th.price, #toursList table tbody tr td.price {
-        width: 12em;
+        width: 15em;
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0; }
