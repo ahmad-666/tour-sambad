@@ -10,6 +10,12 @@
         color: $textDark;
         margin: 0 auto;
     }
+    .otherInfo{
+        color: $primaryColor;
+        width: 100%;
+        text-align: left;
+        display: none;
+    }
     table{
         max-width: 90%;
         height: auto;
@@ -82,6 +88,7 @@
                         font-size: $fontM - .2em;
                         color: $textWhite;
                         margin: 0 auto;
+                        white-space: nowrap;
                     }
                     .process{background-color: lighten($redColor2,5%);}
                     .showAnswer{
@@ -147,5 +154,36 @@
 @include mediaQ(460px){
     #tickets{
         font-size: 4px;
+    }
+}
+@include mediaQ(400px){
+    #tickets{
+        .otherInfo{       
+            display: block;
+        }
+        table{
+            max-width: 100%;
+            thead,tbody{  
+                tr{
+                    overflow: auto;
+                    th.id,td.id{
+                        flex-shrink: 0;
+                        width: 15em;
+                    }
+                    th.reason,td.reason{
+                        flex-shrink: 0;
+                        width: 25em;
+                    }
+                    th.date,td.date{
+                        flex-shrink: 0;
+                        width: 15em;
+                    }
+                    th.answer,td.answer{
+                        flex-shrink: 0;
+                        width: 10em;
+                    }
+                }
+            }
+        }  
     }
 }

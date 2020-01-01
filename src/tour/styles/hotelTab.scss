@@ -7,7 +7,7 @@
             .contents{
                 #hotelTab{
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
-                    .hotelInfo,{
+                    .hotelInfo{
                         width: 100%;
                         height: auto;
                         padding-bottom: $dist2;
@@ -62,6 +62,13 @@
                             width: 100%;
                             height: auto;
                             margin-top: $dist2;
+                            .otherInfo{
+                                width: 100%;
+                                font-size: $fontM;
+                                color: $primaryColor;
+                                text-align: left;
+                                display: none;
+                            }
                             table{
                                 width: 100%;
                                 height: auto;
@@ -119,11 +126,20 @@
                                         // td{height: auto;}
                                         td.name{
                                             p{
+                                                width: 100%;
                                                 font-size: $fontM;
                                                 color: $textDark;
+                                                text-align: center;
                                             }
                                         }
                                         td.star{
+                                            p{
+                                                width: 100%;
+                                                height: auto;
+                                                font-size: $fontM;
+                                                color: $textDark;
+                                                text-align: center;
+                                            }
                                             .icons{
                                                 transform: translateY(.5em);
                                                 width: 100%;
@@ -148,6 +164,7 @@
                                                     margin-right: 0;
                                                     p{
                                                         font-weight: 400;
+                                                        font-size: $fontM - .2em;
                                                     }
                                                 }
                                                 
@@ -180,7 +197,7 @@
                                     transform: translateY(-1.5em);
                                     box-shadow: 0 .4em 1em -.3em $shadowColor;
                                 }
-                                width: calc((100% - (3 * 3em)) / 3);
+                                width: calc((100% - (2 * 3em)) / 2);
                                 height: 20em;
                                 border-radius: $dist2;
                                 overflow: hidden;
@@ -188,12 +205,12 @@
                                 display: flex;
                                 @include flex(row,flex-start,flex-start,nowrap,"") ;
                                 img{
-                                    width: 40%;
+                                    width: 50%;
                                     height: 100%;
                                     object-fit: cover;
                                 }
                                 .info{
-                                    width: 60%;
+                                    width: 50%;
                                     height: 100%;
                                     display: flex;
                                     @include flex(row,flex-start,flex-start,nowrap,"") ;
@@ -263,6 +280,201 @@
                     }
                 }
             }     
+        }
+    }
+}
+@include mediaQ(1100px){
+    #tourInfo{
+        #tour{    
+            .tabs_wrapper{         
+                .contents{
+                    #hotelTab{
+                        .hotelInfo{
+                            #detailDisplay{
+                                font-size: 7px;
+                                // .hotel{                      
+                                //     width: calc((100% - (2 * 3em)) / 2);
+                                //     height: 20em;
+                                //     img{
+                                //         width: 50%;
+                                //         height: 100%;
+                                //         object-fit: cover;
+                                //     }
+                                //     .info{
+                                //         width: 50%;
+                                //         height: 100%;
+                                //         display: flex;
+                                //         @include flex(row,flex-start,flex-start,nowrap,"") ;
+                                //     }
+                                // }
+                            }
+                        }
+                    }
+                }     
+            }
+        }
+    }
+}
+@include mediaQ(900px){
+    #tourInfo{
+        #tour{    
+            .tabs_wrapper{         
+                .contents{
+                    #hotelTab{
+                        .hotelInfo{
+                            #detailDisplay{
+                                .hotel{                      
+                                    width: 100%;
+                                    height: 20em;
+                                    img{
+                                        width: 50%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                    .info{
+                                        width: 50%;
+                                        height: 100%;
+                                        display: flex;
+                                        @include flex(row,flex-start,flex-start,nowrap,"") ;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }     
+            }
+        }
+    }
+    #tourInfo{
+        #tour{    
+            .tabs_wrapper{         
+                .contents{
+                    #hotelTab{
+                        .hotelInfo{                     
+                            #tableDisplay{
+                                display: flex;
+                                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                                .otherInfo{                          
+                                    display: block;
+                                }
+                                table{
+                                    width: 100%;                              
+                                    thead,tbody{                              
+                                        tr{
+                                           overflow: auto;     
+                                            th.name,td.name{
+                                                width: 15em;
+                                                flex-shrink: 0;
+                                            }
+                                            th.star,td.star{
+                                                width: 10em;
+                                                flex-shrink: 0;
+                                            }
+                                            th.price,td.price{
+                                                width: 12em;
+                                                flex-shrink: 0;
+                                            }
+                                            th.features,td.features{
+                                                width: 15em;
+                                                flex-shrink: 0;
+                                            }                                     
+                                        }
+                                    }
+                       
+                                }
+                            }
+       
+                        }
+                    }
+                }     
+            }
+        }
+    }
+
+}
+@include mediaQ(800px){
+    #tourInfo{
+        #tour{    
+            .tabs_wrapper{         
+                .contents{
+                    #hotelTab{
+                        .hotelInfo{                     
+                            #tableDisplay{
+                                display: flex;
+                                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                                .otherInfo{                          
+                                    display: block;
+                                }
+                            }    
+                        }
+                    }
+                }     
+            }
+        }
+    }
+}
+@include mediaQ(750px){
+    #tourInfo{
+        #tour{    
+            .tabs_wrapper{         
+                .contents{
+                    #hotelTab{
+                        .hotelInfo{
+                            #detailDisplay{
+                                .hotel{                      
+                                    width: calc((100% - (2 * 3em)) / 2);                              
+                                }
+                            }
+                        }
+                    }
+                }     
+            }
+        }
+    }
+}
+@include mediaQ(600px){
+    #tourInfo{
+        #tour{    
+            .tabs_wrapper{         
+                .contents{
+                    #hotelTab{
+                        .hotelInfo{
+                            #detailDisplay{
+                                .hotel{                      
+                                    width: 100%;     
+                                    img{
+                                        object-fit: fill;
+                                    }                            
+                                }
+                            }
+                        }
+                    }
+                }     
+            }
+        }
+    }
+}
+@include mediaQ(380px){
+    #tourInfo{
+        #tour{    
+            .tabs_wrapper{         
+                .contents{
+                    #hotelTab{
+                        .hotelInfo{
+                            #detailDisplay{
+                                .hotel{                                               
+                                    img{
+                                        width: 40%;
+                                    }
+                                    .info{
+                                        width: 60%;                            
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }     
+            }
         }
     }
 }

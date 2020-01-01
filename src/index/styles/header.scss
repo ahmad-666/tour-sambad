@@ -83,7 +83,7 @@ header{
 @include resizeMobile('header');
 @include mediaQ(500px){
     header{
-        .bg{
+        .bg,.withoutImg{
             form#search{
                 min-width: 75%;
                 @include flex(column,flex-start,center,nowrap,"") ;

@@ -35,6 +35,7 @@
         display: flex;
         @include flex(row,flex-start,flex-start,nowrap,"") ;
         .rightSection{
+            overflow: hidden;
             width: 100%;
             height: auto;
             display: flex;
@@ -71,7 +72,6 @@
                     height: auto;    
                     margin: $dist1 auto 0 auto;   
                     .content{
-                        font-size: 10px;
                         padding: 0;
                         .tourInfos{
                             width: 100%;
@@ -231,4 +231,167 @@
         }
        
     }
+}
+@include mediaQ(1200px){
+    #tourInfo{font-size: 8px;}
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{
+                        .content{
+                            .tourInfos{                           
+                                .items{                            
+                                    .item{
+                                        width: calc((100% - (3* 3em)) / 3);                                     
+                                    }
+                                }
+                            }
+                        }
+                    }     
+                }
+            }   
+        }
+    }
+}
+@include mediaQ(1000px){
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .productSlider{
+                    .slider_wrapper{
+                        .slider{
+                            .slide{
+                                width: calc((100% - (5 * 1.4em)) / 5) ;
+                                // height: 10em;
+                            }
+                        }
+                    }
+                }
+            }       
+        }
+    }
+}
+@include mediaQ(860px){
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .productSlider{
+                    .slider_wrapper{
+                        .slider{
+                            .slide{
+                                width: calc((100% - (4 * 1.4em)) / 4) ;
+                                // height: 10em;
+                            }
+                        }
+                    }
+                }
+            }       
+        }
+    }
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{                   
+                        .content{
+                            .tourInfos{                         
+                                .items{                               
+                                    .item{
+                                        width: calc((100% - (2 * 3em)) / 2);
+                                    }
+                                }
+                            }
+                        }
+                    }     
+                }
+            }       
+        }
+    }
+}
+@include mediaQ(800px){
+    #tourInfo{font-size: 6px;}
+    
+}
+@include mediaQ(750px){
+    #tourInfo{
+        #tour{
+            @include flex(column-reverse,flex-end,center,nowrap,"") ;
+            .rightSection{
+                margin-top: $dist2;
+            }
+            .leftSection{
+                width: 45em;
+                margin-right: 0;
+            }             
+        }
+    }
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{                   
+                        .content{
+                            .tourInfos{                         
+                                .items{                               
+                                    .item{
+                                        width: calc((100% - (3 * 3em)) / 3);
+                                    }
+                                }
+                            }
+                        }
+                    }     
+                }
+            }       
+        }
+    }
+
+}
+@include mediaQ(450px){
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .productSlider{
+                    .slider_wrapper{
+                        .slider{
+                            .slide{
+                                width: calc((100% - (3 * 1.4em)) / 3) ;
+                                // height: 10em;
+                            }
+                        }
+                    }
+                }
+            }       
+        }
+    }
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{                   
+                        .content{
+                            .tourInfos{                         
+                                .items{                               
+                                    .item{
+                                        width: calc((100% - (2 * 3em)) / 2);
+                                    }
+                                }
+                            }
+                        }
+                    }     
+                }
+            }       
+        }
+    }
+}
+@include mediaQ(300px){
+    #tourInfo{
+        #tour{
+            @include flex(column-reverse,flex-end,center,nowrap,"") ;
+            .leftSection{
+                width: 95%;
+            }             
+        }
+    }
+
 }

@@ -8,6 +8,12 @@
     form#reserve{
         #timelineSlider{
             #selectHotel{
+                .otherInfo{
+                    color: $primaryColor;
+                    width: 100%;
+                    text-align: left;
+                    display: none;
+                }
                 table{
                     margin-top: $dist2;
                     width: 100%;
@@ -27,6 +33,7 @@
                             th,td{
                                 height: 100%;
                                 padding: $dist1 + .5em $dist1;
+
                             }
                             th{
                                 h6{
@@ -71,9 +78,17 @@
                                 p{
                                     font-size: $fontM;
                                     color: $textDark;
+                                    text-align: center;
                                 }
                             }
                             td.star{
+                                p{
+                                    width: 100%;
+                                    height: auto;
+                                    font-size: $fontM ;
+                                    color: $textDark;
+                                    text-align: center;
+                                }
                                 .icons{
                                     transform: translateY(.5em);
                                     width: 100%;
@@ -439,5 +454,44 @@
         #timeline{
             font-size: 4px ;
         }           
+    }
+    #timelineWrapper{
+        form#reserve{
+            #timelineSlider{
+                #selectHotel{
+                    .otherInfo{       
+                        display: block;
+                    }
+                    table{
+                        width: 100%;
+                        thead,tbody{
+                            tr{
+                                overflow: auto;
+                                th.name,td.name{
+                                    width: 15em;
+                                    flex-shrink: 0;
+                                }
+                                th.star,td.star{
+                                    width: 8em;
+                                    flex-shrink: 0;
+                                }
+                                th.price,td.price{
+                                    width: 12em;
+                                    flex-shrink: 0;
+                                }
+                                th.features,td.features{
+                                    width: 14em;
+                                    flex-shrink: 0;
+                                }                                     
+                                th.select,td.select{
+                                    width: 10em;
+                                    flex-shrink: 0;
+                                }                                     
+                            }
+                        }
+                    }
+                }
+            }       
+        }   
     }
 }

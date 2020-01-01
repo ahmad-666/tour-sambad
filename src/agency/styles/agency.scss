@@ -85,6 +85,12 @@
         font-weight: 700;
         color: $textDark;
     }
+    .otherInfo{
+        color: $primaryColor;
+        width: 100%;
+        text-align: left;
+        display: none;
+    }
     table{
         width: 100%;
         height: auto;
@@ -214,8 +220,42 @@
         font-size: 4px;
     }
 }
-@include mediaQ(380px){
+@include mediaQ(400px){
     #toursList{
-        font-size: 4px;
+        .otherInfo{
+            display: block;
+        }
+        table{
+            width: 100%;
+            thead,tbody{
+                tr{
+                    overflow: auto;
+                    th.name,td.name{
+                        width: 20em;
+                        flex-shrink: 0;
+                    }
+                    th.dest,td.dest{
+                        width: 15em;
+                        flex-shrink: 0;
+                    }
+                    th.date,td.date{
+                        width: 15em;
+                        flex-shrink: 0;
+                    }
+                    th.hotel,td.hotel{
+                        width: 15em;
+                        flex-shrink: 0;
+                    }
+                    th.price,td.price{
+                        width: 15em;
+                        flex-shrink: 0;
+                    }
+                    th.more,td.more{
+                        width: 12em;
+                        flex-shrink: 0;
+                    }
+                }
+            }
+        }
     }
 }

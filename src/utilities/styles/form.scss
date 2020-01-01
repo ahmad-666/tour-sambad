@@ -435,86 +435,92 @@ form#report{
 }
 @include mediaQ(1000px){
     form#report {
-        font-size: 8px ;
-        .inputWrapper.text {
-            input.style1 {
-                &:focus {
-                    ~label {font-size: 6px;}                  
+        .row{
+            font-size: 8px ;
+            .inputWrapper.text {
+                input.style1 {
+                    &:focus {
+                        ~label {font-size: 6px;}                  
+                    }
+                }
+                input.style2 {
+                    &:focus {
+                        ~label {font-size: 6px;}
+                    }
+                }  
+                input.style1 {
+                    ~label.top {font-size: 6px;}
+                }
+        
+                input.style2 {
+                    ~label.top {font-size: 6px;}
                 }
             }
-            input.style2 {
-                &:focus {
-                    ~label {font-size: 6px;}
+            .inputWrapper.textarea {   
+                textarea.style1 {
+                    &:focus {    
+                        ~label {font-size: 6px;}
+                    }
                 }
-            }  
-            input.style1 {
-                ~label.top {font-size: 6px;}
-            }
-    
-            input.style2 {
-                ~label.top {font-size: 6px;}
+                textarea.style2 {
+                    &:focus {    
+                        ~label {font-size: 6px;}
+                    }
+                }
+                textarea.style1 {
+                    ~label.top {font-size: 6px;}
+                }
+                textarea.style2 {
+                    ~label.top {font-size: 6px;}
+                }
             }
         }
-        .inputWrapper.textarea {   
-            textarea.style1 {
-                &:focus {    
-                    ~label {font-size: 6px;}
-                }
-            }
-            textarea.style2 {
-                &:focus {    
-                    ~label {font-size: 6px;}
-                }
-            }
-            textarea.style1 {
-                ~label.top {font-size: 6px;}
-            }
-            textarea.style2 {
-                ~label.top {font-size: 6px;}
-            }
-        }
+       
     }
 }
 @include mediaQ(700px){
     form#report {
-        font-size: 6px ;
-        .inputWrapper.text {
-            input.style1 {
-                &:focus {
-                    ~label {font-size: 4px;}                  
+        .row{
+            font-size: 6px ;
+            .inputWrapper.text {
+                input.style1 {
+                    &:focus {
+                        ~label {font-size: 4px;}                  
+                    }
+                }
+                input.style2 {
+                    &:focus {
+                        ~label {font-size: 4px;}
+                    }
+                }  
+                input.style1 {
+                    ~label.top {font-size: 4px;}
+                }
+        
+                input.style2 {
+                    ~label.top {font-size: 4px;}
                 }
             }
-            input.style2 {
-                &:focus {
-                    ~label {font-size: 4px;}
+            .inputWrapper.textarea {   
+                textarea.style1 {
+                    &:focus {    
+                        ~label {font-size: 4px;}
+                    }
                 }
-            }  
-            input.style1 {
-                ~label.top {font-size: 4px;}
-            }
-    
-            input.style2 {
-                ~label.top {font-size: 4px;}
+                textarea.style2 {
+                    &:focus {    
+                        ~label {font-size: 4px;}
+                    }
+                }
+                textarea.style1 {
+                    ~label.top {font-size: 4px;}
+                }
+                textarea.style2 {
+                    ~label.top {font-size: 4px;}
+                }
             }
         }
-        .inputWrapper.textarea {   
-            textarea.style1 {
-                &:focus {    
-                    ~label {font-size: 4px;}
-                }
-            }
-            textarea.style2 {
-                &:focus {    
-                    ~label {font-size: 4px;}
-                }
-            }
-            textarea.style1 {
-                ~label.top {font-size: 4px;}
-            }
-            textarea.style2 {
-                ~label.top {font-size: 4px;}
-            }
-        }
+        
     }
 }
 @include mediaQ(550px){
@@ -1513,7 +1519,6 @@ form#filters{
                             display: flex;
                             @include flex(column,flex-start,flex-start,nowrap,"") ;
                             color: blue;
-                            font-size: 9px; 
                         }
                     }
                 }
@@ -1567,7 +1572,7 @@ form#filters{
         }
     }
 }
-@include mediaQ(1000px){
+@include mediaQ(1350px){
     form#filters {
         font-size: 8px ;
         .inputWrapper.text {
@@ -1609,7 +1614,7 @@ form#filters{
         }
     }
 }
-@include mediaQ(700px){
+@include mediaQ(856px){
     form#filters {
         font-size: 6px ;
         .inputWrapper.text {
@@ -1651,6 +1656,7 @@ form#filters{
         }
     }
 }
+
 form#userComment{
     width: auto;
     display: flex;

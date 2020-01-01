@@ -90,6 +90,8 @@
 @include resizeTablet('#loginWrapper,#signupWrapper,#forgetPasswordWrapper') ;
 @include mediaQ(800px){
     #loginWrapper,#signupWrapper,#forgetPasswordWrapper{
+        width: 100%;
+        height: auto;
         @include flex(column,flex-start,flex-start,nowrap,"") ;
         > img{
             width: 100%;
