@@ -6205,43 +6205,43 @@ form#report {
       border: 1.2px solid #2295a6; }
 
 @media screen and (max-width: 1000px) {
-  form#report {
+  form#report .row {
     font-size: 8px; }
-    form#report .inputWrapper.text input.style1:focus ~ label {
+    form#report .row .inputWrapper.text input.style1:focus ~ label {
       font-size: 6px; }
-    form#report .inputWrapper.text input.style2:focus ~ label {
+    form#report .row .inputWrapper.text input.style2:focus ~ label {
       font-size: 6px; }
-    form#report .inputWrapper.text input.style1 ~ label.top {
+    form#report .row .inputWrapper.text input.style1 ~ label.top {
       font-size: 6px; }
-    form#report .inputWrapper.text input.style2 ~ label.top {
+    form#report .row .inputWrapper.text input.style2 ~ label.top {
       font-size: 6px; }
-    form#report .inputWrapper.textarea textarea.style1:focus ~ label {
+    form#report .row .inputWrapper.textarea textarea.style1:focus ~ label {
       font-size: 6px; }
-    form#report .inputWrapper.textarea textarea.style2:focus ~ label {
+    form#report .row .inputWrapper.textarea textarea.style2:focus ~ label {
       font-size: 6px; }
-    form#report .inputWrapper.textarea textarea.style1 ~ label.top {
+    form#report .row .inputWrapper.textarea textarea.style1 ~ label.top {
       font-size: 6px; }
-    form#report .inputWrapper.textarea textarea.style2 ~ label.top {
+    form#report .row .inputWrapper.textarea textarea.style2 ~ label.top {
       font-size: 6px; } }
 
 @media screen and (max-width: 700px) {
-  form#report {
+  form#report .row {
     font-size: 6px; }
-    form#report .inputWrapper.text input.style1:focus ~ label {
+    form#report .row .inputWrapper.text input.style1:focus ~ label {
       font-size: 4px; }
-    form#report .inputWrapper.text input.style2:focus ~ label {
+    form#report .row .inputWrapper.text input.style2:focus ~ label {
       font-size: 4px; }
-    form#report .inputWrapper.text input.style1 ~ label.top {
+    form#report .row .inputWrapper.text input.style1 ~ label.top {
       font-size: 4px; }
-    form#report .inputWrapper.text input.style2 ~ label.top {
+    form#report .row .inputWrapper.text input.style2 ~ label.top {
       font-size: 4px; }
-    form#report .inputWrapper.textarea textarea.style1:focus ~ label {
+    form#report .row .inputWrapper.textarea textarea.style1:focus ~ label {
       font-size: 4px; }
-    form#report .inputWrapper.textarea textarea.style2:focus ~ label {
+    form#report .row .inputWrapper.textarea textarea.style2:focus ~ label {
       font-size: 4px; }
-    form#report .inputWrapper.textarea textarea.style1 ~ label.top {
+    form#report .row .inputWrapper.textarea textarea.style1 ~ label.top {
       font-size: 4px; }
-    form#report .inputWrapper.textarea textarea.style2 ~ label.top {
+    form#report .row .inputWrapper.textarea textarea.style2 ~ label.top {
       font-size: 4px; } }
 
 @media screen and (max-width: 550px) {
@@ -12509,11 +12509,27 @@ header {
             height: 100%;
             border-radius: 1.5em; }
           #toursWrapper #tours .tours .tour .img .agency {
-            font-size: 1.6em;
-            color: white;
+            width: 100%;
+            height: auto;
             position: absolute;
-            right: .5em;
-            bottom: .1em; }
+            bottom: 0;
+            right: 0;
+            padding: 0.3em 0.75em; }
+            #toursWrapper #tours .tours .tour .img .agency p {
+              width: 100%;
+              height: auto;
+              position: relative;
+              z-index: 2;
+              font-size: 1.4em;
+              color: white; }
+            #toursWrapper #tours .tours .tour .img .agency::before {
+              content: '';
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              right: 0;
+              background-color: rgba(30, 30, 30, 0.7); }
           #toursWrapper #tours .tours .tour .img .special {
             width: auto;
             height: auto;
@@ -13064,8 +13080,6 @@ header {
         #toursWrapper #tours.rowDisplay .tours .tour .img img {
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0; }
-        #toursWrapper #tours.rowDisplay .tours .tour .img .agency {
-          bottom: .4em; }
       #toursWrapper #tours.rowDisplay .tours .tour .content {
         margin-top: -0.75em;
         height: 55%;

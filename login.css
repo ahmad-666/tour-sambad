@@ -5891,43 +5891,43 @@ form#report {
       border: 1.2px solid #2295a6; }
 
 @media screen and (max-width: 1000px) {
-  form#report {
+  form#report .row {
     font-size: 8px; }
-    form#report .inputWrapper.text input.style1:focus ~ label {
+    form#report .row .inputWrapper.text input.style1:focus ~ label {
       font-size: 6px; }
-    form#report .inputWrapper.text input.style2:focus ~ label {
+    form#report .row .inputWrapper.text input.style2:focus ~ label {
       font-size: 6px; }
-    form#report .inputWrapper.text input.style1 ~ label.top {
+    form#report .row .inputWrapper.text input.style1 ~ label.top {
       font-size: 6px; }
-    form#report .inputWrapper.text input.style2 ~ label.top {
+    form#report .row .inputWrapper.text input.style2 ~ label.top {
       font-size: 6px; }
-    form#report .inputWrapper.textarea textarea.style1:focus ~ label {
+    form#report .row .inputWrapper.textarea textarea.style1:focus ~ label {
       font-size: 6px; }
-    form#report .inputWrapper.textarea textarea.style2:focus ~ label {
+    form#report .row .inputWrapper.textarea textarea.style2:focus ~ label {
       font-size: 6px; }
-    form#report .inputWrapper.textarea textarea.style1 ~ label.top {
+    form#report .row .inputWrapper.textarea textarea.style1 ~ label.top {
       font-size: 6px; }
-    form#report .inputWrapper.textarea textarea.style2 ~ label.top {
+    form#report .row .inputWrapper.textarea textarea.style2 ~ label.top {
       font-size: 6px; } }
 
 @media screen and (max-width: 700px) {
-  form#report {
+  form#report .row {
     font-size: 6px; }
-    form#report .inputWrapper.text input.style1:focus ~ label {
+    form#report .row .inputWrapper.text input.style1:focus ~ label {
       font-size: 4px; }
-    form#report .inputWrapper.text input.style2:focus ~ label {
+    form#report .row .inputWrapper.text input.style2:focus ~ label {
       font-size: 4px; }
-    form#report .inputWrapper.text input.style1 ~ label.top {
+    form#report .row .inputWrapper.text input.style1 ~ label.top {
       font-size: 4px; }
-    form#report .inputWrapper.text input.style2 ~ label.top {
+    form#report .row .inputWrapper.text input.style2 ~ label.top {
       font-size: 4px; }
-    form#report .inputWrapper.textarea textarea.style1:focus ~ label {
+    form#report .row .inputWrapper.textarea textarea.style1:focus ~ label {
       font-size: 4px; }
-    form#report .inputWrapper.textarea textarea.style2:focus ~ label {
+    form#report .row .inputWrapper.textarea textarea.style2:focus ~ label {
       font-size: 4px; }
-    form#report .inputWrapper.textarea textarea.style1 ~ label.top {
+    form#report .row .inputWrapper.textarea textarea.style1 ~ label.top {
       font-size: 4px; }
-    form#report .inputWrapper.textarea textarea.style2 ~ label.top {
+    form#report .row .inputWrapper.textarea textarea.style2 ~ label.top {
       font-size: 4px; } }
 
 @media screen and (max-width: 550px) {
@@ -11126,6 +11126,8 @@ input[type=number] {
 
 @media screen and (max-width: 800px) {
   #loginWrapper, #signupWrapper, #forgetPasswordWrapper {
+    width: 100%;
+    height: auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
