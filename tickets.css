@@ -12358,6 +12358,32 @@ header {
   #tickets {
     font-size: 4px; } }
 
+@media screen and (max-width: 400px) {
+  #tickets table {
+    max-width: 100%; }
+    #tickets table thead tr, #tickets table tbody tr {
+      overflow: auto; }
+      #tickets table thead tr th.id, #tickets table thead tr td.id, #tickets table tbody tr th.id, #tickets table tbody tr td.id {
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+        width: 15em; }
+      #tickets table thead tr th.reason, #tickets table thead tr td.reason, #tickets table tbody tr th.reason, #tickets table tbody tr td.reason {
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+        width: 25em; }
+      #tickets table thead tr th.date, #tickets table thead tr td.date, #tickets table tbody tr th.date, #tickets table tbody tr td.date {
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+        width: 15em; }
+      #tickets table thead tr th.answer, #tickets table thead tr td.answer, #tickets table tbody tr th.answer, #tickets table tbody tr td.answer {
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+        width: 15em; } }
+
 footer {
   width: 100%;
   height: auto;

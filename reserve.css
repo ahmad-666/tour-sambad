@@ -12412,6 +12412,11 @@ header {
 
 #timelineWrapper {
   width: 95%; }
+  #timelineWrapper form#reserve #timelineSlider #selectHotel .otherInfo {
+    color: #2295a6;
+    width: 100%;
+    text-align: left;
+    display: none; }
   #timelineWrapper form#reserve #timelineSlider #selectHotel table {
     margin-top: 1.5em;
     width: 100%;
@@ -12522,7 +12527,14 @@ header {
       background-color: #eeeef0; }
     #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.name p {
       font-size: 1.6em;
-      color: #2d2d31; }
+      color: #2d2d31;
+      text-align: center; }
+    #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.star p {
+      width: 100%;
+      height: auto;
+      font-size: 1.6em;
+      color: #2d2d31;
+      text-align: center; }
     #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.star .icons {
       -webkit-transform: translateY(0.5em);
           -ms-transform: translateY(0.5em);
@@ -13115,7 +13127,38 @@ header {
 
 @media screen and (max-width: 410px) {
   #timelineWrapper #timeline {
-    font-size: 4px; } }
+    font-size: 4px; }
+  #timelineWrapper form#reserve #timelineSlider #selectHotel .otherInfo {
+    display: block; }
+  #timelineWrapper form#reserve #timelineSlider #selectHotel table {
+    width: 100%; }
+    #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr {
+      overflow: auto; }
+      #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr th.name, #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr td.name, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr th.name, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.name {
+        width: 15em;
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0; }
+      #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr th.star, #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr td.star, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr th.star, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.star {
+        width: 15em;
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0; }
+      #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr th.price, #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr td.price, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr th.price, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.price {
+        width: 15em;
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0; }
+      #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr th.features, #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr td.features, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr th.features, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.features {
+        width: 15em;
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0; }
+      #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr th.select, #timelineWrapper form#reserve #timelineSlider #selectHotel table thead tr td.select, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr th.select, #timelineWrapper form#reserve #timelineSlider #selectHotel table tbody tr td.select {
+        width: 15em;
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0; } }
 
 footer {
   width: 100%;
