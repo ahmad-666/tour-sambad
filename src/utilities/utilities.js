@@ -874,6 +874,7 @@ class MenuToggle{
         this.menu.classList.toggle('show') ;
         if(this.blackFilter) this.blackFilter.classList.toggle('show') ;
         if(this.menu.classList.contains('show')) docHandler(this.menu,[this.blackFilter,this.menuTrigger]);
+        document.body.classList.toggle('disableScroll') ;
     }
 }
 //exports------------------------------------------------------------------------
