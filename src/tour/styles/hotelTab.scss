@@ -352,7 +352,6 @@
                     #hotelTab{
                         .hotelInfo{                     
                             #tableDisplay{
-                                display: flex;
                                 @include flex(column,flex-start,flex-start,nowrap,"") ;
                                 .otherInfo{                          
                                     display: block;
@@ -391,27 +390,6 @@
         }
     }
 
-}
-@include mediaQ(800px){
-    #tourInfo{
-        #tour{    
-            .tabs_wrapper{         
-                .contents{
-                    #hotelTab{
-                        .hotelInfo{                     
-                            #tableDisplay{
-                                display: flex;
-                                @include flex(column,flex-start,flex-start,nowrap,"") ;
-                                .otherInfo{                          
-                                    display: block;
-                                }
-                            }    
-                        }
-                    }
-                }     
-            }
-        }
-    }
 }
 @include mediaQ(750px){
     #tourInfo{
