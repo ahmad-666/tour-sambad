@@ -13742,8 +13742,8 @@ header {
                     -ms-flex-line-pack: start;
                         align-content: flex-start; }
                 #tourInfo #tour .rightSection .tabs_wrapper .contents .content .tourInfos .items .item {
-                  width: -webkit-calc((100% - (4 * 3em)) / 4);
-                  width: calc((100% - (4 * 3em)) / 4);
+                  width: -webkit-calc((100% - (3 * 3em)) / 3);
+                  width: calc((100% - (3 * 3em)) / 3);
                   height: auto;
                   margin: 1.1em;
                   display: -webkit-box;
@@ -14071,8 +14071,8 @@ header {
   #tourInfo {
     font-size: 8px; }
   #tourInfo #tour .rightSection .tabs_wrapper .contents .content .tourInfos .items .item {
-    width: -webkit-calc((100% - (3* 3em)) / 3);
-    width: calc((100% - (3* 3em)) / 3); } }
+    width: -webkit-calc((100% - (2* 3em)) / 2);
+    width: calc((100% - (2* 3em)) / 2); } }
 
 @media screen and (max-width: 1000px) {
   #tourInfo #tour .rightSection .productSlider .slider_wrapper .slider .slide {
@@ -14121,13 +14121,19 @@ header {
     width: -webkit-calc((100% - (3 * 3em)) / 3);
     width: calc((100% - (3 * 3em)) / 3); } }
 
-@media screen and (max-width: 450px) {
-  #tourInfo #tour .rightSection .productSlider .slider_wrapper .slider .slide {
-    width: -webkit-calc((100% - (3 * 1.4em)) / 3);
-    width: calc((100% - (3 * 1.4em)) / 3); }
+@media screen and (max-width: 580px) {
   #tourInfo #tour .rightSection .tabs_wrapper .contents .content .tourInfos .items .item {
     width: -webkit-calc((100% - (2 * 3em)) / 2);
     width: calc((100% - (2 * 3em)) / 2); } }
+
+@media screen and (max-width: 450px) {
+  #tourInfo #tour .rightSection .productSlider .slider_wrapper .slider .slide {
+    width: -webkit-calc((100% - (3 * 1.4em)) / 3);
+    width: calc((100% - (3 * 1.4em)) / 3); } }
+
+@media screen and (max-width: 400px) {
+  #tourInfo #tour .rightSection .tabs_wrapper .contents .content .tourInfos .items {
+    font-size: 5px; } }
 
 @media screen and (max-width: 300px) {
   #tourInfo #tour {
