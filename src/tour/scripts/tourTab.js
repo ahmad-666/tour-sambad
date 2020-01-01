@@ -10,7 +10,7 @@ document.querySelectorAll('#tour #tourTab .days .withCollapse').forEach((withCol
    font.load().then(()=>new Collapse(withCollapse,others));
 })
 let moreInfo = document.querySelector('#tourTab .moreInfo') ;
-moreInfo.querySelectorAll('.fadeEffect').forEach(fadeEffect=>new FadeEffect(fadeEffect,'8em','white'));
+// moreInfo.querySelectorAll('.fadeEffect').forEach(fadeEffect=>new FadeEffect(fadeEffect,'8em','white'));
 let swapInstances = [] ;
 moreInfo.querySelectorAll('.swapIconText').forEach(swap=>swapInstances.push(new SwapIconText(swap,'نمایش بیشتر','نمایش کمتر',['fas','fa-plus'],['fas','fa-minus'],swap.parentElement.querySelector('.fade'))));
 swapInstances.forEach((swapInstance,i,all)=>{
