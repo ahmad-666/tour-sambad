@@ -297,7 +297,7 @@
                         <p>شماره تیکت</p>
                     </th>
                     <th class="reason">
-                        <p>علت درخواست</p>
+                        <p>عنوان درخواست</p>
                     </th>
                     <th class="date">
                         <p>تاریخ</p>
@@ -313,7 +313,7 @@
                         <p>#12345678</p>
                     </td>
                     <td class="reason">
-                        <p>علت ارسال تیکت</p>
+                        <p>عنوان تیکت</p>
                     </td>
                     <td class="date">
                         <p>1398/11/11</p>
@@ -327,7 +327,7 @@
                         <p>#12345678</p>
                     </td>
                     <td class="reason">
-                        <p>علت ارسال تیکت</p>
+                        <p> عنوان تیکت</p>
                     </td>
                     <td class="date">
                         <p>1398/11/11</p>
@@ -335,23 +335,61 @@
                     <td class="answer">
                        <button class="showAnswer btn mid modalTrigger" data-modal="answer1Modal">مشاهده جواب</button>
                         <div class="modal" id="answer1Modal">
-                            <h4>عنوان جواب</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quidem totam repellendus tenetur expedita earum consequatur ut, nobis, distinctio at laborum aliquam incidunt aut odio voluptate ab facilis fugiat eius!
-                                Repellendus modi molestias laborum vitae quidem debitis quo veniam ab, error perspiciatis possimus quis sequi dolorum. Odio distinctio, veritatis voluptates nemo aut enim ipsam accusamus magni aspernatur voluptas numquam natus!
-                                Minus deleniti quasi quia ipsum unde deserunt necessitatibus? Id voluptates illo quisquam aperiam! Provident, veniam nostrum numquam facere autem accusantium, voluptas placeat, laudantium voluptatibus explicabo alias distinctio quod fugit animi.
-                                Impedit fugiat ex velit voluptatum minus eaque quas quasi sed. Autem praesentium quas eaque in numquam similique neque itaque doloribus. Veniam est repellendus odio eaque consectetur, natus hic officia laudantium.
-                                Ea earum ipsa quaerat. Sint vero non consectetur minima. At soluta sunt, nam voluptas voluptate autem voluptatibus, illum magnam tempora nihil illo amet! Dolorum aut cum consequuntur culpa, harum expedita.
-                            </p>
+                            <h4>عنوان تیکت</h4>
+                            <div class="QA">
+                                <div class="question">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto 
+                                        dolorem numquam reprehenderit? Sit commodi tempore optio 
+                                        sequi esse tempora rerum voluptatum veniam quis, culpa, 
+                                        consectetur maxime dignissimos at, quas doloribus.
+                                    </p>
+                                </div>
+                                <div class="answer">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto 
+                                        dolorem numquam reprehenderit? Sit commodi tempore optio 
+                                        sequi esse tempora rerum voluptatum veniam quis, culpa, 
+                                        consectetur maxime dignissimos at, quas doloribus.
+                                    </p>
+                                </div>
+                                <div class="question">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto 
+                                        dolorem numquam reprehenderit? Sit commodi tempore optio 
+                                        sequi esse tempora rerum voluptatum veniam quis, culpa, 
+                                        consectetur maxime dignissimos at, quas doloribus.
+                                    </p>
+                                </div>
+                                <div class="answer">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto 
+                                        dolorem numquam reprehenderit? Sit commodi tempore optio 
+                                        sequi esse tempora rerum voluptatum veniam quis, culpa, 
+                                        consectetur maxime dignissimos at, quas doloribus.
+                                    </p>
+                                </div>
+                            </div>
+                            <form novalidate id="newAnswer1" name="newAnswer1" class="newAnswer" method="GET" action="#!" enctype="text/plain">
+                                <div class="inputWrapper textarea">
+                                    <textarea name="comment1" id="comment1" class="style1 labelHandler validate" required></textarea>
+                                    <label for="comment1">
+                                        <i class="fas fa-comments"></i>
+                                        <p>پاسخ خود را وارد نمایید</p>
+                                    </label>
+                                    <span class="line"></span>
+                                </div>
+                                <button type="submit" class="btn mid">ارسال</button>
+                            </form>
                         </div>
                     </td>
-                </tr>
+                </tr>                       
                 <tr>
                     <td class="id">
                         <p>#12345678</p>
                     </td>
                     <td class="reason">
-                        <p>علت ارسال تیکت</p>
+                        <p> عنوان تیکت</p>
                     </td>
                     <td class="date">
                         <p>1398/11/11</p>
@@ -365,26 +403,63 @@
                         <p>#12345678</p>
                     </td>
                     <td class="reason">
-                        <p>علت ارسال تیکت</p>
+                        <p> عنوان تیکت</p>
                     </td>
                     <td class="date">
                         <p>1398/11/11</p>
                     </td>
                     <td class="answer">
-                       <button class="showAnswer btn mid modalTrigger" data-modal="answer2Modal">مشاهده جواب</button>
-                        <div class="modal" id="answer2Modal">
-                            <h4>عنوان جواب</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quidem totam repellendus tenetur expedita earum consequatur ut, nobis, distinctio at laborum aliquam incidunt aut odio voluptate ab facilis fugiat eius!
-                                Repellendus modi molestias laborum vitae quidem debitis quo veniam ab, error perspiciatis possimus quis sequi dolorum. Odio distinctio, veritatis voluptates nemo aut enim ipsam accusamus magni aspernatur voluptas numquam natus!
-                                Minus deleniti quasi quia ipsum unde deserunt necessitatibus? Id voluptates illo quisquam aperiam! Provident, veniam nostrum numquam facere autem accusantium, voluptas placeat, laudantium voluptatibus explicabo alias distinctio quod fugit animi.
-                                Impedit fugiat ex velit voluptatum minus eaque quas quasi sed. Autem praesentium quas eaque in numquam similique neque itaque doloribus. Veniam est repellendus odio eaque consectetur, natus hic officia laudantium.
-                                Ea earum ipsa quaerat. Sint vero non consectetur minima. At soluta sunt, nam voluptas voluptate autem voluptatibus, illum magnam tempora nihil illo amet! Dolorum aut cum consequuntur culpa, harum expedita.
-                            </p>
+                       <button class="showAnswer btn mid modalTrigger" data-modal="answer1Modal">مشاهده جواب</button>
+                        <div class="modal" id="answer1Modal">
+                            <h4>عنوان تیکت</h4>
+                            <div class="QA">
+                                <div class="question">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto 
+                                        dolorem numquam reprehenderit? Sit commodi tempore optio 
+                                        sequi esse tempora rerum voluptatum veniam quis, culpa, 
+                                        consectetur maxime dignissimos at, quas doloribus.
+                                    </p>
+                                </div>
+                                <div class="answer">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto 
+                                        dolorem numquam reprehenderit? Sit commodi tempore optio 
+                                        sequi esse tempora rerum voluptatum veniam quis, culpa, 
+                                        consectetur maxime dignissimos at, quas doloribus.
+                                    </p>
+                                </div>
+                                <div class="question">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto 
+                                        dolorem numquam reprehenderit? Sit commodi tempore optio 
+                                        sequi esse tempora rerum voluptatum veniam quis, culpa, 
+                                        consectetur maxime dignissimos at, quas doloribus.
+                                    </p>
+                                </div>
+                                <div class="answer">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto 
+                                        dolorem numquam reprehenderit? Sit commodi tempore optio 
+                                        sequi esse tempora rerum voluptatum veniam quis, culpa, 
+                                        consectetur maxime dignissimos at, quas doloribus.
+                                    </p>
+                                </div>
+                            </div>
+                            <form novalidate id="newAnswer2" name="newAnswer2" class="newAnswer" method="GET" action="#!" enctype="text/plain">
+                                <div class="inputWrapper textarea">
+                                    <textarea name="comment2" id="comment2" class="style1 labelHandler validate" required></textarea>
+                                    <label for="comment2">
+                                        <i class="fas fa-comments"></i>
+                                        <p>پاسخ خود را وارد نمایید</p>
+                                    </label>
+                                    <span class="line"></span>
+                                </div>
+                                <button type="submit" class="btn mid">ارسال</button>
+                            </form>
                         </div>
                     </td>
-                </tr>
-               
+                </tr>                       
             </tbody>
         </table>
         <a href="sendTicket.html" class="btn mid" id="newTicket">ارسال تیکت جدید</a>

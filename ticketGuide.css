@@ -4455,7 +4455,7 @@ readers do not read off random characters that represent icons */
 .containerStyle {
   width: 90%;
   height: auto;
-  margin: 4em auto 0 auto;
+  margin: 2em auto 0 auto;
   padding: 1.5em;
   background-color: white;
   -webkit-box-shadow: 0 0 1em 0.01em rgba(70, 69, 85, 0.3);
@@ -5438,6 +5438,24 @@ input[type=number] {
       -ms-flex-line-pack: "";
           align-content: ""; }
 
+#blackFilter {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -10;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(30, 30, 30, 0.7); }
+
+#blackFilter.show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10; }
+
 header #topMenu {
   width: 100%;
   height: auto;
@@ -5994,23 +6012,26 @@ nav {
             -ms-flex-line-pack: "";
                 align-content: "";
         -webkit-box-shadow: 0 0.8em 1em -0.4em rgba(70, 69, 85, 0.3);
-                box-shadow: 0 0.8em 1em -0.4em rgba(70, 69, 85, 0.3); }
+                box-shadow: 0 0.8em 1em -0.4em rgba(70, 69, 85, 0.3);
+        background-image: -webkit-gradient(linear, left bottom, right top, from(#3bbcce), color-stop(#00a6cc), color-stop(#008fc8), color-stop(#0077bf), to(#1b5daf));
+        background-image: -webkit-linear-gradient(left bottom, #3bbcce, #00a6cc, #008fc8, #0077bf, #1b5daf);
+        background-image: linear-gradient(to right top, #3bbcce, #00a6cc, #008fc8, #0077bf, #1b5daf); }
         nav ul.desktop li.mobile ul.mobileDropdown li {
           display: inline-block;
           width: 100%;
           height: auto;
-          background-color: white;
           -webkit-transition: all .3s linear;
           transition: all .3s linear;
+          border-bottom: 1px solid white;
           margin-right: 0; }
           nav ul.desktop li.mobile ul.mobileDropdown li:hover {
-            background-color: #e0e0e0; }
+            background-color: transparent; }
           nav ul.desktop li.mobile ul.mobileDropdown li a {
             display: inline-block;
             width: 100%;
             height: auto;
             padding: 0.75em;
-            color: #2d2d31;
+            color: white;
             font-size: 1.6em; }
         nav ul.desktop li.mobile ul.mobileDropdown li.withCollapse {
           display: -webkit-box;
@@ -6040,7 +6061,7 @@ nav {
             width: 100%;
             height: auto;
             padding: 1.25em;
-            color: #2d2d31;
+            color: white;
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -6096,9 +6117,8 @@ nav {
                     align-content: "";
             border-bottom: 1.5px solid #2295a6; }
             nav ul.desktop li.mobile ul.mobileDropdown li.withCollapse ul.collapse li {
+              border-bottom: none;
               padding-right: 2em; }
-            nav ul.desktop li.mobile ul.mobileDropdown li.withCollapse ul.collapse li.withCollapse.inner:hover {
-              background-color: white; }
             nav ul.desktop li.mobile ul.mobileDropdown li.withCollapse ul.collapse ul.collapse.inner {
               max-height: 25em;
               overflow: auto;
@@ -6121,10 +6141,12 @@ nav {
     font-size: 6px; } }
 
 @media screen and (max-width: 610px) {
-  nav ul.desktop li {
-    display: none; }
-  nav ul.desktop li.mobile {
-    display: block; } }
+  nav {
+    font-size: 8px; }
+    nav ul.desktop li {
+      display: none; }
+    nav ul.desktop li.mobile {
+      display: block; } }
 
 header {
   width: 100%;
@@ -6162,6 +6184,8 @@ header {
       -o-object-fit: cover;
          object-fit: cover; }
     header .bg form#search {
+      border-top-left-radius: 1.5em;
+      border-top-right-radius: 1.5em;
       -webkit-box-shadow: 0 0.3em 0.8em -0.2em rgba(70, 69, 85, 0.3);
               box-shadow: 0 0.3em 0.8em -0.2em rgba(70, 69, 85, 0.3);
       width: auto;
@@ -6237,7 +6261,7 @@ header {
   header .withoutImg {
     width: auto;
     height: auto;
-    margin-top: 3em;
+    margin-top: 1.5em;
     border-radius: 1.5em;
     overflow: hidden;
     -webkit-box-shadow: 0 0 0.5em 0.1em rgba(70, 69, 85, 0.3);
@@ -6282,7 +6306,7 @@ header {
     font-size: 6px; } }
 
 @media screen and (max-width: 500px) {
-  header .bg form#search, header .withoutImg form#search {
+  header .bg form#search {
     min-width: 75%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -6303,10 +6327,40 @@ header {
     -webkit-align-content: "";
         -ms-flex-line-pack: "";
             align-content: ""; }
-    header .bg form#search .point, header .withoutImg form#search .point {
+    header .bg form#search .point {
       margin: 0.75em 0; }
-    header .bg form#search button[type="submit"], header .withoutImg form#search button[type="submit"] {
+    header .bg form#search button[type="submit"] {
       margin: 0.75em 0; } }
+
+@media screen and (max-width: 500px) {
+  header .withoutImg {
+    width: 97%; }
+    header .withoutImg form#search {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+              justify-content: space-around;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: nowrap;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap;
+      -webkit-align-content: "";
+          -ms-flex-line-pack: "";
+              align-content: ""; }
+      header .withoutImg form#search button[type="submit"] {
+        margin-right: 1.5em; }
+      header .withoutImg form#search .select2 {
+        width: 10em; } }
 
 #ticketGuide {
   display: -webkit-box;
@@ -6363,7 +6417,7 @@ footer {
   background-color: #eeeef0;
   -webkit-box-shadow: 0 -0.3em 0.5em -0.2em rgba(70, 69, 85, 0.3);
           box-shadow: 0 -0.3em 0.5em -0.2em rgba(70, 69, 85, 0.3);
-  margin-top: 4em;
+  margin-top: 2em;
   padding: 1.5em 0;
   display: -webkit-box;
   display: -webkit-flex;
