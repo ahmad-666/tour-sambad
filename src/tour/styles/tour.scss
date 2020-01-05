@@ -317,6 +317,15 @@
 @include mediaQ(750px){
     #tourInfo{
         #tour{
+            .rightSection{
+                .productSlider{
+                    width: 95% ;             
+                }
+            } 
+        }
+    }
+    #tourInfo{
+        #tour{
             @include flex(column-reverse,flex-end,center,nowrap,"") ;
             .rightSection{
                 margin-top: $dist2;
@@ -372,6 +381,13 @@
 }
 @include mediaQ(450px){
     #tourInfo{
+        #tour{         
+            .leftSection{
+                width: 98%;
+            }             
+        }
+    }
+    #tourInfo{
         #tour{
             .rightSection{
                 .productSlider{
@@ -390,6 +406,7 @@
     
 }
 @include mediaQ(400px){
+    
     #tourInfo{
         #tour{
             .rightSection{

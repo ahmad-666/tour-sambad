@@ -4,7 +4,6 @@ import TL from '../../utilities/scripts/timeline.js' ;
 import Tooltip from '../../utilities/scripts/toolTip.js' ;
 import Collapse from '../../utilities/scripts/collapse.js' ;
 import util from '../../utilities/utilities.js' ;
-import { remove } from 'animejs';
 let Timeline = TL.Timeline ;
 let TimelineSlider = TL.TimelineSlider ;
 let Progress = TL.Progress ;
@@ -25,12 +24,38 @@ function checkFormValidation(e){
     }
 }
 timelineWrapper.querySelectorAll('.withTooltip').forEach(tooltip=>new Tooltip(tooltip));
-function createRow(){
+let companyIndex = 1 ;
+let companiesSlide = document.querySelector('#otherInfos') ;
+let cloneContainer = companiesSlide.querySelector('.appendDOM') ;
+let cloneRow = companiesSlide.querySelector('.cloneMe') ;
+let cloneTrigger = companiesSlide.querySelector('.appendTrigger') ;
+let afterClone = function(newClone){
+    let title = newClone.querySelector('h6') ;
+    let nameInput = newClone.querySelector('.inputs .inputWrapper.text:nth-child(1) input') ;
+    let nameLabel = nameInput.parentElement.querySelector('label');
+    let snnInput = newClone.querySelector('.inputs .inputWrapper.text:nth-child(2) input') ;
+    let snnLabel = snnInput.parentElement.querySelector('label') ;
+    let tel = newClone.querySelector('.inputs .inputWrapper.text:nth-child(3)') ;
+    let removeRow = newClone.querySelector('.inputs button.removeRow') ;
+    title.textContent = `همسفر شماره ${companyIndex}` ;
+    nameInput.setAttribute('name',`company${companyIndex}Name`) ;
+    nameInput.setAttribute('id',`company${companyIndex}Name`) ;
+    nameLabel.setAttribute('for',`company${companyIndex}Name`) ;
+    snnInput.setAttribute('name',`company${companyIndex}Snn`) ;
+    snnInput.setAttribute('id',`company${companyIndex}Snn`) ;
+    snnLabel.setAttribute('for',`company${companyIndex}Snn`) ;
+    tel.parentElement.removeChild(tel) ;
+    removeRow.style.display= "inline-block" ;
+    removeRow.addEventListener('click',removeRowHandler) ;
+    companyIndex++ ;
+    updateFormValidation() ;
+}
+function updateFormValidation(){
     let reserveForm = timelineWrapper.querySelector('form#reserve') ;
     let reserveFormData = {
         elm: reserveForm,
-        inputs: reserveForm.querySelectorAll('.inputWrapper.text .validate'),
         submit: infoSubmit,
+        inputs: reserveForm.querySelectorAll('.inputWrapper.text .validate'),
         send: false ,
         modal: null
     }
@@ -41,51 +66,40 @@ function createRow(){
         reserveFormData.send,
         reserveFormData.modal
     ) ;
-    timelineWrapper.querySelectorAll('input[type="number"]').forEach(number=>new NumberInput(number));
-    timelineWrapper.querySelectorAll('.labelHandler').forEach(label=> new LabelHandler(label)) ;
-    reserveForm.querySelectorAll('button.removeRow').forEach(removeRow=>removeRow.removeEventListener('click',removeRowInfo)) ;
-    reserveForm.querySelectorAll('button.removeRow').forEach(removeRow=>removeRow.addEventListener('click',removeRowInfo)) ;
+    reserveForm.querySelectorAll('input[type="number"]').forEach(number=>new NumberInput(number));
+    reserveForm.querySelectorAll('.labelHandler').forEach(label=> new LabelHandler(label)) ;
 }
-createRow() ;
-function removeRowInfo(e){
+function removeRowHandler(e){
     let row = this.parentElement.parentElement ;
     row.parentElement.removeChild(row) ;
     companyIndex-- ;
-    createRow() ;
+    updateCompanions() ;
+    updateFormValidation() ;
 }
-let companyIndex = 1 ;
-new AppendDOM(
-    timelineWrapper.querySelector('#otherInfos .appendDOM'),
-    timelineWrapper.querySelector('#otherInfos .cloneMe'),
-    timelineWrapper.querySelector('#otherInfos .appendTrigger'),
-    function(newElm){
-        let nameInput = newElm.querySelector('.inputs .inputWrapper:nth-child(1) input');
-        let nameLabel = newElm.querySelector('.inputs .inputWrapper:nth-child(1) label');
-        let snnInput = newElm.querySelector('.inputs .inputWrapper:nth-child(2) input');
-        let snnLabel = newElm.querySelector('.inputs .inputWrapper:nth-child(2) label');
-        let phoneInput = newElm.querySelector('.inputs .inputWrapper:nth-child(3) input');
-        let phoneLabel = newElm.querySelector('.inputs .inputWrapper:nth-child(3) label');
-        let title = newElm.querySelector('h6') ;
-        let btn = newElm.querySelector('button.removeRow') ;
-        btn.style.display= "inline-block" ;
-        title.textContent = `مشخصات همراه${companyIndex}` ;
-        nameInput.setAttribute('id',`company${companyIndex}Name`) ;
-        nameInput.setAttribute('name',`company${companyIndex}Name`) ;
-        nameLabel.setAttribute('for',`company${companyIndex}Name`) ;
-        nameInput.value = '' ;
-        snnInput.setAttribute('id',`company${companyIndex}Snn`) ;
-        snnInput.setAttribute('name',`company${companyIndex}Snn`) ;
-        snnLabel.setAttribute('for',`company${companyIndex}Snn`) ;
-        snnInput.value = '' ;
-        phoneInput.setAttribute('id',`company${companyIndex}Tel`) ;
-        phoneInput.setAttribute('name',`company${companyIndex}Tel`) ;
-        phoneLabel.setAttribute('for',`company${companyIndex}Tel`) ;
-        phoneInput.value = '' ;
-        createRow() ;
-        companyIndex++ ;
-        if(companyIndex>1){
-            let phone = phoneInput.parentElement ;
-            phone.parentElement.removeChild(phone) ;
+function updateCompanions(){
+    cloneContainer.querySelectorAll('.cloneMe').forEach((newClone,i)=>{
+        if(i!=0){
+            let title = newClone.querySelector('h6') ;
+            let nameInput = newClone.querySelector('.inputs .inputWrapper.text:nth-child(1) input') ;
+            let nameLabel = nameInput.parentElement.querySelector('label');
+            let snnInput = newClone.querySelector('.inputs .inputWrapper.text:nth-child(2) input') ;
+            let snnLabel = snnInput.parentElement.querySelector('label') ;
+            title.textContent = `همسفر شماره ${i}` ;
+            nameInput.setAttribute('name',`company${i}Name`) ;
+            nameInput.setAttribute('id',`company${i}Name`) ;
+            nameLabel.setAttribute('for',`company${i}Name`) ;
+            snnInput.setAttribute('name',`company${i}Snn`) ;
+            snnInput.setAttribute('id',`company${i}Snn`) ;
+            snnLabel.setAttribute('for',`company${i}Snn`) ;
         }
-    }
+    })
+}
+updateFormValidation() ;
+new AppendDOM(
+    cloneContainer,
+    cloneRow,
+    cloneTrigger,
+    afterClone
 )
+
+

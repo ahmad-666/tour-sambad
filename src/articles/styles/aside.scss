@@ -11,7 +11,7 @@ main{
                 img{transform: scale(1.1) ;}
             }      
         }
-        #popular{
+        #popular,#similars{
             width: 100% ;
             height: auto;
             padding: 0 $dist1 ;
@@ -27,6 +27,10 @@ main{
                 width: 100%;
                 height: auto;
                 display: flex;
+            }
+        }
+        #popular{      
+            .articles{
                 @include flex(column,flex-start,center,nowrap,"") ;
             }
             .article{
@@ -60,17 +64,8 @@ main{
             }
         }
         #similars{
-            width: 100% ;
-            height: auto;
-            padding: 0 $dist1 ;
-            margin-top: $dist3 ;
-            display: flex ;
-            @include flex(column,flex-start,center,nowrap,"") ;
-            h4{
-                width: 100% ;
-                font-weight: 700 ;
-                font-size: $fontL + .2em ;
-                color: $primaryColor ;    
+            .articles{
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
             }
             .article{
                 width: 100% ;
@@ -120,24 +115,45 @@ main{
             height: auto;
             margin: 0 ;
             margin-top: $dist3 ;
-            #popular{
+            #popular,#similars{
                .articles{
-                   @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+                    overflow: auto;
+                   @include flex(row,flex-start,flex-start,nowrap,"") ;
                    .article{
+                       flex-shrink: 0;
                        width: calc((100% - (3 * 3em)) / 3);
                        margin: $dist2;
-                   }
+                   }       
                }
             }
             #similars{
-                margin-top: $dist2 ;
                 .article{
+                    @include flex(column,flex-start,center,nowrap,"") ;
                     .imgWrapper{
-                        width: 20em ;
+                        width: 100% ;
+                        height: auto;
+                        overflow: hidden;
+                        border-radius: $dist2 ;
+                        display: flex ;
                         img{
                             width: 100% ;
-                            height: 20em;
+                            height: 15em;
                         }
+                    }
+                    .col{
+                        width: auto;
+                    }
+                    h6{
+                        @include multiEllipse(3,$dist2,$textDark) ;
+                        max-width: 100% ;
+                        font-size: $fontM  ;
+                        color: $textDark ;
+                        text-align: center;
+                    }
+                    p.date{
+                        font-size: $fontM - .2em ;
+                        color: darken($textGrey,10%) ;
+                        margin-top: .3em;
                     }
                 }
             }
@@ -145,21 +161,18 @@ main{
         
     }
 }
-@include mediaQ(580px){
+@include mediaQ(540px){
     main{
         aside.sideBar{
-            #popular{
+            #popular,#similars{
                .articles{
-                   .article{width: calc((100% - (2 * 3em)) / 2) ;}
+                   .article{
+                       width: calc((100% - (2 * 3em)) / 2);
+                       .imgWrapper {
+                           img{height: 20em;}
+                       }
+                   }       
                }
-            }
-            #similars{
-                .article{
-                    .imgWrapper{
-                        width: 20em ;
-                        img{height: 20em;}
-                    }
-                }
             }
         }  
         
@@ -168,25 +181,12 @@ main{
 @include mediaQ(400px){
     main{
         aside.sideBar{
-            #popular{
+            #popular,#similars{
                .articles{
                    .article{
-                       width: 100% ;
-                       .imgWrapper{
-                           img{
-                               height: 20em;
-                           }
-                       }
-                    }
+                       width: calc((100% - (5 * 3em)) / 1);             
+                   }       
                }
-            }
-            #similars{
-                .article{
-                    .imgWrapper{
-                        width: 20em ;
-                        img{height: 20em;}
-                    }
-                }
             }
         }  
         

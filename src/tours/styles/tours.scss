@@ -431,6 +431,8 @@
                         @include flex(column,flex-start,flex-start,nowrap,"") ;   
                         a{
                            margin-top: $dist1;
+                           margin-left: auto;
+                           margin-right: auto;
                         }             
                     }
                 }
@@ -550,6 +552,14 @@
 }
 @include mediaQ(1350px){
     #toursWrapper{
+        #displayStyles{
+            .right{
+                margin-left: 0;
+                margin-right: 0;
+            }  
+        }
+    }
+    #toursWrapper{
         font-size: 8px;
         width: 97%;
         @include flex(row,flex-start,flex-start,nowrap,"") ;
@@ -583,6 +593,44 @@
 }
 @include mediaQ(1000px){
     #toursWrapper{
+        font-size: 6px;
+    }
+    // #toursWrapper{
+    //     #tours.colDisplay{
+    //         .tours{
+    //             .tour{
+    //                 .content{
+    //                     @include flex(row,space-between,flex-start,wrap,flex-start) ;
+    //                     padding-right: $dist2;
+    //                     .colTour.info{
+    //                         flex-shrink: 0;
+    //                         width: auto;
+    //                     }
+    //                     .colTour.services{   
+    //                         max-width: 100%;
+    //                         display: flex;                                           
+    //                     }
+    //                     .colTour.price{
+    //                         width: 100% !important;
+    //                         margin-top: 0;
+    //                         margin-right: 0;
+    //                         padding-right: $dist2;
+    //                         border-right: 1px solid $textGrey;
+    //                         width: auto;
+    //                         flex-shrink: 0;
+    //                         @include flex(column,flex-start,flex-start,nowrap,"") ;   
+    //                         a{
+    //                            margin-top: $dist1;
+    //                            margin-left: auto;
+    //                            margin-right: auto;
+    //                         }             
+    //                     }
+    //                 }
+    //             }  
+    //         }
+    //     }
+    // }
+    #toursWrapper{
         #tours.colDisplay{
             .tours{
                 .tour{
@@ -603,11 +651,6 @@
         }
     }
 }
-@include mediaQ(850px){
-    #toursWrapper{
-        font-size: 6px;
-    }
-}
 @include mediaQ(750px){
     #toursWrapper{
         @include flex(column,flex-start,center,nowrap,"") ;
@@ -626,9 +669,15 @@
         #displayStyles{
             @include flex(column,flex-start,flex-start,nowrap,"") ;
             .left{
+                width: auto;
                 margin-right: 0;
                 margin-top: $dist2;
-                @include flex(row,flex-start,center,wrap,flex-start) ;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                height: auto;
+                .sorts{
+                    margin-right: 0;
+                    margin-top: 0;
+                }
             }     
         }
     }
@@ -656,6 +705,21 @@
     }
 }
 @include mediaQ(580px){
+    #toursWrapper{
+        #tours.colDisplay{
+            .tours{
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                .tour{  
+                    .content{
+                        .colTour.price{
+                            border-right: 1px solid transparent;                             
+                        }
+                    }
+                }  
+            }
+        }
+
+    }
     #toursWrapper{
         #tours.colDisplay{
             .tours{
@@ -687,27 +751,42 @@
 }
 @include mediaQ(420px){
     #toursWrapper{
+        .col{
+            #displayStyles{
+                .left{
+                    width: 80vw;
+                }     
+            }
+        }
+      
+    }
+    #toursWrapper{
         #tours.colDisplay{
             .tours{
                 .tour{
                     height: auto;
                     @include flex(column,flex-start,center,nowrap,"") ;
                     .img{
-                        width: 75%;
-                        height: 25em;
+                        width: 100%;
+                        height: 30em;
                     }
                     .content{
                         padding-top: $dist2;
                         padding-right: 0;
                         @include flex(row,flex-start,flex-start,wrap,flex-start) ;
                         .colTour.info{
-                            width: 40%;
+                            width: auto;
                         }
                         .colTour.services{   
-                            width: calc(60% - 2em);
+                            width: auto;
+                            // .serviceWrapper{
+                            //     @include flex(column,flex-start,flex-end,nowrap,"") ;
+
+                            // }
                         }
                         .colTour.price{
-                            width: auto;              
+                            width: 100%;     
+                            // @include flex(column,flex-start,center,nowrap,"") ;         
                         }
                     }
                 }  

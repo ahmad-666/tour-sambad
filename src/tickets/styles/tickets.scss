@@ -185,10 +185,12 @@
             display: block;
         }
         table{
-            max-width: 100%;
+            width: auto;
+            overflow: auto;
             thead,tbody{  
                 tr{
-                    overflow: auto;
+                   width: auto;  
+                   min-width: 100%;   
                     th.id,td.id{
                         flex-shrink: 0;
                         width: 15em;

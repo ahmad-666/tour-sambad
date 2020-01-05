@@ -52,3 +52,12 @@ phoneDropdownTrigger.addEventListener('click',e=>{
     phoneDropdown.classList.toggle('show') ;
     docHandler(phoneDropdown,[]) ;
 })
+let loginDropdownTrigger = document.querySelector('.loginWrapper .content') ;
+let loginDropdown = document.querySelector('#loginDropdown') ;
+if(loginDropdownTrigger){
+   loginDropdownTrigger.addEventListener('click',e=>{
+      e.stopPropagation() ;
+      loginDropdown.classList.toggle('show') ;
+      docHandler(loginDropdown,[]) ;
+  })
+}

@@ -227,9 +227,11 @@
         }
         table{
             width: 100%;
+            overflow: auto ;
             thead,tbody{
                 tr{
-                    overflow: auto;
+                    width: auto;
+                    min-width: 100% ;
                     th.name,td.name{
                         width: 20em;
                         flex-shrink: 0;
