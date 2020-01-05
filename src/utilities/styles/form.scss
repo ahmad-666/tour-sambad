@@ -707,6 +707,7 @@ form#loginUser,form#loginAdmin,form#signupUser,form#signupAdmin,form#forgetPassw
         @include swapColor(white,$primaryColor) ;
         cursor: pointer;
         margin-top: $dist2 ;
+        padding: .4em $dist3;
     }
     .loginRoute{
         font-size: $fontM;
@@ -3393,7 +3394,18 @@ form#editProfile{
         width: auto;
         height: auto;
         display: flex;
-        @include flex(row,flex-start,center,wrap,flex-start) ;  
+        @include flex(column,flex-start,flex-start,nowrap,"") ;  
+        margin-top: $dist1;
+        h6{
+            font-size: $fontM;
+            color: $textDark;
+            font-weight: 700;
+        }
+        .row{
+            display: flex;
+            @include flex(row,flex-start,center,wrap,flex-start) ;
+            margin-top: -$dist1;
+        }
         .vanillaSelect{
             width: auto;
             height: auto;
@@ -4977,6 +4989,196 @@ form#sendTicket{
             width: 90%;
             margin-left: auto;
             margin-right: auto;
+        }
+    }
+}
+
+form.newAnswer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    margin-top: $dist3;
+    padding-top: $dist3;
+    border-top: 1px solid $textGrey;
+    .inputWrapper.textarea {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-top: 0;
+        display: flex;
+        textarea {
+            // we set height/max-height via js
+            width: 100%;
+            font-size: $fontM;
+            color: $darkColor;
+            padding: $dist1;
+            line-height: $dist2 ;
+            transition: all .2s linear;
+            resize: none;
+            &::placeholder {
+                font-size: $fontM;
+                color: $textGrey;
+            }
+        }
+        textarea.style1 {
+            height: 8em;
+            border: 1.2px solid lighten($textGrey, 25%);
+            border-radius: $dist2;
+            ~label {
+                bottom: 100%;
+                transform: translateY(150%);
+            }
+            &:focus {
+                border: 1.2px solid $primaryColor;
+                ~label {
+                    font-size: 8px;
+                    right: $dist1;
+                    color: $primaryColor;
+                    bottom: calc(100% + .5em);
+                    transform: translateY(0);
+                }
+            }
+        }
+        textarea.style2 {
+            overflow: hidden;
+            border: none;
+            border-bottom: 1.2px solid lighten($textGrey, 25%);
+            ~label {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &:focus {
+                border-bottom: 1.2px solid $primaryColor;
+                ~label {
+                    font-size: 8px;
+                    right: 0;
+                    color: $primaryColor;
+                    top: 0;
+                    transform: translateY(-100%);
+                }
+                ~.line {
+                    width: 100%;
+                }
+            }
+        }
+        textarea.style1.error {
+            border: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+        }
+        textarea.style2.error {
+            border-bottom: 1.2px solid lighten($redColor2, 5%);
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+        }
+        textarea.style1 {
+            ~label.top {
+                font-size: 8px;
+                bottom: calc(100% + 2em);
+                transform: translateY(50%);
+                right: 0;
+            }
+        }
+        textarea.style2 {
+            ~label.top {
+                font-size: 8px;
+                top: 0;
+                transform: translateY(-100%);
+                right: 0;                            
+            }
+        }
+        label {
+            width: auto;
+            height: auto;
+            position: absolute;
+            right: $dist1;
+            position: absolute;
+            display: flex;
+            @include flex(row, flex-start, center, nowrap, "");
+            transition: all .2s linear;
+            color: lighten($textGrey,20%);
+            .isRequire{
+                width: auto;
+                height: auto;
+                color: lighten($redColor2, 0%);
+                font-size: $fontS - .1em; 
+                padding-left: .3em;
+            }
+            i {
+                font-size: $fontM;
+            }
+
+            p {
+                font-size: $fontM - .1em;
+                transform: translateX(-.3em);
+            }
+        }
+        .line {
+            width: 0%;
+            height: 1.2px;
+            background-color: $primaryColor;
+            position: absolute;
+            right: 0;
+            top: calc(100% - .6px);
+            transition: all .2s linear;
+        }
+    }
+    button{
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $primaryColor ;
+        color: white;
+        cursor: pointer;
+        margin-top: $dist1;
+    }
+}
+@include mediaQ(1000px){
+    form.newAnswer {
+        font-size: 8px ;
+        .inputWrapper.textarea {   
+            textarea.style1 {
+                &:focus {    
+                    ~label {font-size: 6px;}
+                }
+            }
+            textarea.style2 {
+                &:focus {    
+                    ~label {font-size: 6px;}
+                }
+            }
+            textarea.style1 {
+                ~label.top {font-size: 6px;}
+            }
+            textarea.style2 {
+                ~label.top {font-size: 6px;}
+            }
+        }
+    }
+}
+@include mediaQ(700px){
+    form.newAnswer {
+        font-size: 6px ; 
+        .inputWrapper.textarea {   
+            textarea.style1 {
+                &:focus {    
+                    ~label {font-size: 4px;}
+                }
+            }
+            textarea.style2 {
+                &:focus {    
+                    ~label {font-size: 4px;}
+                }
+            }
+            textarea.style1 {
+                ~label.top {font-size: 4px;}
+            }
+            textarea.style2 {
+                ~label.top {font-size: 4px;}
+            }
         }
     }
 }

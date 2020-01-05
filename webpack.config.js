@@ -29,7 +29,6 @@ module.exports = {
         'changePassword' : './src/changePassword/changePassword.js',
         'editProfile' : './src/editProfile/editProfile.js',
         'toursResume' : './src/toursResume/toursResume.js',
-        'companies' : './src/companies/companies.js',
         'returnMoney' : './src/returnMoney/returnMoney.js',
         'sendTicket' : './src/sendTicket/sendTicket.js',
         'tickets' : './src/tickets/tickets.js'
@@ -282,12 +281,6 @@ module.exports = {
             inject: true,
             chunks: ['toursResume'],
             template: './src/toursResume/toursResume.html'
-        }),
-        new HtmlWebpackPlugin({ 
-            filename: 'companies.html' , 
-            inject: true,
-            chunks: ['companies'],
-            template: './src/companies/companies.html'
         }),
         new HtmlWebpackPlugin({ 
             filename: 'returnMoney.html' , 

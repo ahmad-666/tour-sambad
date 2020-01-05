@@ -50,7 +50,7 @@
         }
         thead{
             tr{
-                background-color: white;
+                background-color: $primaryColor;
                 border-bottom: 1px solid lighten($textGrey,20%);
                 th{    
                     text-align: right;        
@@ -60,7 +60,7 @@
                         height: 100%;
                         font-size: $fontM;
                         font-weight: 700;
-                        color: $primaryColor;
+                        color: white;
                     }
                 }
             }
@@ -96,32 +96,55 @@
                         cursor: pointer;
                     }
                     .modal{
-                        width: 50em;
-                        max-height: 80vh;
-                        overflow: auto;
+                        opacity: 0;
+                        visibility: hidden;
+                        width: 55em;
+                        height: auto;
                         position: fixed;
                         top: 50%;
                         right: 50%;
                         transform: translate(50%,-50%);
-                        z-index: -100;
-                        box-shadow: 0 0 1em .3em $shadowColor;
                         background-color: white;
-                        opacity: 0;
-                        visibility: hidden;
-                        transition: all .3s linear;
+                        padding: $dist2 $dist1;
                         display: flex;
                         @include flex(column,flex-start,center,nowrap,"") ;
                         h4{
-                            font-size: $fontL;
-                            font-weight: 700;
-                            color: $textDark;
-                        }
-                        p{
-                            margin-top: $dist1;
-                            color: darken($textGrey,20%);
-                            line-height: $dist2 + .3em;
                             font-size: $fontM;
+                            color: $textDark;
+                            font-weight: 700;
                         }
+                        .QA{
+                            width: 100%;
+                            max-height: 30em;
+                            overflow: auto;
+                            display: flex;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
+                            .question,.answer{
+                                width: 75%;
+                                height: auto;
+                                display: flex;
+                                margin-top: $dist1 + .3em;
+                                padding: $dist1;
+                                border-radius: $dist1;
+                                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                                p{
+                                    width: 100%;
+                                    height: auto;
+                                    line-height: $dist2 + .5em;
+                                    color: white;
+                                    font-size: $fontM - .2em;
+                                }
+                            }
+                            .question{
+                                margin-left: auto;
+                                background-color: #3949ab  ;
+                            }
+                            .answer{
+                                margin-right: auto;
+                                background-color: #e57373 ;          
+                            }
+                        }
+
                     }
                     .modal.show{
                         opacity: 1;

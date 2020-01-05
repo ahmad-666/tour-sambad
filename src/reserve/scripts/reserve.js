@@ -50,6 +50,7 @@ createRow() ;
 function removeRowInfo(e){
     let row = this.parentElement.parentElement ;
     row.parentElement.removeChild(row) ;
+    companyIndex-- ;
     createRow() ;
 }
 let companyIndex = 1 ;
@@ -82,7 +83,7 @@ new AppendDOM(
         phoneInput.value = '' ;
         createRow() ;
         companyIndex++ ;
-        if(companyIndex>2){
+        if(companyIndex>1){
             let phone = phoneInput.parentElement ;
             phone.parentElement.removeChild(phone) ;
         }

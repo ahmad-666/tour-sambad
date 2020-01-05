@@ -24,4 +24,4 @@ new Form.FormValidate(adminSignupForm.elm,adminSignupForm.submit,
     adminSignupForm.inputs,adminSignupForm.send,adminSignupForm.modal) ;
 userSignupFormElm.querySelectorAll('.labelHandler').forEach(label=>new Form.LabelHandler(label)) ;
 adminSignupFormElm.querySelectorAll('.labelHandler').forEach(label=>new Form.LabelHandler(label)) ;
-tabsWrapper.querySelectorAll('.inputWrapper.file').forEach(file=>new Form.FileHandler(file)) ;
+//tabsWrapper.querySelectorAll('.inputWrapper.file').forEach(file=>new Form.FileHandler(file)) ;

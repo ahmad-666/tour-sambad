@@ -114,7 +114,13 @@
                                 }
                                 thead{
                                     tr{
-                                        background-color: lighten($textGrey,35%);
+                                        background-color: $primaryColor;
+                                        th{
+                                            h6{
+                                                color: white ;
+                                            }
+                                            
+                                        }
                                         border-bottom: 1px solid lighten($textGrey,30%);
                                     }
                                 }
@@ -357,10 +363,12 @@
                                     display: block;
                                 }
                                 table{
-                                    width: 100%;                              
-                                    thead,tbody{                              
-                                        tr{
-                                           overflow: auto;     
+                                    width: 100%;    
+                                    overflow: auto;
+                                    thead,tbody{  
+                                        tr{        
+                                            width: auto;  
+                                            min-width: 100%;              
                                             th.name,td.name{
                                                 width: 15em;
                                                 flex-shrink: 0;

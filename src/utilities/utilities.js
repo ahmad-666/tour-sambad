@@ -810,20 +810,32 @@ class SwapIconText{
 //fix dom element with thresholds---------------------
 //fix dom element with thresholds---------------------
 class FixElm{
-    constructor(elm,stopElm,threshold){
+    constructor(elm,stopElm,threshold,afterCb,beforeCb){
         //stop is that element that we want to remove fix class if we reach that element
         //threshold is size of screen and bellow that width we dont fix anything
         this.elm = elm ;
         this.stopElm = stopElm ;
         this.threshold = threshold ;
+        this.afterCb = afterCb ;
+        this.beforeCb = beforeCb ;
         this.init() ;
     }
     init(){
         if(window.innerWidth>this.threshold) window.addEventListener('scroll',this) ;
     }
     handleEvent(e){
-        window.scrollY>this.elm.getBoundingClientRect().top?this.elm.classList.add('fix'):this.elm.classList.remove('fix') ;
-        if(this.stopElm.getBoundingClientRect().top<window.innerHeight) this.elm.classList.remove('fix') ; 
+        if(window.scrollY>this.elm.getBoundingClientRect().top){
+            this.elm.classList.add('fix') ;
+            this.afterCb() ;
+        }
+        else{
+            this.elm.classList.remove('fix') ;
+            this.beforeCb() ;
+        }
+        if(this.stopElm.getBoundingClientRect().top<window.innerHeight) {
+            this.elm.classList.remove('fix') ; 
+            this.beforeCb() ;
+        }
     }
 }
 //new FixElm(document.querySelector('.leftSection'),document.querySelector('footer'),850)

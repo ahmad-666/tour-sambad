@@ -303,7 +303,7 @@
                 </div>
             </div>
             <div class="inputWrapper text">
-                <input type="number" id="ssn" name="ssn" class="style1 labelHandler validate" required>
+                <input type="number" id="ssn" name="ssn" class="style1 labelHandler validate">
                 <label for="ssn">
                     <i class="fas fa-poll-h icon"></i>
                     <p>کد ملی</p>
@@ -315,7 +315,7 @@
                 </div>
             </div>
             <div class="inputWrapper text">
-                <input type="email" id="email" name="email" class="style1 labelHandler validate" required>
+                <input type="email" id="email" name="email" class="style1 labelHandler validate">
                 <label for="email">
                     <i class="fas fa-envelope icon"></i>
                     <p>پست الکترونیکی</p>
@@ -325,19 +325,7 @@
                     <p>ایمیل صحیح وارد نمایید</p>
                     <i class="fas fa-caret-up"></i>
                 </div>
-            </div>
-            <div class="inputWrapper text">
-                <input type="number" id="tel" name="tel" class="style1 labelHandler validate" required>
-                <label for="tel">
-                    <i class="fas fa-phone icon"></i>
-                    <p>شماره ثابت</p>
-                </label>
-                <span class="line"></span>
-                <div class="msg">
-                    <p>شماره ثابت وارد نمایید</p>
-                    <i class="fas fa-caret-up"></i>
-                </div>
-            </div>
+            </div>    
             <div class="inputWrapper text">
                 <input type="number" id="mobile" name="mobile" class="style1 labelHandler validate" required pattern="\d{11}">
                 <label for="mobile">
@@ -347,6 +335,18 @@
                 <span class="line"></span>
                 <div class="msg">
                     <p>شماره موبایل صحیح(شروع با ۰۹) وارد نمایید</p>
+                    <i class="fas fa-caret-up"></i>
+                </div>
+            </div>
+            <div class="inputWrapper text">
+                <input type="number" id="tel" name="tel" class="style1 labelHandler validate">
+                <label for="tel">
+                    <i class="fas fa-phone icon"></i>
+                    <p>شماره ثابت</p>
+                </label>
+                <span class="line"></span>
+                <div class="msg">
+                    <p>شماره ثابت وارد نمایید</p>
                     <i class="fas fa-caret-up"></i>
                 </div>
             </div>
@@ -376,69 +376,73 @@
             </div>     
         </div>
         <div class="inputsSelect">
-            <div class="vanillaSelect">
-                <label for="selectDay">روز:</label>
-                <select name="selectDay" id="selectDay">
-                    <option value="day1">1</option>
-                    <option value="day2">2</option>
-                    <option value="day3">3</option>
-                    <option value="day4">4</option>
-                    <option value="day5">5</option>
-                    <option value="day6">6</option>
-                    <option value="day7">7</option>
-                    <option value="day8">8</option>
-                    <option value="day9">9</option>
-                    <option value="day10">10</option>
-                    <option value="day11">11</option>
-                    <option value="day12">12</option>
-                    <option value="day13">13</option>
-                    <option value="day14">14</option>
-                    <option value="day15">15</option>
-                    <option value="day16">16</option>
-                    <option value="day17">17</option>
-                    <option value="day18">18</option>
-                    <option value="day19">19</option>
-                    <option value="day20">20</option>
-                    <option value="day21">21</option>
-                    <option value="day22">22</option>
-                    <option value="day23">23</option>
-                    <option value="day24">24</option>
-                    <option value="day25">25</option>
-                    <option value="day26">26</option>
-                    <option value="day27">27</option>
-                    <option value="day28">28</option>
-                    <option value="day29">29</option>
-                    <option value="day30">30</option>
-                    <option value="day31">31</option>
-                  
-                </select>
+            <h6>تاریخ تولد</h6>
+            <div class="row">
+                <div class="vanillaSelect">
+                    <label for="selectDay">روز:</label>
+                    <select name="selectDay" id="selectDay">
+                        <option value="day1">1</option>
+                        <option value="day2">2</option>
+                        <option value="day3">3</option>
+                        <option value="day4">4</option>
+                        <option value="day5">5</option>
+                        <option value="day6">6</option>
+                        <option value="day7">7</option>
+                        <option value="day8">8</option>
+                        <option value="day9">9</option>
+                        <option value="day10">10</option>
+                        <option value="day11">11</option>
+                        <option value="day12">12</option>
+                        <option value="day13">13</option>
+                        <option value="day14">14</option>
+                        <option value="day15">15</option>
+                        <option value="day16">16</option>
+                        <option value="day17">17</option>
+                        <option value="day18">18</option>
+                        <option value="day19">19</option>
+                        <option value="day20">20</option>
+                        <option value="day21">21</option>
+                        <option value="day22">22</option>
+                        <option value="day23">23</option>
+                        <option value="day24">24</option>
+                        <option value="day25">25</option>
+                        <option value="day26">26</option>
+                        <option value="day27">27</option>
+                        <option value="day28">28</option>
+                        <option value="day29">29</option>
+                        <option value="day30">30</option>
+                        <option value="day31">31</option>
+                      
+                    </select>
+                </div>
+                <div class="vanillaSelect">
+                    <label for="selectMonth">ماه:</label>
+                    <select name="selectMonth" id="selectMonth">
+                        <option value="month1">فروردین</option>
+                        <option value="month2">اردیبهشت</option>
+                        <option value="month3">خرداد</option>
+                        <option value="month4">تیر</option>
+                        <option value="month5">مرداد</option>
+                        <option value="month6">شهریور</option>
+                        <option value="month7">مهر</option>
+                        <option value="month8">آبان</option>
+                        <option value="month9">آذر</option>
+                        <option value="month10">دی</option>
+                        <option value="month11">بهمن</option>
+                        <option value="month12">اسفند</option>                                      
+                    </select>
+                </div>
+                <div class="vanillaSelect">
+                    <label for="selectYear">ماه:</label>
+                    <select name="selectYear" id="selectYear">
+                        <option value="year1398">1398</option>
+                        <option value="year1397">1397</option>
+                        <option value="year1396">1396</option>
+                        <option value="year1395">1395</option>
+                    </select>
+                </div>
             </div>
-            <div class="vanillaSelect">
-                <label for="selectMonth">ماه:</label>
-                <select name="selectMonth" id="selectMonth">
-                    <option value="month1">فروردین</option>
-                    <option value="month2">اردیبهشت</option>
-                    <option value="month3">خرداد</option>
-                    <option value="month4">تیر</option>
-                    <option value="month5">مرداد</option>
-                    <option value="month6">شهریور</option>
-                    <option value="month7">مهر</option>
-                    <option value="month8">آبان</option>
-                    <option value="month9">آذر</option>
-                    <option value="month10">دی</option>
-                    <option value="month11">بهمن</option>
-                    <option value="month12">اسفند</option>                                      
-                </select>
-            </div>
-            <div class="vanillaSelect">
-                <label for="selectYear">ماه:</label>
-                <select name="selectYear" id="selectYear">
-                    <option value="year1398">1398</option>
-                    <option value="year1397">1397</option>
-                    <option value="year1396">1396</option>
-                    <option value="year1395">1395</option>
-                </select>
-            </div>
+            
         </div>
         <div class="inputWrapper toggle">
             <input type="hidden">

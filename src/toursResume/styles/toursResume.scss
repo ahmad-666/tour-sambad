@@ -25,26 +25,51 @@
             background-color: white;
             transition: all .3s linear;
             &:hover{background-color: darken(white,10%);}
-            img{
+            .img{
                 flex-shrink: 0;
                 width: 20em;
                 height: 20em;
                 border-radius: $dist1;
+                overflow: hidden;
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .agency{
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 1;
+                    color: white;
+                    font-size: $fontM - .2em;
+                    padding: .3em;
+                    &::before{
+                        content: '' ;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background-color: rgba(30,30,30,.8);
+                        z-index: -1;
+                    }
+                }
             }
             .info{
                 margin-right: $dist1;
                 width: 100%;
                 height: auto;
                 display: flex;
-                @include flex(row,flex-start,flex-start,nowrap,"") ;
+                @include flex(row,space-between,flex-start,nowrap,"") ;
                 .col{
                     height: auto;
                     display: flex;
                     @include flex(column,flex-start,flex-start,nowrap,"") ;
-                    &:not(:first-child){margin-right: $dist2;}
                 }
                 .col.priceCol{
-                    flex-shrink: 0;
                     width: auto;
                     p{
                         &:nth-child(1){
@@ -73,7 +98,7 @@
                     }
                 }
                 .col.companiesCol{
-                    width: 50%;
+                    width: auto;
                     p{
                         font-size: $fontL;
                         font-weight: 700;
@@ -84,14 +109,14 @@
                        max-height: 25em;
                        overflow: auto; 
                        display: flex;
-                       @include flex(row,flex-start,center,wrap,flex-start) ;
+                       @include flex(column,flex-start,flex-start,nowrap,"") ;
                        margin-right: -$dist1;
                        li{
                            width: auto;
                            height: auto;
                            display: flex;
                            @include flex(row,flex-start,center,nowrap,"") ;
-                           margin: $dist1;
+                           margin-top: $dist1;
                            i{
                                font-size: $fontM - .2em;
                                color: $greenColor1;
@@ -106,7 +131,7 @@
                     }
                 }
                 .col.infoCol{
-                    width: 50%;
+                    width: auto;
                     height: auto;
                     .innerRow{
                         width: 100%;

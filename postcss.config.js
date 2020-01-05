@@ -1,4 +1,4 @@
-//const cssnano = require('cssnano') ; //we dont want any minify here
+//const cssnano = require('cssnano') ; 
 const autoprefixer = require('autoprefixer') ; 
 //const purgecss = require('@fullhuman/postcss-purgecss') ; //this plugin is having some conflict with 'mini-css-extract-plugin'
 module.exports = {

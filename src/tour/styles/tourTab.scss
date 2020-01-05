@@ -3,7 +3,24 @@
 @import '../../mixins.scss' ;
 #tourInfo{
     #tour{    
-        .tabs_wrapper{         
+        .tabs_wrapper{     
+            .tabs{
+               background-color: lighten($primaryColor,5%);
+                padding: $dist2;
+                box-shadow: 0 0 .5em .1em $shadowColor;
+                li.tab{
+                    border: 1px solid transparent ;
+                    background-color: transparent;
+                    color: white;
+                    &:not(:last-child){border-left: 2px solid white;}
+                    
+                }
+                li.tab.active{
+                    background-color: white;
+                    color: $primaryColor;
+                    border: none;
+                }
+            }    
             .contents{
                 #tourTab{
                     @include flex(column,flex-start,flex-start,nowrap,"") ;

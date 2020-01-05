@@ -161,20 +161,27 @@ nav{
                 display: flex;
                 @include flex(column,flex-start,flex-start,nowrap,"") ;
                 box-shadow: 0 .8em 1em -.4em $shadowColor;
+                background-image: linear-gradient(to right top, #3bbcce, #00a6cc, #008fc8, #0077bf, #1b5daf);
                 li{
                     display: inline-block;
                     width: 100%;
                     height: auto;
-                    background-color: white;
+                    // background-color: white;
                     transition: all .3s linear;
-                    &:hover{background-color: darken(white,12%);}
+                    border-bottom: 1px solid white;
+                    &:hover{
+                        background-color: transparent;
+                        // ul,li{
+                        //     background-color: transparent;
+                        // }
+                    }
                     margin-right: 0;
                     a{
                         display: inline-block;
                         width: 100%;
                         height: auto;
                         padding: $dist1;
-                        color: $textDark;
+                        color: white;
                         font-size: $fontM;
                     }
                 }
@@ -185,7 +192,7 @@ nav{
                         width: 100%;
                         height: auto;
                         padding: $dist1 + .5em;
-                        color: $textDark;
+                        color: white;
                         display: flex;
                         @include flex(row,flex-start,center,nowrap,"") ;
                         p{
@@ -203,10 +210,11 @@ nav{
                         border-bottom: 1.5px solid $primaryColor;
                         li{
                             // width: calc(100% - 2em);
+                            border-bottom: none;
                             padding-right: 2em;
                         }
                         li.withCollapse.inner{
-                            &:hover{background-color: white;}
+                            // &:hover{background-color: white;}
                         }
                         ul.collapse.inner{
                             max-height: 25em;
@@ -234,6 +242,7 @@ nav{
 @include resizeMobile('nav') ;
 @include mediaQ(610px){
     nav{
+        font-size: 8px;
         ul.desktop{   
             li{display:none;}
             li.mobile{

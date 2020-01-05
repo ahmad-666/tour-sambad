@@ -12,7 +12,6 @@
     .col{
         &:nth-child(1){
             flex-shrink: 0;
-            width: 30em;  
             .row{
                 width: 100%;
                 height: auto;
@@ -23,12 +22,12 @@
                     padding: $dist2;
                     height: 6em;
                 }
-                &:nth-child(2){margin-top: $dist3;}     
+                &:nth-child(2){margin-top: $dist2;}     
             }    
         }
         &:nth-child(2){
             width: 100%;
-            margin-right: $dist3;
+            margin-right: $dist2;
             .row{
                 width: 100%;
                 height: auto;
@@ -39,20 +38,22 @@
                     padding: $dist2;
                     height: 6em;
                 }
-                &:nth-child(2){margin-top: $dist3;}     
+                &:nth-child(2){margin-top: $dist2;}     
             }       
         }
         height: auto;
-        display: flex;
+        &:not(#filters){display: flex;}
         @include flex(column,flex-start,flex-start,nowrap,"") ;
        
     }
     #displayStyles{
+        padding: 0;
         height: auto;
         display: flex;
-        @include flex(row,flex-start,center,wrap,flex-start) ;
+        @include flex(row,flex-start,center,nowrap,"") ;
         .right{
-            width: auto;
+            flex-shrink: 0;
+            width: 25em;
             height: auto;
             display: flex;
             @include flex(row,flex-start,center,nowrap,"")
@@ -92,10 +93,8 @@
             }
         }
         .left{
-            width: auto;
             height: auto;
             margin-right: $dist2;
-            display: flex;
             @include flex(row,flex-start,center,wrap,flex-start) ;
             .title{
                 width: auto;
@@ -140,6 +139,12 @@
                 }
             }
         }
+        .right,.left{
+            padding: 0 $dist2;
+            height: 6em;
+            margin-top: 0;
+        }
+
        
     }
     #tours{
@@ -147,7 +152,8 @@
         @include flex(column,flex-start,center,nowrap,"") ;
         padding-bottom: $dist2;
         .showMore{
-            width: calc(100% - (2 * 1em));
+            width: calc(100%);
+            border-radius: $dist2;
             height: auto;
             padding: .5em $dist2;
             @include swapColor(white,$primaryColor) ;
@@ -224,6 +230,19 @@
                         left: -$dist2;
                         top: $dist1;
                         transform: rotate(-45deg);
+                    }
+                    .discount{
+                        width: auto;
+                        height: auto;
+                        border-radius: $dist1;
+                        border-bottom-right-radius: 0;
+                        padding: .2em .8em;
+                        color: $textWhite;
+                        background-color: $primaryColor;
+                        font-size: $fontM - .2em;
+                        position: absolute;
+                        right: -0;
+                        top: 0;
                     }
                 }
                 .content{
@@ -306,7 +325,6 @@
                        
                     }
                     .colTour.services{
-                        width: 100%;
                         height: auto;
                         // display: flex;
                         @include flex(column,flex-start,flex-start,nowrap,"") ;                
@@ -321,11 +339,11 @@
                             max-height: 14em;
                             overflow: auto;
                             display: flex;
-                            @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
                             .service{
                                 width: auto;
                                 height: auto;
-                                margin: $dist1;
+                                margin-top: $dist1;
                                 display: flex;
                                 @include flex(row,flex-start,center,nowrap,"") ;
                                 i{
@@ -344,53 +362,30 @@
                         }
                     }
                     .colTour.price{
-                        // flex-shrink: 0;
-                        // width: 15em;
-                        display: flex;
-                        @include flex(column,flex-start,flex-start,nowrap,"") ;
-                        h6{
-                            font-size: $fontM;
-                            color: $textDark;
-                            font-weight: 700;
-                        }
-                        .priceWrapper{
-                            width: 100%;
+                        height: auto;
+                        display: flex;    
+                        .priceContainer{
+                            width: auto;
                             height: auto;
-                            margin-top: $dist1;
                             display: flex;
-                            @include flex(column,flex-start,flex-start,nowrap,"") ;
-                            .beforeDiscount{
-                                width: 100%;
-                                height: auto;
-                                display: flex;
-                                @include flex(row,flex-start,center,wrap,flex-start) ;
-                                .before{
-                                    color: lighten($textGrey,20%);
-                                    text-decoration: line-through;
-                                    font-size: $fontM - .2em;
-                                }
-                                .discount{
-                                    width: auto;
-                                    height: auto;
-                                    border-radius: $dist1;
-                                    color: $textWhite;
-                                    background-color: $primaryColor;
-                                    font-size: $fontS;
-                                    padding: 0 .4em;
-                                    margin-right: $dist2;
-                                }
+                            @include flex(row,flex-start,center,nowrap,"") ;
+                            h6{
+                                font-size: $fontM;
+                                font-weight: 700;
+                                color: $textDark;
+                                padding-left: $dist1;
                             }
-                            .finalPrice{
-                                font-size: $fontL ;
+                            p{
+                                font-size: $fontL;
                                 color: $primaryColor;
                             }
                         }
                         a{
-                            margin-top: $dist1 ;
+                            white-space: nowrap;
                             font-size: $fontM;
-                            padding: .5em $dist2;
-                            @include swapColor(white,$primaryColor) ;
-                        }
+                            padding: .3em $dist2;
+                            @include swapColor(white,$primaryColor);
+                        }             
                     }
                 }
             }          
@@ -414,7 +409,7 @@
                 }     
                 .content{
                     height: 100%;
-                    @include flex(row,flex-start,flex-start,nowrap,"") ;
+                    @include flex(row,space-between,flex-start,nowrap,"") ;
                     padding-right: $dist2;
                     .colTour{
                         height: 100%;
@@ -425,12 +420,18 @@
                         width: auto;
                     }
                     .colTour.services{   
-                        width: 100%;
+                        max-width: 100%;
                         display: flex;                                           
                     }
                     .colTour.price{
+                        padding-right: $dist2;
+                        border-right: 1px solid $textGrey;
+                        width: auto;
                         flex-shrink: 0;
-                        width: 15em;     
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;   
+                        a{
+                           margin-top: $dist1;
+                        }             
                     }
                 }
             }  
@@ -442,7 +443,7 @@
             .tour{
                 width: calc((100% - (3 * 1.5em)) / 3);
                 margin: $dist1;
-                height: 41em;
+                height: 38em;
                 border-radius: $dist2;
                 border: 1px solid lighten($textGrey,10%);
                 overflow: visible;
@@ -477,38 +478,74 @@
                         display: none;                                           
                     }       
                     .colTour.price{
-                        margin-top: 0;
-                        display: flex;
-                        @include flex(column,flex-start,flex-start,nowrap,"") ;
-                        h6{
-                            flex-shrink: 0;           
-                            transform: translateY(.2em);
-                        }
-                        .priceWrapper{
-                            width: 100%;
-                            margin-right: 0;                
-                            display: flex;
-                            @include flex(row,flex-start,center,wrap,flex-start) ;    
-                            .beforeDiscount{
-                                width: auto;
-                                display: flex;
-                                @include flex(row,flex-start,center,nowrap,"") ;
-                                .discount{
-                                    margin-right: $dist1;
-                                }
-                            }
-                            .finalPrice{margin-right: $dist2;}
-                            .finalPrice.withoutDiscount{margin-right: 0;}
-                        }
+                        width: 100%;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;   
                         a{
-                            margin-top: 0;
-                            margin-left: auto;
-                            margin-right: auto;
-                        }
-                    }        
+                           margin-left: auto;
+                           margin-right: auto;
+                           margin-top: $dist1;
+                        }             
+                    } 
                 }
             }  
         }
+    }
+}
+#filters{
+    width: 30em;
+    display: flex;
+} 
+#sort{
+    width: 100%;
+    display: flex;
+}
+#mobileFilterSort{
+    display: none;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 -.5em 1em -.2em $shadowColor;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    @include flex(row,flex-start,flex-start,nowrap,"");
+    #mobileFilter,#mobileSort{
+        width: 100%;
+        height: 100%;
+        padding: $dist2;
+        display: flex;
+        @include flex(row,center,center,nowrap,"") ;
+        cursor: pointer;
+        @include swapColor($primaryColor,white) ;
+        &:hover{border: none;}
+        &:first-child{border-left: 2px solid $primaryColor;}
+        i,p{font-size: $fontL;}
+        p{
+            margin-right: .3em;
+            font-weight: 700;
+        }
+
+
+    }
+}
+@include resizeTablet('#mobileFilterSort') ;
+@include resizeMobile('#mobileFilterSort') ;
+@include mediaQ(750px){
+    #mobileFilterSort{display: flex;z-index: 12;}
+    #filters,#sort{display: none ;}
+    #filters.show,#sort.show{
+        display: flex;
+        animation: fadeIn .3s linear forwards;
+        z-index: 11;
+        position: fixed;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%,-50%);
+    }
+    #filters{width: 45em;}
+    #sort{width: auto;}
+    @keyframes fadeIn {
+        from{opacity: 0;}
+        to{opacity: 1;}
     }
 }
 @include mediaQ(1350px){
@@ -517,9 +554,6 @@
         width: 97%;
         @include flex(row,flex-start,flex-start,nowrap,"") ;
         .col{
-            &:nth-child(1){
-                width: 30em;   
-            }
             &:nth-child(2){
                 width: 100%;
                 margin-right: $dist2;
@@ -531,7 +565,6 @@
             .left{
                 margin-right: 0;
                 margin-top: $dist2;
-                display: flex;
                 @include flex(row,flex-start,center,wrap,flex-start) ;
             }     
         }
@@ -578,14 +611,14 @@
 @include mediaQ(750px){
     #toursWrapper{
         @include flex(column,flex-start,center,nowrap,"") ;
-        margin-top: $dist3;
+        margin-top: $dist2;
         .col{
-            &:nth-child(1){
-                width: 40em;   
-            }
+            // &:nth-child(1){
+            //     width: 40em;   
+            // }
             &:nth-child(2){
                 width: 100%;
-                margin-top: $dist3;
+                margin-top: $dist2;
                 margin-right: 0;
                    
             }           
@@ -595,7 +628,6 @@
             .left{
                 margin-right: 0;
                 margin-top: $dist2;
-                display: flex;
                 @include flex(row,flex-start,center,wrap,flex-start) ;
             }     
         }

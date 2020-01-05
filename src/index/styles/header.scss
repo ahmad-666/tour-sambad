@@ -18,6 +18,8 @@ header{
             object-fit: cover;
         }
         form#search{
+            border-top-left-radius: $dist2;
+            border-top-right-radius: $dist2;
             box-shadow: 0 .3em .8em -.2em $shadowColor;
             width: auto;
             height: auto;
@@ -48,7 +50,7 @@ header{
     .withoutImg{
         width: auto;
         height: auto;
-        margin-top: $dist3;
+        margin-top: $dist2;
         border-radius: $dist2;
         overflow: hidden;
         box-shadow: 0 0 .5em .1em $shadowColor;
@@ -83,7 +85,7 @@ header{
 @include resizeMobile('header');
 @include mediaQ(500px){
     header{
-        .bg,.withoutImg{
+        .bg{
             form#search{
                 min-width: 75%;
                 @include flex(column,flex-start,center,nowrap,"") ;
@@ -94,6 +96,21 @@ header{
                     margin: $dist1 0;
                 }
             
+            }
+        }
+    }
+}
+@include mediaQ(500px){
+    header{
+        .withoutImg{
+            width: 97%;
+            form#search{
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                @include flex(row,space-around,center,nowrap,"") ;
+                button[type="submit"]{margin-right: $dist2;}
+                .select2{width: 10em;}
             }
         }
     }

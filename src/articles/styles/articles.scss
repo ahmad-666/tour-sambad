@@ -5,6 +5,7 @@
 @import './aside.scss' ;
 @import './pagination.scss' ;
 main {
+    margin-top: $dist2;
     .wrapper {
         display: flex;
         @include flex(column, flex-start, flex-start, nowrap, "");
