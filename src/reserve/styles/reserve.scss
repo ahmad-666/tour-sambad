@@ -304,7 +304,69 @@
        
     }   
 }
-@include resizeTablet('#timelineWrapper') ;
+#oldCompanies{
+    display: none;
+    width: 60em;
+    height: auto;
+    padding: $dist1;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    box-shadow: 0 0 1em .3em $shadowColor;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    z-index: 10;
+    h4{
+        font-size: $fontL;
+        font-weight: 700;
+        color: $textDark;
+    }
+    .list{
+        width: 100%;
+        max-height: 75vh;
+        overflow: auto;
+        display: flex;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        .company{
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            padding: $dist1 0;
+            &:not(:last-child){border-bottom: 1px solid $textGrey;}
+            .info{
+                width: calc((100% - (3 * 1.5em)) / 3);
+                height: auto;
+                display: flex;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                h6{
+                    font-size: $fontM - .2em;
+                    color: $primaryColor;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: $fontM - .2em;
+                    color: $textGrey
+                }
+            }
+            .info,button{margin: $dist1;}
+            button{
+                color: white;
+                background-color: $primaryColor;
+            }
+        }
+    }
+    button.close{
+        color: white;
+        background-color: lighten($redColor2,5%);
+        margin: $dist1 auto 0 auto;
+    }
+}
+#oldCompanies.show{
+    display: flex;
+}
+@include resizeTablet('#timelineWrapper,#oldCompanies') ;
 @include mediaQ(1100px){
     #timelineWrapper{
         form#reserve{
@@ -441,9 +503,9 @@
 @include mediaQ(750px){
     #timelineWrapper{width: 95%;}
 }
-@include resizeMobile('#timelineWrapper') ;
+@include resizeMobile('#timelineWrapper,#oldCompanies') ;
 @include mediaQ(520px){
-    
+
     #timelineWrapper{
         form#reserve{
             #timelineSlider{
@@ -456,6 +518,9 @@
     }
 }
 @include mediaQ(410px){
+    #oldCompanies{
+     width: 90%;   
+    }
     #timelineWrapper{
         #timeline{
             font-size: 4px ;

@@ -29,6 +29,35 @@ let companiesSlide = document.querySelector('#otherInfos') ;
 let cloneContainer = companiesSlide.querySelector('.appendDOM') ;
 let cloneRow = companiesSlide.querySelector('.cloneMe') ;
 let cloneTrigger = companiesSlide.querySelector('.appendTrigger') ;
+let companyModal = document.querySelector('#oldCompanies') ;
+let insideModalTriggers = companyModal.querySelectorAll('button:not(.close)') ;
+let modalCloseHandler = companyModal.querySelector('button.close') ;
+modalCloseHandler.addEventListener('click',e=>{
+    companyModal.classList.remove('show') ;
+    document.removeEventListener('click',modalDocHandler) ;
+})
+insideModalTriggers.forEach(trigger=>{
+    trigger.addEventListener('click',e=>{
+        let company = e.currentTarget.parentElement ;
+        let name = company.getAttribute('data-name') ;
+        let snn = company.getAttribute('data-snn') ;
+        let clone = null ;
+        cloneContainer.insertBefore(
+            clone = cloneRow.cloneNode(true),
+            cloneTrigger
+        ) ;
+        afterClone(clone) ;
+        updateCompanions() ;
+        updateFormValidation() ;
+        let nameInput = clone.querySelector('.inputs .inputWrapper.text:nth-child(1) input');
+        let snnInput = clone.querySelector('.inputs .inputWrapper.text:nth-child(2) input');
+        nameInput.value = name;
+        snnInput.value = snn;
+        nameInput.parentElement.querySelector('label').classList.add('top') ;
+        snnInput.parentElement.querySelector('label').classList.add('top') ;
+        //companyIndex++ ;
+    }) 
+})
 let afterClone = function(newClone){
     let title = newClone.querySelector('h6') ;
     let nameInput = newClone.querySelector('.inputs .inputWrapper.text:nth-child(1) input') ;
@@ -36,20 +65,38 @@ let afterClone = function(newClone){
     let snnInput = newClone.querySelector('.inputs .inputWrapper.text:nth-child(2) input') ;
     let snnLabel = snnInput.parentElement.querySelector('label') ;
     let tel = newClone.querySelector('.inputs .inputWrapper.text:nth-child(3)') ;
+    let oldCompanies = newClone.querySelector('.inputs button.oldCompanies') ;
     let removeRow = newClone.querySelector('.inputs button.removeRow') ;
     title.textContent = `همسفر شماره ${companyIndex}` ;
     nameInput.setAttribute('name',`company${companyIndex}Name`) ;
     nameInput.setAttribute('id',`company${companyIndex}Name`) ;
+    nameInput.value = '' ;
     nameLabel.setAttribute('for',`company${companyIndex}Name`) ;
     snnInput.setAttribute('name',`company${companyIndex}Snn`) ;
     snnInput.setAttribute('id',`company${companyIndex}Snn`) ;
     snnLabel.setAttribute('for',`company${companyIndex}Snn`) ;
+    snnInput.value = '' ;
     tel.parentElement.removeChild(tel) ;
+    oldCompanies.style.display= "inline-block" ;
     removeRow.style.display= "inline-block" ;
+    oldCompanies.addEventListener('click',openCompanyModal) ;
     removeRow.addEventListener('click',removeRowHandler) ;
     companyIndex++ ;
     updateFormValidation() ;
 }
+function openCompanyModal(e){
+    e.stopPropagation();
+    companyModal.classList.add('show') ;
+    document.addEventListener('click',modalDocHandler) ;
+}
+function modalDocHandler(e){
+    let clickedElm = e.target ;
+    if(!companyModal.contains(clickedElm)) {
+        companyModal.classList.remove('show') ;
+        document.removeEventListener('click',modalDocHandler) ;
+    }
+}
+
 function updateFormValidation(){
     let reserveForm = timelineWrapper.querySelector('form#reserve') ;
     let reserveFormData = {

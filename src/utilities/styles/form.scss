@@ -3083,6 +3083,12 @@ form#reserve{
                 background-color: lighten($redColor2,5%);
                 font-size: $fontM - .2em;
             }
+            .oldCompanies{
+                margin: $dist2;
+                color: $textWhite;
+                background-color: $primaryColor ;
+                font-size: $fontM - .2em;
+            }
         }
     }
 }
