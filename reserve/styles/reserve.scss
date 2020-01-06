@@ -1,0 +1,570 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../utilities/styles/timeline.scss' ;
+@import '../../utilities/styles/toolTip.scss' ;
+#timelineWrapper{
+    width: 95%;
+    form#reserve{
+        #timelineSlider{
+            #selectHotel{
+                .otherInfo{
+                    color: $primaryColor;
+                    width: 100%;
+                    text-align: left;
+                    display: none;
+                }
+                table{
+                    margin-top: $dist2;
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    thead,tbody{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        tr{
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            @include flex(row,flex-start,flex-start,nowrap,"") ;
+                            th,td{
+                                height: 100%;
+                                padding: $dist1 + .5em $dist1;
+
+                            }
+                            th{
+                                h6{
+                                    width: 100%;
+                                    text-align: center;
+                                    font-size: $fontM;
+                                    font-weight: 700;
+                                    color: $textDark;
+                                }
+                            }
+                            th.name,td.name{
+                                width: 20%;
+                            }
+                            th.star,td.star{
+                                width: 12em;
+                                flex-shrink: 0;
+                            }
+                            th.price,td.price{
+                                width: 15%;
+                            }
+                            th.features,td.features{
+                                width: 20%;
+                            }                                     
+                            th.select,td.select{
+                                width: 20%;
+                            }                                     
+                        }
+                    }
+                    thead{
+                        tr{
+                            background-color: $primaryColor;
+                            border-bottom: 1px solid lighten($textGrey,30%);
+                            th{
+                                h6{
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                    tbody{
+                        tr{
+                            &:nth-child(odd){background-color: white;}
+                            &:nth-child(even){background-color: lighten($textGrey,35%);}
+                            // align-items: stretch;
+                            // td{height: auto;}
+                            td.name{
+                                p{
+                                    font-size: $fontM;
+                                    color: $textDark;
+                                    text-align: center;
+                                }
+                            }
+                            td.star{
+                                p{
+                                    width: 100%;
+                                    height: auto;
+                                    font-size: $fontM ;
+                                    color: $textDark;
+                                    text-align: center;
+                                }
+                                .icons{
+                                    transform: translateY(.5em);
+                                    width: 100%;
+                                    height: auto;
+                                    display: flex;
+                                    @include flex(row,space-around,center,wrap,flex-start) ;
+                                    i{
+                                        font-size: $fontS;
+                                        color: lighten($orangeColor1,5%);
+                                    }
+                                }
+                               
+                                
+                            }   
+                            td.price{
+                                .priceWrapper{
+                                    margin-top: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    justify-content: center;                                           
+                                    .priceHelper{
+                                        margin-right: 0;
+                                        p{
+                                            font-weight: 400;
+                                        }
+                                    }
+                                    
+                                }
+                            }                             
+                            td.features{
+                                // padding: 0;
+                                display: flex;
+                                @include flex(row,flex-start,center,wrap,flex-start) ;
+                                i{
+                                    color: $textDark;
+                                    font-size: $fontS + .1em;
+                                    margin: .5em;
+                                }
+                            }
+                            td.select{
+                                text-align: center;
+                                button{
+                                    @include swapColor($primaryColor,white) ;
+                                    border: 1px solid $primaryColor ;
+                                }
+                            }
+                        }                           
+                    }
+                }
+            }
+            #generalInfo{
+                .content{
+                    width: 100%;
+                    height: auto;
+                    margin-top: $dist2;
+                    display: flex;
+                    @include flex(row,flex-start,flex-start,nowrap,"") ;
+                    img{
+                        flex-shrink: 0;
+                        width: 20em;
+                        height: 20em;
+                        border-radius: $dist2;
+                    }
+                    .infos{
+                        width: 100%;
+                        height: auto;
+                        margin-right: $dist2;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        .tourInfos{
+                            width: 100%;
+                            height: auto;
+                            padding: $dist1;
+                            background-color: darken(#5c6bc0 ,0%);
+                            display: flex;
+                            border-radius: $dist2;
+                            @include flex(column,flex-start,center,nowrap,"") ;
+                            box-shadow: 0 0 .5em .1em #5c6bc0;
+                            .items{
+                                width: 100%;
+                                height: auto;
+                                margin-top: $dist1;
+                                display: flex;
+                                @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+                                .item{
+                                    width: calc((100% - (4 * 1.5em)) / 4);
+                                    height: auto;
+                                    margin: $dist1;
+                                    display: flex;
+                                    @include flex(row,flex-start,center,nowrap,"") ;
+                                    color: $textWhite;
+                                    p,i{font-size: $fontS + .2em;}
+                                    i{
+                                        width: 1em;
+                                    }
+                                    p{
+                                        margin-right: .5em;
+                                        color: inherit;
+                                    }
+                                }
+                            }
+                        }
+                        .otherWrapper{
+                            width: auto;
+                            height: auto;
+                            display: flex;
+                            @include flex(row,flex-start,center,wrap,flex-start) ;
+                            .priceWrapper{
+                                .before{color: lighten($textGrey,20%);}
+                                .discount{color: $textWhite;}
+                                .finalPrice{
+                                    font-size: $fontL;
+                                    color: $primaryColor;
+                                }
+                            }
+                            .innerForm{
+                                width: auto;
+                                height: auto;
+                                margin-right: $dist4;
+                                display: flex;
+                                @include flex(row,flex-start,center,nowrap,"") ;
+                            }
+                        }
+                       
+        
+                    }
+                }
+               
+            }
+            #otherInfos{
+                .content{
+                    margin-top: 0;
+                   .row{
+                       width: 100%;
+                       padding: $dist2 0;
+                       &:not(:last-child){border-bottom: 2px solid $primaryColor;}
+                       display: flex;
+                       @include flex(column,flex-start,flex-start,nowrap,"") ;                            
+                       h6{
+                           font-size: $fontM;
+                           font-weight: 700;
+                           color: $textDark;
+                       }
+                    }
+
+                   .title{
+                        width: auto;
+                        height: auto;
+                        margin-top: $dist2;
+                        color: $textDark;
+                        p{
+                            font-size: $fontM;
+                            font-weight: 700;
+                        }
+                    }
+                   .appendTrigger{
+                       cursor: pointer;
+                        width: auto;
+                        height: auto;
+                        margin-top: $dist2;
+                        display: flex;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        color: $textDark;
+                        i{
+                            font-size: $fontM;
+                            width: $fontS;
+                        }
+                        p{
+                            font-size: $fontM;
+                            font-weight: 700;
+                            margin-right: .4em;
+                        }
+                    }
+                }
+            }
+            #trackCode{
+                .content{
+                    display: flex;
+                    @include flex(column,flex-start,center,nowrap,"") ;
+                    margin-top: $dist2;
+                }
+                .track{
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    @include flex(column,flex-start,center,nowrap,"") ;
+                    color: $textWhite;
+                    background-color: $primaryColor;
+                    border-radius: $dist2;
+                    padding: $dist2 $dist4;
+                    h6{
+                        font-size: 700;
+                        font-size: $fontL + .2em;
+                    }
+                    p{
+                        font-size: $fontL;
+                        margin-top: $dist1;
+                        color: inherit;
+                    }
+                }
+                p{
+                    font-size: $fontM;
+                    color: $textDark;
+                    margin-top: $dist1;
+                }
+            }
+        }
+       
+    }   
+}
+#oldCompanies{
+    display: none;
+    width: 60em;
+    height: auto;
+    padding: $dist1;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    box-shadow: 0 0 1em .3em $shadowColor;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    z-index: 10;
+    h4{
+        font-size: $fontL;
+        font-weight: 700;
+        color: $textDark;
+    }
+    .list{
+        width: 100%;
+        max-height: 75vh;
+        overflow: auto;
+        display: flex;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        .company{
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(row,flex-start,center,nowrap,"") ;
+            padding: $dist1 0;
+            &:not(:last-child){border-bottom: 1px solid $textGrey;}
+            .info{
+                width: calc((100% - (3 * 1.5em)) / 3);
+                height: auto;
+                display: flex;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                h6{
+                    font-size: $fontM - .2em;
+                    color: $primaryColor;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: $fontM - .2em;
+                    color: $textGrey
+                }
+            }
+            .info,button{margin: $dist1;}
+            button{
+                color: white;
+                background-color: $primaryColor;
+            }
+        }
+    }
+    button.close{
+        color: white;
+        background-color: lighten($redColor2,5%);
+        margin: $dist1 auto 0 auto;
+    }
+}
+#oldCompanies.show{
+    display: flex;
+}
+@include resizeTablet('#timelineWrapper,#oldCompanies') ;
+@include mediaQ(1100px){
+    #timelineWrapper{
+        form#reserve{
+            #timelineSlider{
+                #generalInfo{
+                    .content{
+                        .infos{
+                            .tourInfos{                           
+                                .items{            
+                                    .item{
+                                        width: calc((100% - (3 * 1.5em)) / 3);                                   
+                                    }
+                                }
+                            }
+                        }
+                    }            
+                }
+            }      
+        }   
+    }
+}
+@include mediaQ(600px){
+    #timelineWrapper{
+        form#reserve{
+            #timelineSlider{
+                #generalInfo{
+                    .content{
+                        .infos{
+                            .tourInfos{                           
+                                .items{            
+                                    .item{
+                                        width: calc((100% - (2 * 1.5em)) / 2);                                   
+                                    }
+                                }
+                            }
+                        }
+                    }            
+                }
+            }      
+        }   
+    }
+}
+@include mediaQ(580px){
+    #timelineWrapper{
+        form#reserve{
+            #timelineSlider{
+                #generalInfo{
+                    .content{
+                        @include flex(column,flex-start,center,nowrap,"") ;
+                        img{
+                            width: 100%;
+                            height: 30em;
+                        }
+                        .infos{
+                            margin-right: 0;
+                            margin-top: $dist2;
+                            .tourInfos{                       
+                                .items{
+                                    .item{
+                                        width: calc((100% - (2 * 1.5em)) / 2);
+                                    }
+                                }
+                            }
+                            .otherWrapper{
+                                width: auto;
+                                height: auto;
+                                display: flex;
+                                @include flex(row,flex-start,center,wrap,flex-start) ;
+                                .priceWrapper{
+                                    .before{color: lighten($textGrey,20%);}
+                                    .discount{color: $textWhite;}
+                                    .finalPrice{
+                                        font-size: $fontL;
+                                        color: $primaryColor;
+                                    }
+                                }
+                                .innerForm{
+                                    width: auto;
+                                    height: auto;
+                                    margin-right: $dist4;
+                                    display: flex;
+                                    @include flex(row,flex-start,center,nowrap,"") ;
+                                }
+                            }
+                           
+            
+                        }
+                    }
+                   
+                }
+            }
+           
+        }   
+    }
+}
+@include mediaQ(450px){
+    #timelineWrapper{
+        width: 95%;
+        form#reserve{
+            #timelineSlider{             
+                #generalInfo{
+                    .content{              
+                        .infos{                                     
+                            .otherWrapper{     
+                                margin-left: auto;             
+                                margin-right: auto;             
+                                @include flex(column,flex-start,center,nowrap,"") ;
+                            }                     
+                        }
+                    }
+                   
+                }
+            }        
+        }   
+    }
+    #timelineWrapper{
+        form#reserve{
+            #timelineSlider{
+                #generalInfo{
+                    .content{                 
+                        .infos{                     
+                            .otherWrapper{                          
+                                .innerForm{
+                                    margin-right: 0;
+                                }
+                            }                               
+                        }
+                    }               
+                }
+            }      
+        }   
+    }
+}
+@include mediaQ(750px){
+    #timelineWrapper{width: 95%;}
+}
+@include resizeMobile('#timelineWrapper,#oldCompanies') ;
+@include mediaQ(520px){
+
+    #timelineWrapper{
+        form#reserve{
+            #timelineSlider{
+                #selectHotel{
+                    font-size: 4px;
+                }
+            }
+           
+        }   
+    }
+}
+@include mediaQ(410px){
+    #oldCompanies{
+     width: 90%;   
+    }
+    #timelineWrapper{
+        #timeline{
+            font-size: 4px ;
+        }           
+    }
+    #timelineWrapper{
+        form#reserve{
+            #timelineSlider{
+                #selectHotel{
+                    .otherInfo{       
+                        display: block;
+                    }
+                    table{
+                        width: 100%;
+                        overflow: auto;
+                        thead,tbody{
+                            tr{
+                                min-width: 100%;
+                                width: auto;
+                                th.name,td.name{
+                                    width: 15em;
+                                    flex-shrink: 0;
+                                }
+                                th.star,td.star{
+                                    width: 8em;
+                                    flex-shrink: 0;
+                                }
+                                th.price,td.price{
+                                    width: 12em;
+                                    flex-shrink: 0;
+                                }
+                                th.features,td.features{
+                                    width: 14em;
+                                    flex-shrink: 0;
+                                }                                     
+                                th.select,td.select{
+                                    width: 10em;
+                                    flex-shrink: 0;
+                                }                                     
+                            }
+                        }
+                    }
+                }
+            }       
+        }   
+    }
+}

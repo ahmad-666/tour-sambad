@@ -1,0 +1,201 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+#menuToggle{
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    padding: $dist2 + .5em;
+    position: fixed;
+    top: 50%;
+    right: $dist1;
+    transform: translateY(-50%);
+    @include swapColor(white,$primaryColor) ;
+    cursor: pointer;
+    z-index: 12;
+    transition: all .3s linear;
+    &::before{
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%,-50%);
+        font-size: $fontL;
+    }
+}
+#menuToggle.show{
+    right: 31em;
+}
+#menuToggle.behind{
+    z-index: 0;
+}
+#blackFilter{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+#blackFilter.show{
+    display: block;
+    animation: getShow .3s linear forwards;
+    @keyframes getShow {
+        from{
+            background-color: rgba(80,80,80,0);
+            z-index: 11;
+        }
+        to{
+            background-color: rgba(40,40,40,.8);
+            z-index: 11;
+        }
+    }
+}
+#menu{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    right: -35em;
+    top: 0;
+    transition: all .3s linear;
+    width: 30em;
+    height: 100vh;
+    box-shadow: -1em 0 1em -.5em $shadowColor ;
+    z-index: 12;
+    background-color: white;
+    display: flex;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    .logo{
+        width: 100%;
+        height: auto;
+        padding: $dist1;
+        display: flex;
+        @include flex(column,flex-start,center,nowrap,"") ;
+        border-bottom: 1px solid lighten($textGrey,20%);
+        img{
+            width: 7em;
+            height: 7em;
+        }
+        h6{
+            font-size: $fontL;
+            font-weight: 700;
+            color: $primaryColor;
+        }
+        .userInfo{
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(row,space-around,center,nowrap,"") ;
+            p{
+                width: 100%;
+                font-size: $fontM - .2em;
+                color: $textDark;
+            }
+            .score{
+                flex-shrink: 0;
+                width: auto;
+                margin-right: $dist2;
+                height: auto;
+                display: flex;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                color: $primaryColor;
+                i{
+                    font-size: $fontM;
+                }
+                p{
+                    margin-top: $dist1;
+                    font-size: $fontM - .2em;
+                }
+            }
+        }
+    }
+    ul{
+        width: 100%;
+        max-height: 75vh;
+        overflow: auto;
+        display: flex;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        li{
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid lighten($textGrey,20%);
+            a{
+                display: flex ;
+                width: 100%;
+                height: auto;
+                transition: all .3s linear;
+                background-color: white;
+                &:hover{background-color: darken(white,10%);}
+                @include flex(row,flex-start,center,nowrap,"") ;
+                padding: $dist2 $dist1;
+                i{
+                    flex-shrink: 0;
+                    width: $fontS ;
+                    font-size: $fontM;
+                }
+                p{
+                    width: calc(100% - 2em);
+                    font-size: $fontM;
+                    color: $textDark;
+                    margin-right: .5em;
+                }
+                
+            }
+            &:nth-child(1){
+                a{
+                    i{color: $purpleColor1;}
+                }
+            }
+            &:nth-child(2){
+                a{
+                    i{color: $greenColor1;}
+                }
+            }
+            &:nth-child(3){
+                a{
+                    i{color: $purpleColor3;}
+                }
+            }
+            &:nth-child(4){
+                a{
+                    i{color: $primaryColor;font-size: $fontS;}
+                }
+            }
+            &:nth-child(5){
+                a{
+                    i{color: $textGrey;}
+                }
+            }
+            &:nth-child(6){
+                a{
+                    i{
+                        color: $brownColor;
+                        font-size: $fontS;
+                    }
+                }
+            }
+            &:nth-child(7){
+                a{
+                    i{color: $redColor2;}
+                }
+            }
+            &:nth-child(8){
+                a{
+                    i{color: $orangeColor1;}
+                }
+            }
+            &:nth-child(9){
+                a{
+                    i{color: $redColor1;}
+                }
+            }
+        }
+    }
+
+}
+#menu.show{
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+}
+@include resizeTablet('#menuToggle,#menu') ;
+@include resizeMobile('#menuToggle,#menu') ;

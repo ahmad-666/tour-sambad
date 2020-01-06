@@ -1,0 +1,251 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+#toursResume{
+    display: flex;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    h4{
+        font-size: $fontL;
+        font-weight: 700;
+        color: $textDark;
+    }
+    .tours{
+        width: 100%;
+        height: auto;
+        margin-top: $dist2;
+        display: flex;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        .tour{
+            width: 100%;
+            height: auto;
+            padding: $dist2 $dist1;
+            display: flex;
+            @include flex(row,flex-start,flex-start,nowrap,"") ;
+            background-color: white;
+            transition: all .3s linear;
+            &:not(:last-child){border-bottom: 1px solid $textGrey;}
+            &:hover{background-color: darken(white,10%);}
+
+            .img{
+                flex-shrink: 0;
+                width: 20em;
+                height: 20em;
+                border-radius: $dist1;
+                overflow: hidden;
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .agency{
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 1;
+                    color: white;
+                    font-size: $fontM - .2em;
+                    padding: .3em;
+                    &::before{
+                        content: '' ;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background-color: rgba(30,30,30,.8);
+                        z-index: -1;
+                    }
+                }
+            }
+            .info{
+                margin-right: $dist1;
+                width: 100%;
+                height: auto;
+                display: flex;
+                @include flex(row,space-between,flex-start,nowrap,"") ;
+                .col{
+                    height: auto;
+                    display: flex;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                }
+                .col.priceCol{
+                    width: auto;
+                    p{
+                        &:nth-child(1){
+                            font-size: $fontM;
+                            color: $primaryColor;
+                            font-weight: 700;
+                        }
+                        &:nth-child(2){
+                            color: $textGrey;
+                            font-size: $fontM ;
+                        }
+                    }
+                    .code{
+                        margin-top: $dist2;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        h6{
+                            font-size: $fontM;
+                            font-weight: 700;
+                            color: $primaryColor;
+                        }
+                        p{
+                            font-size: $fontM + .2em;
+                            color: $textGrey;
+                        }
+                    }
+                }
+                .col.companiesCol{
+                    width: auto;
+                    p{
+                        font-size: $fontM;
+                        font-weight: 700;
+                        color: $primaryColor;
+                    }
+                    ul{
+                       width: 100%;
+                       max-height: 25em;
+                       overflow: auto; 
+                       display: flex;
+                       @include flex(column,flex-start,flex-start,nowrap,"") ;
+                       margin-right: 0;
+                       li{
+                           width: auto;
+                           height: auto;
+                           display: flex;
+                           @include flex(row,flex-start,center,nowrap,"") ;
+                           margin-top: $dist1;
+                           i{
+                               font-size: $fontM - .2em;
+                               color: $greenColor1;
+                           }
+                           p{
+                               margin-right: .3em;
+                               font-size: $fontM - .2em;
+                               color: $textGrey;
+                               font-weight: 400;
+                           }
+                       }
+                    }
+                }
+                .col.infoCol{
+                    min-width: 35em;
+                    height: auto;
+                    .innerRow{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        .withIcon{
+                            width: auto;
+                            height: auto;
+                            margin: $dist2;
+                            display: flex;
+                            @include flex(row,flex-start,center,nowrap,"") ;
+                            i{
+                                font-size: $fontM - .2em;
+                                color: $primaryColor;
+                                width: $fontS;
+                            }
+                            p{
+                                margin-right: .1em;
+                                color: $textGrey;
+                                font-size: $fontM - .2em;
+                            }
+                        }
+                    }
+                    .innerRow.name{
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        p{
+                            font-size: $fontM - .2em;
+                            margin-top: $dist1;
+                            color: $textGrey;
+                            &:first-child{
+                                font-size: $fontM;
+                                font-weight: 700;
+                                color: $primaryColor;
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                    .innerRow.details{
+                        margin-right: -$dist2;
+                        margin-top: -$dist2;
+                        @include flex(row,flex-start,center,wrap,flex-start) ;
+                    }
+                    .innerRow.inOut{
+                        margin-right: -$dist2;
+                        margin-top: 0;
+                        @include flex(row,flex-start,center,nowrap,"") ;                  
+                        .in{
+                            i.fa-plane{transform: rotate(180deg);}
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+@include resizeTablet('#toursResume') ;
+@include mediaQ(750px){
+    #toursResume{width: 95%;}
+}
+@include mediaQ(780px){
+    #toursResume{font-size: 6px;}
+}
+@include mediaQ(580px){
+    #toursResume{
+        .tours{
+            .tour{
+                @include flex(column,flex-start,center,nowrap,"") ;
+                .img{
+                    width: 95%;
+                    height: 30em;          
+                }
+                .info{
+                    margin-top: $dist1;
+                    margin-right: 0;           
+                    @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+                    .col.infoCol{
+                        min-width: "";
+                        width: 100%;
+                        margin-right: 3%;
+                        @include flex(column,flex-start,center,nowrap,"") ;
+                        .innerRow.inOut{
+                            margin-right: 0;
+                            .withIcon.in{margin-right: 0;}
+                        }
+                        .innerRow.details{
+                            .withIcon{margin-right: $dist1;}
+                        }
+                    }
+                    .col.companiesCol{
+                        margin-right: $dist2;
+                        width: calc(60% - 4em);
+                    }
+                    .col.priceCol{
+                        width: 40%;     
+                        margin-top: $dist1;   
+                        margin-left: $dist2;  
+                        @include flex(column,flex-start,flex-end,nowrap,"") ;    
+                    }                                               
+                }
+            }
+        }
+    }
+}
+// @include mediaQ(480px){
+//     #toursResume{
+//         font-size: 4px;
+//         .tours{
+//             .tour{
+//                 img{
+//                     height: 33em;
+//                 }
+//             }
+//         }
+//     }
+// }

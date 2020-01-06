@@ -1,0 +1,122 @@
+@import '../../variables.scss' ;
+@import '../../mixins.scss' ;
+@import '../../colors.scss' ;
+footer{
+    width: 100%;
+    height: auto;
+    background-color: lighten($textGrey,35%);
+    box-shadow: 0 -.3em .5em -.2em $shadowColor;
+    margin-top: $sectionsDist;
+    padding: $dist2 0 ;
+    display: flex;
+    @include flex(column,flex-start,center,nowrap,"") ; 
+    .links{
+        width: 100%;
+        height: auto;
+        display: flex;
+        @include flex(row,space-between,flex-start,wrap,flex-start) ;
+        .col{
+            width: auto;
+            height: auto;
+            margin: $dist1;
+            display: flex;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            h4{
+                font-size: $fontM;
+                font-weight: 700;
+                color: $primaryColor;
+            }
+            .info{
+                width: auto;
+                height: auto;
+                margin-top: $dist1 + .5em;
+                display: flex;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                i{
+                    font-size: $fontM;
+                    color: $textGrey;
+                }
+                p{
+                    margin-right: .5em;
+                    font-size: $fontM;
+                    color: $textGrey;
+                }
+            }
+            a{
+                font-size: $fontM;
+                color: $textGrey;
+                margin-top: $dist1;
+                &:hover{color: $primaryColor;}
+            }
+        }
+        .col.socials{
+            .icons{
+                width: auto;
+                height: auto;
+                display: flex;
+                @include flex(row,flex-start,center,wrap,flex-start) ;
+                a{
+                    width: 2.5em;
+                    height: 2.5em;
+                    border-radius: 50%;
+                    background-color: white;
+                    border: 1px solid white ;
+                    position: relative;
+                    color: $primaryColor;
+                    margin: $dist1;
+                    transition: all .2s linear;
+                    i{
+                        font-size: $fontS;
+                    }
+                    &:hover{transform: scale(1.2);}
+                }
+            }
+        }
+    }
+    .sponsers{
+        width: 100%;
+        height: auto;
+        display: flex;
+        @include flex(row,center,center,wrap,flex-start) ;
+        a{
+            width: auto;
+            height: auto;
+            margin: $dist1 $dist2;
+            img{
+                width: 6em;
+                height: 5em;
+            }
+        }
+    }
+    .copyright{
+        width: auto;
+        height: auto;
+        margin-top: $dist1;
+        display: flex;
+        @include flex(row,center,center,nowrap,"") ;
+        i{ 
+            flex-shrink: 0;
+            font-size: $fontL;
+            color: $textGrey;
+        }
+        p{
+            width: 95%;
+            margin-right: .5em;
+            font-size: $fontM;
+            color: $textGrey;
+        }
+    }
+}
+@include resizeTablet('footer') ;
+@include resizeMobile('footer') ;
+@include mediaQ(550px){
+    footer{     
+        .links{  
+            .col{          
+                margin: $dist2 ;
+            }
+
+        }
+
+    }
+}

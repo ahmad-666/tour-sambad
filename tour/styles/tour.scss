@@ -1,0 +1,439 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import '../../utilities/styles/productSlider.scss' ;
+@import '../../utilities/styles/tabs.scss' ;
+@import './tourTab.scss' ;
+@import './hotelTab.scss' ;
+@import '../../article/styles/comment.scss' ;
+#tourInfo{
+    width: 95%;
+    height: auto;
+    margin: $dist2 auto 0 auto;
+    display: flex;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    #breadcrumb{
+        width: auto;
+        height: auto;
+        margin: 0;
+        display: flex(row,flex-start,center,wrap,flex-start);
+        a,i{
+            font-size: $fontM;
+            &:not(:first-child){margin-right: $dist1 + .5em;}
+            color: $textGrey;
+            &:hover{color: $primaryColor;}
+        } 
+        i{
+            transform: translateY(.15em);
+        }   
+    }
+    #tour{
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin-top: $dist2;
+        display: flex;
+        @include flex(row,flex-start,flex-start,nowrap,"") ;
+        .rightSection{
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            padding: $dist2;
+            margin: 0;
+            .productSlider{
+                width: 80% ;
+                margin-right: 0  ;
+                .curr_wrapper{
+                    width: 100% ;
+                    height: 35em;
+                }
+                .slider_wrapper{
+                    .slider{
+                        .slide{
+                            width: calc((100% - (6 * 1.4em)) / 6) ;
+                            // height: 10em;
+                        }
+                    }
+                }
+            }
+            .tabs_wrapper{
+                width: 100% ;
+                margin-top: $dist2;
+                .tabs{
+                    // padding-bottom: .5em ;
+                    .tab{
+                        padding: .6em $dist2 ;
+                    }
+                }
+                .contents{
+                    width: 100% ;
+                    height: auto;    
+                    margin: $dist1 auto 0 auto;   
+                    .content{
+                        padding: 0;
+                        .tourInfos{
+                            width: 100%;
+                            height: auto;
+                            padding: $dist1;
+                            margin-top: $dist2;
+                            background-color: darken(#5c6bc0 ,0%);
+                            display: flex;
+                            border-radius: $dist2;
+                            @include flex(column,flex-start,center,nowrap,"") ;
+                            box-shadow: 0 0 .5em .1em #5c6bc0;
+                            .items{
+                                width: 100%;
+                                height: auto;
+                                margin-top: $dist1;
+                                display: flex;
+                                @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+                                .item{
+                                    width: calc((100% - (3 * 3em)) / 3);
+                                    height: auto;
+                                    margin: $dist2 - .4em;
+                                    display: flex;
+                                    @include flex(row,flex-start,center,nowrap,"") ;
+                                    color: $textWhite;
+                                    p,i{font-size: $fontS + .2em;}
+                                    i{
+                                        width: 1em;
+                                    }
+                                    p{
+                                        margin-right: .5em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }     
+            }
+        }
+        .leftSection{
+            flex-shrink: 0;
+            width: 35em;
+            height: auto;
+            margin-right: $dist2;
+            display: flex;
+            
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            #support{
+                width: 100%;
+                height: auto;
+                margin-top: 0;
+                padding: 0;
+                background-color: $darkColor2 ;
+                .content{
+                    width: 100%;
+                    height: auto;
+                    padding: $dist1;
+                    display: flex;
+                    z-index: 2;
+                    @include flex(column,flex-start,center,nowrap,"") ;
+                    .user{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        img{
+                            flex-shrink: 0;
+                            width: 5em;
+                            height: 5em;
+                            border-radius: 50%;
+                        }
+                        .info{
+                            width: 100%;
+                            height: auto;
+                            margin-right: $dist1;
+                            display: flex;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
+                            p{
+                                font-size: $fontM - .2em;
+                                color: $textWhite;
+                            }
+                        }
+                    }
+                    .title{
+                        width: auto;
+                        height: auto;
+                        margin-top: $dist1;
+                        display: flex;
+                        @include flex(column,flex-start,center,nowrap,"") ;
+                        color: $textWhite;
+                        i{
+                            font-size: $fontXXL;
+                        }
+                        h6{
+                            font-size: $fontM;
+                            font-weight: 700;
+                        }
+                    }
+                    .desc{
+                        margin-top: $dist1;
+                        font-size: $fontM - .2em;
+                        color: lighten($textGrey,15%);
+                    }
+                }
+            }
+            #reserve{
+                width: 100%;
+                height: auto;
+                margin-top: $dist2;
+                padding: $dist1;
+                display: flex;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                .title{
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    @include flex(column,flex-start,center,nowrap,"") ;
+                    color: $primaryColor;
+                    i{
+                        font-size: $fontSpecial;
+                    }
+                    h6{
+                        font-size: $fontL;
+                        font-weight: 700;
+                    }
+                }
+                .desc{
+                    width: auto;
+                    height: auto;
+                    font-size: $fontM - .2em;
+                    color: lighten($textGrey,5%);
+                    margin-top: $dist1;
+                }
+                a{
+                    width: 90%;
+                    height: auto;
+                    padding: $dist1;
+                    border-radius: $dist1;
+                    display: flex;
+                    @include flex(row,center,center,nowrap,"") ;
+                    i,p{font-size: $fontM - .2em;}
+                    p{margin-right: .3em;}
+                }
+                .reserve{
+                    margin: $dist2 auto 0 auto;
+                    @include swapColor(white,$primaryColor) ;
+                }
+                .more{
+                    margin: $dist2 auto 0 auto;
+                    @include swapColor(white,$purpleColor3) ;
+                }
+            }
+        }
+        .leftSection.fix{
+            position: fixed;
+            top: $dist2;
+            left: $dist2;
+            z-index: 10;
+        }
+       
+    }
+}
+@include mediaQ(1200px){
+    #tourInfo{font-size: 8px;}
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{
+                        .content{
+                            .tourInfos{                           
+                                .items{                            
+                                    .item{
+                                        width: calc((100% - (2* 3em)) / 2);                                     
+                                    }
+                                }
+                            }
+                        }
+                    }     
+                }
+            }   
+        }
+    }
+}
+@include mediaQ(1000px){
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .productSlider{
+                    .slider_wrapper{
+                        .slider{
+                            .slide{
+                                width: calc((100% - (5 * 1.4em)) / 5) ;
+                                // height: 10em;
+                            }
+                        }
+                    }
+                }
+            }       
+        }
+    }
+}
+@include mediaQ(860px){
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .productSlider{
+                    .slider_wrapper{
+                        .slider{
+                            .slide{
+                                width: calc((100% - (4 * 1.4em)) / 4) ;
+                                // height: 10em;
+                            }
+                        }
+                    }
+                }
+            }       
+        }
+    }
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{                   
+                        .content{
+                            .tourInfos{                         
+                                .items{                               
+                                    .item{
+                                        width: calc((100% - (2 * 3em)) / 2);
+                                    }
+                                }
+                            }
+                        }
+                    }     
+                }
+            }       
+        }
+    }
+}
+@include mediaQ(800px){
+    #tourInfo{font-size: 6px;}
+    
+}
+@include mediaQ(750px){
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .productSlider{
+                    width: 95% ;             
+                }
+            } 
+        }
+    }
+    #tourInfo{
+        #tour{
+            @include flex(column-reverse,flex-end,center,nowrap,"") ;
+            .rightSection{
+                margin-top: $dist2;
+            }
+            .leftSection{
+                width: 45em;
+                margin-right: 0;
+            }             
+        }
+    }
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{                   
+                        .content{
+                            .tourInfos{                         
+                                .items{                               
+                                    .item{
+                                        width: calc((100% - (3 * 3em)) / 3);
+                                    }
+                                }
+                            }
+                        }
+                    }     
+                }
+            }       
+        }
+    }
+
+}
+@include mediaQ(580px){
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{                   
+                        .content{
+                            .tourInfos{                         
+                                .items{                               
+                                    .item{
+                                        width: calc((100% - (2 * 3em)) / 2);
+                                    }
+                                }
+                            }
+                        }
+                    }     
+                }
+            }       
+        }
+    }
+    
+}
+@include mediaQ(450px){
+    #tourInfo{
+        #tour{         
+            .leftSection{
+                width: 98%;
+            }             
+        }
+    }
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .productSlider{
+                    .slider_wrapper{
+                        .slider{
+                            .slide{
+                                width: calc((100% - (3 * 1.4em)) / 3) ;
+                                // height: 10em;
+                            }
+                        }
+                    }
+                }
+            }       
+        }
+    }
+    
+}
+@include mediaQ(400px){
+    
+    #tourInfo{
+        #tour{
+            .rightSection{
+                .tabs_wrapper{
+                    .contents{                   
+                        .content{
+                            .tourInfos{                         
+                                .items{                               
+                                   font-size: 5px;
+                                }
+                            }
+                        }
+                    }     
+                }
+            }       
+        }
+    }
+    
+}
+@include mediaQ(300px){
+    #tourInfo{
+        #tour{
+            @include flex(column-reverse,flex-end,center,nowrap,"") ;
+            .leftSection{
+                width: 95%;
+            }             
+        }
+    }
+
+}

@@ -20,13 +20,21 @@
     <meta name='twitter:title' content='سمباد' />
     <meta name='twitter:description' content='آزانس مسفارتی سمباد' />
     <meta name='twitter:image' content='./assets/imgs/logo.png' type='image/png' />
-<link href="article.css" rel="stylesheet"></head>
+    <link rel="stylesheet" href="./libraries/fontawesome/all.min.css">
+    <link rel="stylesheet" href="./framework.css">
+    <link rel="stylesheet" href="./utilities/styles/form.css">
+    <link rel="stylesheet" href="./init.css">
+    <link rel="stylesheet" href="./index/styles/header.css">
+    <link rel="stylesheet" href="./article/styles/article.css">
+    <link rel="stylesheet" href="./article/styles/comment.css">
+    <link rel="stylesheet" href="./index/styles/footer.css">
+</head>
 <body class="bg">
     <header>
         <div id="topMenu">
             <div class="right">
                 <a href="./index.html" class="logo">
-                    <img src="assets/imgs/logo.png" alt="logoAlt">
+                    <img src="./assets/icons/logo.png" alt="logoAlt">
                     <p>سمباد</p>
                 </a>
             </div>
@@ -303,11 +311,11 @@
     <main>
         <div class="wrapper">
             <div id="article" class="containerStyle">
-                <img id="articleBg" src="assets/imgs/slide2.jpg" alt="articleImg">
+                <img id="articleBg" src="./assets/imgs/slide2.jpg" alt="articleImg">
                 <div class="info">
                     <div class="writer">
                         <a href="./#!">
-                            <img src="assets/imgs/profile.png" alt="profileImg">
+                            <img src="./assets/icons/profile.png" alt="profileImg">
                             <p>نام نویسنده</p>
                         </a>
                         <p class="date">1398/10/10</p>
@@ -500,7 +508,7 @@
                 <div class="articles">
                     <a href="article.html" class="article">
                         <div class="imgWrapper zoom">
-                            <img src="assets/imgs/tour1.jpg" alt="articleImg">
+                            <img src="./assets/imgs/tour1.jpg" alt="articleImg">
                         </div>
                         <h6>
                             <span class="ellipse" data-align="center">...</span>
@@ -510,7 +518,7 @@
                     </a>
                     <a href="article.html" class="article">
                         <div class="imgWrapper zoom">
-                            <img src="assets/imgs/tour2.jpg" alt="articleImg">
+                            <img src="./assets/imgs/tour2.jpg" alt="articleImg">
                         </div>
                         <h6>
                             <span class="ellipse" data-align="center">...</span>
@@ -520,7 +528,7 @@
                     </a>
                     <a href="article.html" class="article">
                         <div class="imgWrapper zoom">
-                            <img src="assets/imgs/tour3.jpg" alt="articleImg">
+                            <img src="./assets/imgs/tour3.jpg" alt="articleImg">
                         </div>
                         <h6>
                             <span class="ellipse" data-align="center">...</span>
@@ -530,7 +538,7 @@
                     </a>
                     <a href="article.html" class="article">
                         <div class="imgWrapper zoom">
-                            <img src="assets/imgs/tour1.jpg" alt="articleImg">
+                            <img src="./assets/imgs/tour1.jpg" alt="articleImg">
                         </div>
                         <h6>
                             <span class="ellipse" data-align="center">...</span>
@@ -545,7 +553,7 @@
                 <div class="articles">
                     <a href="article.html" class="article">
                         <div class="imgWrapper zoom">
-                            <img src="assets/imgs/tour4.jpg" alt="articleImg">
+                            <img src="./assets/imgs/tour4.jpg" alt="articleImg">
                         </div>
                         <div class="col">
                             <h6>
@@ -558,7 +566,7 @@
                     </a>
                     <a href="article.html" class="article">
                         <div class="imgWrapper zoom">
-                            <img src="assets/imgs/tour1.jpg" alt="articleImg">
+                            <img src="./assets/imgs/tour1.jpg" alt="articleImg">
                         </div>
                         <div class="col">
                             <h6>
@@ -571,7 +579,7 @@
                     </a>
                     <a href="article.html" class="article">
                         <div class="imgWrapper zoom">
-                            <img src="assets/imgs/tour2.jpg" alt="articleImg">
+                            <img src="./assets/imgs/tour2.jpg" alt="articleImg">
                         </div>
                         <div class="col">
                             <h6>
@@ -584,7 +592,7 @@
                     </a>
                     <a href="article.html" class="article">
                         <div class="imgWrapper zoom">
-                            <img src="assets/imgs/tour4.jpg" alt="articleImg">
+                            <img src="./assets/imgs/tour4.jpg" alt="articleImg">
                         </div>
                         <div class="col">
                             <h6>
@@ -651,16 +659,16 @@
         </div>
         <div class="sponsers">
             <a href="#!">
-                <img src="assets/imgs/plane.png" alt="sponserAlt">
+                <img src="./assets/icons/plane.png" alt="sponserAlt">
             </a>
             <a href="#!">
-                <img src="assets/imgs/plane.png" alt="sponserAlt">
+                <img src="./assets/icons/plane.png" alt="sponserAlt">
             </a>
             <a href="#!">
-                <img src="assets/imgs/plane.png" alt="sponserAlt">
+                <img src="./assets/icons/plane.png" alt="sponserAlt">
             </a>
             <a href="#!">
-                <img src="assets/imgs/plane.png" alt="sponserAlt">
+                <img src="./assets/icons/plane.png" alt="sponserAlt">
             </a>
         </div>
         <div class="copyright">
@@ -668,6 +676,13 @@
             <p>کلیه حقوق سایت متعلق به مجموعه گردشگری سمباد میباشد</p>
         </div>
     </footer>
-<script type="text/javascript" src="article.js"></script></body>
+    <script src="./libraries/fontfaceobserver.js"></script>
+    <script src="./utilities/utilities.js"></script>
+    <script src="./utilities/scripts/form.js"></script>
+    <script src="./utilities/scripts/collapse.js"></script>
+    <script src="./index/scripts/nav.js"></script>
+    <script src="./utilities/scripts/modal.js"></script>
+    <script src="./article/scripts/comment.js"></script>
+</body>
 
 </html>
