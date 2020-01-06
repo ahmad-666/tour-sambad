@@ -1,0 +1,67 @@
+#ticketGuide {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#ticketGuide h4 {
+  font-size: 2em;
+  color: #2295a6;
+  font-weight: 700;
+}
+
+#ticketGuide .content {
+  width: 100%;
+  height: auto;
+  margin-top: 1.5em;
+}
+
+#ticketGuide .content p {
+  font-size: 1.6em;
+  line-height: 2em;
+  color: #90909b;
+}
+
+@media screen and (max-width: 1000px) {
+  #ticketGuide {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #ticketGuide {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #ticketGuide {
+    font-size: 6px;
+  }
+}
+/*# sourceMappingURL=ticketGuide.css.map */

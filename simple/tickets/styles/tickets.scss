@@ -1,0 +1,214 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+#tickets{
+    display: flex;
+    @include flex(column,flex-start,flex-start,nowrap,"") ;
+    h4{
+        font-size: $fontL;
+        font-weight: 700;
+        color: $textDark;
+        margin: 0 auto;
+    }
+    .otherInfo{
+        color: $primaryColor;
+        width: 100%;
+        text-align: left;
+        display: none;
+    }
+    table{
+        max-width: 90%;
+        height: auto;
+        margin: $dist2 auto 0 auto;
+        display: flex;
+        @include flex(column,flex-start,flex-start,nowrap,"") ;
+        thead,tbody{
+            width: 100%;
+            height: auto; 
+            display: flex;
+            @include flex(column,flex-start,flex-start,nowrap,"") ;
+            tr{
+                width: 100%;
+                height: auto;
+                display: flex;
+                @include flex(row,flex-start,flex-start,nowrap,"") ;
+                padding: $dist2;
+                th.id,td.id{
+                    width: 20em;
+                }
+                th.reason,td.reason{
+                    width: 30em;
+                }
+                th.date,td.date{
+                    width: 20em;
+                }
+                th.answer,td.answer{
+                    flex-shrink: 0;
+                    width: 20em;
+                }
+            }
+        }
+        thead{
+            tr{
+                background-color: $primaryColor;
+                border-bottom: 1px solid lighten($textGrey,20%);
+                th{    
+                    text-align: right;        
+                    p{
+                        display: inline-block;
+                        width: auto;
+                        height: 100%;
+                        font-size: $fontM;
+                        font-weight: 700;
+                        color: white;
+                    }
+                }
+            }
+        }
+        tbody{
+            tr{
+                &:nth-child(even){background-color: white;}
+                &:nth-child(odd){background-color: darken(white,6%);}
+                &:not(:last-child){border-bottom: 1px solid lighten($textGrey,20%);}
+                td.id,td.reason,td.date,td.answer{
+                    p{
+                        width: 100%;
+                        height: 100%;
+                        font-size: $fontM;
+                        color: $textDark;
+                    }
+                }
+                td.answer{
+                    .process,.showAnswer{
+                        display: inline-block;
+                        width: auto;
+                        height: auto;
+                        border-radius: $dist2;
+                        padding: .5em $dist2;
+                        font-size: $fontM - .2em;
+                        color: $textWhite;
+                        margin: 0 auto;
+                        white-space: nowrap;
+                    }
+                    .process{background-color: lighten($redColor2,5%);}
+                    .showAnswer{
+                        background-color: $primaryColor;
+                        cursor: pointer;
+                    }
+                    .modal{
+                        opacity: 0;
+                        visibility: hidden;
+                        width: 55em;
+                        height: auto;
+                        position: fixed;
+                        top: 50%;
+                        right: 50%;
+                        transform: translate(50%,-50%);
+                        background-color: white;
+                        padding: $dist2 $dist1;
+                        display: flex;
+                        @include flex(column,flex-start,center,nowrap,"") ;
+                        h4{
+                            font-size: $fontM;
+                            color: $textDark;
+                            font-weight: 700;
+                        }
+                        .QA{
+                            width: 100%;
+                            max-height: 30em;
+                            overflow: auto;
+                            display: flex;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
+                            .question,.answer{
+                                width: 75%;
+                                height: auto;
+                                display: flex;
+                                margin-top: $dist1 + .3em;
+                                padding: $dist1;
+                                border-radius: $dist1;
+                                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                                p{
+                                    width: 100%;
+                                    height: auto;
+                                    line-height: $dist2 + .5em;
+                                    color: white;
+                                    font-size: $fontM - .2em;
+                                }
+                            }
+                            .question{
+                                margin-left: auto;
+                                background-color: #3949ab  ;
+                            }
+                            .answer{
+                                margin-right: auto;
+                                background-color: #e57373 ;          
+                            }
+                        }
+
+                    }
+                    .modal.show{
+                        opacity: 1;
+                        visibility: visible;
+                        z-index: 100;
+                    }
+                }
+            }
+        }
+    }
+    #newTicket{
+        padding: .5em $dist2;
+        font-size: $fontM;
+        @include swapColor(white,$primaryColor);
+        margin-top: $dist2;
+    }
+
+}
+@include resizeTablet('#tickets') ;
+@include mediaQ(750px){
+    #tickets{
+        width: 95%;
+        table{
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+@include resizeMobile('#tickets') ;
+@include mediaQ(460px){
+    #tickets{
+        font-size: 4px;
+    }
+}
+@include mediaQ(400px){
+    #tickets{
+        .otherInfo{       
+            display: block;
+        }
+        table{
+            width: auto;
+            overflow: auto;
+            thead,tbody{  
+                tr{
+                   width: auto;  
+                   min-width: 100%;   
+                    th.id,td.id{
+                        flex-shrink: 0;
+                        width: 15em;
+                    }
+                    th.reason,td.reason{
+                        flex-shrink: 0;
+                        width: 25em;
+                    }
+                    th.date,td.date{
+                        flex-shrink: 0;
+                        width: 15em;
+                    }
+                    th.answer,td.answer{
+                        flex-shrink: 0;
+                        width: 10em;
+                    }
+                }
+            }
+        }  
+    }
+}

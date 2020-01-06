@@ -1,0 +1,253 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+@import '../../colors.scss';
+nav{
+    width: 100%;
+    height: auto;
+    background-color: darken($darkBlue,5%);
+    ul.desktop{
+        width: 100%;
+        height: 5em;
+        padding: 0 $dist2;
+        display: flex;
+        @include flex(row,flex-start,center,nowrap,"") ;
+        li{
+            width: auto;
+            height: 100%;
+            &:not(:first-child){margin-right: $dist3;}
+            transition: all .3s linear;      
+            background-color: transparent;
+            &:hover{background-color: $primaryColor;}
+            a{
+                display: inline-block;
+                width: 100%;
+                height: 100%;       
+                padding: $dist1;
+                color: $textWhite;
+            }
+        }
+        li:not(.dropdownTrigger){
+            a{
+                font-size: $fontM;
+            }
+        }
+        li.dropdownTrigger{
+            position: relative;
+            &:hover{
+                .dropdown{
+                    opacity: 1;
+                    visibility: visible;
+                    z-index: 9;
+                }
+            }
+            a{
+                display: flex;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                p,i{
+                    font-size: $fontM;
+                    &:not(:first-child){margin-right: $dist1;}
+                }
+            }
+            ul.dropdown{
+                opacity: 0;
+                visibility: hidden;
+                transition: all .3s linear ;
+                width: 20em;
+                max-height: 25em;
+                // overflow: auto;
+                position: absolute;
+                top: calc(100% + 0em);
+                right: 0;
+                display: flex;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                box-shadow: 0 .8em 1em -.5em $shadowColor;
+                li{
+                    width: 100%;
+                    height: auto;
+                    color: $textWhite;
+                    transition: all .3s linear;
+                    margin-right: 0;
+                    background-color: darken($darkBlue,5%);
+                    &:hover{background-color: $primaryColor}
+                    &:not(:last-child){border-bottom: 1px solid $textGrey;}
+                    a{
+                        display: inline-block ;
+                        width: 100%;
+                        height: auto;
+                        font-size: $fontM;
+                        padding: $dist1 / 2 ;
+                    }
+                }
+                li.innerDropdownTrigger{
+                    position: relative;
+                    &:hover{
+                        ul.innerDropdown{
+                            opacity: 1;
+                            visibility: visible;
+                            z-index: 10;
+                        }
+                    }
+                    a{
+                       font-size: 10px;
+                       display: flex;
+                       @include flex(row,flex-start,center,nowrap,"") ;
+                       p,i{
+                           font-size: $fontM;
+                           &:not(:first-child){margin-right: $dist1;}
+                       }
+                    }
+                    ul.innerDropdown{
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all .3s linear;
+                        width: 25em;
+                        max-height: 35em;
+                        overflow: auto;
+                        position: absolute;
+                        right: 100%;
+                        top: 0;
+                        box-shadow: 0 .8em 1em -.5em $shadowColor;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        li{
+                            background-color: darken($darkBlue,5%);
+                            width: 100%;
+                            height: auto;
+                            transition: all .3s linear;
+                            color: $textWhite;
+                            &:hover{background-color: $primaryColor;}
+                            font-size: 10px;
+                            a{
+                                width: 100%;
+                                height: auto;
+                                padding: $dist1 / 2 ;
+                                font-size: $fontM - .05em;                  
+                            }
+                        }             
+                    }
+                }
+            }
+        }
+        li.mobile{
+            display: none;
+            width: auto;
+            height: 100%;   
+            padding: 0 $dist2;
+            position: relative;
+            margin-right: 0;
+            transition: all .3s linear;
+            background-color: transparent;
+            color: $textWhite;
+            cursor: pointer;
+            &:hover{background-color: $primaryColor;}
+            .fa-bars{
+                display: inline-block;
+                width: auto;
+                height: 100%;
+                font-size: $fontXL;        
+                position: relative;
+                top: 50%;
+                transform: translateY(-25%);
+            }
+            ul.mobileDropdown{
+                opacity: 0;
+                visibility: hidden;
+                transition: all .3s linear;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 25em;
+                height: auto;
+                display: flex;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                box-shadow: 0 .8em 1em -.4em $shadowColor;
+                background-image: linear-gradient(to right top, #3bbcce, #00a6cc, #008fc8, #0077bf, #1b5daf);
+                li{
+                    display: inline-block;
+                    width: 100%;
+                    height: auto;
+                    // background-color: white;
+                    transition: all .3s linear;
+                    border-bottom: 1px solid white;
+                    &:hover{
+                        background-color: transparent;
+                        // ul,li{
+                        //     background-color: transparent;
+                        // }
+                    }
+                    margin-right: 0;
+                    a{
+                        display: inline-block;
+                        width: 100%;
+                        height: auto;
+                        padding: $dist1;
+                        color: white;
+                        font-size: $fontM;
+                    }
+                }
+                li.withCollapse{
+                    display: flex;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    .collapseTrigger{
+                        width: 100%;
+                        height: auto;
+                        padding: $dist1 + .5em;
+                        color: white;
+                        display: flex;
+                        @include flex(row,flex-start,center,nowrap,"") ;
+                        p{
+                            font-size: $fontM;
+                        }
+                        i{
+                            margin-right: .3em;
+                            font-size: $fontM;
+                        }
+                    }
+                    ul.collapse{
+                        width: 100%;
+                        display: flex;
+                        @include flex(column,flex-start,flex-start,nowrap,"") ;
+                        border-bottom: 1.5px solid $primaryColor;
+                        li{
+                            // width: calc(100% - 2em);
+                            border-bottom: none;
+                            padding-right: 2em;
+                        }
+                        li.withCollapse.inner{
+                            // &:hover{background-color: white;}
+                        }
+                        ul.collapse.inner{
+                            max-height: 25em;
+                            overflow: auto;
+                            border-bottom: 1.5px solid transparent;
+                        }   
+                    }                  
+                }
+
+            }
+            ul.mobileDropdown.show{
+                opacity: 1;
+                visibility: visible;
+                z-index: 10;
+            }
+            
+        }
+        
+    }
+}
+@include resizeTablet('nav') ;
+@include mediaQ(800px){
+    nav{font-size: 7px;}
+}
+@include resizeMobile('nav') ;
+@include mediaQ(610px){
+    nav{
+        font-size: 8px;
+        ul.desktop{   
+            li{display:none;}
+            li.mobile{
+                display: block;  
+            }         
+        }
+    }
+}

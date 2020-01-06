@@ -1,0 +1,300 @@
+#gridWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#gridWrapper h4 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #2d2d31;
+}
+
+#gridWrapper .grid {
+  width: 100%;
+  height: auto;
+  margin-top: 1.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#gridWrapper .grid .row {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#gridWrapper .grid .row .tour {
+  position: relative;
+}
+
+#gridWrapper .grid .row .tour::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(80, 80, 80, 0.3);
+}
+
+#gridWrapper .grid .row .tour p {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 2.4em;
+  font-weight: 700;
+  color: #fbfbfb;
+  bottom: 0;
+}
+
+#gridWrapper .grid .row:nth-child(1) .tour {
+  width: -webkit-calc(100% / 3);
+  width: -moz-calc(100% / 3);
+  width: calc(100% / 3);
+  height: 25em;
+}
+
+#gridWrapper .grid .row:nth-child(1) .tour:not(:first-child) {
+  margin-right: 1.5em;
+}
+
+#gridWrapper .grid .row:nth-child(2) {
+  margin-top: 1.5em;
+}
+
+#gridWrapper .grid .row:nth-child(2) .col {
+  width: -webkit-calc(100% / 2);
+  width: -moz-calc(100% / 2);
+  width: calc(100% / 2);
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#gridWrapper .grid .row:nth-child(2) .col:not(:first-child) {
+  margin-right: 1.5em;
+}
+
+#gridWrapper .grid .row:nth-child(2) .col .tour {
+  width: 100%;
+  height: 25em;
+}
+
+#gridWrapper .grid .row:nth-child(2) .col .tour:not(:first-child) {
+  margin-top: 1.5em;
+}
+
+@media screen and (max-width: 1000px) {
+  #gridWrapper {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #gridWrapper {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #gridWrapper {
+    font-size: 6px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #gridWrapper .grid .row:nth-child(1) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+  }
+  #gridWrapper .grid .row:nth-child(1) .tour:nth-child(1) {
+    width: 100%;
+    height: 30em;
+    margin-right: 0;
+  }
+  #gridWrapper .grid .row:nth-child(1) .tour:nth-child(2) {
+    width: -webkit-calc((100% - 2 * 1em) / 2);
+    width: -moz-calc((100% - 2 * 1em) / 2);
+    width: calc((100% - 2 * 1em) / 2);
+    height: 25em;
+    margin-right: 0;
+  }
+  #gridWrapper .grid .row:nth-child(1) .tour:nth-child(3) {
+    width: -webkit-calc((100% - 2 * 1em) / 2);
+    width: -moz-calc((100% - 2 * 1em) / 2);
+    width: calc((100% - 2 * 1em) / 2);
+    height: 25em;
+    margin-right: 2em;
+  }
+  #gridWrapper .grid .row:nth-child(1) .tour:not(:first-child) {
+    margin-top: 1.5em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #gridWrapper .grid .row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+            align-content: flex-start;
+  }
+  #gridWrapper .grid .row .col {
+    width: 100% !important;
+    margin-top: 2em !important;
+    margin-right: 0 !important;
+  }
+  #gridWrapper .grid .row .tour {
+    width: 100% !important;
+    margin-right: 0em !important;
+    height: 25em !important;
+  }
+  #gridWrapper .grid .row .tour:not(:first-child) {
+    margin-top: 2em !important;
+  }
+}
+/*# sourceMappingURL=grid.css.map */

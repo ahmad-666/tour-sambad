@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <meta name='description' content='آژانس مسافرتی سمباد' />
+    <meta name='keywords' content='tour, sambad, tour, travel, سمباد, تور, مسافرت' />
+    <meta name='author' content='rad7 devs' />
+    <title>آزانش مسافرتی سمباد</title>
+    <link rel='icon' href='./assets/imgs/logo.png' type='image/png' />
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content='سمباد' />
+    <meta property='og:description' content='آزانس مسافرتی سمباد' />
+    <meta property='og:site_name' content='sambad' />
+    <meta property='og:url' content='https://sambad.ir/' />
+    <meta property='og:image' content='./assets/imgs/logo.png' type='image/png' />
+    <meta property='og:locale' content='fa_IR' />
+    <meta name='twitter:card' content='summery' />
+    <meta name='twitter:title' content='سمباد' />
+    <meta name='twitter:description' content='آزانس مسفارتی سمباد' />
+    <meta name='twitter:image' content='./assets/imgs/logo.png' type='image/png' />
+    <link rel="stylesheet" href="./libraries/fontawesome/all.min.css">
+    <link rel="stylesheet" href="./libraries/select2.min.css">
+    <link rel="stylesheet" href="./libraries/nouislider.min.css">
+    <link rel="stylesheet" href="./framework.css">
+    <link rel="stylesheet" href="./utilities/styles/form.css">
+    <link rel="stylesheet" href="./init.css">
+    <link rel="stylesheet" href="./index/styles/header.css">
+    <link rel="stylesheet" href="./tours/styles/tours.css">
+    <link rel="stylesheet" href="./index/styles/footer.css">
+</head>
+
+<body class="bg">
+    <header>
+        <div id="topMenu">
+            <div class="right">
+                <a href="./index.html" class="logo">
+                    <img src="./assets/icons/logo.png" alt="logoAlt">
+                    <p>سمباد</p>
+                </a>
+            </div>
+            <div class="left">
+                <div class="loginWrapper">
+                    <div class="content">
+                        <i class="fas fa-user"></i>
+                        <p>نام فرد</p>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <ul id="loginDropdown" class="fadeIn">
+                        <li>
+                            <a href="editProfile.html">ویرایش مشخصات</a>
+                        </li>
+                        <li>
+                            <a href="changePassword.html">تغییر رمز ورود</a>
+                        </li>
+                        <li>
+                            <a href="reserve.html">رزرو فعلی</a>
+                        </li>
+                        <li>
+                            <a href="toursResume.html">سوابق رزروها</a>
+                        </li>
+                        <li>
+                            <a href="returnMoney.html">درخواست استرداد وجه</a>
+                        </li>
+                        <li>
+                            <a href="tickets.html">ارتباط با پشتیبانی</a>
+                        </li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="telWrapper">
+                    <div class="content">
+                        <i class="fas fa-phone"></i>
+                        <p>شماره تماس</p>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <ul id="telDropdown" class="fadeIn">
+                        <li class="tel">
+                            <p>051-38670000</p>
+                            <p>پشتیبانی ۲۴ساعته</p>
+                        </li>
+                        <li>
+                            <a href="rules.html">قوانین</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">تماس با ما</a>
+                        </li>
+                        <li>
+                            <a href="ticketGuide.html">راهنمای  خرید بلیط</a>
+                        </li>
+                        <li>
+                            <a href="moneyGuide.html">راهنمای استرداد وجه</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul class="desktop">
+                <li class="dropdownTrigger">
+                    <a href="tours.html">
+                        <p>تور داخلی</p>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="tours.html">مشهد</a>
+                        </li>
+                        <li>
+                            <a href="tours.html">تهران</a>
+                        </li>
+                        <li>
+                            <a href="tours.html">مشهد</a>
+                        </li>
+                        <li>
+                            <a href="tours.html">تهران</a>
+                        </li>
+                        <li>
+                            <a href="tours.html">مشهد</a>
+                        </li>
+                        <li>
+                            <a href="tours.html">تهران</a>
+                        </li>
+                        <li>
+                            <a href="tours.html">مشهد</a>
+                        </li>
+                        <li>
+                            <a href="tours.html">تهران</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdownTrigger">
+                    <a href="tours.html">
+                        <p>تور خارجی</p>
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="tours.html">چین</a>
+                        </li>
+                        <li class="innerDropdownTrigger">
+                            <a href="tours.html">
+                                <p>ترکیه</p>
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                            <ul class="innerDropdown">
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                                <li>
+                                    <a href="tours.html">نام شهر ترکیه</a>
+                                </li>
+                            </ul>
+                        </li>             
+                    </ul>
+                </li>
+                <li>
+                    <a href="tours.html">تور زیارتی</a>
+                </li>
+                <li>
+                    <a href="tours.html">طبیعت گردی</a>
+                </li>
+                <li>
+                    <a href="tours.html">کوهنوردی</a>
+                </li>
+                <li>
+                    <a href="tours.html">یک روزه</a>
+                </li>
+                <li>
+                    <a href="tours.html">لحظه آخری</a>
+                </li>
+                <li class="mobile">
+                    <i class="fas fa-bars"></i>
+                    <ul class="mobileDropdown">
+                        <li class="withCollapse">
+                            <div class="collapseTrigger">
+                                <p>تور داخلی</p>
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                            <ul class="collapse">
+                                <li class="preventBodyScroll">
+                                    <a href="tours.html">مشهد</a>
+                                </li>
+                                <li class="preventBodyScroll">
+                                    <a href="tours.html">تهران</a>
+                                </li>
+                                <li class="preventBodyScroll">
+                                    <a href="tours.html">مشهد</a>
+                                </li>
+                                <li class="preventBodyScroll">
+                                    <a href="tours.html">تهران</a>
+                                </li>
+                                <li class="preventBodyScroll">
+                                    <a href="tours.html">مشهد</a>
+                                </li>
+                                <li class="preventBodyScroll">
+                                    <a href="tours.html">تهران</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="withCollapse">
+                            <div class="collapseTrigger">
+                                <p>تور خارجی</p>
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                            <ul class="collapse">
+                                <li class="withCollapse inner">
+                                    <div class="collapseTrigger inner">
+                                        <p>ترکیه</p>
+                                        <i class="fas fa-angle-down"></i>
+                                    </div>
+                                    <ul class="collapse inner">
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>                                 
+                                    </ul>
+                                </li>
+                                <li  class="preventBodyScroll">
+                                    <a href="tours.html">چین</a>
+                                </li>
+                                <li class="withCollapse inner">
+                                    <div class="collapseTrigger inner">
+                                        <p>ترکیه</p>
+                                        <i class="fas fa-angle-down"></i>
+                                    </div>
+                                    <ul class="collapse inner">
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>
+                                        <li>
+                                            <a href="tours.html">نام شهر ترکیه</a>
+                                        </li>      
+                                    </ul>
+                                </li>
+                                <li  class="preventBodyScroll">
+                                    <a href="tours.html">چین</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="preventBodyScroll">
+                            <a href="tours.html">تور زیارتی</a>
+                        </li>
+                        <li class="preventBodyScroll">
+                            <a href="tours.html"> طبیعت گردی</a>
+                        </li>
+                        <li class="preventBodyScroll">
+                            <a href="tours.html"> کوهنوردی</a>
+                        </li>
+                        <li class="preventBodyScroll">
+                            <a href="tours.html">یک روزه</a>
+                        </li>
+                        <li class="preventBodyScroll">
+                            <a href="tours.html">لحظه آخری</a>
+                        </li>             
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="bg withoutImg">
+            <!-- <img src="./assets/imgs/tour4.jpg" alt="bgAlt"> -->
+            <form novalidate id="search" class="" name="search" action="#!" method="GET" enctype="text/plain">
+                <div class="point">
+                    <label for="startPoint">مبدا</label>
+                    <select class="select2 validate" id="startPoint" name="startPoint">
+                        <option></option>
+                        <option value="mashhad" selected>مشهد</option>
+                        <option value="tehran">تهران</option>
+                        <option value="mashhad">مشهد</option>
+                        <option value="tehran">تهران</option>
+                        <option value="mashhad">مشهد</option>
+                        <option value="tehran">تهران</option>
+                        <option value="mashhad">مشهد</option>
+                        <option value="tehran">تهران</option>
+                        <option value="mashhad">مشهد</option>
+                        <option value="tehran">تهران</option>
+                    </select>
+                </div>
+                <div class="point">
+                    <label for="endPoint">مقصد</label>
+                    <select class="select2 validate" id="endPoint" name="endPoint">
+                        <option></option>
+                        <option value="mashhad">مشهد</option>
+                        <option value="tehran">تهران</option>
+                        <option value="mashhad">مشهد</option>
+                        <option value="tehran">تهران</option>
+                        <option value="mashhad">مشهد</option>
+                        <option value="tehran">تهران</option>
+                        <option value="mashhad">مشهد</option>
+                        <option value="tehran">تهران</option>
+                        <option value="mashhad">مشهد</option>
+                        <option value="tehran">تهران</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn mid pulse">جست و جو</button>
+            </form>
+        </div>
+    </header>
+    <div id="toursWrapper">
+        <form novalidate id="filters" name="filters" class="col" method="GET" action="#!" enctype="text/plain">
+            <div class="row containerStyle">
+                <div class="mobileFixFlexFixer">
+                    <div class="filtersWrapper" id="currFilters">
+                        <div class="top">
+                            <h4>فیلتر های انتخابی</h4>
+                            <button id="clearFilters" type="button" class="btn small pulse">پاک کردن همه</button>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                    <!-- <div class="filtersWrapper" id="inOutDate">
+                        <h4>تاریخ رفت/برگشت</h4>
+                        <div class="inputs">
+                            <div class="inputWrapper text">
+                                <input type="text" id="inDate" name="inDate" class="style1 labelHandler validate">
+                                <label for="inDate">
+                                    <i class="fas fa-calendar icon"></i>
+                                    <p>تاریخ رفت</p>
+                                </label>
+                                <span class="line"></span>
+                            </div>
+                            <div class="inputWrapper text">
+                                <input type="text" id="outDate" name="outDate" class="style1 labelHandler validate">
+                                <label for="outDate">
+                                    <i class="fas fa-calendar icon"></i>
+                                    <p>تاریخ برگشت</p>
+                                </label>
+                                <span class="line"></span>
+                               
+                            </div>
+                        </div>              
+                    </div> -->
+                    <div class="filtersWrapper inputWrapper range" id="priceRanger">
+                        <input type="hidden" class="min">
+                        <input type="hidden" class="max">
+                        <h4>بازه ی قیمت</h4>
+                        <div class="ranger" data-min="50000" data-max="5000000" data-step="100000"></div>
+                        <p class="text"></p>
+                    </div>
+                    <div class="filtersWrapper" id="starsFilter">
+                        <div class="withCollapse">
+                            <div class="mainCategory">
+                                <div class="inputWrapper checkboxes">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="allStars" name="allStars" class="style1" value="allStars">
+                                        <label for="allStars">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="تمام هتل ها">
+                                                <p>ستاره هتل</p>
+                                            </div>                   
+                                        </label>
+                                    </div>
+                                </div>
+                                <i class="fas fa-angle-down collapseTrigger"></i>
+                            </div>
+                            <div class="collapse">
+                                <div class="inputWrapper checkboxes">
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="star1" name="star1" class="style1" value="star1">
+                                        <label for="star1">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="۱ستاره">
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="star2" name="star2" class="style1" value="star2">
+                                        <label for="star2">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="۲ستاره">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </label>
+                                    </div>                           
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="star3" name="star3" class="style1" value="star3">
+                                        <label for="star3">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="۳ستاره">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </label>
+                                    </div>                                    
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="star4" name="star4" class="style1" value="star4">
+                                        <label for="star4">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="۴ستاره">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </label>
+                                    </div>                               
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="star5" name="star5" class="style1" value="star5">
+                                        <label for="star5">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="۵ستاره">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </label>
+                                    </div>                           
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filtersWrapper" id="vehicleType">
+                        <div class="withCollapse">
+                            <div class="mainCategory">
+                                <div class="inputWrapper checkboxes">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="allVehicles" name="allVehicles" class="style1" value="allVehicles">
+                                        <label for="allVehicles">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="تمام وسایل نقلیه">
+                                                <p>وسیله نقلیه</p>
+                                            </div>       
+                                        </label>
+                                    </div>
+                                </div>
+                                <i class="fas fa-angle-down collapseTrigger"></i>
+                            </div>
+                            <div class="collapse">
+                                <div class="inputWrapper checkboxes">
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="landVehicle" name="landVehicle" class="style1" value="landVehicle">
+                                        <label for="landVehicle">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="زمینی">
+                                                <i class="fas fa-car-alt"></i>
+                                                <p>زمینی</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="railVehicle" name="railVehicle" class="style1" value="railVehicle">
+                                        <label for="railVehicle">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="ریلی">
+                                                <i class="fas fa-subway"></i>
+                                                <p>ریلی</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="airVehicle" name="airVehicle" class="style1" value="airVehicle">
+                                        <label for="airVehicle">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="هوایی">
+                                                <i class="fas fa-plane"></i>
+                                                <p>هوایی</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                                                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>                 
+                    <div class="filtersWrapper" id="dists">
+                        <div class="withCollapse">
+                            <div class="mainCategory">
+                                <div class="inputWrapper checkboxes">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="allDists" name="allDists" class="style1" value="allDists">
+                                        <label for="allDists">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="تمام  مقصدها">
+                                                <p>انتخاب مقصد</p>
+                                            </div>       
+                                        </label>
+                                    </div>
+                                </div>
+                                <i class="fas fa-angle-down collapseTrigger"></i>
+                            </div>
+                            <div class="collapse">
+                                <div class="inputWrapper checkboxes">
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="distTehran" name="distTehran" class="style1" value="distTehran">
+                                        <label for="distTehran">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="تهران">
+                                                <p>تهران</p>
+                                            </div>
+                                        </label>
+                                    </div>                                                                                                   
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="distMashhad" name="distMashhad" class="style1" value="distMashhad">
+                                        <label for="distMashhad">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="مشهد">
+                                                <p>مشهد</p>
+                                            </div>
+                                        </label>
+                                    </div>                                                                                                   
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="distShiraz" name="distShiraz" class="style1" value="distShiraz">
+                                        <label for="distShiraz">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="شیراز">
+                                                <p>شیراز</p>
+                                            </div>
+                                        </label>
+                                    </div>                                                                                                   
+                                    <div class="checkbox subCategory">
+                                        <input type="checkbox" id="distEsfehan" name="distEsfehan" class="style1" value="distEsfehan">
+                                        <label for="distEsfehan">
+                                            <span class="rect">
+                                                <i class="fas fa-check center-xy"></i>
+                                            </span>
+                                            <div class="content" data-currFilter="اصفهان">
+                                                <p>اصفهان</p>
+                                            </div>
+                                        </label>
+                                    </div>                                                                                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>                 
+                </div>
+            </div>
+        </form>
+        <div class="col">
+            <div class="row" id="displayStyles">
+                <div class="right containerStyle">
+                    <p>نمایش بصورت</p>
+                    <div class="icons">
+                        <i class="withTooltip fas fa-grip-horizontal switchDisplayMode" data-tooltip="افقی" data-display="rowDisplay" data-display-alt="colDisplay" data-target="tours">
+                            <span class="tooltip"></span>
+                        </i>
+                        <i class="withTooltip fas fa-grip-vertical switchDisplayMode" data-tooltip="عمودی" data-display="colDisplay" data-display-alt="rowDisplay" data-target="tours">
+                            <span class="tooltip"></span>
+                        </i>
+                    </div>
+                </div>
+                <div class="left containerStyle" id="sort">
+                    <div class="title">
+                        <i class="fas sort-amount-up"></i>
+                        <p>مرتب سازی بر اساس</p>
+                    </div>
+                    <div class="sorts">
+                        <button class="sort active" id="lowPriceSort">ارزانترین</button>
+                        <button class="sort" id="highPriceSort">گرانترین</button>
+                        <button class="sort" id="toggleDate">تاریخ</button>
+                        <button class="sort" id="toggleDate"> مدت اقامت</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row colDisplay" id="tours">
+                <div class="tours">
+                    <div class="tour">
+                        <div class="img">
+                            <img src="./assets/imgs/tour1.jpg" class="forceFull" alt="tourAlt">
+                            <div class="agency">
+                                <p>نام آژانس</p>
+                            </div>
+                            <p class="special">شرایط اقساط</p>
+                        </div>
+                        <div class="content">
+                            <div class="colTour info">
+                                <div class="rowTour title">
+                                    <h6>عنوان تور</h6>
+                                </div>
+                                <div class="rowTour inOut">
+                                    <div class="in">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ٰرفت: ایران ایر</p>
+                                    </div>
+                                    <div class="out">
+                                        <i class="fas fa-plane"></i>
+                                        <p>برگشت: قشم ایر</p>
+                                    </div>
+                                </div>                       
+                                <div class="rowTour details">
+                                    <div class="withIcon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p> 15دی - ۱۹ دی(۴روز)</p>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="colTour services">
+                                <h6>خدمات تور</h6>
+                                <div class="serviceWrapper">
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="colTour price">
+                                <div class="priceContainer">
+                                    <h6>شروع قیمت از</h6>
+                                    <p>۵۰۰۰۰۰۰تومان</p>
+                                </div>
+                                <a href="tour.html" class="btn mid">مشاهده و رزرو</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour">
+                        <div class="img">
+                            <img src="./assets/imgs/slide1.jpg" class="forceFull" alt="tourAlt">
+                            <div class="agency">
+                                <p>نام آژانس</p>                  
+                            </div>
+                            <p class="discount">50%</p>
+                        </div>
+                        <div class="content">
+                            <div class="colTour info">
+                                <div class="rowTour title">
+                                    <h6>عنوان تور</h6>
+                                </div>
+                                <div class="rowTour inOut">
+                                    <div class="in">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ٰرفت: ایران ایر</p>
+                                    </div>
+                                    <div class="out">
+                                        <i class="fas fa-plane"></i>
+                                        <p>برگشت: قشم ایر</p>
+                                    </div>
+                                </div>                       
+                                <div class="rowTour details">
+                                    <div class="withIcon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p> 15دی - ۱۹ دی(۴روز)</p>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="colTour services">
+                                <h6>خدمات تور</h6>
+                                <div class="serviceWrapper">
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                    <div class="service">
+                                        <i class="fas fa-check"></i>
+                                        <p>توضیح خدمت</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="colTour price">
+                                <div class="priceContainer">
+                                    <h6>شروع قیمت از</h6>
+                                    <p>۵۰۰۰۰۰۰تومان</p>
+                                </div>
+                                <a href="tour.html" class="btn mid">مشاهده و رزرو</a>
+                            </div>
+                        </div>
+                    </div>                         
+                </div>
+                <button class="showMore">نمایش بیشتر</button>
+            </div>
+        </div>
+    </div>
+    <div id="mobileFilterSort">
+        <div id="mobileFilter">
+            <i class="fas fa-filter"></i>
+            <p>فیلترها</p>
+        </div>
+        <div id="mobileSort">
+            <i class="fas fa-sort-amount-up-alt"></i>
+            <p>مرتب سازی</p>
+        </div>
+    </div>
+    <div id="blackFilter"></div>
+    <footer>
+        <div class="links">
+            <div class="col">
+                <h4>اطلاعات بیشتر</h4>
+                <div class="info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>مشهد - بلوار هفت تیر - نبش هفت تیر ۱۱ -ساختمان کسری - طبقه چهارم - واحد ۴۳</p>
+                </div>
+                <div class="info">
+                    <i class="fas fa-phone"></i>
+                    <p>051-91010015</p>
+                </div>
+                <div class="info">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@sambad.ir</p>
+                </div>
+            </div>
+            <div class="col">
+                <h4>درباره سمباد</h4>
+                <a href="about.html">درباره ما</a>
+                <a href="rules.html">قوانین</a>
+                <a href="report.html">ثبت شکایات</a>
+                <a href="articles.html">وبلاگ</a>
+            </div>
+            <div class="col">
+                <h4>راهنمای سایت</h4>
+                <a href="ticketGuide.html">راهنمای خرید بلیط</a>
+                <a href="moneyGuide.html">راهنمای استرداد وجه</a>
+            </div>
+            <div class="col socials">
+                <h4>سمباد را در شبکه های اجتماعی دنبال کنید</h4>
+                <div class="icons">
+                    <a href="#!">
+                        <i class="fab fa-telegram-plane center-xy"></i>
+                    </a>
+                    <a href="#!">
+                        <i class="fab fa-instagram center-xy"></i>
+                    </a>
+                    <a href="#!">
+                        <i class="fab fa-telegram-plane center-xy"></i>
+                    </a>
+                    <a href="#!">
+                        <i class="fab fa-instagram center-xy"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="sponsers">
+            <a href="#!">
+                <img src="./assets/icons/plane.png" alt="sponserAlt">
+            </a>
+            <a href="#!">
+                <img src="./assets/icons/plane.png" alt="sponserAlt">
+            </a>
+            <a href="#!">
+                <img src="./assets/icons/plane.png" alt="sponserAlt">
+            </a>
+            <a href="#!">
+                <img src="./assets/icons/plane.png" alt="sponserAlt">
+            </a>
+        </div>
+        <div class="copyright">
+            <i class="fas fa-copyright"></i>
+            <p>کلیه حقوق سایت متعلق به مجموعه گردشگری سمباد میباشد</p>
+        </div>
+    </footer>
+    <script src="./libraries/jquery.min.js"></script>
+    <script src="./libraries/select2.min.js"></script>
+    <script src="./libraries/fontfaceobserver.js"></script>
+    <script src="./libraries/wNumb.min.js"></script>
+    <script src="./libraries/nouislider.min.js"></script>
+    <script src="./utilities/utilities.js"></script>
+    <script src="./utilities/scripts/form.js"></script>
+    <script src="./utilities/scripts/collapse.js"></script>
+    <script src="./utilities/scripts/toolTip.js"></script>
+    <script src="./utilities/scripts/filters.js"></script>
+    <script src="./index/scripts/nav.js"></script>
+    <script src="./index/scripts/header.js"></script>
+    <script src="./tours/scripts/tours.js"></script>
+</body>
+
+</html>

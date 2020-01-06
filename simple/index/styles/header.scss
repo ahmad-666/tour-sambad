@@ -1,0 +1,117 @@
+@import '../../variables.scss' ;
+@import '../../colors.scss' ;
+@import '../../mixins.scss' ;
+@import './topMenu.scss' ;
+@import './nav.scss' ;
+header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    .bg{
+        width: 100%;
+        height: 50em;
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        form#search{
+            border-top-left-radius: $dist2;
+            border-top-right-radius: $dist2;
+            box-shadow: 0 .3em .8em -.2em $shadowColor;
+            width: auto;
+            height: auto;
+            bottom: 0;
+            background-color: white;
+            display: flex;
+            @include flex(row,space-around,center,nowrap,"") ;
+            .point{
+                width: auto ;
+                height: auto;
+                display: flex;
+                @include flex(row,flex-start,center,nowrap,"") ;
+                margin: $dist1 + .5em $dist2;
+                label{
+                    font-size: $fontM;
+                    color: $textGrey;
+                }
+            }
+            button[type="submit"]{
+                white-space: nowrap;
+                font-size: $fontM;
+                @include swapColor($textWhite,$primaryColor) ;
+                margin: $dist1 + .5em $dist2;
+            }
+           
+        }
+    }
+    .withoutImg{
+        width: auto;
+        height: auto;
+        margin-top: $dist2;
+        border-radius: $dist2;
+        overflow: hidden;
+        box-shadow: 0 0 .5em .1em $shadowColor;
+    }
+}
+.select2{
+    width: 15em ;
+    font-size: $fontM ;
+    margin-right: .4em;
+    option{
+        color: darken($textGrey,10%) ;
+        font-size: $fontM ;
+    }    
+}
+.select2-container--default .select2-selection--single{
+    border-radius: $dist3 ;
+    border: 1.2px solid lighten($textGrey,25%) ;
+    height: 2.5em;
+    outline: none  ;
+    .select2-selection__rendered{line-height: 2.5em ;}
+    .select2-selection__arrow{@include center-y ;}
+}
+.select2-results__option{
+    font-size: $fontM  ;
+    color: $textDark ;
+}
+.select2-results__option.alert{
+    font-size: $fontM ;
+    color: $textDark ;
+}
+@include resizeTablet('header');
+@include resizeMobile('header');
+@include mediaQ(500px){
+    header{
+        .bg{
+            form#search{
+                min-width: 75%;
+                @include flex(column,flex-start,center,nowrap,"") ;
+                .point{
+                    margin: $dist1 0;
+                }
+                button[type="submit"]{
+                    margin: $dist1 0;
+                }
+            
+            }
+        }
+    }
+}
+@include mediaQ(500px){
+    header{
+        .withoutImg{
+            width: 97%;
+            form#search{
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                @include flex(row,space-around,center,nowrap,"") ;
+                button[type="submit"]{margin-right: $dist2;}
+                .select2{width: 10em;}
+            }
+        }
+    }
+}
