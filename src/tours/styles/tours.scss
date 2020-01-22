@@ -147,10 +147,21 @@
 
        
     }
-    #tours{
-        display: flex;
-        @include flex(column,flex-start,center,nowrap,"") ;
-        padding-bottom: $dist2;
+    #tours{   
+        #someTourWrapper{
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(column,flex-start,center,nowrap,"") ;
+            padding-bottom: $dist2;
+        }
+        #someTourWrapper.hide{display: none;}
+        #table{
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        #table.show{display: block;}
         .showMore{
             width: calc(100%);
             border-radius: $dist2;
@@ -389,6 +400,124 @@
                     }
                 }
             }          
+        }
+        #table{
+            width: 100%;
+            height: auto;
+            padding: $dist2;
+            box-shadow: 0 0 .5em .1em $shadowColor;
+            background-color: white;
+            table{
+                width: 100%;
+                height: auto;
+                display: flex ;
+                @include flex(column,flex-start,flex-start,nowrap,"") ;
+                overflow: auto;
+                thead,tbody{
+                    min-width: 100%;
+                    height: auto;
+                    display: flex;
+                    @include flex(column,flex-start,flex-start,nowrap,"") ;
+                    tr{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        @include flex(row,space-around,center,nowrap,"") ;
+                        padding: $dist1;
+                        th,td{
+                            flex-shrink: 0;
+                            &:not(:first-child){margin-right: $dist2;}
+                        }
+                        th.title,td.title{width: 20em;}
+                        th.agency,td.agency{width: 18em;}
+                        th.in,td.in{width: 12em;}
+                        th.out,td.out{width: 12em;}
+                        th.price,td.price{width: 15em;}
+                        th.reserve,td.reserve{width: 15em;}
+                    }
+                }
+                thead{
+                    tr{
+                        background-color: $primaryColor;
+                        color: white;
+                        th{
+                            h6{
+                                font-size: $fontM;
+                                font-weight: 700;
+                                color: inherit;
+                            }
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        &:nth-child(odd){background-color: white;}
+                        &:nth-child(even){background-color: lighten($textGrey,35%);}
+                        td.title{
+                            display: flex;
+                            @include flex(row,flex-start,center,nowrap,"") ;
+                            img{
+                                width: 7em;
+                                height: 7em;
+                                border-radius: 50%;
+                            }
+                            p{
+                                margin-right: .3em;
+                                font-size: $fontM ;
+                                color: $textDark;
+                            }
+                        }
+                        td.agency{
+                            text-align: center;
+                            p{
+                                font-size: $fontM ;
+                                color: $textDark;
+                            }
+                        }
+                        td.in,td.out{
+                            display: flex;
+                            @include flex(column,flex-start,flex-start,nowrap,"") ;
+                            .icon{
+                                width: auto;
+                                height: auto;
+                                display: flex;
+                                @include flex(row,flex-start,center,nowrap,"") ;
+                                p,i{
+                                    font-size: $fontM ;
+                                }
+                                i{
+                                    color: $primaryColor;
+                                }
+                                p{
+                                    color: $textDark;
+                                    margin-right: .3em;
+                                }
+                            }
+                        }
+                        td.price{
+                            text-align: center;
+                            p{
+                                font-size: $fontL;
+                                color: $primaryColor;
+                                font-weight: 700;
+                            }
+                        }
+                        td.reserve{
+                            text-align: center;
+                            a{
+                                display: inline-block;
+                                width: auto;
+                                height: auto;
+                                border-radius: $dist1;
+                                padding: .3em $dist1 + .4em;
+                                color: white;
+                                background-color: $primaryColor;
+                                font-size: $fontM;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     #tours.colDisplay{
@@ -750,6 +879,9 @@
     }
 }
 @include mediaQ(420px){
+    #table{
+        font-size: 4px;
+    }
     #toursWrapper{
         .col{
             #displayStyles{

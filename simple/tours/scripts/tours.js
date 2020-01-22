@@ -35,15 +35,24 @@ filtersForm.querySelectorAll('label').forEach(label=>label.addEventListener('cli
 let filterHandlerInstance = mainCategories.forEach(mainCategory=>new FilterHandler(currFiltersWrapper,mainCategory)) ;
 new CurrFilterClearAll(currFiltersWrapper,filtersForm,clearAllBtn,filterHandlerInstance) ;
 //switch display handler------------------------------------
+let someTourWrapper = document.querySelector('#someTourWrapper') ;
+ let table = document.querySelector('#table') ;
+ let dummyWrapper = document.querySelector('#someTourWrapper') ;
 filtersWrapper.querySelectorAll('.switchDisplayMode').forEach(switchElm=>switchElm.addEventListener('click',switchDisplay)) ;
 function switchDisplay(e){
+    dummyWrapper.classList.remove('hide') ;
     let target = document.querySelector(`#${this.getAttribute('data-target')}`) ;
     let displayMode = this.getAttribute('data-display') ;
     let altDisplayMode = this.getAttribute('data-display-alt') ;
     target.classList.remove(altDisplayMode);
     target.classList.add(displayMode);
+    table.classList.remove('show') ;
 }
-
+document.querySelector('i[data-display="tableDisplay"]').addEventListener('click',showTable) ;
+function showTable(e){
+    dummyWrapper.classList.add('hide') ;
+    table.classList.add('show') ;
+}
 let sortWrapper = document.querySelector('#displayStyles .sorts') ;
 sortWrapper.querySelectorAll('.sort').forEach((sort,i,all)=>{
     sort.addEventListener('click',e=>{

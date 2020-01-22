@@ -31,7 +31,7 @@
   padding: 0 1.5em;
 }
 
-#agency .title, #agency .services {
+#agency .title, #agency .services, #agency .map {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -66,11 +66,11 @@
   padding-top: 1.5em;
 }
 
-#agency .title:not(:last-child), #agency .services:not(:last-child) {
+#agency .title:not(:last-child), #agency .services:not(:last-child), #agency .map:not(:last-child) {
   border-bottom: 1px solid #c6c6cb;
 }
 
-#agency .title h4, #agency .services h4 {
+#agency .title h4, #agency .services h4, #agency .map h4 {
   font-size: 2em;
   font-weight: 700;
   color: #2d2d31;
@@ -243,6 +243,17 @@
 
 #agency .services .withCollapse .collapseTrigger {
   margin-top: 0.75em;
+}
+
+#agency .map .mapWrapper {
+  width: 80%;
+  height: 35em;
+  margin: 1.5em auto 0 auto;
+}
+
+#agency .map .mapWrapper img {
+  width: 100%;
+  height: 100%;
 }
 
 #toursList {

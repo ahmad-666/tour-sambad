@@ -433,7 +433,9 @@
   margin-top: 0;
 }
 
-#toursWrapper #tours {
+#toursWrapper #tours #someTourWrapper {
+  width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -463,6 +465,20 @@
       -ms-flex-line-pack: "";
           align-content: "";
   padding-bottom: 1.5em;
+}
+
+#toursWrapper #tours #someTourWrapper.hide {
+  display: none;
+}
+
+#toursWrapper #tours #table {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+#toursWrapper #tours #table.show {
+  display: block;
 }
 
 #toursWrapper #tours .showMore {
@@ -1018,6 +1034,321 @@
   color: #2295a6;
   background-color: white;
   border: 1.2px solid #2295a6;
+}
+
+#toursWrapper #tours #table {
+  width: 100%;
+  height: auto;
+  padding: 1.5em;
+  -webkit-box-shadow: 0 0 0.5em 0.1em rgba(70, 69, 85, 0.3);
+          box-shadow: 0 0 0.5em 0.1em rgba(70, 69, 85, 0.3);
+  background-color: white;
+}
+
+#toursWrapper #tours #table table {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  overflow: auto;
+}
+
+#toursWrapper #tours #table table thead, #toursWrapper #tours #table table tbody {
+  min-width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#toursWrapper #tours #table table thead tr, #toursWrapper #tours #table table tbody tr {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+  padding: 0.75em;
+}
+
+#toursWrapper #tours #table table thead tr th, #toursWrapper #tours #table table thead tr td, #toursWrapper #tours #table table tbody tr th, #toursWrapper #tours #table table tbody tr td {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+#toursWrapper #tours #table table thead tr th:not(:first-child), #toursWrapper #tours #table table thead tr td:not(:first-child), #toursWrapper #tours #table table tbody tr th:not(:first-child), #toursWrapper #tours #table table tbody tr td:not(:first-child) {
+  margin-right: 1.5em;
+}
+
+#toursWrapper #tours #table table thead tr th.title, #toursWrapper #tours #table table thead tr td.title, #toursWrapper #tours #table table tbody tr th.title, #toursWrapper #tours #table table tbody tr td.title {
+  width: 20em;
+}
+
+#toursWrapper #tours #table table thead tr th.agency, #toursWrapper #tours #table table thead tr td.agency, #toursWrapper #tours #table table tbody tr th.agency, #toursWrapper #tours #table table tbody tr td.agency {
+  width: 18em;
+}
+
+#toursWrapper #tours #table table thead tr th.in, #toursWrapper #tours #table table thead tr td.in, #toursWrapper #tours #table table tbody tr th.in, #toursWrapper #tours #table table tbody tr td.in {
+  width: 12em;
+}
+
+#toursWrapper #tours #table table thead tr th.out, #toursWrapper #tours #table table thead tr td.out, #toursWrapper #tours #table table tbody tr th.out, #toursWrapper #tours #table table tbody tr td.out {
+  width: 12em;
+}
+
+#toursWrapper #tours #table table thead tr th.price, #toursWrapper #tours #table table thead tr td.price, #toursWrapper #tours #table table tbody tr th.price, #toursWrapper #tours #table table tbody tr td.price {
+  width: 15em;
+}
+
+#toursWrapper #tours #table table thead tr th.reserve, #toursWrapper #tours #table table thead tr td.reserve, #toursWrapper #tours #table table tbody tr th.reserve, #toursWrapper #tours #table table tbody tr td.reserve {
+  width: 15em;
+}
+
+#toursWrapper #tours #table table thead tr {
+  background-color: #2295a6;
+  color: white;
+}
+
+#toursWrapper #tours #table table thead tr th h6 {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: inherit;
+}
+
+#toursWrapper #tours #table table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+#toursWrapper #tours #table table tbody tr:nth-child(even) {
+  background-color: #eeeef0;
+}
+
+#toursWrapper #tours #table table tbody tr td.title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#toursWrapper #tours #table table tbody tr td.title img {
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+}
+
+#toursWrapper #tours #table table tbody tr td.title p {
+  margin-right: .3em;
+  font-size: 1.6em;
+  color: #2d2d31;
+}
+
+#toursWrapper #tours #table table tbody tr td.agency {
+  text-align: center;
+}
+
+#toursWrapper #tours #table table tbody tr td.agency p {
+  font-size: 1.6em;
+  color: #2d2d31;
+}
+
+#toursWrapper #tours #table table tbody tr td.in, #toursWrapper #tours #table table tbody tr td.out {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#toursWrapper #tours #table table tbody tr td.in .icon, #toursWrapper #tours #table table tbody tr td.out .icon {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-content: "";
+      -ms-flex-line-pack: "";
+          align-content: "";
+}
+
+#toursWrapper #tours #table table tbody tr td.in .icon p, #toursWrapper #tours #table table tbody tr td.in .icon i, #toursWrapper #tours #table table tbody tr td.out .icon p, #toursWrapper #tours #table table tbody tr td.out .icon i {
+  font-size: 1.6em;
+}
+
+#toursWrapper #tours #table table tbody tr td.in .icon i, #toursWrapper #tours #table table tbody tr td.out .icon i {
+  color: #2295a6;
+}
+
+#toursWrapper #tours #table table tbody tr td.in .icon p, #toursWrapper #tours #table table tbody tr td.out .icon p {
+  color: #2d2d31;
+  margin-right: .3em;
+}
+
+#toursWrapper #tours #table table tbody tr td.price {
+  text-align: center;
+}
+
+#toursWrapper #tours #table table tbody tr td.price p {
+  font-size: 2em;
+  color: #2295a6;
+  font-weight: 700;
+}
+
+#toursWrapper #tours #table table tbody tr td.reserve {
+  text-align: center;
+}
+
+#toursWrapper #tours #table table tbody tr td.reserve a {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border-radius: 0.75em;
+  padding: 0.3em 1.15em;
+  color: white;
+  background-color: #2295a6;
+  font-size: 1.6em;
 }
 
 #toursWrapper #tours.colDisplay .tours {
@@ -1783,9 +2114,6 @@
   #toursWrapper #tours.colDisplay .tours .tour .content .colTour.price {
     border-right: 1px solid transparent;
   }
-  #toursWrapper #tours.colDisplay .tours .tour .content .colTour.price a {
-    margin-right: 0;
-  }
   #toursWrapper #tours.colDisplay .tours .tour {
     height: auto;
   }
@@ -1834,6 +2162,9 @@
 }
 
 @media screen and (max-width: 420px) {
+  #table {
+    font-size: 4px;
+  }
   #toursWrapper .col #displayStyles .left {
     width: 80vw;
   }
@@ -1902,9 +2233,6 @@
   }
   #toursWrapper #tours.colDisplay .tours .tour .content .colTour.price {
     width: 100%;
-  }
-  #toursWrapper #tours.colDisplay .tours .tour .content .colTour.price a {
-    margin-right: auto;
   }
   #toursWrapper #tours.rowDisplay .tours .tour {
     width: 80%;

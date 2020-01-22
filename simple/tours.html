@@ -623,10 +623,16 @@
                 <div class="right containerStyle">
                     <p>نمایش بصورت</p>
                     <div class="icons">
-                        <i class="withTooltip fas fa-grip-horizontal switchDisplayMode" data-tooltip="افقی" data-display="rowDisplay" data-display-alt="colDisplay" data-target="tours">
+                        <i class="withTooltip fas fa-grip-horizontal switchDisplayMode" data-tooltip="افقی"
+                            data-display="rowDisplay" data-display-alt="colDisplay" data-target="tours">
                             <span class="tooltip"></span>
                         </i>
-                        <i class="withTooltip fas fa-grip-vertical switchDisplayMode" data-tooltip="عمودی" data-display="colDisplay" data-display-alt="rowDisplay" data-target="tours">
+                        <i class="withTooltip fas fa-grip-vertical switchDisplayMode" data-tooltip="عمودی"
+                            data-display="colDisplay" data-display-alt="rowDisplay" data-target="tours">
+                            <span class="tooltip"></span>
+                        </i>
+                        <i class="withTooltip fas fa-table switchDisplayMode" data-tooltip="جدولی"
+                            data-display="tableDisplay" data-target="table">
                             <span class="tooltip"></span>
                         </i>
                     </div>
@@ -645,114 +651,284 @@
                 </div>
             </div>
             <div class="row colDisplay" id="tours">
-                <div class="tours">
-                    <div class="tour">
-                        <div class="img">
-                            <img src="./assets/imgs/tour1.jpg" class="forceFull" alt="tourAlt">
-                            <div class="agency">
-                                <p>نام آژانس</p>
-                            </div>
-                            <p class="special">شرایط اقساط</p>
-                        </div>
-                        <div class="content">
-                            <div class="colTour info">
-                                <div class="rowTour title">
-                                    <h6>عنوان تور</h6>
+                <div id="someTourWrapper">
+                    <div class="tours">
+                        <div class="tour">
+                            <div class="img">
+                                <img src="./assets/imgs/tour1.jpg" class="forceFull" alt="tourAlt">
+                                <div class="agency">
+                                    <p>نام آژانس</p>
                                 </div>
-                                <div class="rowTour inOut">
-                                    <div class="in">
-                                        <i class="fas fa-plane"></i>
-                                        <p>ٰرفت: ایران ایر</p>
-                                    </div>
-                                    <div class="out">
-                                        <i class="fas fa-plane"></i>
-                                        <p>برگشت: قشم ایر</p>
-                                    </div>
-                                </div>                       
-                                <div class="rowTour details">
-                                    <div class="withIcon">
-                                        <i class="fas fa-calendar"></i>
-                                        <p> 15دی - ۱۹ دی(۴روز)</p>
-                                    </div>
-                                </div>                       
+                                <p class="special">شرایط اقساط</p>
                             </div>
-                            <div class="colTour services">
-                                <h6>خدمات تور</h6>
-                                <div class="serviceWrapper">
-                                    <div class="service">
-                                        <i class="fas fa-check"></i>
-                                        <p>توضیح خدمت</p>
+                            <div class="content">
+                                <div class="colTour info">
+                                    <div class="rowTour title">
+                                        <h6>عنوان تور</h6>
                                     </div>
-                                    <div class="service">
-                                        <i class="fas fa-check"></i>
-                                        <p>توضیح خدمت</p>
+                                    <div class="rowTour inOut">
+                                        <div class="in">
+                                            <i class="fas fa-plane"></i>
+                                            <p>ٰرفت: ایران ایر</p>
+                                        </div>
+                                        <div class="out">
+                                            <i class="fas fa-plane"></i>
+                                            <p>برگشت: قشم ایر</p>
+                                        </div>
                                     </div>
+                                    <div class="rowTour details">
+                                        <div class="withIcon">
+                                            <i class="fas fa-calendar"></i>
+                                            <p> 15دی - ۱۹ دی(۴روز)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="colTour services">
+                                    <h6>خدمات تور</h6>
+                                    <div class="serviceWrapper">
+                                        <div class="service">
+                                            <i class="fas fa-check"></i>
+                                            <p>توضیح خدمت</p>
+                                        </div>
+                                        <div class="service">
+                                            <i class="fas fa-check"></i>
+                                            <p>توضیح خدمت</p>
+                                        </div>
 
+                                    </div>
+                                </div>
+                                <div class="colTour price">
+                                    <div class="priceContainer">
+                                        <h6>شروع قیمت از</h6>
+                                        <p>۵۰۰۰۰۰۰تومان</p>
+                                    </div>
+                                    <a href="tour.html" class="btn mid">مشاهده و رزرو</a>
                                 </div>
                             </div>
-                            <div class="colTour price">
-                                <div class="priceContainer">
-                                    <h6>شروع قیمت از</h6>
-                                    <p>۵۰۰۰۰۰۰تومان</p>
+                        </div>
+                        <div class="tour">
+                            <div class="img">
+                                <img src="./assets/imgs/slide1.jpg" class="forceFull" alt="tourAlt">
+                                <div class="agency">
+                                    <p>نام آژانس</p>
                                 </div>
-                                <a href="tour.html" class="btn mid">مشاهده و رزرو</a>
+                                <p class="discount">50%</p>
+                            </div>
+                            <div class="content">
+                                <div class="colTour info">
+                                    <div class="rowTour title">
+                                        <h6>عنوان تور</h6>
+                                    </div>
+                                    <div class="rowTour inOut">
+                                        <div class="in">
+                                            <i class="fas fa-plane"></i>
+                                            <p>ٰرفت: ایران ایر</p>
+                                        </div>
+                                        <div class="out">
+                                            <i class="fas fa-plane"></i>
+                                            <p>برگشت: قشم ایر</p>
+                                        </div>
+                                    </div>
+                                    <div class="rowTour details">
+                                        <div class="withIcon">
+                                            <i class="fas fa-calendar"></i>
+                                            <p> 15دی - ۱۹ دی(۴روز)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="colTour services">
+                                    <h6>خدمات تور</h6>
+                                    <div class="serviceWrapper">
+                                        <div class="service">
+                                            <i class="fas fa-check"></i>
+                                            <p>توضیح خدمت</p>
+                                        </div>
+                                        <div class="service">
+                                            <i class="fas fa-check"></i>
+                                            <p>توضیح خدمت</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="colTour price">
+                                    <div class="priceContainer">
+                                        <h6>شروع قیمت از</h6>
+                                        <p>۵۰۰۰۰۰۰تومان</p>
+                                    </div>
+                                    <a href="tour.html" class="btn mid">مشاهده و رزرو</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="tour">
-                        <div class="img">
-                            <img src="./assets/imgs/slide1.jpg" class="forceFull" alt="tourAlt">
-                            <div class="agency">
-                                <p>نام آژانس</p>                  
-                            </div>
-                            <p class="discount">50%</p>
-                        </div>
-                        <div class="content">
-                            <div class="colTour info">
-                                <div class="rowTour title">
-                                    <h6>عنوان تور</h6>
-                                </div>
-                                <div class="rowTour inOut">
-                                    <div class="in">
-                                        <i class="fas fa-plane"></i>
-                                        <p>ٰرفت: ایران ایر</p>
-                                    </div>
-                                    <div class="out">
-                                        <i class="fas fa-plane"></i>
-                                        <p>برگشت: قشم ایر</p>
-                                    </div>
-                                </div>                       
-                                <div class="rowTour details">
-                                    <div class="withIcon">
-                                        <i class="fas fa-calendar"></i>
-                                        <p> 15دی - ۱۹ دی(۴روز)</p>
-                                    </div>
-                                </div>                       
-                            </div>
-                            <div class="colTour services">
-                                <h6>خدمات تور</h6>
-                                <div class="serviceWrapper">
-                                    <div class="service">
-                                        <i class="fas fa-check"></i>
-                                        <p>توضیح خدمت</p>
-                                    </div>
-                                    <div class="service">
-                                        <i class="fas fa-check"></i>
-                                        <p>توضیح خدمت</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="colTour price">
-                                <div class="priceContainer">
-                                    <h6>شروع قیمت از</h6>
-                                    <p>۵۰۰۰۰۰۰تومان</p>
-                                </div>
-                                <a href="tour.html" class="btn mid">مشاهده و رزرو</a>
-                            </div>
-                        </div>
-                    </div>                         
+                    <button class="showMore">نمایش بیشتر</button>
                 </div>
-                <button class="showMore">نمایش بیشتر</button>
+                <div id="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="title">
+                                    <h6>نام تور</h6>
+                                </th>
+                                <th class="agency">
+                                    <h6>آژانس</h6>
+                                </th>
+                                <th class="in">
+                                    <h6>رفت</h6>
+                                </th>
+                                <th class="out">
+                                    <h6>برگشت</h6>
+                                </th>
+                                <th class="price">
+                                    <h6>شروع قیمت</h6>
+                                </th>
+                                <th class="reserve">
+                                    <h6>رزرو</h6>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="title">
+                                    <img src="./assets/imgs/tour1.jpg" alt="tourAlt">
+                                    <p>نام تور</p>
+                                </td>
+                                <td class="agency">
+                                    <p>نام آژانس</p>
+                                </td>
+                                <td class="in">
+                                    <div class="icon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>5دی</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ایران ایر</p>
+                                    </div>
+                                </td>
+                                <td class="out">
+                                    <div class="icon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>۱۰دی</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ایران ایر</p>
+                                    </div>
+                                </td>
+                                <td class="price">
+                                    <p>۵۰۰۰۰۰۰تومان</p>
+                                </td>
+                                <td class="reserve">
+                                    <a href="tour.html">مشاهده رزرو</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">
+                                    <img src="./assets/imgs/tour2.jpg" alt="tourAlt">
+                                    <p>نام تور</p>
+                                </td>
+                                <td class="agency">
+                                    <p>نام آژانس</p>
+                                </td>
+                                <td class="in">
+                                    <div class="icon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>5دی</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ایران ایر</p>
+                                    </div>
+                                </td>
+                                <td class="out">
+                                    <div class="icon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>۱۰دی</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ایران ایر</p>
+                                    </div>
+                                </td>
+                                <td class="price">
+                                    <p>۵۰۰۰۰۰۰تومان</p>
+                                </td>
+                                <td class="reserve">
+                                    <a href="tour.html">مشاهده رزرو</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">
+                                    <img src="./assets/imgs/tour3.jpg" alt="tourAlt">
+                                    <p>نام تور</p>
+                                </td>
+                                <td class="agency">
+                                    <p>نام آژانس</p>
+                                </td>
+                                <td class="in">
+                                    <div class="icon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>5دی</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ایران ایر</p>
+                                    </div>
+                                </td>
+                                <td class="out">
+                                    <div class="icon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>۱۰دی</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ایران ایر</p>
+                                    </div>
+                                </td>
+                                <td class="price">
+                                    <p>۵۰۰۰۰۰۰تومان</p>
+                                </td>
+                                <td class="reserve">
+                                    <a href="tour.html">مشاهده رزرو</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">
+                                    <img src="./assets/imgs/tour4.jpg" alt="tourAlt">
+                                    <p>نام تور</p>
+                                </td>
+                                <td class="agency">
+                                    <p>نام آژانس</p>
+                                </td>
+                                <td class="in">
+                                    <div class="icon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>5دی</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ایران ایر</p>
+                                    </div>
+                                </td>
+                                <td class="out">
+                                    <div class="icon">
+                                        <i class="fas fa-calendar"></i>
+                                        <p>۱۰دی</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-plane"></i>
+                                        <p>ایران ایر</p>
+                                    </div>
+                                </td>
+                                <td class="price">
+                                    <p>۵۰۰۰۰۰۰تومان</p>
+                                </td>
+                                <td class="reserve">
+                                    <a href="tour.html">مشاهده رزرو</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
