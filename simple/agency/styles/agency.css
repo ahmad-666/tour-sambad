@@ -31,7 +31,7 @@
   padding: 0 1.5em;
 }
 
-#agency .title, #agency .services, #agency .map {
+#agency .title, #agency .services, #agency .map, #agency .verify {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -66,20 +66,53 @@
   padding-top: 1.5em;
 }
 
-#agency .title:not(:last-child), #agency .services:not(:last-child), #agency .map:not(:last-child) {
+#agency .title:not(:last-child), #agency .services:not(:last-child), #agency .map:not(:last-child), #agency .verify:not(:last-child) {
   border-bottom: 1px solid #c6c6cb;
 }
 
-#agency .title h4, #agency .services h4, #agency .map h4 {
+#agency .title h4, #agency .services h4, #agency .map h4, #agency .verify h4 {
   font-size: 2em;
   font-weight: 700;
   color: #2d2d31;
 }
 
+#agency .title .icons {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+}
+
 #agency .title .withIcon {
   width: auto;
   height: auto;
-  margin-top: 0.95em;
+  margin: 1.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -119,6 +152,19 @@
 #agency .title .withIcon p {
   margin-right: .2em;
   font-size: 1.4em;
+}
+
+#agency .title a:hover {
+  color: #2295a6;
+}
+
+#agency .verify .content {
+  margin-top: 0.75em;
+  width: 100%;
+  height: auto;
+  font-size: 1.6em;
+  color: #767682;
+  line-height: 1.8em;
 }
 
 #agency .services .withCollapse {

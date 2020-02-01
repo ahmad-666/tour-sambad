@@ -6,7 +6,7 @@
     display: flex;
     @include flex(column,flex-start,flex-start,nowrap,"") ;
     padding: 0 $dist2;
-    .title,.services,.map{
+    .title,.services,.map,.verify{
         width: 100%;
         height: auto;
         &:not(:last-child){border-bottom: 1px solid lighten($textGrey,20%);}
@@ -21,10 +21,16 @@
         }
     }
     .title{
+        .icons{
+            width: 100%;
+            height: auto;
+            display: flex;
+            @include flex(row,flex-start,flex-start,wrap,flex-start) ;
+        }
         .withIcon{
             width: auto;
             height: auto;
-            margin-top: $dist1 + .2em;
+            margin: $dist2;
             display: flex;
             @include flex(row,flex-start,center,nowrap,"") ;
             color: $textGrey;
@@ -36,6 +42,19 @@
                 margin-right: .2em;
                 font-size: $fontM - .2em;
             }
+        }
+        a:hover{
+            color: $primaryColor;
+        }
+    }
+    .verify{
+        .content{
+            margin-top: $dist1;
+            width: 100%;
+            height: auto;
+            font-size: $fontM;
+            color: darken($textGrey,10%) ;
+            line-height: $dist2 + .3em;
         }
     }
     .services{
