@@ -1068,10 +1068,10 @@
                             <p class="finalPrice">500000تومان</p>
                         </div>
                     </div>
-                    <a href="reserve.html" class="reserve">
+                    <button class="reserve triggerCodePopup">
                         <i class="fas fa-plus"></i>
-                        <p>بری رزرو کلیک کنید</p>
-                    </a>
+                        <p>برای رزرو کلیک کنید</p>
+                    </button>
                     <a href="tours.html" class="more">
                         <i class="fas fa-calendar"></i>
                         <p>مشاهده دیگر تورهای آژانس</p>
@@ -1401,6 +1401,32 @@
             <i class="fas fa-angle-double-left"></i>
         </a>
     </div>
+    <form novalidate id="codePopup" name="codePopup" method="GET" action="#!" enctype="text/plain">
+        <i class="fas fa-times close"></i>
+        <i class="fas fa-sms title"></i>
+        <h4>وارد کردن کد تایید</h4>
+        <div class="inputWrapper text code">
+			<input type="text" id="code" name="code" class="style2 labelHandler validate" required>
+			<label for="code">
+				<i class="fas fa-lock icon"></i>
+				<p>کد امنیتی</p>
+			</label>
+			<span class="line"></span>
+			<div class="msg">
+				<p>کد وارد شده صحیح نیست</p>
+				<i class="fas fa-caret-up"></i>
+			</div>
+			<!-- <div class="row">
+				<div id="timer">
+					<p class="sec"></p>
+					<p>:</p>
+					<p class="min"></p>
+				</div>
+				<button type="button" id="resendCode">ارسال مجدد کد</button>
+			</div> -->
+		</div>
+        <button type="submit" id="validateCode">ثبت</button>
+    </form>
     <footer>
         <div class="links">
             <div class="col">

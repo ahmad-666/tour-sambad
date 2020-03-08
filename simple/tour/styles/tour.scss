@@ -204,7 +204,7 @@
                     color: lighten($textGrey,5%);
                     margin-top: $dist1;
                 }
-                a{
+                a,button{
                     width: 90%;
                     height: auto;
                     padding: $dist1;
@@ -215,6 +215,7 @@
                     p{margin-right: .3em;}
                 }
                 .reserve{
+                    font-size: $fontM - .5em;
                     margin: $dist2 auto 0 auto;
                     @include swapColor(white,$primaryColor) ;
                 }
@@ -233,6 +234,303 @@
        
     }
 }
+#codePopup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    z-index: 12;
+    width: 50em;
+    height: auto;
+    border-radius: $dist2;
+    background-color: white;
+    padding: $dist2;
+    box-shadow: 0 0 1em .2em $shadowColor;
+    @include flex(column,flex-start,center,nowrap,"") ;
+    i.title{
+        font-size: 4em;
+        color: $primaryColor;
+    }
+    i.close{
+        font-size: $fontL + .5em;
+        cursor: pointer;
+        position: absolute;
+        top: .5em;
+        right: .5em;
+        color: lighten($redColor2,5%);
+    }
+    h4{
+        font-size: $fontL - .2em;
+        font-weight: 700;
+        margin-top: .5em;
+        color: lighten($textGrey,15%);
+    }
+    .inputWrapper.text {
+        width: 65%;
+        height: 4em;
+        position: relative;
+        margin: $dist2 + .5em;
+        input {
+            width: 100%;
+            height: 100%;
+            line-height: 4em;
+            padding: 0 $dist1;
+            font-size: $fontM;
+            color: $darkColor;
+            transition: all .2s linear;
+            &::placeholder {
+                color: $textGrey;
+                font-size: $fontM;
+            }
+        }
+        input.style1 {
+            border: none;
+            border-bottom: 1.2px solid lighten($textGrey, 25%);
+
+            &:focus {
+                ~label {
+                    color: $primaryColor;
+                    font-size: 8px;
+                    bottom: calc(100% + .5em);
+                    transform: translateY(50%);
+                    right: 0;
+                }
+
+                ~.line {
+                    width: 100%;
+                }
+            }
+        }
+
+        input.style2 {
+            border: 1.2px solid lighten($textGrey, 25%);
+            border-radius: $dist3;
+
+            &:focus {
+                border: 1.2px solid $primaryColor;
+
+                ~label {
+                    color: $primaryColor;
+                    font-size: 8px;
+                    bottom: calc(100% + 1.5em);
+                    transform: translateY(50%);
+                    right: $dist1;
+                }
+
+                ~.line {
+                    width: 0%;
+                }
+            }
+        }
+
+        input.style1.error {
+            border-bottom: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+
+            ~.line {
+                background-color: lighten($redColor2, 5%);
+            }
+        }
+
+        input.style2.error {
+            border: 1.2px solid lighten($redColor2, 5%);
+
+            ~label {
+                color: lighten($redColor2, 5%);
+            }
+        }
+
+        label {
+            width: auto;
+            height: auto;
+            position: absolute;
+            right: $dist1;
+            bottom: 50%;
+            transform: translateY(50%);
+            display: flex;
+            @include flex(row, flex-start, center, nowrap, "");
+            color: lighten($textGrey, 20%);
+            transition: all .2s linear;
+            .isRequire{
+                width: auto;
+                height: auto;
+                color: lighten($redColor2, 0%);
+                font-size: $fontS - .1em; 
+                padding-left: .3em;
+            }
+            .icon {
+                font-size: $fontM;
+            }
+
+            p {
+                font-size: $fontM - .1em;
+                transform: translateX(-.3em);
+            }
+        }
+
+        input.style1 {
+            ~label.top {
+                font-size: 8px;
+                bottom: calc(100% + .5em);
+                transform: translateY(50%);
+                right: 0;
+            }
+        }
+
+        input.style2 {
+            ~label.top {
+                font-size: 8px;
+                bottom: calc(100% + 1.5em);
+                transform: translateY(50%);
+                right: $dist1;
+            }
+        }
+
+        .line {
+            width: 0%;
+            height: 1.2px;
+            background-color: $primaryColor;
+            position: absolute;
+            right: 0;
+            top: calc(100% - 1px);
+            transition: all .2s linear;
+        }
+
+        .msg {
+            width: auto;
+            height: auto;
+            border-radius: $dist3;
+            padding: $dist1 $dist2;
+            position: relative;
+            background-color: lighten($redColor2, 5%);
+            position: absolute;
+            right: 0;
+            top: 115%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s linear;
+
+            p {
+                color: $whiteColor2;
+                font-size: $fontM - .2em;
+            }
+
+            i {
+                font-size: $fontXL;
+                color: lighten($redColor2, 5%);
+                position: absolute;
+                right: $dist2;
+                top: calc(0% - .6em);
+            }
+        }
+
+        .msg.show {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+    }
+    .inputWrapper.code{
+        .row{
+            width: 100% ;
+            height: auto;
+            margin-top: $dist1 ;
+            display: flex ;
+            @include flex(row,space-between,center,nowrap,"") ;
+            #timer{
+                width: auto ;
+                height: auto;
+                display: flex;
+                @include flex(row,flex-start,center,nowrap,"");
+                p{
+                    font-size: $fontM ;
+                    color: $textGrey ;
+                }
+            }
+            #resendCode{
+                width: auto ;
+                height: auto;
+                background-color: transparent ;
+                color: $textGrey ;
+                cursor: pointer;
+                font-size: $fontM ;
+            }
+        }
+    }
+    button[type="submit"]{
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        border-radius: $dist2;
+        font-size: $fontL;
+        padding: .2em $dist2;
+        margin-top: 0;
+        @include swapColor(white,$primaryColor) ;
+    }
+}
+#codePopup.show{display: flex;}
+@include mediaQ(900px){
+    form#codePopup {
+        font-size: 8px ;
+        .inputWrapper.text {
+            input.style1 {
+                &:focus {
+                    ~label {font-size: 6px;}                  
+                }
+            }
+            input.style2 {
+                &:focus {
+                    ~label {font-size: 6px;}
+                }
+            }  
+            input.style1 {
+                ~label.top {font-size: 6px;}
+            }
+    
+            input.style2 {
+                ~label.top {font-size: 6px;}
+            }
+        }
+    }
+}
+@include mediaQ(600px){
+    form#codePopup {
+        font-size: 6px ;
+        .inputWrapper.text {
+            input.style1 {
+                &:focus {
+                    ~label {font-size: 4px;}                  
+                }
+            }
+            input.style2 {
+                &:focus {
+                    ~label {font-size: 4px;}
+                }
+            }  
+            input.style1 {
+                ~label.top {font-size: 4px;}
+            }
+    
+            input.style2 {
+                ~label.top {font-size: 4px;}
+            }
+        }
+    }
+}
+@include mediaQ(500px){
+    form#codePopup {
+        width: 90%;        
+    }
+}
+
+
+
+
+
 @include mediaQ(1200px){
     #tourInfo{font-size: 8px;}
     #tourInfo{
