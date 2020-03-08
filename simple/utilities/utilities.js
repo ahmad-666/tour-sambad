@@ -832,10 +832,14 @@ class FixElm{
             this.elm.classList.remove('fix') ;
             this.beforeCb() ;
         }
-        if(this.stopElm.getBoundingClientRect().top<window.innerHeight) {
+        if(this.elm.getBoundingClientRect().bottom > this.stopElm.getBoundingClientRect().top) {
             this.elm.classList.remove('fix') ; 
             this.beforeCb() ;
         }
+        // if(this.stopElm.getBoundingClientRect().top<window.innerHeight) {
+        //     this.elm.classList.remove('fix') ; 
+        //     this.beforeCb() ;
+        // }
     }
 }
 //new FixElm(document.querySelector('.leftSection'),document.querySelector('footer'),850)
