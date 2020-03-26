@@ -8,14 +8,14 @@ let userSignupForm = {
     elm: userSignupFormElm,
     submit: userSignupFormElm.querySelector('button[type="submit"]'), 
     inputs: userSignupFormElm.querySelectorAll('.validate'),
-    send: true ,
+    send: false ,
     modal: null 
 }
 let adminSignupForm = {
     elm: adminSignupFormElm,
     submit: adminSignupFormElm.querySelector('button[type="submit"]'), 
     inputs: adminSignupFormElm.querySelectorAll('.validate'),
-    send: true ,
+    send: false ,
     modal: null 
 }
 new FormValidate(userSignupForm.elm,userSignupForm.submit,
